@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="4e31257d-31c5-493c-b925-1ebcb3cf2511">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ДоступныеПериодыОтчета" category="Ref">
+				<xr:TypeId>e239b9e9-c56d-46a3-b592-f4f97adac3fd</xr:TypeId>
+				<xr:ValueId>80ce22e2-a903-4747-a0ab-365bacb2a0e6</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ДоступныеПериодыОтчета" category="Manager">
+				<xr:TypeId>8b923770-e182-46f1-b330-51e6dadc1b54</xr:TypeId>
+				<xr:ValueId>3fbff6bb-d8b6-4d55-8d4f-9b562f187eba</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ДоступныеПериодыОтчета" category="List">
+				<xr:TypeId>cec7c903-929f-47e0-b29c-96a09d177ac2</xr:TypeId>
+				<xr:ValueId>90d2f2ed-1cbe-4680-809d-b7aef226ef4e</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ДоступныеПериодыОтчета</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>1e44abfe-c173-4802-b535-96849d384983</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</Enum>
+</MetaDataObject>

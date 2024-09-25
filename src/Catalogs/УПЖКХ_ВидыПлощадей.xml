@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Catalog uuid="2858fdff-111f-444e-b426-fe8463d10dda">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.УПЖКХ_ВидыПлощадей" category="Object">
+				<xr:TypeId>99247b86-279c-4652-af80-e7d95422c8b1</xr:TypeId>
+				<xr:ValueId>ce3ae98b-3b3e-4075-b85e-741f6c389ad4</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.УПЖКХ_ВидыПлощадей" category="Ref">
+				<xr:TypeId>650b2cec-054f-4f11-80ef-5382b6b283cb</xr:TypeId>
+				<xr:ValueId>f08300ad-bb0d-46e3-994e-0532eb68250e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.УПЖКХ_ВидыПлощадей" category="Selection">
+				<xr:TypeId>318bac2e-3102-41f6-829e-7d48fc74f260</xr:TypeId>
+				<xr:ValueId>79ec643a-6cea-4116-8118-199c48a66843</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.УПЖКХ_ВидыПлощадей" category="List">
+				<xr:TypeId>1795c80c-1ae0-4be9-afc7-a1541a667f1b</xr:TypeId>
+				<xr:ValueId>1ac0e1d8-9918-4a5e-b2c8-c6d999e58712</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.УПЖКХ_ВидыПлощадей" category="Manager">
+				<xr:TypeId>dfb67628-c07d-4ccb-a725-3e8dd2fdfa82</xr:TypeId>
+				<xr:ValueId>4e3b5fea-1e77-4f2d-820d-b920874d0ac6</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>УПЖКХ_ВидыПлощадей</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>42b34b62-4798-4bdd-b37a-45c81f4bc7ad</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>

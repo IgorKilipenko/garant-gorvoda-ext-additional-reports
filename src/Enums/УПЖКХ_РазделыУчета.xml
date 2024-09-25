@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="8cc7e756-3496-4e33-ae55-ca3bb7dfd386">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.УПЖКХ_РазделыУчета" category="Ref">
+				<xr:TypeId>053b85bf-15e7-49f3-8c89-2b43c5e9b3a4</xr:TypeId>
+				<xr:ValueId>ac1dd435-108d-4188-b53c-94248022082c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.УПЖКХ_РазделыУчета" category="Manager">
+				<xr:TypeId>0ae56a7c-a975-48a9-a7b2-f804f9369c7e</xr:TypeId>
+				<xr:ValueId>02ae3302-0552-4b38-8009-34ae85c1f01d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.УПЖКХ_РазделыУчета" category="List">
+				<xr:TypeId>be33de24-832a-4de4-a697-372135e79586</xr:TypeId>
+				<xr:ValueId>eca53612-d189-49a2-a8eb-ff2bc24430d9</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>УПЖКХ_РазделыУчета</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>8df42fdf-a07c-4d07-81bd-81061b8df7f7</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="38aad794-da3f-4cfe-a881-0b73f7395f0b">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Льготы</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>427b05b0-4b44-41a0-a523-ee5f0c03c876</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8d8b45c3-30f8-4f5f-92c3-97fa8c74cfed">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Пени</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>ff47ba21-d819-4d6f-9cf2-58226de3a0a9</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="36b79d87-e78d-4d27-a228-ed7d61e564a0">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НачислениеПоПУ</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>6682b7f0-174e-4fa0-af70-1ab808b5067d</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="53063532-038e-4363-a2d9-39f6ee9cbb65">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НачислениеУслуг</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>734278e7-cf49-4e41-87a7-9716c195387c</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

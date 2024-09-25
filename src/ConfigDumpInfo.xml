@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.18">
+	<ConfigVersions>
+		<Metadata name="Catalog.Организации" id="ea331b04-48bc-46b9-a941-198417732110" configVersion="c6962b9b50af6273c87a9feec922d5579a5b9575"/>
+		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="cd9811b8d69cd2e6f2810443332be9e58325c6ba"/>
+		<Metadata name="Enum.ДоступныеПериодыОтчета" id="4e31257d-31c5-493c-b925-1ebcb3cf2511" configVersion="877acfa11aafb1758fed12d38c8aa0179652f8e3"/>
+		<Metadata name="Enum.УПЖКХ_ВидыНачислений" id="f6388d8a-a0e1-4dd8-a19e-564fa99a5f13" configVersion="fd7ef4d170da9d8a396e8afeabaf39fd0433575d">
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.КорректировкаПриОтсутствииДействующегоИПУ" id="485f93aa-a675-466d-b292-bc5a29ea427f"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.Корректировка" id="498eb8c5-5308-41da-a0e6-74ed6ce628af"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.Комиссия" id="68f78d2a-efc2-4d70-bb6f-114dbe0ac828"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.ЗачетДолговИПереплат" id="741afe2c-1183-45b8-94d4-d444412bd3e8"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.НачислениеПриОтсутствииПоказанийИПУПоНормативу" id="7585e998-b309-45b7-bc65-d8efe3ffc09d"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.Начисление" id="863ab321-f188-44b4-a71c-61c843959fd1"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.НачислениеПриОтсутствииДействующегоИПУПоНормативу" id="a5a40cd5-3b95-4362-898f-f9695cdf2085"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.НачислениеПриОтсутствииДействующегоИПУПоНормативуЗаСчетПовышающегоКоэффициента" id="a88cb299-1b98-44c8-a5d1-135d504f767f"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.Оплата" id="b93c4ea1-0822-49e7-894e-1528bd3a43b0"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.ПерерасчетНачисления" id="d0cb606d-e333-4848-86c7-b18ca39990d4"/>
+			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.КорректировкаПриОтсутствииПоказанийПоИПУ" id="efa418cb-27bd-485a-a350-1d7f257bb0a7"/>
+		</Metadata>
+		<Metadata name="Enum.УПЖКХ_РазделыУчета" id="8cc7e756-3496-4e33-ae55-ca3bb7dfd386" configVersion="b41db16c8588c85391362d927e28b4b1525f25dd">
+			<Metadata name="Enum.УПЖКХ_РазделыУчета.EnumValue.НачислениеПоПУ" id="36b79d87-e78d-4d27-a228-ed7d61e564a0"/>
+			<Metadata name="Enum.УПЖКХ_РазделыУчета.EnumValue.Льготы" id="38aad794-da3f-4cfe-a881-0b73f7395f0b"/>
+			<Metadata name="Enum.УПЖКХ_РазделыУчета.EnumValue.НачислениеУслуг" id="53063532-038e-4363-a2d9-39f6ee9cbb65"/>
+			<Metadata name="Enum.УПЖКХ_РазделыУчета.EnumValue.Пени" id="8d8b45c3-30f8-4f5f-92c3-97fa8c74cfed"/>
+		</Metadata>
+		<Metadata name="Language.Русский" id="44f6a684-9fe1-469e-9a55-91239dd938e6" configVersion="44ad2cfdada2925adf58ec52fbf069567f42dd12"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам" id="24183566-4402-46c5-8a8a-2307ef99b9f9" configVersion="461d65b305c8ea43c784ba75cfadb742af99c80e">
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.Перерасчет" id="2c5f2c5d-9e38-4608-8b42-056341b5d987"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.Группировка.Attribute.Поле" id="4e951adf-11e4-4857-8b25-9e27839fd307"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.ВключатьОбособленныеПодразделения" id="52f06e09-8e5a-4c5e-a093-86f6c93849ec"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.ФормироватьБезФоновогоЗадания" id="642b15dc-11cf-41e9-a9f9-2bf3d9e05327"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.ДополнительныеПоля.Attribute.Представление" id="78fadf15-c684-43f9-8b00-9e1b3496a09c"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.Группировка.Attribute.Использование" id="7e796e38-70a3-43c7-b038-07575dcf45fb"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.НачалоПериода" id="850731a2-98ee-40a9-a1d0-f21c563125ed"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.ПовышающийКоэффициент" id="898d1613-5c71-4f75-9b71-a1990f3506e1"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.РазмещениеДополнительныхПолей" id="89f6c9f7-8f84-4013-bd1a-960342284571"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.Группировка.Attribute.Представление" id="961c9abd-6207-4a14-84fd-7b55126df2a0"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.ДополнительныеПоля" id="d544c4c2-473d-4387-affb-8b90397d1959"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.КонецПериода" id="d5f446b1-1fc0-4eed-8e8a-f28b2b0b21c6"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.Группировка.Attribute.ТипГруппировки" id="d6620a31-7936-44a4-812b-6cabe655fe61"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.Пени" id="e12c4892-f6d3-462b-8940-128288941320"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.Организация" id="e3e6ae84-5946-4f2a-8e1f-bad21a8e7f54"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.ВидОтчета" id="e6c086ad-c0d9-48b3-bab3-65905c4fb888"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.ДополнительныеПоля.Attribute.Поле" id="f0f99785-d39e-4a2e-add3-f1d6311dce3c"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.Льгота" id="f8fe99b3-c080-4986-a37d-1297d3ef04dc"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Attribute.РежимРасшифровки" id="f9426c98-03ea-4420-9d35-972ff3c6713f"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.ДополнительныеПоля.Attribute.Использование" id="fbfc0837-0828-4aa5-9fb5-ba0e302bb0ba"/>
+			<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.TabularSection.Группировка" id="fef01374-eb60-4d61-9f30-199c03ad7bf1"/>
+		</Metadata>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Form.ФормаОтчета" id="99742a57-52b4-45ca-8370-6884b0379e30" configVersion="bdd121052d229c9bd6f58c766fb59b34435b1f7c"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Form.ФормаОтчета.Form" id="99742a57-52b4-45ca-8370-6884b0379e30.0" configVersion="04919cc82389938cd82c18bb327d5199893b825b"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Help" id="24183566-4402-46c5-8a8a-2307ef99b9f9.1" configVersion="19801c34af2c271711e47db82f079f721efa5e02"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="5573c131e307b656424e07bbf5747a3d3d9dc6e1"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.ObjectModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.0" configVersion="9693aab8feb02428d9b3bc105551325685acdeeb"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c" configVersion="759479937da9a8ef933e6a51b8c98c9ca6cbacfb"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="e35490c29b6dfeb78e1f4773fce0e873cdda1416"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="140c3ca09767b147c87ba52122b103c940d644fe"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="3e206f14e90d940bb7576238f425fdab47a7594f"/>
+		<Metadata name="Role.ГП_ОсновнаяРоль" id="3752ebe7-8a08-4e46-a371-c671c13fda09" configVersion="5839ed7a668f1975d510eaf6eb99d0be1fbd287f"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
