@@ -3,7 +3,7 @@
 	<ConfigVersions>
 		<Metadata name="Catalog.Организации" id="ea331b04-48bc-46b9-a941-198417732110" configVersion="c6962b9b50af6273c87a9feec922d5579a5b9575"/>
 		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="cd9811b8d69cd2e6f2810443332be9e58325c6ba"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="84e21f1bf49e62957b4c4413a012384973a0a6d2"/>
 		<Metadata name="Enum.ДоступныеПериодыОтчета" id="4e31257d-31c5-493c-b925-1ebcb3cf2511" configVersion="877acfa11aafb1758fed12d38c8aa0179652f8e3"/>
 		<Metadata name="Enum.УПЖКХ_ВидыНачислений" id="f6388d8a-a0e1-4dd8-a19e-564fa99a5f13" configVersion="fd7ef4d170da9d8a396e8afeabaf39fd0433575d">
 			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.КорректировкаПриОтсутствииДействующегоИПУ" id="485f93aa-a675-466d-b292-bc5a29ea427f"/>
@@ -54,9 +54,8 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="5573c131e307b656424e07bbf5747a3d3d9dc6e1"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.ObjectModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.0" configVersion="9693aab8feb02428d9b3bc105551325685acdeeb"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c" configVersion="759479937da9a8ef933e6a51b8c98c9ca6cbacfb"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="e35490c29b6dfeb78e1f4773fce0e873cdda1416"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="47fee8ed87a213a43e6306eece66213b5f1c4a8c"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="140c3ca09767b147c87ba52122b103c940d644fe"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="3e206f14e90d940bb7576238f425fdab47a7594f"/>
-		<Metadata name="Role.ГП_ОсновнаяРоль" id="3752ebe7-8a08-4e46-a371-c671c13fda09" configVersion="5839ed7a668f1975d510eaf6eb99d0be1fbd287f"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="7fa29f9e2080284053d436a97b33d67c245a0a8d"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

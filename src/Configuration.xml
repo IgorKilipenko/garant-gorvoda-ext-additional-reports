@@ -40,7 +40,7 @@
 					<v8:content>Дополнительные отчеты</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment/>
+			<Comment>// Гарант+</Comment>
 			<ConfigurationExtensionPurpose>AddOn</ConfigurationExtensionPurpose>
 			<KeepMappingToExtendedConfigurationObjectsByIDs>true</KeepMappingToExtendedConfigurationObjectsByIDs>
 			<NamePrefix>ГП_</NamePrefix>
@@ -50,11 +50,9 @@
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
-			<DefaultRoles>
-				<xr:Item xsi:type="xr:MDObjectRef">Role.ГП_ОсновнаяРоль</xr:Item>
-			</DefaultRoles>
-			<Vendor/>
-			<Version/>
+			<DefaultRoles/>
+			<Vendor>ГарантПлюс</Vendor>
+			<Version>1.0.0.0-dev0</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -65,7 +63,6 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
-			<Role>ГП_ОсновнаяРоль</Role>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
