@@ -3,7 +3,7 @@
 	<ConfigVersions>
 		<Metadata name="Catalog.Организации" id="ea331b04-48bc-46b9-a941-198417732110" configVersion="c6962b9b50af6273c87a9feec922d5579a5b9575"/>
 		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="9463e742a4b56a420fda8ee625184a4a7a11d1aa"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="bdc68ebacc02f9b130ad3b89fc6f130d2b37d842"/>
 		<Metadata name="Enum.ДоступныеПериодыОтчета" id="4e31257d-31c5-493c-b925-1ebcb3cf2511" configVersion="877acfa11aafb1758fed12d38c8aa0179652f8e3"/>
 		<Metadata name="Enum.УПЖКХ_ВидыНачислений" id="f6388d8a-a0e1-4dd8-a19e-564fa99a5f13" configVersion="fd7ef4d170da9d8a396e8afeabaf39fd0433575d">
 			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.КорректировкаПриОтсутствииДействующегоИПУ" id="485f93aa-a675-466d-b292-bc5a29ea427f"/>
@@ -51,12 +51,12 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Form.ФормаОтчета" id="99742a57-52b4-45ca-8370-6884b0379e30" configVersion="bdd121052d229c9bd6f58c766fb59b34435b1f7c"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Form.ФормаОтчета.Form" id="99742a57-52b4-45ca-8370-6884b0379e30.0" configVersion="04919cc82389938cd82c18bb327d5199893b825b"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Help" id="24183566-4402-46c5-8a8a-2307ef99b9f9.1" configVersion="19801c34af2c271711e47db82f079f721efa5e02"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="379cfa1fd019a2cbfebedfe6e4a6c6460bafcb18"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="9539d0e0189cf6ba7a12bca21f47650e4994fb4b"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.ObjectModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.0" configVersion="9693aab8feb02428d9b3bc105551325685acdeeb"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.Макет" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c" configVersion="759479937da9a8ef933e6a51b8c98c9ca6cbacfb"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="5d610c7277f03fcfcac7cf2907783ac161a21afc"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="d01ae94f70adc921bf5b189ad8bc51a604e5b98d"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="140c3ca09767b147c87ba52122b103c940d644fe"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="e5d207049819552a1031f379b6b553e3abe01c46"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="53331514235d7f283327877bab22eb5d3aede65b"/>
 		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг" id="c380ce26-6ef9-420d-8d85-e3ff33483051" configVersion="b9803bbbd8f7aab9198f062cf24e13350cd13fc4"/>
 		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="c6b41bccc8fc93c7d29c619d6ecf0094db7d718e"/>
 	</ConfigVersions>

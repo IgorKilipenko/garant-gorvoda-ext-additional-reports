@@ -388,7 +388,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Итоговое количество начисления</v8:content>
+					<v8:content>Итоговоый объкм начисления</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -398,7 +398,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>К оплате количество</v8:content>
+					<v8:content>К оплате объем</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -418,9 +418,12 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество льготы</v8:content>
+					<v8:content>Объкм льготы</v8:content>
 				</v8:item>
 			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоНачисления</dataPath>
@@ -428,9 +431,12 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество начисления</v8:content>
+					<v8:content>Объем начисления</v8:content>
 				</v8:item>
 			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоПерерасчета</dataPath>
@@ -438,9 +444,12 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество перерасчета</v8:content>
+					<v8:content>Объем перерасчета</v8:content>
 				</v8:item>
 			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоПени</dataPath>
@@ -448,9 +457,12 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество пени</v8:content>
+					<v8:content>Объем пени</v8:content>
 				</v8:item>
 			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоПовышающийКоэффициент</dataPath>
@@ -458,9 +470,12 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество повышающий коэффициент</v8:content>
+					<v8:content>Объем повышающий коэффициент</v8:content>
 				</v8:item>
 			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоОплаты</dataPath>
@@ -468,9 +483,12 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество оплаты</v8:content>
+					<v8:content>Объем оплаты</v8:content>
 				</v8:item>
 			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоОплатыПени</dataPath>
@@ -478,7 +496,50 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество оплаты пени</v8:content>
+					<v8:content>Объем оплаты пени</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водозабор</dataPath>
+			<field>Водозабор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водозабор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Финансирование</dataPath>
+			<field>Финансирование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Финансирование</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контролер</dataPath>
+			<field>Контролер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПотребления</dataPath>
+			<field>ВидПотребления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид потребления</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -834,7 +895,8 @@
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетов
 ИЗ
 	РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода,
-	ЛицевойСчет В (ВЫБРАТЬ РАЗЛИЧНЫЕ ЛицевойСчет ИЗ ОстаткиИОбороты)) КАК ДинамическиеПоказателиЛицевыхСчетов
+	   ЛицевойСчет В (ВЫБРАТЬ РАЗЛИЧНЫЕ ЛицевойСчет ИЗ ОстаткиИОбороты)) КАК ДинамическиеПоказателиЛицевыхСчетов
+	//ВТ_lc_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1000,11 +1062,190 @@
 		<dataSource>втАдресаЗданий</dataSource>
 		<objectName>втАдресаЗданий</objectName>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ОстаткиОбъемов</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоНаНачалоПериода</dataPath>
+			<field>КоличествоНаНачалоПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объем задолженности</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЛицевойСчет</dataPath>
+			<field>ЛицевойСчет</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лицевой счет</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УслугаДляОтбора</dataPath>
+			<field>УслугаДляОтбора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга для отбора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор начисления</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтрагентНачисления</dataPath>
+			<field>КонтрагентНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент начисления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоНаКонецПериода</dataPath>
+			<field>КоличествоНаКонецПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток объема на конец периода</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>втАдресаЗданий</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	УПЖКХ_НачисленияОбороты.ЛицевойСчет КАК ЛицевойСчет,
+	УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги КАК Услуга,
+	УПЖКХ_НачисленияОбороты.Договор КАК Договор,
+	СУММА(УПЖКХ_НачисленияОбороты.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_ОстаткиНачисленийКоличествоНачало
+ИЗ
+	РегистрНакопления.УПЖКХ_Начисления.Обороты(, &amp;НачалоПериода, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (Договор).* КАК Договор}) КАК УПЖКХ_НачисленияОбороты
+{ГДЕ
+	УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги КАК УслугаДляОтбора,
+	УПЖКХ_НачисленияОбороты.Договор.Владелец КАК КонтрагентНачисления}
+
+СГРУППИРОВАТЬ ПО
+	УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги,
+	УПЖКХ_НачисленияОбороты.ЛицевойСчет,
+	УПЖКХ_НачисленияОбороты.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	УПЖКХ_НачисленияОбороты.ЛицевойСчет КАК ЛицевойСчет,
+	УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги КАК Услуга,
+	УПЖКХ_НачисленияОбороты.Договор КАК Договор,
+	СУММА(УПЖКХ_НачисленияОбороты.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_ОстаткиНачисленийКоличествоКонец
+ИЗ
+	РегистрНакопления.УПЖКХ_Начисления.Обороты(, &amp;КонецПериода, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (Договор).* КАК Договор}) КАК УПЖКХ_НачисленияОбороты
+{ГДЕ
+	УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги КАК УслугаДляОтбора,
+	УПЖКХ_НачисленияОбороты.Договор.Владелец КАК КонтрагентНачисления}
+
+СГРУППИРОВАТЬ ПО
+	УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги,
+	УПЖКХ_НачисленияОбороты.ЛицевойСчет,
+	УПЖКХ_НачисленияОбороты.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЕСТЬNULL(ВТ_ОстаткиНачисленийКоличествоКонец.ЛицевойСчет, ВТ_ОстаткиНачисленийКоличествоНачало.ЛицевойСчет) КАК ЛицевойСчет,
+	ЕСТЬNULL(ВТ_ОстаткиНачисленийКоличествоКонец.Услуга, ВТ_ОстаткиНачисленийКоличествоНачало.Услуга) КАК Услуга,
+	ЕСТЬNULL(ВТ_ОстаткиНачисленийКоличествоКонец.Договор, ВТ_ОстаткиНачисленийКоличествоНачало.Услуга) КАК Договор,
+	ЕСТЬNULL(ВТ_ОстаткиНачисленийКоличествоНачало.Количество, 0) КАК КоличествоНаНачалоПериода,
+	ЕСТЬNULL(ВТ_ОстаткиНачисленийКоличествоКонец.Количество, 0) КАК КоличествоНаКонецПериода
+ПОМЕСТИТЬ ВТ_ОстаткиНачисленийКоличествоПодготовка
+ИЗ
+	ВТ_ОстаткиНачисленийКоличествоКонец КАК ВТ_ОстаткиНачисленийКоличествоКонец
+		ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ОстаткиНачисленийКоличествоНачало КАК ВТ_ОстаткиНачисленийКоличествоНачало
+		ПО ВТ_ОстаткиНачисленийКоличествоКонец.ЛицевойСчет = ВТ_ОстаткиНачисленийКоличествоНачало.ЛицевойСчет
+			И ВТ_ОстаткиНачисленийКоличествоКонец.Услуга = ВТ_ОстаткиНачисленийКоличествоНачало.Услуга
+			И ВТ_ОстаткиНачисленийКоличествоКонец.Договор = ВТ_ОстаткиНачисленийКоличествоНачало.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ОстаткиНачисленийКоличествоПодготовка.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_ОстаткиНачисленийКоличествоПодготовка.Услуга КАК Услуга,
+	ВТ_ОстаткиНачисленийКоличествоПодготовка.Договор КАК Договор,
+	СУММА(ВТ_ОстаткиНачисленийКоличествоПодготовка.КоличествоНаНачалоПериода) КАК КоличествоНаНачалоПериода,
+	СУММА(ВТ_ОстаткиНачисленийКоличествоПодготовка.КоличествоНаКонецПериода) КАК КоличествоНаКонецПериода
+{
+    ВЫБРАТЬ
+    ЛицевойСчет.*,
+    Услуга.*,
+    Договор.*,
+    КоличествоНаНачалоПериода,
+    КоличествоНаКонецПериода
+}
+ИЗ
+	ВТ_ОстаткиНачисленийКоличествоПодготовка КАК ВТ_ОстаткиНачисленийКоличествоПодготовка
+СГРУППИРОВАТЬ ПО
+	Услуга,
+	ЛицевойСчет,
+	Договор</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>АдресаЗданий</destinationDataSet>
 		<sourceExpression>Здание</sourceExpression>
 		<destinationExpression>Здание</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ЗапросДанных</sourceDataSet>
+		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
+		<sourceExpression>ЛицевойСчет</sourceExpression>
+		<destinationExpression>ЛицевойСчет</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ЗапросДанных</sourceDataSet>
+		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
+		<sourceExpression>Услуга</sourceExpression>
+		<destinationExpression>Услуга</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ЗапросДанных</sourceDataSet>
+		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
+		<sourceExpression>Договор</sourceExpression>
+		<destinationExpression>Договор</destinationExpression>
 	</dataSetLink>
 	<totalField>
 		<dataPath>ВладелецЛС</dataPath>
@@ -1135,12 +1376,20 @@
 		<expression>Сумма(КоличествоПовышающийКоэффициент)</expression>
 	</totalField>
 	<totalField>
+		<dataPath>ИтоговоеКоличествоНачисления</dataPath>
+		<expression>Сумма(ИтоговоеКоличествоНачисления)</expression>
+	</totalField>
+	<totalField>
 		<dataPath>КОплатеКоличество</dataPath>
 		<expression>Сумма(КОплатеКоличество)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>ИтоговоеКоличествоНачисления</dataPath>
-		<expression>Сумма(ИтоговоеКоличествоНачисления)</expression>
+		<dataPath>КоличествоНаКонецПериода</dataPath>
+		<expression>Сумма(КоличествоНаКонецПериода)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНаНачалоПериода</dataPath>
+		<expression>Сумма(КоличествоНаНачалоПериода)</expression>
 	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -1412,14 +1661,13 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ИтоговоеКоличествоНачисления</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНаНачалоПериода</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНаКонецПериода</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
-			<dcsset:dataParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ВидыПлощадейОбщаяПлощадь</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
