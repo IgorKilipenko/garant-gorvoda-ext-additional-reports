@@ -2,28 +2,28 @@
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
 	<Report uuid="24183566-4402-46c5-8a8a-2307ef99b9f9">
 		<InternalInfo>
-			<xr:GeneratedType name="ReportObject.ГП_СводнаяВедомостьПоДоговорам" category="Object">
+			<xr:GeneratedType name="ReportObject.ГП_СводнаяВедомостьСКоличеством" category="Object">
 				<xr:TypeId>d07db7cb-c093-49c0-8e05-9e84bb17d77d</xr:TypeId>
 				<xr:ValueId>25dae19b-639c-4ae4-87ba-62be74d8638c</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ReportManager.ГП_СводнаяВедомостьПоДоговорам" category="Manager">
+			<xr:GeneratedType name="ReportManager.ГП_СводнаяВедомостьСКоличеством" category="Manager">
 				<xr:TypeId>dd4a6232-a2d5-4cd6-b645-b317530fbfd4</xr:TypeId>
 				<xr:ValueId>7371a65a-a63c-4d05-a682-e295d20b1ae6</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ГП_СводнаяВедомостьПоДоговорам</Name>
+			<Name>ГП_СводнаяВедомостьСКоличеством</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>(разработка) Сводная ведомость (по договорам)</v8:content>
+					<v8:content>Списки</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>// Гарант+</Comment>
+			<Comment>// Гарант+ Сводная ведомость с данными по объекмам и доп. фильтами</Comment>
 			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>Report.ГП_СводнаяВедомостьПоДоговорам.Form.ФормаОтчета</DefaultForm>
+			<DefaultForm>Report.ГП_СводнаяВедомостьСКоличеством.Form.ФормаОтчета</DefaultForm>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет</MainDataCompositionSchema>
+			<MainDataCompositionSchema>Report.ГП_СводнаяВедомостьСКоличеством.Template.Макет</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>
@@ -31,7 +31,12 @@
 			<SettingsStorage/>
 			<IncludeHelpInContents>true</IncludeHelpInContents>
 			<ExtendedPresentation/>
-			<Explanation/>
+			<Explanation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создан на базе отчета КВП_СводнаяВедомость</v8:content>
+				</v8:item>
+			</Explanation>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="e3e6ae84-5946-4f2a-8e1f-bad21a8e7f54">
@@ -519,11 +524,11 @@
 			</Attribute>
 			<TabularSection uuid="fef01374-eb60-4d61-9f30-199c03ad7bf1">
 				<InternalInfo>
-					<xr:GeneratedType name="ReportTabularSection.ГП_СводнаяВедомостьПоДоговорам.Группировка" category="TabularSection">
+					<xr:GeneratedType name="ReportTabularSection.ГП_СводнаяВедомостьСКоличеством.Группировка" category="TabularSection">
 						<xr:TypeId>5593d7cd-ce14-4a4d-a4ae-081141a72a09</xr:TypeId>
 						<xr:ValueId>5d0b4d6d-acf4-451a-a24c-89c4de202b2c</xr:ValueId>
 					</xr:GeneratedType>
-					<xr:GeneratedType name="ReportTabularSectionRow.ГП_СводнаяВедомостьПоДоговорам.Группировка" category="TabularSectionRow">
+					<xr:GeneratedType name="ReportTabularSectionRow.ГП_СводнаяВедомостьСКоличеством.Группировка" category="TabularSectionRow">
 						<xr:TypeId>752b6d21-5d04-410a-89c8-96dee708c63e</xr:TypeId>
 						<xr:ValueId>26379c31-3940-4ed0-8c99-96ddf096df21</xr:ValueId>
 					</xr:GeneratedType>
@@ -751,11 +756,11 @@
 			</TabularSection>
 			<TabularSection uuid="d544c4c2-473d-4387-affb-8b90397d1959">
 				<InternalInfo>
-					<xr:GeneratedType name="ReportTabularSection.ГП_СводнаяВедомостьПоДоговорам.ДополнительныеПоля" category="TabularSection">
+					<xr:GeneratedType name="ReportTabularSection.ГП_СводнаяВедомостьСКоличеством.ДополнительныеПоля" category="TabularSection">
 						<xr:TypeId>f06318eb-625b-4a1b-981f-bdc9ecdc0fe7</xr:TypeId>
 						<xr:ValueId>027cdbe9-b621-4fd3-848c-c6eee6bb8c7f</xr:ValueId>
 					</xr:GeneratedType>
-					<xr:GeneratedType name="ReportTabularSectionRow.ГП_СводнаяВедомостьПоДоговорам.ДополнительныеПоля" category="TabularSectionRow">
+					<xr:GeneratedType name="ReportTabularSectionRow.ГП_СводнаяВедомостьСКоличеством.ДополнительныеПоля" category="TabularSectionRow">
 						<xr:TypeId>5ed3a882-1a3d-40e5-abe1-ba67449ad133</xr:TypeId>
 						<xr:ValueId>a86aadbe-3269-4294-9702-beac85e10f50</xr:ValueId>
 					</xr:GeneratedType>

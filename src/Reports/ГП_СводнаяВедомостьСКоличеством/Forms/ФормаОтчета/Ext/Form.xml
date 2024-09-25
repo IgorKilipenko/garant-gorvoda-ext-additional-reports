@@ -1251,7 +1251,7 @@
 	<Attributes>
 		<Attribute name="Отчет" id="1">
 			<Type>
-				<v8:Type>cfg:ReportObject.ГП_СводнаяВедомостьПоДоговорам</v8:Type>
+				<v8:Type>cfg:ReportObject.ГП_СводнаяВедомостьСКоличеством</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Save>
