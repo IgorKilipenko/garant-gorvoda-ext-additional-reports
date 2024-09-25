@@ -51,7 +51,7 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Form.ФормаОтчета" id="99742a57-52b4-45ca-8370-6884b0379e30" configVersion="bdd121052d229c9bd6f58c766fb59b34435b1f7c"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Form.ФормаОтчета.Form" id="99742a57-52b4-45ca-8370-6884b0379e30.0" configVersion="04919cc82389938cd82c18bb327d5199893b825b"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Help" id="24183566-4402-46c5-8a8a-2307ef99b9f9.1" configVersion="19801c34af2c271711e47db82f079f721efa5e02"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="1dbe26a1da232904d8a29f60b8c2f50c1ba3d063"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="379cfa1fd019a2cbfebedfe6e4a6c6460bafcb18"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.ObjectModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.0" configVersion="9693aab8feb02428d9b3bc105551325685acdeeb"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.Макет" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c" configVersion="759479937da9a8ef933e6a51b8c98c9ca6cbacfb"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="5d610c7277f03fcfcac7cf2907783ac161a21afc"/>
