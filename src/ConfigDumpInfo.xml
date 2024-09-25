@@ -54,7 +54,7 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.ManagerModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.2" configVersion="45106b9e0f00007782d7fc3796bbeed04a8504a9"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.ObjectModule" id="24183566-4402-46c5-8a8a-2307ef99b9f9.0" configVersion="9693aab8feb02428d9b3bc105551325685acdeeb"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c" configVersion="759479937da9a8ef933e6a51b8c98c9ca6cbacfb"/>
-		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="ee67003661e4cf5080a36810abb66f0bf3d2be72"/>
+		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.Макет.Template" id="6b1aefb8-1e7f-4635-9c9b-6f5d9e30ca1c.0" configVersion="5d610c7277f03fcfcac7cf2907783ac161a21afc"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="140c3ca09767b147c87ba52122b103c940d644fe"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьПоДоговорам.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="5eb1a9e5b14f6619b43cc6cacaefd4d0bcbe010e"/>
 	</ConfigVersions>
