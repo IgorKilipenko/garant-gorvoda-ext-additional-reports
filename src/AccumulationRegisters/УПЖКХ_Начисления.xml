@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AccumulationRegister uuid="b4cff208-e36b-4914-8ec3-01a5a7a28fe5">
+		<InternalInfo>
+			<xr:GeneratedType name="AccumulationRegisterRecord.УПЖКХ_Начисления" category="Record">
+				<xr:TypeId>78f9ba1e-064d-429d-b1f1-362650ee330f</xr:TypeId>
+				<xr:ValueId>76631a1f-d66d-41d9-b4a4-a46ac13754e1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterManager.УПЖКХ_Начисления" category="Manager">
+				<xr:TypeId>ce091ab4-d4da-4c66-b1d7-4bf40212c39a</xr:TypeId>
+				<xr:ValueId>630c6d5b-3f18-48c7-ac07-71b48b3b54b4</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterSelection.УПЖКХ_Начисления" category="Selection">
+				<xr:TypeId>db47b4f9-cfa7-426f-b3ae-6e0ff3b09b30</xr:TypeId>
+				<xr:ValueId>0196030e-1115-47e7-9c28-328cda858aaf</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterList.УПЖКХ_Начисления" category="List">
+				<xr:TypeId>8494f42d-c3fb-4b45-a78f-513e7bd65705</xr:TypeId>
+				<xr:ValueId>f6adbb5d-8fbf-421e-aaa2-18cbf5d4019f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordSet.УПЖКХ_Начисления" category="RecordSet">
+				<xr:TypeId>6858c988-9085-471e-8144-7ef9d61bcf8b</xr:TypeId>
+				<xr:ValueId>cd33bf9a-f312-48b7-8eb9-0d477326f2d6</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordKey.УПЖКХ_Начисления" category="RecordKey">
+				<xr:TypeId>a0bc32e0-7c67-456a-a16e-3aa81ec13e53</xr:TypeId>
+				<xr:ValueId>32c0c3f2-7afa-434a-a972-1955f04ceff9</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>УПЖКХ_Начисления</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>3e945bb1-8dd7-4c35-97f0-282a43a58ff9</ExtendedConfigurationObject>
+			<RegisterType>Turnovers</RegisterType>
+		</Properties>
+		<ChildObjects>
+			<Resource uuid="d0af840a-2df0-4dd4-bc98-b8f54822a5aa">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СуммаНачисления</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>d4b895ac-1022-4814-899d-2f8a71bec032</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Dimension uuid="de5ddf88-027f-46dd-ab2e-ad629beefaff">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Организация</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3fc6c433-11e7-4c42-8cd7-4d4e05ef1f49</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="083ff41b-f7eb-494a-ab6f-5563bd00e311">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ЛицевойСчет</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>4b90e602-346c-4f59-b957-a7dcb5e978ad</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="e4e3270a-9437-4690-8f5a-d0618f3889ac">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Услуга</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3ade7d24-9599-4bea-a82a-73ac08ded337</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КВП_Услуги</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="76f92552-dfd1-4bbf-a04e-89e1f25ad1fe">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Договор</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>c55d27f6-a912-4ac0-b52a-d4e4030047df</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</AccumulationRegister>
+</MetaDataObject>
