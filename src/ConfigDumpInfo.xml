@@ -95,6 +95,6 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="27e02ca9158a6e51f6cbfbd6b439061530eccc3a"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="01f0801e9079c605a3af14d22481ad0016ffaa0f"/>
 		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг" id="c380ce26-6ef9-420d-8d85-e3ff33483051" configVersion="b9803bbbd8f7aab9198f062cf24e13350cd13fc4"/>
-		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="c6b41bccc8fc93c7d29c619d6ecf0094db7d718e"/>
+		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="781c2da6321bb024fa5a40dfc2fd9d993be8c757"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

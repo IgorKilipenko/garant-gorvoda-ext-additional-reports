@@ -9,6 +9,7 @@
 			<ExtendedConfigurationObject>842e428f-c95d-4d80-90f7-4bce95a3cc24</ExtendedConfigurationObject>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_СводнаяВедомостьСКоличеством</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ОтчетПоКлиентам</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
