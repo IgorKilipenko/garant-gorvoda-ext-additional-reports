@@ -34,7 +34,7 @@
 		<Metadata name="Catalog.ПодразделенияОрганизаций" id="f0818814-901e-47cd-816b-4b6348d393a4" configVersion="86dc03b7adad72022cbc3c26aca22de7fbea8e35"/>
 		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
 		<Metadata name="ChartOfAccounts.Хозрасчетный" id="6bb79fc0-b442-4037-b869-ad6bac28686f" configVersion="2ba2b6b401cc61b874eac8dbb6e1b63ce20e536d"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="e461a117b786a9ae29cc1ed6cda219c6b08145a2"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="20a79e017e2a8a68a39577112974995283d8bdc7"/>
 		<Metadata name="Enum.ДоступныеПериодыОтчета" id="4e31257d-31c5-493c-b925-1ebcb3cf2511" configVersion="877acfa11aafb1758fed12d38c8aa0179652f8e3"/>
 		<Metadata name="Enum.УПЖКХ_ВидыНачислений" id="f6388d8a-a0e1-4dd8-a19e-564fa99a5f13" configVersion="fd7ef4d170da9d8a396e8afeabaf39fd0433575d">
 			<Metadata name="Enum.УПЖКХ_ВидыНачислений.EnumValue.КорректировкаПриОтсутствииДействующегоИПУ" id="485f93aa-a675-466d-b292-bc5a29ea427f"/>
