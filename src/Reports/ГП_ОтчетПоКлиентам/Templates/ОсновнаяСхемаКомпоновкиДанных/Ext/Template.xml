@@ -317,6 +317,66 @@
 			<dataPath>Наименование</dataPath>
 			<field>Наименование</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПотребления</dataPath>
+			<field>ВидПотребления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид потребления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Финансирование</dataPath>
+			<field>Финансирование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Финансирование</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Шифр</dataPath>
+			<field>Шифр</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шифр</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контролер</dataPath>
+			<field>Контролер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договородержатель</dataPath>
+			<field>Договородержатель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договородержатель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водозабор</dataPath>
+			<field>Водозабор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водозабор</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
     РеализацияУслуг.Период КАК Период,
@@ -509,6 +569,10 @@
             ТОГДА &amp;НомГруппаВодоотведение
         КОГДА ВТ_БУРеализацияИСодержание.НоменклатурнаяГруппа В (&amp;СписокНомГруппНВ)
             ТОГДА &amp;НомГруппаНВ
+        КОГДА ВТ_БУРеализацияИСодержание.НоменклатурнаяГруппа = &amp;НомГруппаВодоснабжение
+                И ВТ_БУРеализацияИСодержание.Номенклатура = ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
+                И ВТ_БУРеализацияИСодержание.Содержание ПОДОБНО "Водоотведение%"
+            ТОГДА &amp;НомГруппаВодоотведение
         ИНАЧЕ ВТ_БУРеализацияИСодержание.НоменклатурнаяГруппа
     КОНЕЦ КАК ГруппаУслуг,
     ВТ_БУРеализацияИСодержание.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
@@ -545,6 +609,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    ДинамическиеПоказателиЛицевыхСчетов.Период КАК Период,
+    ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет КАК ЛицевойСчет,
+    ДинамическиеПоказателиЛицевыхСчетов.ПроцентВодоотведенияХВС КАК ПроцентВодоотведенияХВС,
+    ДинамическиеПоказателиЛицевыхСчетов.ПроцентВодоотведенияГВС КАК ПроцентВодоотведенияГВС,
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления.Шифр КАК Шифр,
+    ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
+    ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
+    ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель,
+    ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер
+ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетов
+ИЗ
+    РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода, ) КАК ДинамическиеПоказателиЛицевыхСчетов
+    //ВТ_lc_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
     ВТ_РезультатПодгтовка.Период КАК Период,
     ВТ_РезультатПодгтовка.Регистратор КАК Регистратор,
     ВТ_РезультатПодгтовка.Организация КАК Организация,
@@ -569,7 +651,13 @@
     ВТ_ЛицевыеСчета.Наименование КАК Наименование,
     ВТ_ЛицевыеСчета.Помещение КАК Помещение,
     ВТ_ЛицевыеСчета.Здание КАК Здание,
-    ВТ_ЛицевыеСчета.Собственник КАК Собственник
+    ВТ_ЛицевыеСчета.Собственник КАК Собственник,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Шифр КАК Шифр,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор
 {ВЫБРАТЬ
     Период КАК Период,
     Регистратор КАК Регистратор,
@@ -593,14 +681,26 @@
     АдресЛС КАК АдресЛС,
     ЛицевойСчет.* КАК ЛицевойСчет,
     Помещение.* КАК Помещение,
-    Здание.* КАК Здание}
+    Здание.* КАК Здание,
+    Шифр КАК Шифр,
+    ВидПотребления КАК ВидПотребления,
+    Финансирование КАК Финансирование,
+    Контролер КАК Контролер,
+    Договородержатель КАК Договородержатель,
+    Водозабор КАК Водозабор}
 ИЗ
     ВТ_РезультатПодгтовка КАК ВТ_РезультатПодгтовка
         ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЛицевыеСчета КАК ВТ_ЛицевыеСчета
         ПО (ВТ_ЛицевыеСчета.Собственник = ВТ_РезультатПодгтовка.Контрагент.Наименование)
             И (ВТ_ЛицевыеСчета.Здание.Наименование = ВТ_РезультатПодгтовка.АдресЛС)
+        ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ВТ_ДинамическиеПоказателиЛицевыхСчетов
+        ПО (ВТ_ЛицевыеСчета.ЛицевойСчет = ВТ_ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет)
 {ГДЕ
-    (ВТ_РезультатПодгтовка.ГруппаУслуг В (&amp;СпсокНоменклатурныхГрупп))}</query>
+    (ВТ_РезультатПодгтовка.ГруппаУслуг В (&amp;СпсокНоменклатурныхГрупп)) КАК ГруппаУслуг,
+    (ВТ_ЛицевыеСчета.ЛицевойСчет = &amp;ЛицевойСчет),
+    (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор),
+    (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер),
+    (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование)}</query>
 	</dataSet>
 	<totalField>
 		<dataPath>Количество</dataPath>
@@ -800,12 +900,59 @@
 		<value xsi:type="xs:decimal">0</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
+	<parameter>
+		<name>Водозабор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Водозабор</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Контролер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контролер</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Финансирование</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Финансирование</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<settingsVariant>
-		<dcsset:name>Основной1</dcsset:name>
+		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Основной1</v8:content>
+				<v8:content>Отчет по клиентам</v8:content>
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
@@ -814,13 +961,13 @@
 					<dcsset:field>ГруппаУслуг</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Шифр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Договор</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ЛицевойСчет</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Количество</dcsset:field>
@@ -848,39 +995,42 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НомГруппаВодоотведение</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НомГруппаВодоснабжение</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НоменклатураВодоотведение</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НоменклатураХВС</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>СпсокНоменклатурныхГрупп</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>e503a76b-c421-453a-93bd-440e6361d546</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НомГруппаНВ</dcscor:parameter>
+					<dcscor:parameter>Водозабор</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>5a94d273-3eb1-45ea-b7ea-2b3691ad2771</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контролер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>7e5aa6c3-5dfc-4c90-81b4-19fb071111e0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>321d401f-b157-4b1c-ada0-b70f6176a798</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>2c264fa4-5537-4ac6-871b-4ea435b63977</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
 					<dcsset:field>ГруппаУслуг</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Шифр</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
@@ -891,11 +1041,13 @@
 					<dcsset:field>Договор</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>ЛицевойСчет</dcsset:field>
-					<dcsset:orderType>Asc</dcsset:orderType>
-				</dcsset:item>
 			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
 				<dcsset:column>
 					<dcsset:groupItems>
@@ -917,7 +1069,7 @@
 				<dcsset:row>
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Контрагент</dcsset:field>
+							<dcsset:field>Шифр</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -933,7 +1085,7 @@
 					<dcsset:item>
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Договор</dcsset:field>
+								<dcsset:field>Контрагент</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -949,7 +1101,7 @@
 						<dcsset:item>
 							<dcsset:groupItems>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>ЛицевойСчет</dcsset:field>
+									<dcsset:field>Договор</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -972,8 +1124,13 @@
 		</dcsset:settings>
 	</settingsVariant>
 	<settingsVariant>
-		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:name>Служебный</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Служебный</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -1004,11 +1161,6 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НачалоПериода</dcscor:parameter>
-					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
 						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
@@ -1016,21 +1168,6 @@
 						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 					</dcscor:value>
 					<dcsset:userSettingID>9e77dedf-2bab-4485-b070-aae04c4699c8</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ПС_РасчетыСПокупателямиИЗаказчиками</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ПС_Выручка</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ПС_НДСА</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

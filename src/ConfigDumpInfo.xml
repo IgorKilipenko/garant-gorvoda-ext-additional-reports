@@ -57,9 +57,9 @@
 		</Metadata>
 		<Metadata name="Language.Русский" id="44f6a684-9fe1-469e-9a55-91239dd938e6" configVersion="44ad2cfdada2925adf58ec52fbf069567f42dd12"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам" id="29e299d6-9c0c-4475-9ca3-25cde982d00b" configVersion="adfe7c35f63c351108d2b28f8de39009e06155b1"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентам.ObjectModule" id="29e299d6-9c0c-4475-9ca3-25cde982d00b.0" configVersion="a87c9660548144d3aeff9029ae086c5a1a20af98"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентам.ObjectModule" id="29e299d6-9c0c-4475-9ca3-25cde982d00b.0" configVersion="62bb526fe1cde01a2780076628c7eed7d3d806b9"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных" id="0d2107ac-6134-4474-9748-754ecfc5bb74" configVersion="668be2f48b40be674cb89810625a3f9b9a704e34"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="7f9b608f23dc1ea1bb4025a4762a2d2b4d35cf64"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="43655ff9d22c26c093f96b7fa0ef4d1160d661ad"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством" id="24183566-4402-46c5-8a8a-2307ef99b9f9" configVersion="0e09bb386b0f55517bb847c3954ba024a9b2a207">
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Attribute.Перерасчет" id="2c5f2c5d-9e38-4608-8b42-056341b5d987"/>
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.TabularSection.Группировка.Attribute.Поле" id="4e951adf-11e4-4857-8b25-9e27839fd307"/>
