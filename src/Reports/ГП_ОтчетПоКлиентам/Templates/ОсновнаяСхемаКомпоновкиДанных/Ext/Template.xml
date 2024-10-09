@@ -84,7 +84,7 @@
 			</title>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				<dcscom:required>true</dcscom:required>
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
@@ -98,7 +98,7 @@
 			</title>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				<dcscom:required>true</dcscom:required>
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
@@ -621,8 +621,7 @@
     ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетов
 ИЗ
-    РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода, ) КАК ДинамическиеПоказателиЛицевыхСчетов
-    //ВТ_lc_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
+    ВТ_lc_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -696,8 +695,8 @@
         ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ВТ_ДинамическиеПоказателиЛицевыхСчетов
         ПО (ВТ_ЛицевыеСчета.ЛицевойСчет = ВТ_ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет)
 {ГДЕ
-    (ВТ_РезультатПодгтовка.ГруппаУслуг В (&amp;СпсокНоменклатурныхГрупп)) КАК ГруппаУслуг,
-    (ВТ_ЛицевыеСчета.ЛицевойСчет = &amp;ЛицевойСчет),
+    (ВТ_РезультатПодгтовка.ГруппаУслуг В (&amp;СпсокНоменклатурныхГрупп)),
+    (ВТ_ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет = &amp;ЛицевойСчет),
     (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор),
     (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер),
     (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование)}</query>
@@ -1003,25 +1002,25 @@
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Водозабор</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>5a94d273-3eb1-45ea-b7ea-2b3691ad2771</dcsset:userSettingID>
+					<dcsset:userSettingID>481d0e1c-d8fd-4fc4-920a-65af2ac5caad</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Контролер</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>7e5aa6c3-5dfc-4c90-81b4-19fb071111e0</dcsset:userSettingID>
+					<dcsset:userSettingID>fdda97b3-035e-40c4-959b-acd06fc46a96</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>321d401f-b157-4b1c-ada0-b70f6176a798</dcsset:userSettingID>
+					<dcsset:userSettingID>b61da6dc-e47a-4442-b44c-f96b1480ff73</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Финансирование</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>2c264fa4-5537-4ac6-871b-4ea435b63977</dcsset:userSettingID>
+					<dcsset:userSettingID>fb871c82-9361-4758-8cf4-2f7eb2ebb8ef</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -1134,6 +1133,9 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Шифр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -1169,8 +1171,18 @@
 					</dcscor:value>
 					<dcsset:userSettingID>9e77dedf-2bab-4485-b070-aae04c4699c8</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СпсокНоменклатурныхГрупп</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>9a085280-b8be-4775-8d0c-4c1d2b00bf7b</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Шифр</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
 					<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
@@ -1191,7 +1203,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+						<dcsset:field>Шифр</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1207,7 +1219,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Контрагент</dcsset:field>
+							<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1223,7 +1235,7 @@
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Договор</dcsset:field>
+								<dcsset:field>Контрагент</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1239,7 +1251,7 @@
 						<dcsset:item xsi:type="dcsset:StructureItemGroup">
 							<dcsset:groupItems>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>Услуга</dcsset:field>
+									<dcsset:field>Договор</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1252,6 +1264,23 @@
 							<dcsset:selection>
 								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Услуга</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
 						</dcsset:item>
 					</dcsset:item>
 				</dcsset:item>
