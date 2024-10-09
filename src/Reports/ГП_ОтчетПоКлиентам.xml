@@ -37,6 +37,7 @@
 			<Form>ФормаОтчета</Form>
 			<Form>ФормаНастроек</Form>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+			<Template>Макет</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
