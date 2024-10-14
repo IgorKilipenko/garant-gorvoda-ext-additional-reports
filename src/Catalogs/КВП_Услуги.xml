@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Catalog uuid="9106b8b8-5160-4a0a-a64e-bcd313a89189">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.КВП_Услуги" category="Object">
+				<xr:TypeId>31ea6a17-d1a0-4b99-8494-802be3c1046f</xr:TypeId>
+				<xr:ValueId>ba43cc3e-a3af-467d-b611-e082869b8e0d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.КВП_Услуги" category="Ref">
+				<xr:TypeId>efa86867-d8e6-4446-8bdf-996bdd619f8d</xr:TypeId>
+				<xr:ValueId>604bfb26-cd9e-4d35-9663-94a926173890</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.КВП_Услуги" category="Selection">
+				<xr:TypeId>45128eba-2a6f-4bf4-9842-1229808c2fd2</xr:TypeId>
+				<xr:ValueId>1a79e209-430a-48a3-8f3a-0e9e82b9683b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.КВП_Услуги" category="List">
+				<xr:TypeId>53265eca-4fd1-48d1-a93f-ee32947d86c0</xr:TypeId>
+				<xr:ValueId>7f3c4358-4632-4ae0-b6b6-f68268b4ff14</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.КВП_Услуги" category="Manager">
+				<xr:TypeId>9c1f7e70-1875-4f8d-ac4f-37e44ee9fab1</xr:TypeId>
+				<xr:ValueId>08246d82-fdba-4748-9b24-614bc61a375b</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>КВП_Услуги</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>c89ed911-806a-48bb-983a-a756a38372c6</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>

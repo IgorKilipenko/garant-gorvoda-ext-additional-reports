@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>1.0.0.0-rc3</Version>
+			<Version>1.1.0.0-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -66,10 +66,22 @@
 			<Subsystem>УПЖКХ_НачисленияУслуг</Subsystem>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
+			<Catalog>Валюты</Catalog>
+			<Catalog>КВП_Услуги</Catalog>
+			<Catalog>КВП_ЛицевыеСчета</Catalog>
+			<Catalog>ДоговорыКонтрагентов</Catalog>
+			<Catalog>ПодразделенияОрганизаций</Catalog>
+			<Catalog>НоменклатурныеГруппы</Catalog>
+			<Catalog>Номенклатура</Catalog>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
 			<Enum>УПЖКХ_РазделыУчета</Enum>
 			<Enum>ДоступныеПериодыОтчета</Enum>
 			<Report>ГП_СводнаяВедомостьСКоличеством</Report>
+			<Report>ГП_ОтчетПоКлиентам</Report>
+			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
+			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
+			<ChartOfAccounts>Хозрасчетный</ChartOfAccounts>
+			<AccountingRegister>Хозрасчетный</AccountingRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
