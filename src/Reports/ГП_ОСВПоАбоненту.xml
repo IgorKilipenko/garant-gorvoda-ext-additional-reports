@@ -37,6 +37,7 @@
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
 			<Template>Макет</Template>
 			<Template>ПФ_MXL_ОСВПоАбоненту</Template>
+			<Template>ПФ_MXL_АктСверки</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
