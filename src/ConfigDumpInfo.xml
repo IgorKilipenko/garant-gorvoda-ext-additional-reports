@@ -64,7 +64,7 @@
 		</Metadata>
 		<Metadata name="Language.Русский" id="44f6a684-9fe1-469e-9a55-91239dd938e6" configVersion="44ad2cfdada2925adf58ec52fbf069567f42dd12"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту" id="e80d272f-690c-4b56-9bed-1049e67ac8c8" configVersion="c108048dc38a3b182a60052972fefce17283150c"/>
-		<Metadata name="Report.ГП_ОСВПоАбоненту.ManagerModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.2" configVersion="95844b9da721689f5078f90e08051504bae061bc"/>
+		<Metadata name="Report.ГП_ОСВПоАбоненту.ManagerModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.2" configVersion="cabaa49b1b46c280d0883fac50ce42c0165fd8ea"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.ObjectModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.0" configVersion="fa862c38fed8b88b2255201381424e4b7e526186"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ОсновнаяСхемаКомпоновкиДанных" id="d8a3e70a-2b04-48bc-9e69-995edb4e375c" configVersion="ce925f7b756c2acf9b272b9cd0e526259e326e94"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d8a3e70a-2b04-48bc-9e69-995edb4e375c.0" configVersion="01d85ab460bae424bd65431d968fc9695a5ee067"/>
