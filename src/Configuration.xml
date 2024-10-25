@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>1.1.0.0-rc1</Version>
+			<Version>1.2.0.1-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -64,6 +64,9 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>УПЖКХ_НачисленияУслуг</Subsystem>
+			<StyleItem>ЗаголовкиСтрокШрифт</StyleItem>
+			<StyleItem>ЗаголовкиСтрокЦветТекста</StyleItem>
+			<StyleItem>СодержаниеУслугиШрифт</StyleItem>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
 			<Catalog>Валюты</Catalog>
@@ -73,13 +76,17 @@
 			<Catalog>ПодразделенияОрганизаций</Catalog>
 			<Catalog>НоменклатурныеГруппы</Catalog>
 			<Catalog>Номенклатура</Catalog>
+			<Catalog>Контрагенты</Catalog>
+			<Document>РеализацияТоваровУслуг</Document>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
 			<Enum>УПЖКХ_РазделыУчета</Enum>
 			<Enum>ДоступныеПериодыОтчета</Enum>
 			<Report>ГП_СводнаяВедомостьСКоличеством</Report>
 			<Report>ГП_ОтчетПоКлиентам</Report>
+			<Report>ГП_ОСВПоАбоненту</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
+			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
 			<ChartOfAccounts>Хозрасчетный</ChartOfAccounts>
 			<AccountingRegister>Хозрасчетный</AccountingRegister>
 		</ChildObjects>

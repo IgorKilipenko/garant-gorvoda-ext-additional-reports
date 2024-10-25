@@ -134,6 +134,40 @@
 					<Balance>false</Balance>
 				</Properties>
 			</Resource>
+			<Resource uuid="a354c8bb-8407-4ba1-991e-c5d611634be2">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВалютнаяСумма</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>2364dd92-2120-41b6-a6f7-008c333d706b</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<Balance>false</Balance>
+				</Properties>
+			</Resource>
+			<Attribute uuid="193a8a86-4531-436e-a4c6-ed6cda029fa6">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Содержание</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>17c87c43-ee62-4b46-a19c-f2b35f24719e</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
 		</ChildObjects>
 	</AccountingRegister>
 </MetaDataObject>
