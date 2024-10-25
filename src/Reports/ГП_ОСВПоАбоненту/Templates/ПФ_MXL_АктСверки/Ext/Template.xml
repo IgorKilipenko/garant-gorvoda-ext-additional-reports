@@ -332,7 +332,7 @@
 				<c>
 					<f>32</f>
 					<parameter>Счетфактура</parameter>
-					<detailParameter>Счетфактура</detailParameter>
+					<detailParameter>Регистратор</detailParameter>
 				</c>
 			</c>
 			<c>
@@ -571,25 +571,32 @@
 			<c>
 				<i>1</i>
 				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
 					<f>49</f>
-					<parameter>Должность</parameter>
-				</c>
-			</c>
-			<c>
-				<i>4</i>
-				<c>
-					<f>50</f>
-					<parameter>ДолжностьК</parameter>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>47</f>
 				</c>
 			</c>
 			<c>
 				<c>
 					<f>43</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>50</f>
 				</c>
 			</c>
 		</row>
@@ -602,32 +609,34 @@
 			<c>
 				<i>1</i>
 				<c>
-					<f>13</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>13</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>13</f>
-				</c>
-			</c>
-			<c>
-				<c>
 					<f>51</f>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>43</f>
+					<f>52</f>
+					<parameter>ФИОПредставителя</parameter>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>52</f>
+					<f>53</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>54</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>55</f>
+					<parameter>ФИОПредставителяК</parameter>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>43</f>
 				</c>
 			</c>
 		</row>
@@ -640,34 +649,22 @@
 			<c>
 				<i>1</i>
 				<c>
-					<f>53</f>
+					<f>13</f>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>54</f>
-					<parameter>ФИОПредставителя</parameter>
+					<f>13</f>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>55</f>
+					<f>13</f>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>56</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>57</f>
-					<parameter>ФИОПредставителяК</parameter>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>43</f>
+					<f>13</f>
 				</c>
 			</c>
 		</row>
@@ -702,35 +699,7 @@
 	</rowsItem>
 	<rowsItem>
 		<index>21</index>
-		<row>
-			<columnsID>225f38cf-71d1-4994-a882-9b31ede74a4a</columnsID>
-			<formatIndex>13</formatIndex>
-			<c>
-				<i>1</i>
-				<c>
-					<f>13</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>13</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>13</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>13</f>
-				</c>
-			</c>
-		</row>
-	</rowsItem>
-	<rowsItem>
-		<index>22</index>
-		<indexTo>26</indexTo>
+		<indexTo>25</indexTo>
 		<row>
 			<columnsID>225f38cf-71d1-4994-a882-9b31ede74a4a</columnsID>
 			<empty>true</empty>
@@ -738,8 +707,8 @@
 	</rowsItem>
 	<templateMode>true</templateMode>
 	<defaultFormatIndex>13</defaultFormatIndex>
-	<height>27</height>
-	<vgRows>27</vgRows>
+	<height>26</height>
+	<vgRows>26</vgRows>
 	<merge>
 		<r>1</r>
 		<c>1</c>
@@ -796,22 +765,12 @@
 		<w>2</w>
 	</merge>
 	<merge>
-		<r>17</r>
-		<c>1</c>
-		<w>2</w>
-	</merge>
-	<merge>
-		<r>17</r>
-		<c>4</c>
-		<w>2</w>
-	</merge>
-	<merge>
-		<r>19</r>
+		<r>18</r>
 		<c>2</c>
 		<w>1</w>
 	</merge>
 	<merge>
-		<r>19</r>
+		<r>18</r>
 		<c>5</c>
 		<w>1</w>
 	</merge>
@@ -880,7 +839,7 @@
 		<area>
 			<type>Rows</type>
 			<beginRow>11</beginRow>
-			<endRow>26</endRow>
+			<endRow>25</endRow>
 			<beginColumn>-1</beginColumn>
 			<endColumn>-1</endColumn>
 		</area>
@@ -1057,8 +1016,7 @@
 	</format>
 	<format>
 		<font>4</font>
-		<leftBorder>0</leftBorder>
-		<topBorder>0</topBorder>
+		<border>0</border>
 		<fillType>Text</fillType>
 	</format>
 	<format>
@@ -1113,6 +1071,11 @@
 		<verticalAlignment>Center</verticalAlignment>
 		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
+		<containsValue>true</containsValue>
+		<valueType>
+			<v8:TypeSet xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef</v8:TypeSet>
+		</valueType>
+		<controlType>381ed624-9217-4e63-85db-c4c3cb87daae</controlType>
 	</format>
 	<format>
 		<font>0</font>
@@ -1182,8 +1145,7 @@
 	</format>
 	<format>
 		<font>4</font>
-		<leftBorder>0</leftBorder>
-		<topBorder>0</topBorder>
+		<border>0</border>
 		<width>313</width>
 		<fillType>Text</fillType>
 	</format>
@@ -1254,21 +1216,6 @@
 		<font>0</font>
 		<horizontalAlignment>Left</horizontalAlignment>
 		<textPlacement>Wrap</textPlacement>
-	</format>
-	<format>
-		<font>0</font>
-		<horizontalAlignment>Left</horizontalAlignment>
-		<textPlacement>Wrap</textPlacement>
-		<fillType>Parameter</fillType>
-		<bySelectedColumns>true</bySelectedColumns>
-	</format>
-	<format>
-		<font>0</font>
-		<width>64</width>
-		<horizontalAlignment>Left</horizontalAlignment>
-		<textPlacement>Wrap</textPlacement>
-		<fillType>Parameter</fillType>
-		<bySelectedColumns>true</bySelectedColumns>
 	</format>
 	<format>
 		<font>0</font>
