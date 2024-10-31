@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Catalog uuid="90f26b1e-c9b1-4fa1-877f-970c47ad2c08">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.БанковскиеСчета" category="Object">
+				<xr:TypeId>bb6581b3-f36d-437f-a34d-22b32faf83d3</xr:TypeId>
+				<xr:ValueId>9ccde06d-e2df-4353-a0f0-4eec4392c324</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.БанковскиеСчета" category="Ref">
+				<xr:TypeId>c2fb773c-1633-46be-92e2-daf9f2bc4276</xr:TypeId>
+				<xr:ValueId>0ab92b85-1e87-4e9c-9983-61062c8b08a7</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.БанковскиеСчета" category="Selection">
+				<xr:TypeId>5b26ceff-3d76-4436-b6ce-905d58118a0f</xr:TypeId>
+				<xr:ValueId>a99aa71a-6682-4462-bd8f-f186931f7dc6</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.БанковскиеСчета" category="List">
+				<xr:TypeId>566599f8-0bba-4fd8-91d7-974431a86a04</xr:TypeId>
+				<xr:ValueId>1064bca2-c059-4b01-b927-1d6acf6921de</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.БанковскиеСчета" category="Manager">
+				<xr:TypeId>b20049c3-44be-49ea-8ec2-e85657095925</xr:TypeId>
+				<xr:ValueId>7134261f-8def-4a17-823e-065f6d9f9b35</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>БанковскиеСчета</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>1c4519b8-4da1-4a6c-ab02-f813d7150cf3</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="a3860071-99d1-4c73-8f40-adda016c5d24">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НомерСчета</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>41bda9ce-9cd4-4285-afc9-c5126dc0330e</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>70</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>
