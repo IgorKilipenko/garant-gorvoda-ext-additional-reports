@@ -26,6 +26,7 @@
 			<Metadata name="AccumulationRegister.УПЖКХ_Начисления.Dimension.Организация" id="de5ddf88-027f-46dd-ab2e-ad629beefaff"/>
 			<Metadata name="AccumulationRegister.УПЖКХ_Начисления.Dimension.Услуга" id="e4e3270a-9437-4690-8f5a-d0618f3889ac"/>
 		</Metadata>
+		<Metadata name="Catalog.Банки" id="711f0adc-b60f-44de-9afd-acce836a30a2" configVersion="4485bbc8d435f5ff11c065b3e7f4f77c84be50f2"/>
 		<Metadata name="Catalog.БанковскиеСчета" id="90f26b1e-c9b1-4fa1-877f-970c47ad2c08" configVersion="941133c94a9dbc7569939da41c01094eab021c30">
 			<Metadata name="Catalog.БанковскиеСчета.Attribute.НомерСчета" id="a3860071-99d1-4c73-8f40-adda016c5d24"/>
 		</Metadata>
@@ -51,7 +52,7 @@
 		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
 		<Metadata name="ChartOfAccounts.Хозрасчетный" id="6bb79fc0-b442-4037-b869-ad6bac28686f" configVersion="49bf89c9f5bca3008dff01a427f0bad23f5f8c05"/>
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="f8181eb93a7b0053b403dd5f9df180b06fe653ad"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="9b9aad9cde68cd3143f4df924df004d4e0b48213"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>

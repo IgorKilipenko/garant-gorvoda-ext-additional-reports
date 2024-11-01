@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>1.3.0.0-dev0</Version>
+			<Version>1.3.0.0-dev1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -79,6 +79,7 @@
 			<Catalog>Контрагенты</Catalog>
 			<Catalog>ВидыКонтактнойИнформации</Catalog>
 			<Catalog>БанковскиеСчета</Catalog>
+			<Catalog>Банки</Catalog>
 			<Document>РеализацияТоваровУслуг</Document>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
 			<Enum>УПЖКХ_РазделыУчета</Enum>
