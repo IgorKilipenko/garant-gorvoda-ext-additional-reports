@@ -1119,7 +1119,6 @@
 				<c>
 					<f>15</f>
 					<parameter>Контрагент</parameter>
-					<v xsi:type="xs:string">Контрагент</v>
 					<detailParameter>Контрагент</detailParameter>
 				</c>
 			</c>
@@ -1128,6 +1127,7 @@
 				<c>
 					<f>16</f>
 					<parameter>ЮрАдрес</parameter>
+					<detailParameter>ЮрАдрес</detailParameter>
 				</c>
 			</c>
 			<c>
@@ -1135,6 +1135,7 @@
 				<c>
 					<f>16</f>
 					<parameter>РасчетныйСчет</parameter>
+					<detailParameter>РасчетныйСчет</detailParameter>
 				</c>
 			</c>
 			<c>
@@ -1154,6 +1155,7 @@
 				<c>
 					<f>16</f>
 					<parameter>ПредставлениеБанка</parameter>
+					<detailParameter>Банк</detailParameter>
 				</c>
 			</c>
 			<c>
@@ -1161,6 +1163,7 @@
 				<c>
 					<f>16</f>
 					<parameter>НомерКорСчета</parameter>
+					<pictureParameter>КоррСчетБанка</pictureParameter>
 				</c>
 			</c>
 		</row>
@@ -2221,11 +2224,7 @@
 		<verticalAlignment>Center</verticalAlignment>
 		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
-		<containsValue>true</containsValue>
-		<valueType>
-			<v8:TypeSet xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef</v8:TypeSet>
-		</valueType>
-		<controlType>381ed624-9217-4e63-85db-c4c3cb87daae</controlType>
+		<detailsUse>Cell</detailsUse>
 	</format>
 	<format>
 		<border>1</border>
