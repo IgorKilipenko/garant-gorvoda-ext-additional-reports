@@ -150,9 +150,10 @@
     ХозрасчетныйОстатки.СуммаОстаток КАК СуммаОстаток
 ПОМЕСТИТЬ ВТ_ДанныеБУ
 ИЗ
-    РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;Период, Счет В (&amp;ФильтрСписокСчетов), &amp;ВидыСубконто, {(Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК ДокументРеализации}) КАК ХозрасчетныйОстатки
+    РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;Период, Счет В (&amp;ФильтрСписокСчетов), &amp;ВидыСубконто, Организация = &amp;Организация {(Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК ДокументРеализации}) КАК ХозрасчетныйОстатки
 {ГДЕ
-    ((ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто1 КАК Справочник.Контрагенты)) = &amp;Контрагент)}
+    ((ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто1 КАК Справочник.Контрагенты)) = &amp;Контрагент),
+    (ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Справочник.ДоговорыКонтрагентов)).lc_ВидДоговора = &amp;ВидДоговора}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -392,6 +393,21 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -1845,6 +1861,11 @@
 					<dcscor:parameter>Контрагент</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>dd2a4fce-f3f2-497f-94d0-781db153bbcd</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
