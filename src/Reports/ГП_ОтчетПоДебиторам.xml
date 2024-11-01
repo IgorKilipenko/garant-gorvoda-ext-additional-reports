@@ -35,7 +35,6 @@
 		</Properties>
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
-			<Template>ОсновнаяСхемаКомпоновкиДанных1</Template>
 			<Template>ПФ_MXL_Макет</Template>
 		</ChildObjects>
 	</Report>
