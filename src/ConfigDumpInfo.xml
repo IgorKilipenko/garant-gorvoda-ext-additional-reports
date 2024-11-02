@@ -52,7 +52,7 @@
 		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
 		<Metadata name="ChartOfAccounts.Хозрасчетный" id="6bb79fc0-b442-4037-b869-ad6bac28686f" configVersion="49bf89c9f5bca3008dff01a427f0bad23f5f8c05"/>
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="fdaee185aa9f39b3eb68de623f0267ef983ac32f"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="b62daa51abe600e6a954cd42b70ba347e41e49db"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -78,18 +78,18 @@
 		</Metadata>
 		<Metadata name="Language.Русский" id="44f6a684-9fe1-469e-9a55-91239dd938e6" configVersion="44ad2cfdada2925adf58ec52fbf069567f42dd12"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту" id="e80d272f-690c-4b56-9bed-1049e67ac8c8" configVersion="c108048dc38a3b182a60052972fefce17283150c"/>
-		<Metadata name="Report.ГП_ОСВПоАбоненту.ManagerModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.2" configVersion="cabaa49b1b46c280d0883fac50ce42c0165fd8ea"/>
+		<Metadata name="Report.ГП_ОСВПоАбоненту.ManagerModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.2" configVersion="051fa1b7a12957be9ef3564b1e1c213d6cfb1737"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.ObjectModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.0" configVersion="ad6839d497479e404615d61140dfdcdbe71db257"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ОсновнаяСхемаКомпоновкиДанных" id="d8a3e70a-2b04-48bc-9e69-995edb4e375c" configVersion="ce925f7b756c2acf9b272b9cd0e526259e326e94"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d8a3e70a-2b04-48bc-9e69-995edb4e375c.0" configVersion="01d85ab460bae424bd65431d968fc9695a5ee067"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ПФ_MXL_АктСверки" id="6795e01b-1485-4dc4-87e7-5dc6d3273c63" configVersion="cea894b21001b133b58dd36e9d5ea83e1d11c242"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ПФ_MXL_АктСверки.Template" id="6795e01b-1485-4dc4-87e7-5dc6d3273c63.0" configVersion="fd4b0abe46d915ec7be1fffff5e7320878fa98ea"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="ad02c261ac49f0a6f8a11402de795aa574a53c60"/>
-		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="6e24d25879ab78469e13e86fb5855e9713d843c1"/>
+		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="f80d9908fb3074bf1ae227c2283a44ae238f6886"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных" id="70dbc91c-669d-409b-a542-8da098f5f619" configVersion="2c09505ef1da6a647f461c50ef6c579963ead567"/>
-		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="70dbc91c-669d-409b-a542-8da098f5f619.0" configVersion="81196a721765cfe18e1bddadfd67c9a7515cc0c8"/>
+		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="70dbc91c-669d-409b-a542-8da098f5f619.0" configVersion="d8e0ffbc4bd2d5a2ec0bdddb499d2016e51c7f57"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ПФ_MXL_Макет" id="e397c215-881c-479f-91a3-a28888079109" configVersion="a34b3698eb20a8aed73824baa310a540cfe8aca8"/>
-		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ПФ_MXL_Макет.Template" id="e397c215-881c-479f-91a3-a28888079109.0" configVersion="4ca5618e5c70144eb89ee04becc40fe9d49ebd14"/>
+		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ПФ_MXL_Макет.Template" id="e397c215-881c-479f-91a3-a28888079109.0" configVersion="f9b633f73e1aadc594e05ddfed524c634fac62b6"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам" id="29e299d6-9c0c-4475-9ca3-25cde982d00b" configVersion="8babb250a2b916c91e9d8db08ff655585ea6098d"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Form.ФормаНастроек" id="7e601bb2-ea48-40b4-a409-a95b26e3bdea" configVersion="d264ae9ffd9640f0f4f0772df9b13688c645d19d"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Form.ФормаНастроек.Form" id="7e601bb2-ea48-40b4-a409-a95b26e3bdea.0" configVersion="e21321ca27c9ddd0f98ec7f920945d8609db82fa"/>
