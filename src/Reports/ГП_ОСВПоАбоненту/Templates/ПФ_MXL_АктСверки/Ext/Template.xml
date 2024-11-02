@@ -325,14 +325,14 @@
 				<c>
 					<f>32</f>
 					<parameter>Документ</parameter>
-					<detailParameter>Регистратор</detailParameter>
+					<detailParameter>Документ</detailParameter>
 				</c>
 			</c>
 			<c>
 				<c>
 					<f>32</f>
 					<parameter>Счетфактура</parameter>
-					<detailParameter>Регистратор</detailParameter>
+					<detailParameter>Счетфактура</detailParameter>
 				</c>
 			</c>
 			<c>
