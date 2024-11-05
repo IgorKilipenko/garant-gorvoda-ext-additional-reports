@@ -756,11 +756,11 @@
     (ВТ_Результат.НоменклатурнаяГруппа В (&amp;СписокНоменклатурныхГрупп)),
     (ВТ_Результат.ЛицевойСчет = &amp;ЛицевойСчет),
     (ВТ_Результат.Шифр = &amp;Шифр),
-    (ВТ_Результат.Водозабор = &amp;Водозабор),
-    (ВТ_Результат.Контролер = &amp;Контролер),
-    (ВТ_Результат.Договородержатель = &amp;Договородержатель),
-    (ВТ_Результат.Финансирование = &amp;Финансирование),
-    (ВТ_Результат.ВидПотребления = &amp;ВидПотребления),
+    (ВЫРАЗИТЬ(ВТ_Результат.Водозабор КАК Справочник.lc_Водозаборы)) = &amp;Водозабор,
+    (ВЫРАЗИТЬ(ВТ_Результат.Контролер КАК Справочник.lc_Контролеры)) = &amp;Контролер,
+    (ВЫРАЗИТЬ(ВТ_Результат.Договородержатель КАК Справочник.lc_Контролеры)) = &amp;Договородержатель,
+    (ВЫРАЗИТЬ(ВТ_Результат.Финансирование КАК Справочник.lc_СпособыФинансирования)) = &amp;Финансирование,
+    (ВЫРАЗИТЬ(ВТ_Результат.ВидПотребления КАК Справочник.lc_ГруппыПотребителей)) = &amp;ВидПотребления,
     ВТ_Результат.Регистратор.* КАК Регистратор,
     ВТ_Результат.Организация.* КАК Организация,
     ВТ_Результат.Подразделение.* КАК Подразделение,
@@ -1654,6 +1654,28 @@
 							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 								<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
 								<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СуммаНУ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Количество</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
 							</dcscor:item>
 						</dcsset:appearance>
 						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
