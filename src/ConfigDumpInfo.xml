@@ -54,7 +54,7 @@
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2" configVersion="af2a18ac4d840ec0af3f04c274ce3e5b12947e27"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="6c7ab2840fd3cc29f502ce0e9a6384fb59ff884f"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="51e4f374c9e82e14b028e82402de8578a691f7af"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="6af3e47d01e6ef5669fe20cc152f057c1c8c909f"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -105,7 +105,7 @@
 		<Metadata name="Report.ГП_ОтчетПоШифрам" id="4f7d5920-f762-4c30-8a86-d70355273789" configVersion="2d8479a69c83e7f24ef52ddd6b970876758f2600"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.ObjectModule" id="4f7d5920-f762-4c30-8a86-d70355273789.0" configVersion="2ea3749bc11ddd2dd58d0acc33d9607346c16a78"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9" configVersion="20c45866a8d9f33198fc03828f03e02b2412c190"/>
-		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9.0" configVersion="d19f148e73d08bac6df6823a4fd7a9ed8bf45d2a"/>
+		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9.0" configVersion="b7892c759262ccb4780e4def5e101b085817fcbf"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством" id="24183566-4402-46c5-8a8a-2307ef99b9f9" configVersion="0e09bb386b0f55517bb847c3954ba024a9b2a207">
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Attribute.Перерасчет" id="2c5f2c5d-9e38-4608-8b42-056341b5d987"/>
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.TabularSection.Группировка.Attribute.Поле" id="4e951adf-11e4-4857-8b25-9e27839fd307"/>
