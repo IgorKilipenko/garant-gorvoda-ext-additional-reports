@@ -1594,7 +1594,6 @@
 						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
-						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
