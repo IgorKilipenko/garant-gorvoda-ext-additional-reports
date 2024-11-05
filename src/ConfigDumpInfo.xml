@@ -99,7 +99,7 @@
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет" id="2ff397f3-e820-4018-a265-17abca5c39e9" configVersion="683f35c6b5a6e33799610ffd7028b7e9ac1b7874"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет.Template" id="2ff397f3-e820-4018-a265-17abca5c39e9.0" configVersion="e416ee38eea3882395812fbf4f5de359da548fe3"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных" id="0d2107ac-6134-4474-9748-754ecfc5bb74" configVersion="668be2f48b40be674cb89810625a3f9b9a704e34"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="f2664fb6a1b2a85b879bb68665f6ad513fd67589"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="8bc439a43747a0f850a27691d79c1f55ee2d3c7f"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством" id="24183566-4402-46c5-8a8a-2307ef99b9f9" configVersion="0e09bb386b0f55517bb847c3954ba024a9b2a207">
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Attribute.Перерасчет" id="2c5f2c5d-9e38-4608-8b42-056341b5d987"/>
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.TabularSection.Группировка.Attribute.Поле" id="4e951adf-11e4-4857-8b25-9e27839fd307"/>
