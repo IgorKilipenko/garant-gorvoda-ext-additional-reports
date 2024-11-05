@@ -347,7 +347,7 @@
     РеализацияУслуг.Период МЕЖДУ &amp;НачалоПериодаГраница И &amp;КонецПериодаГраница
     И РеализацияУслуг.Активность = ИСТИНА
     И РеализацияУслуг.Организация = &amp;Организация
-    И РеализацияУслуг.НоменклатурнаяГруппа В (&amp;СписокНоменклатурныхГрупп)
+    И РеализацияУслуг.НоменклатурнаяГруппа В(&amp;СписокНоменклатурныхГрупп)
 {ГДЕ
     РеализацияУслуг.Услуга.* КАК Услуга,
     РеализацияУслуг.НоменклатурнаяГруппа.* КАК НоменклатурнаяГруппа}
@@ -513,8 +513,7 @@
     СоответствияНазначенийПлатежей.ЛицевойСчет КАК ЛицевойСчет
 ПОМЕСТИТЬ ВТ_СоответствияНазначенийПлатежей
 ИЗ
-    РегистрСведений.ГП_СоответствияНазначенийПлатежей.СрезПоследних(&amp;КонецПериодаГраница, ) КАК СоответствияНазначенийПлатежей
-    // ВТ_СоответствияНазначенийПлатежей КАК СоответствияНазначенийПлатежей
+    ВТ_СоответствияНазначенийПлатежей### КАК СоответствияНазначенийПлатежей
 ГДЕ
     (СоответствияНазначенийПлатежей.НазначениеПлатежа, СоответствияНазначенийПлатежей.Договор, СоответствияНазначенийПлатежей.Контрагент) В
             (ВЫБРАТЬ РАЗЛИЧНЫЕ
@@ -581,8 +580,7 @@
     ВТ_СоответствияНазначенийПлатежей.Контрагент КАК Контрагент
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетов
 ИЗ
-    РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериодаГраница, ) КАК ДинамическиеПоказателиЛицевыхСчетов
-    // ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов### КАК ДинамическиеПоказателиЛицевыхСчетов
         ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_СоответствияНазначенийПлатежей КАК ВТ_СоответствияНазначенийПлатежей
         ПО ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет = ВТ_СоответствияНазначенийПлатежей.ЛицевойСчет
 ;
@@ -627,13 +625,12 @@
             И (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договор = ВТ_РезультатПодгтовка.Договор)
             И (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Содержание = ВТ_РезультатПодгтовка.Содержание)
 {ГДЕ
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Шифр = &amp;Шифр,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор.* КАК Водозабор,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер.* КАК Контролер,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель.* КАК Договородержатель,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование.* КАК Финансирование,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления.* КАК ВидПотребления
-    }
+    (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Шифр = &amp;Шифр),
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -719,7 +716,7 @@
     ВТ_РезультатСоединениеНеуникальные.НоменклатурнаяГруппа.* КАК НоменклатурнаяГруппа,
     ВТ_РезультатСоединениеНеуникальные.ГруппаУслуг.* КАК ГруппаУслуг,
     ВТ_РезультатСоединениеНеуникальные.Услуга.* КАК Услуга,
-    ВТ_РезультатСоединениеНеуникальные.Шифр.* КАК Шифр,
+    ВТ_РезультатСоединениеНеуникальные.Шифр КАК Шифр,
     ВТ_РезультатСоединениеНеуникальные.СуммаНУ КАК СуммаНУ,
     ВТ_РезультатСоединениеНеуникальные.Сумма КАК Сумма,
     ВТ_РезультатСоединениеНеуникальные.СуммаНДС КАК СуммаНДС,
@@ -1008,6 +1005,47 @@
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
 	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell/>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сводные данные, распределенные по шифрам, за период: </v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Дата</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell/>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Дата</dcsat:name>
+			<dcsat:expression>ПредставлениеПериода(НАЧАЛОПЕРИОДА(&amp;ПериодОтчета.ДатаНачала, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ПериодОтчета.ДатаОкончания, "ДЕНЬ"), "ФП = Истина")</dcsat:expression>
+		</parameter>
+	</template>
+	<groupTemplate>
+		<groupName>Заголовок</groupName>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupTemplate>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -1080,7 +1118,22 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НомГруппаНВ</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НоменклатураВодоотведение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатураХВС</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатураГВС</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1099,8 +1152,30 @@
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Заголовок</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:name>ТаблицаДанных</dcsset:name>
 				<dcsset:column>
+					<dcsset:name>КолонкиУслуг</dcsset:name>
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>ГруппаУслуг</dcsset:field>
@@ -1116,6 +1191,18 @@
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Заголовок</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType"/>
+						</dcscor:item>
+					</dcsset:outputParameters>
 				</dcsset:column>
 				<dcsset:row>
 					<dcsset:groupItems>
@@ -1181,9 +1268,43 @@
 						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
 						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
 						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СуммаНУ</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сумма без НДС (руб.)</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
 						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
@@ -1193,6 +1314,7 @@
 						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
 						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
 						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 					</dcscor:item>
