@@ -302,6 +302,10 @@
 					<v8:content>Шифр</v8:content>
 				</v8:item>
 			</title>
+			<presentationExpression>ВЫБОР
+	КОГДА Строка(Шифр) = "" ТОГДА "&lt;&gt;"
+	ИНАЧЕ Строка(Шифр)
+КОНЕЦ</presentationExpression>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Контролер</dataPath>
@@ -638,13 +642,6 @@
         ПО (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контрагент = ВТ_РезультатПодгтовка.Контрагент)
             И (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договор = ВТ_РезультатПодгтовка.Договор)
             И (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Содержание = ВТ_РезультатПодгтовка.Содержание)
-{ГДЕ
-    (ВТ_ДинамическиеПоказателиЛицевыхСчетов.Шифр = &amp;Шифр),
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -758,9 +755,12 @@
 {ГДЕ
     (ВТ_Результат.НоменклатурнаяГруппа В (&amp;СписокНоменклатурныхГрупп)),
     (ВТ_Результат.ЛицевойСчет = &amp;ЛицевойСчет),
+    (ВТ_Результат.Шифр = &amp;Шифр),
     (ВТ_Результат.Водозабор = &amp;Водозабор),
     (ВТ_Результат.Контролер = &amp;Контролер),
+    (ВТ_Результат.Договородержатель = &amp;Договородержатель),
     (ВТ_Результат.Финансирование = &amp;Финансирование),
+    (ВТ_Результат.ВидПотребления = &amp;ВидПотребления),
     ВТ_Результат.Регистратор.* КАК Регистратор,
     ВТ_Результат.Организация.* КАК Организация,
     ВТ_Результат.Подразделение.* КАК Подразделение,
@@ -1064,6 +1064,28 @@
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
 	</parameter>
+	<parameter>
+		<name>ВидПотребления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид потребления</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Договородержатель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договородержатель</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<template>
 		<name>Макет1</name>
 		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
@@ -1210,7 +1232,7 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="true" strikeout="false" kind="Absolute" scale="100"/>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -1342,7 +1364,7 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="true" strikeout="false" kind="Absolute" scale="100"/>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -1602,6 +1624,43 @@
 						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Шифр</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
