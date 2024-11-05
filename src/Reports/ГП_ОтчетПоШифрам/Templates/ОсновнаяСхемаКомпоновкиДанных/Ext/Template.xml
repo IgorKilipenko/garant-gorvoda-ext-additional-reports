@@ -347,6 +347,7 @@
     РеализацияУслуг.Период МЕЖДУ &amp;НачалоПериодаГраница И &amp;КонецПериодаГраница
     И РеализацияУслуг.Активность = ИСТИНА
     И РеализацияУслуг.Организация = &amp;Организация
+    И РеализацияУслуг.НоменклатурнаяГруппа В (&amp;СписокНоменклатурныхГрупп)
 {ГДЕ
     РеализацияУслуг.Услуга.* КАК Услуга,
     РеализацияУслуг.НоменклатурнаяГруппа.* КАК НоменклатурнаяГруппа}
@@ -359,7 +360,7 @@
     Хозрасчетный.УточнениеПериода КАК УточнениеПериода,
     Хозрасчетный.Регистратор КАК Регистратор,
     Хозрасчетный.СчетДт КАК Счет,
-    Хозрасчетный.СубконтоКт1 КАК НоменклатурнаяГруппа,
+    ВЫРАЗИТЬ(Хозрасчетный.СубконтоКт1 КАК Справочник.НоменклатурныеГруппы) КАК НоменклатурнаяГруппа,
     Хозрасчетный.СубконтоКт2 КАК СтавкаНДС,
     Хозрасчетный.СубконтоКт3 КАК Номенклатура,
     ЕСТЬNULL(Хозрасчетный.Организация, НЕОПРЕДЕЛЕНО) КАК Организация,
@@ -707,7 +708,7 @@
 ГДЕ
     Т.ЛицевойСчет ЕСТЬ NULL
 {ГДЕ
-    (ВТ_РезультатСоединениеНеуникальные.ГруппаУслуг В (&amp;СпсокНоменклатурныхГрупп)),
+    (ВТ_РезультатСоединениеНеуникальные.ГруппаУслуг В (&amp;СписокНоменклатурныхГрупп)),
     (ВТ_РезультатСоединениеНеуникальные.ЛицевойСчет = &amp;ЛицевойСчет),
     (ВТ_РезультатСоединениеНеуникальные.Водозабор = &amp;Водозабор),
     (ВТ_РезультатСоединениеНеуникальные.Контролер = &amp;Контролер),
@@ -867,6 +868,21 @@
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
+		<name>НомГруппаНВ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ном группа НВ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
 		<name>НоменклатураВодоотведение</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -882,27 +898,41 @@
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
+		<name>НоменклатураХВС</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура ХВС</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НоменклатураГВС</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура ГВС</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
 		<name>СписокНомГруппНВ</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
 				<v8:content>Список ном групп НВ</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
-		<valueListAllowed>true</valueListAllowed>
-		<availableAsField>false</availableAsField>
-	</parameter>
-	<parameter>
-		<name>СпсокНоменклатурныхГрупп</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Спсок номенклатурных групп</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -962,9 +992,30 @@
 		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 		<availableAsField>false</availableAsField>
 	</parameter>
+	<parameter>
+		<name>СписокНоменклатурныхГрупп</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Список номенклатурных групп</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по шифрам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -1039,12 +1090,12 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>СпсокНоменклатурныхГрупп</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string"/>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:parameter>СписокНоменклатурныхГрупп</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
