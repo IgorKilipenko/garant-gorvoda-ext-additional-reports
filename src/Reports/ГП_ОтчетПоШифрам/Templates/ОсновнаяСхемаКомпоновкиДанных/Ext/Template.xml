@@ -1139,66 +1139,6 @@
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
 					<dcsat:item xsi:type="dcsat:Field">
 						<dcsat:value xsi:type="v8:LocalStringType">
 							<v8:item>
@@ -1215,6 +1155,78 @@
 						<dcscor:item>
 							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -1256,68 +1268,12 @@
 				<dcsat:tableCell/>
 				<dcsat:tableCell/>
 				<dcsat:tableCell/>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 			<dcsat:item xsi:type="dcsat:TableRow">
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>Шрифт</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
@@ -1347,6 +1303,78 @@
 						<dcscor:item>
 							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -1675,7 +1703,7 @@
 						<dcsset:appearance>
 							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+								<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
 							</dcscor:item>
 						</dcsset:appearance>
 						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
@@ -1711,35 +1739,6 @@
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
-				<dcsset:conditionalAppearance>
-					<dcsset:item>
-						<dcsset:selection/>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">50</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:use>false</dcscor:use>
-								<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
-								<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>ВесовойКоэффициентШирины</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
-						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
-						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
-						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
-						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
-						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
-						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
-					</dcsset:item>
-				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>МакетОформления</dcscor:parameter>
