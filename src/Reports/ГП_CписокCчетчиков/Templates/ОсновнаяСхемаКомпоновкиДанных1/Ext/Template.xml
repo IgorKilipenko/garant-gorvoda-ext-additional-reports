@@ -559,7 +559,7 @@
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетовНаНачало
 ИЗ
     РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;НачалоПериода, ) КАК ДинамическиеПоказателиЛицевыхСчетов
-    // ВТ_ДинамическиеПоказателиЛицевыхСчетов### КАК ДинамическиеПоказателиЛицевыхСчетов
+    //ВТ_ДинамическиеПоказателиЛицевыхСчетов### КАК ДинамическиеПоказателиЛицевыхСчетов
 ГДЕ
     ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет В
             (ВЫБРАТЬ
@@ -581,7 +581,7 @@
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетовНаКонец
 ИЗ
     РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода, ) КАК ДинамическиеПоказателиЛицевыхСчетов
-    // ВТ_ДинамическиеПоказателиЛицевыхСчетов### КАК ДинамическиеПоказателиЛицевыхСчетов
+    //ВТ_ДинамическиеПоказателиЛицевыхСчетов### КАК ДинамическиеПоказателиЛицевыхСчетов
 ГДЕ
     ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет В
             (ВЫБРАТЬ
@@ -874,6 +874,10 @@
 		<dataPath>НомерПломбы</dataPath>
 		<expression>Максимум(НомерПломбы)</expression>
 	</totalField>
+	<totalField>
+		<dataPath>ВидУслуги</dataPath>
+		<expression>Максимум(ВидУслуги)</expression>
+	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
 		<title xsi:type="v8:LocalStringType">
@@ -1009,12 +1013,6 @@
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоИПУ</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоКПУ</dcsset:field>
-				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 					<dcsset:lwsTitle>
 						<v8:item>
@@ -1022,6 +1020,9 @@
 							<v8:content>Характеристики</v8:content>
 						</v8:item>
 					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидУслуги</dcsset:field>
+					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>СпособРегистрацииПоказаний</dcsset:field>
 					</dcsset:item>
@@ -1040,16 +1041,10 @@
 					<dcsset:field>Модель</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Идентификатор</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ЗаводскойНомер</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДатаПоверки</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>НомерПломбы</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 					<dcsset:lwsTitle>
@@ -1066,9 +1061,6 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>НочноеПоказание</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ПиковоеПоказание</dcsset:field>
 					</dcsset:item>
 					<dcsset:placement>Auto</dcsset:placement>
 				</dcsset:item>
@@ -1162,7 +1154,14 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Здание</dcsset:field>
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Договор</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1170,40 +1169,42 @@
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
-					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:OrderItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:orderType>Asc</dcsset:orderType>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:OrderItemField">
+						<dcsset:field>Договор</dcsset:field>
+						<dcsset:orderType>Asc</dcsset:orderType>
+					</dcsset:item>
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
 						<dcsset:use>false</dcsset:use>
 					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Здание</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КоличествоИПУ</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КоличествоКПУ</dcsset:field>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Контрагент</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Договор</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Together</dcsset:placement>
 					</dcsset:item>
 				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеРесурсов</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionResourcesPlacement">Horizontally</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>УровеньИерархии</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ПредставлениеОбъекта</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Квартира</dcsset:field>
+							<dcsset:field>Здание</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1215,19 +1216,7 @@
 							<dcsset:use>false</dcsset:use>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:OrderItemField">
-							<dcsset:field>УровеньИерархии</dcsset:field>
-							<dcsset:orderType>Asc</dcsset:orderType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:OrderItemField">
-							<dcsset:field>Квартира.ВидПомещения</dcsset:field>
-							<dcsset:orderType>Asc</dcsset:orderType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:OrderItemField">
-							<dcsset:field>Квартира.Код</dcsset:field>
-							<dcsset:orderType>Asc</dcsset:orderType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:OrderItemField">
-							<dcsset:field>ПредставлениеОбъекта</dcsset:field>
+							<dcsset:field>Здание</dcsset:field>
 							<dcsset:orderType>Asc</dcsset:orderType>
 						</dcsset:item>
 					</dcsset:order>
@@ -1236,13 +1225,7 @@
 							<dcsset:use>false</dcsset:use>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ПредставлениеОбъекта</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоИПУ</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоКПУ</dcsset:field>
+							<dcsset:field>Здание</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
