@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>1.5.0.1-rc1</Version>
+			<Version>1.6.0.0-dev0</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -67,6 +67,7 @@
 			<StyleItem>ЗаголовкиСтрокШрифт</StyleItem>
 			<StyleItem>ЗаголовкиСтрокЦветТекста</StyleItem>
 			<StyleItem>СодержаниеУслугиШрифт</StyleItem>
+			<Role>ГП_ИспользованиеДополнительныхОтчетов</Role>
 			<CommonModule>ГП_РаботаСОтчетами</CommonModule>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
@@ -90,6 +91,7 @@
 			<Report>ГП_ОСВПоАбоненту</Report>
 			<Report>ГП_ОтчетПоДебиторам</Report>
 			<Report>ГП_ОтчетПоШифрам</Report>
+			<Report>ГП_CписокCчетчиков</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
