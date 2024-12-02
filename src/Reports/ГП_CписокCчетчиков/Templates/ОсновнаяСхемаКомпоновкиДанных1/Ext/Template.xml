@@ -309,6 +309,16 @@
 				</v8:DateQualifiers>
 			</valueType>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
     УПЖКХ_ИсторияСостоянийПриборовУчетаИнтервальный.Объект КАК Объект,
@@ -734,6 +744,12 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>НочноеПоказание</dataPath>
 			<field>НочноеПоказание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показание для истории</v8:content>
+				</v8:item>
+			</title>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Формат</dcscor:parameter>
@@ -751,6 +767,12 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДневноеПоказание</dataPath>
 			<field>ДневноеПоказание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показание</v8:content>
+				</v8:item>
+			</title>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Формат</dcscor:parameter>
@@ -798,15 +820,163 @@
 				</dcscor:item>
 			</appearance>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПиковоеПредПоказание</dataPath>
+			<field>ПиковоеПредПоказание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пиковое показание</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=-; ЧГ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДневноеПредПоказание</dataPath>
+			<field>ДневноеПредПоказание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показание</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=-; ЧГ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПредПоказания</dataPath>
+			<field>ДатаПредПоказания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата показания</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НочноеПредПоказание</dataPath>
+			<field>НочноеПредПоказание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показание для истории</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=-; ЧГ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
 		<dataSource>ИсточникДанных</dataSource>
 		<query>ВЫБРАТЬ
-	КВП_ПоказанияСчетчиковСрезПоследних.Период КАК ДатаПоказания,
-	КВП_ПоказанияСчетчиковСрезПоследних.Счетчик,
-	КВП_ПоказанияСчетчиковСрезПоследних.ДневноеПоказание,
-	КВП_ПоказанияСчетчиковСрезПоследних.НочноеПоказание,
-	КВП_ПоказанияСчетчиковСрезПоследних.ПиковоеПоказание
+    КВП_ПоказанияСчетчиковСрезПоследних.Период КАК ДатаПоказания,
+    КВП_ПоказанияСчетчиковСрезПоследних.Счетчик КАК Счетчик,
+    КВП_ПоказанияСчетчиковСрезПоследних.ДневноеПоказание КАК ДневноеПоказание,
+    КВП_ПоказанияСчетчиковСрезПоследних.НочноеПоказание КАК НочноеПоказание,
+    КВП_ПоказанияСчетчиковСрезПоследних.ПиковоеПоказание КАК ПиковоеПоказание,
+    КВП_ПоказанияСчетчиковСрезПоследних.НачальноеПоказание КАК ЭтоНачальноеПоказание
+ПОМЕСТИТЬ ВТ_ТекущиеПоказания
 ИЗ
-	РегистрСведений.КВП_ПоказанияСчетчиков.СрезПоследних(&amp;КонецПериода, ) КАК КВП_ПоказанияСчетчиковСрезПоследних</query>
+    РегистрСведений.КВП_ПоказанияСчетчиков.СрезПоследних(&amp;КонецПериода, ) КАК КВП_ПоказанияСчетчиковСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+    КВП_ПоказанияСчетчиковСрезПоследних.Период КАК ДатаПредПоказания,
+    КВП_ПоказанияСчетчиковСрезПоследних.Счетчик КАК Счетчик,
+    КВП_ПоказанияСчетчиковСрезПоследних.ДневноеПоказание КАК ДневноеПредПоказание,
+    КВП_ПоказанияСчетчиковСрезПоследних.НочноеПоказание КАК НочноеПредПоказание,
+    КВП_ПоказанияСчетчиковСрезПоследних.ПиковоеПоказание КАК ПиковоеПредПоказание,
+    КВП_ПоказанияСчетчиковСрезПоследних.НачальноеПоказание КАК ЭтоНачальноеПоказание
+ПОМЕСТИТЬ ВТ_ВсеПоказания
+ИЗ
+    РегистрСведений.КВП_ПоказанияСчетчиков КАК КВП_ПоказанияСчетчиковСрезПоследних
+ГДЕ
+    КВП_ПоказанияСчетчиковСрезПоследних.Активность = ИСТИНА
+    И КВП_ПоказанияСчетчиковСрезПоследних.Период &lt; &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+    ВТ_ТекущиеПоказания.ДатаПоказания КАК ДатаПоказания,
+    ВТ_ТекущиеПоказания.Счетчик КАК Счетчик,
+    ВТ_ТекущиеПоказания.ДневноеПоказание КАК ДневноеПоказание,
+    ВТ_ТекущиеПоказания.НочноеПоказание КАК НочноеПоказание,
+    ВТ_ТекущиеПоказания.ПиковоеПоказание КАК ПиковоеПоказание,
+    ВТ_ВсеПоказания.ДатаПредПоказания КАК ДатаПредПоказания,
+    ВТ_ВсеПоказания.ДневноеПредПоказание КАК ДневноеПредПоказание,
+    ВТ_ВсеПоказания.НочноеПредПоказание КАК НочноеПредПоказание,
+    ВТ_ВсеПоказания.ПиковоеПредПоказание КАК ПиковоеПредПоказание,
+    АВТОНОМЕРЗАПИСИ() КАК АвтоНомер
+ПОМЕСТИТЬ ВТ_РезультатПодготовка
+ИЗ
+    ВТ_ТекущиеПоказания КАК ВТ_ТекущиеПоказания
+        ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВсеПоказания КАК ВТ_ВсеПоказания
+        ПО ВТ_ТекущиеПоказания.Счетчик = ВТ_ВсеПоказания.Счетчик
+            И ВТ_ТекущиеПоказания.ДатаПоказания &gt; ВТ_ВсеПоказания.ДатаПредПоказания
+            И (ВЫБОР
+                КОГДА ВТ_ВсеПоказания.ЭтоНачальноеПоказание
+                    ТОГДА ВТ_ТекущиеПоказания.ЭтоНачальноеПоказание = ЛОЖЬ
+                ИНАЧЕ ИСТИНА
+            КОНЕЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+    ВТ_РезультатПодготовка.ДатаПоказания КАК ДатаПоказания,
+    ВТ_РезультатПодготовка.Счетчик КАК Счетчик,
+    ВТ_РезультатПодготовка.ДневноеПоказание КАК ДневноеПоказание,
+    ВТ_РезультатПодготовка.НочноеПоказание КАК НочноеПоказание,
+    ВТ_РезультатПодготовка.ПиковоеПоказание КАК ПиковоеПоказание,
+    ВТ_РезультатПодготовка.ДатаПредПоказания КАК ДатаПредПоказания,
+    ВТ_РезультатПодготовка.ДневноеПредПоказание КАК ДневноеПредПоказание,
+    ВТ_РезультатПодготовка.НочноеПредПоказание КАК НочноеПредПоказание,
+    ВТ_РезультатПодготовка.ПиковоеПредПоказание КАК ПиковоеПредПоказание
+ИЗ
+    ВТ_РезультатПодготовка КАК ВТ_РезультатПодготовка
+        ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РезультатПодготовка КАК Т
+        ПО ВТ_РезультатПодготовка.Счетчик = Т.Счетчик
+            И ВТ_РезультатПодготовка.ДатаПоказания &lt; Т.ДатаПоказания
+            И ВТ_РезультатПодготовка.АвтоНомер &lt;&gt; Т.АвтоНомер
+ГДЕ
+    Т.ДатаПоказания ЕСТЬ NULL</query>
 	</dataSet>
 	<dataSetLink>
 		<sourceDataSet>ДанныеПоПриборамУчета</sourceDataSet>
@@ -877,6 +1047,26 @@
 	<totalField>
 		<dataPath>ВидУслуги</dataPath>
 		<expression>Максимум(ВидУслуги)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДневноеПредПоказание</dataPath>
+		<expression>Максимум(ДневноеПредПоказание)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НочноеПредПоказание</dataPath>
+		<expression>Максимум(НочноеПредПоказание)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаПредПоказания</dataPath>
+		<expression>Максимум(ДатаПредПоказания)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПиковоеПредПоказание</dataPath>
+		<expression>Максимум(ПиковоеПредПоказание)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Комментарий</dataPath>
+		<expression>Максимум(Комментарий)</expression>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -1035,6 +1225,9 @@
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>Разрядность</dcsset:field>
 					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Комментарий</dcsset:field>
+					</dcsset:item>
 					<dcsset:placement>Together</dcsset:placement>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -1061,6 +1254,24 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>НочноеПоказание</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предыдущие показания</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаПредПоказания</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДневноеПредПоказание</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НочноеПредПоказание</dcsset:field>
 					</dcsset:item>
 					<dcsset:placement>Auto</dcsset:placement>
 				</dcsset:item>
@@ -1098,11 +1309,6 @@
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Организация</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
