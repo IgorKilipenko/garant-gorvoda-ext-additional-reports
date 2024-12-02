@@ -54,7 +54,7 @@
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2" configVersion="af2a18ac4d840ec0af3f04c274ce3e5b12947e27"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="6c7ab2840fd3cc29f502ce0e9a6384fb59ff884f"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="9df2884509439caea45bcb32eee37e56a97f35bf"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="608f3271a89b10171bd96692d853676fae7983da"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -79,11 +79,9 @@
 			<Metadata name="Enum.УПЖКХ_РазделыУчета.EnumValue.Пени" id="8d8b45c3-30f8-4f5f-92c3-97fa8c74cfed"/>
 		</Metadata>
 		<Metadata name="Language.Русский" id="44f6a684-9fe1-469e-9a55-91239dd938e6" configVersion="44ad2cfdada2925adf58ec52fbf069567f42dd12"/>
-		<Metadata name="Report.ГП_CписокCчетчиков" id="ad0a1d23-b059-4e00-8508-8d449d63c55d" configVersion="661700d65efd74014a53dcf6932fb724c9178334"/>
-		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных" id="70900434-02bc-42d3-aa64-9b515250468d" configVersion="f0f9e601fbe8480cbdb945d4ba17fe97c05d8019"/>
-		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="70900434-02bc-42d3-aa64-9b515250468d.0" configVersion="f6213dd85b99af793e1733b0ff5430ee5115a961"/>
-		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных1" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c" configVersion="db0e6d1954c27f656b72b07e242b6343ed6aba56"/>
-		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных1.Template" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c.0" configVersion="560aae2f38efe7abd43d3e8eb3ba49ea9451c7ad"/>
+		<Metadata name="Report.ГП_CписокCчетчиков" id="ad0a1d23-b059-4e00-8508-8d449d63c55d" configVersion="cd4fe32254b083c5c87d8f37008216e38d4108d2"/>
+		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c" configVersion="b8c43f7675d91832a088b4c614f095f677cd749e"/>
+		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c.0" configVersion="3a733c2ac7e000b2494e3be4ae9cb2413ac1988b"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту" id="e80d272f-690c-4b56-9bed-1049e67ac8c8" configVersion="c108048dc38a3b182a60052972fefce17283150c"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.ManagerModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.2" configVersion="051fa1b7a12957be9ef3564b1e1c213d6cfb1737"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.ObjectModule" id="e80d272f-690c-4b56-9bed-1049e67ac8c8.0" configVersion="a9e4ed0ef6a1e1e58e279111e2e65f67be06ba55"/>
