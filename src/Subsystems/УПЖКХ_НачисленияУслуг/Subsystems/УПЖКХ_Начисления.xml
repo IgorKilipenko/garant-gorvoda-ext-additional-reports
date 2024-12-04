@@ -14,6 +14,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ОтчетПоДебиторам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ОтчетПоШифрам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_CписокCчетчиков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_СпискиАбонентовСЮрАдресами</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
