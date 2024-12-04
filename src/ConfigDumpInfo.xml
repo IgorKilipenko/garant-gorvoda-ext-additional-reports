@@ -54,7 +54,7 @@
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2" configVersion="af2a18ac4d840ec0af3f04c274ce3e5b12947e27"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="6c7ab2840fd3cc29f502ce0e9a6384fb59ff884f"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="b131a55e46f670a360c49eb63d215b44fe869cb9"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="e8e75381c8e2e4229b81c204bfd6fbe0367c7738"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -142,9 +142,9 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="27e02ca9158a6e51f6cbfbd6b439061530eccc3a"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="01f0801e9079c605a3af14d22481ad0016ffaa0f"/>
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами" id="c50dc0d7-7039-4857-a37d-6a9c270370a5" configVersion="5a0a0792a0f86dc9ee9e36dd6baf601103fd2689"/>
-		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.ObjectModule" id="c50dc0d7-7039-4857-a37d-6a9c270370a5.0" configVersion="a8eabbc54c27f69009f7915f494a659394218071"/>
+		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.ObjectModule" id="c50dc0d7-7039-4857-a37d-6a9c270370a5.0" configVersion="8804be8fabbf4f458e8e1b8ea5388a6fe58c9e64"/>
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5" configVersion="480d3c1bf979a1641ef9bb560456d11d5a28a23d"/>
-		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5.0" configVersion="18f36d612a72dc2475a2a908da9780574d851dae"/>
+		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5.0" configVersion="6deca54a95478b56c3d130c98880a1f20068b54e"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП" id="49d418b2-77d3-48e4-9b25-e85578e1b41d" configVersion="9b027995d814f25a3081fb36e98e10c7fdd31b4a"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
