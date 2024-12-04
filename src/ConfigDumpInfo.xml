@@ -144,7 +144,7 @@
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами" id="c50dc0d7-7039-4857-a37d-6a9c270370a5" configVersion="5a0a0792a0f86dc9ee9e36dd6baf601103fd2689"/>
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.ObjectModule" id="c50dc0d7-7039-4857-a37d-6a9c270370a5.0" configVersion="a8eabbc54c27f69009f7915f494a659394218071"/>
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5" configVersion="480d3c1bf979a1641ef9bb560456d11d5a28a23d"/>
-		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5.0" configVersion="87cf43aba228cb1c76577a6e2aac0e55b7831317"/>
+		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5.0" configVersion="18f36d612a72dc2475a2a908da9780574d851dae"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП" id="49d418b2-77d3-48e4-9b25-e85578e1b41d" configVersion="9b027995d814f25a3081fb36e98e10c7fdd31b4a"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
