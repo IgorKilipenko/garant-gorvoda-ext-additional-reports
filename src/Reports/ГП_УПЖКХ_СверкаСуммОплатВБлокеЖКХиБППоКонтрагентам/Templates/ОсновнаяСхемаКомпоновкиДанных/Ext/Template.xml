@@ -806,36 +806,12 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
 						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
 							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
@@ -908,11 +884,11 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14.125</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14.125</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
@@ -922,6 +898,14 @@
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
 							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
@@ -964,11 +948,11 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
@@ -978,6 +962,14 @@
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
 							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
@@ -1055,54 +1047,6 @@
 						<dcsat:value xsi:type="v8:LocalStringType">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Лицевой счет</v8:content>
-							</v8:item>
-						</dcsat:value>
-					</dcsat:item>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">#D9EAD3</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>СтильГраницы</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
-								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
-							</dcscor:value>
-							<dcscor:item>
-								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
-								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
-									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
-								</dcscor:value>
-							</dcscor:item>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>Размещение</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:item xsi:type="dcsat:Field">
-						<dcsat:value xsi:type="v8:LocalStringType">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
 								<v8:content>Документ регистрации оплаты</v8:content>
 							</v8:item>
 						</dcsat:value>
@@ -1134,59 +1078,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:item xsi:type="dcsat:Field">
-						<dcsat:value xsi:type="v8:LocalStringType">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Идентификатор платежа</v8:content>
-							</v8:item>
-						</dcsat:value>
-					</dcsat:item>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">#D9EAD3</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>СтильГраницы</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
-								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
-							</dcscor:value>
-							<dcscor:item>
-								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
-								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
-									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
-								</dcscor:value>
-							</dcscor:item>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>Размещение</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1227,6 +1123,14 @@
 						<dcscor:item>
 							<dcscor:parameter>Размещение</dcscor:parameter>
 							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1330,11 +1234,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14.125</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14.125</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1381,6 +1285,14 @@
 						<dcscor:item>
 							<dcscor:parameter>Размещение</dcscor:parameter>
 							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30.125</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1576,11 +1488,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1627,6 +1539,14 @@
 						<dcscor:item>
 							<dcscor:parameter>Размещение</dcscor:parameter>
 							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">33</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1759,21 +1679,39 @@
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#D9EAD3</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
 						</dcscor:item>
 						<dcscor:item>
-							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
@@ -1781,26 +1719,6 @@
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">10.625</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -2304,13 +2222,7 @@
 							<dcsset:field>Контрагент</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ЛицевойСчет</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ДокументРегистрацииОплаты</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>НомерСтроки</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>Сумма</dcsset:field>
