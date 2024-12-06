@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>1.5.0.1-rc1</Version>
+			<Version>1.6.4.0-dev1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -64,9 +64,11 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>УПЖКХ_НачисленияУслуг</Subsystem>
+			<Subsystem>УПЖКХ_УправлениеЛицевымиСчетами</Subsystem>
 			<StyleItem>ЗаголовкиСтрокШрифт</StyleItem>
 			<StyleItem>ЗаголовкиСтрокЦветТекста</StyleItem>
 			<StyleItem>СодержаниеУслугиШрифт</StyleItem>
+			<Role>ГП_ИспользованиеДополнительныхОтчетов</Role>
 			<CommonModule>ГП_РаботаСОтчетами</CommonModule>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
@@ -90,6 +92,11 @@
 			<Report>ГП_ОСВПоАбоненту</Report>
 			<Report>ГП_ОтчетПоДебиторам</Report>
 			<Report>ГП_ОтчетПоШифрам</Report>
+			<Report>ГП_CписокCчетчиков</Report>
+			<Report>УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП</Report>
+			<Report>ГП_СпискиАбонентовСЮрАдресами</Report>
+			<Report>ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам</Report>
+			<Report>ГП_ЗаполненностьСведенийАбонентов</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>

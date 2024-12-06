@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Report uuid="49d418b2-77d3-48e4-9b25-e85578e1b41d">
+		<InternalInfo>
+			<xr:GeneratedType name="ReportObject.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП" category="Object">
+				<xr:TypeId>c44e821e-b28d-466a-9809-28a8dd9576b9</xr:TypeId>
+				<xr:ValueId>f7edda6a-7dcc-45d5-adaa-7ea26dd08433</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ReportManager.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП" category="Manager">
+				<xr:TypeId>a0fbca05-5d3a-4a7f-859d-79e1e9d25771</xr:TypeId>
+				<xr:ValueId>c1b25a4f-2d39-4e70-bb28-9c4815c0c901</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>f45d9301-9b24-46a0-b74e-9a74b000481a</ExtendedConfigurationObject>
+			<MainDataCompositionSchema>Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+		</Properties>
+		<ChildObjects>
+			<Template>ГП_ОсновнаяСхемаКомпоновкиДанных</Template>
+		</ChildObjects>
+	</Report>
+</MetaDataObject>
