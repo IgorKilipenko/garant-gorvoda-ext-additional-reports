@@ -225,14 +225,14 @@
 {ГДЕ
 	(ВТ_ДоговорыАбонентов.Договор = &amp;Договор),
 	(ВТ_ДоговорыАбонентов.Контрагент = &amp;Контрагент),
-	(ВТ_СведенияДляВзаиморасчетовПоЛСАбонентов.ЛицевойСчет = &amp;ЛицевойСчет),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления = &amp;ВидПотребления),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;СпособФинансирование),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель = &amp;Договородержатель),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика = &amp;Характеристика),
-	(ВТ_ВидыТарифовПотребителейЛицевыхСчетов.ВидТарифаПотребителя = &amp;ВидТарифаПотребителя)}
+	(ЕСТЬNULL(ВТ_СведенияДляВзаиморасчетовПоЛСАбонентов.ЛицевойСчет, ЗНАЧЕНИЕ(Справочник.КВП_ЛицевыеСчета.ПустаяСсылка)) = &amp;ЛицевойСчет),
+	(ЕСТЬNULL(ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления, ЗНАЧЕНИЕ(Справочник.lc_ГруппыПотребителей.ПустаяСсылка)) = &amp;ВидПотребления),
+	(ЕСТЬNULL(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование, ЗНАЧЕНИЕ(Справочник.lc_СпособыФинансирования.ПустаяСсылка)) = &amp;СпособФинансирование),
+	(ЕСТЬNULL(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор, ЗНАЧЕНИЕ(Справочник.lc_Водозаборы.ПустаяСсылка)) = &amp;Водозабор),
+	(ЕСТЬNULL(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель, ЗНАЧЕНИЕ(Справочник.lc_Контролеры.ПустаяСсылка)) = &amp;Договородержатель),
+	(ЕСТЬNULL(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер, ЗНАЧЕНИЕ(Справочник.lc_Контролеры.ПустаяСсылка)) = &amp;Контролер),
+	(ЕСТЬNULL(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика, ЗНАЧЕНИЕ(Справочник.lc_ХарактеристикиОбъекта.ПустаяСсылка)) = &amp;Характеристика),
+	(ЕСТЬNULL(ВТ_ВидыТарифовПотребителейЛицевыхСчетов.ВидТарифаПотребителя, ЗНАЧЕНИЕ(Справочник.lc_ВидыТарифов.ПустаяСсылка)) = &amp;ВидТарифаПотребителя)}
 </query>
 	</dataSet>
 	<parameter>
@@ -400,7 +400,12 @@
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по заполненности сведений абонентов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -525,7 +530,113 @@
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Водозабор</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Водозабор</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Договородержатель</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Договородержатель</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Контролер</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Контролер</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СпособФинансирование</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СпособФинансирование</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Характеристика</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Характеристика</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:LightSalmon</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
 			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполненность сведений абонентов</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
