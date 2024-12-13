@@ -895,7 +895,7 @@
 			<c>
 				<c>
 					<f>63</f>
-					<parameter>СуммаНачисления</parameter>
+					<parameter>КоличествоНачисления</parameter>
 				</c>
 			</c>
 			<c>
@@ -1000,7 +1000,7 @@
 			<c>
 				<c>
 					<f>72</f>
-					<parameter>СуммаВсего</parameter>
+					<parameter>КоличествоУслуга</parameter>
 				</c>
 			</c>
 			<c>
@@ -1104,7 +1104,7 @@
 			<c>
 				<c>
 					<f>83</f>
-					<parameter>СуммаНачисления</parameter>
+					<parameter>КоличествоНачисления</parameter>
 				</c>
 			</c>
 			<c>
@@ -1209,7 +1209,7 @@
 			<c>
 				<c>
 					<f>91</f>
-					<parameter>СуммаВсего</parameter>
+					<parameter>КоличествоУслуга</parameter>
 				</c>
 			</c>
 			<c>
@@ -1314,7 +1314,7 @@
 			<c>
 				<c>
 					<f>99</f>
-					<parameter>ИтоговаяСуммаНачисления</parameter>
+					<parameter>ИтоговоеКоличествоНачисления</parameter>
 				</c>
 			</c>
 			<c>
