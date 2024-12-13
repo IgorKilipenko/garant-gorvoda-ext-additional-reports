@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="ffacf866-925e-47ee-8350-8cf84d7e97da">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.КВП_ВидыТарифов" category="Ref">
+				<xr:TypeId>74e94c69-87ab-4938-995c-09df96b8896c</xr:TypeId>
+				<xr:ValueId>813fbde4-c2ab-44e4-8e02-f32d922c1e1b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.КВП_ВидыТарифов" category="Manager">
+				<xr:TypeId>2c7ea8f4-ba42-455a-a9e2-43b7a3eb7b45</xr:TypeId>
+				<xr:ValueId>9a10c22e-e0a3-46b5-9d06-32c766fea5c1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.КВП_ВидыТарифов" category="List">
+				<xr:TypeId>9b8bc386-d2ef-4fcd-ab75-7e3c62b34543</xr:TypeId>
+				<xr:ValueId>d96cfb02-6383-4a09-a9d7-97ff728f8900</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>КВП_ВидыТарифов</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>794e0bd2-f1f6-43df-9d09-6c1412b1b958</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="ede59c15-84dc-40d0-84e0-890e3fcb9900">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Дневной</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>11c13422-2a99-410d-80fc-1f657c135255</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>
