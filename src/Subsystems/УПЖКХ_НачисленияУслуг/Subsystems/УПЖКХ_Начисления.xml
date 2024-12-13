@@ -17,6 +17,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_СпискиАбонентовСЮрАдресами</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_СписокАбонентовОбъемПпоДоговору</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ПоказанияСчетчиковДляМКД</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
