@@ -97,7 +97,7 @@
 			<Report>ГП_СпискиАбонентовСЮрАдресами</Report>
 			<Report>ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам</Report>
 			<Report>ГП_ЗаполненностьСведенийАбонентов</Report>
-			<Report>ГП_Списки</Report>
+			<Report>ГП_СписокАбонентовОбъемПпоДоговору</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
