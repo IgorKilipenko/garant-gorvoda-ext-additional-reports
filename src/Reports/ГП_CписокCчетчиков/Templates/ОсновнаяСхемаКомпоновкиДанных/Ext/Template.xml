@@ -282,6 +282,7 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Договор</dataPath>
 			<field>Договор</field>
+			<presentationExpression>НомерДоговора</presentationExpression>
 			<valueType>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
 			</valueType>
@@ -336,6 +337,26 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Пасп. период поверки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДоговора</dataPath>
+			<field>НомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодМКД</dataPath>
+			<field>КодМКД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код МКД</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -744,6 +765,7 @@
     ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика,
     ЕСТЬNULL(ВТ_СобственникиКонтрагентыДоговорыЛС.ОтветственныйВладелец, ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)) КАК ОтветственныйВладелец,
     ЕСТЬNULL(ВТ_СобственникиКонтрагентыДоговорыЛС.Договор, ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+    ЕСТЬNULL(ВТ_СобственникиКонтрагентыДоговорыЛС.Договор.Номер, "") КАК НомерДоговора,
     ЕСТЬNULL(ВТ_СобственникиКонтрагентыДоговорыЛС.Контрагент, ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)) КАК Контрагент,
     ВТ_СобственникиКонтрагентыДоговорыЛС.ПериодСведений КАК ПериодСведений
 ИЗ
@@ -1009,6 +1031,24 @@
 		<sourceExpression>Счетчик</sourceExpression>
 		<destinationExpression>Счетчик</destinationExpression>
 	</dataSetLink>
+	<calculatedField>
+		<dataPath>ЧисловойНомерДоговора</dataPath>
+		<expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(НомерДоговора)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Числовой номер договора</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
 	<totalField>
 		<dataPath>ЗаводскойНомер</dataPath>
 		<expression>Максимум(ЗаводскойНомер)</expression>
@@ -1100,6 +1140,14 @@
 	<totalField>
 		<dataPath>МежпроверочныйИнтервал</dataPath>
 		<expression>Максимум(МежпроверочныйИнтервал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧисловойНомерДоговора</dataPath>
+		<expression>Максимум(ЧисловойНомерДоговора)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НомерДоговора</dataPath>
+		<expression>Максимум(НомерДоговора)</expression>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -1401,6 +1449,20 @@
 					<dcsset:userSettingID>f008befe-56da-4047-a4f4-e302bdf64f2a</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЧисловойНомерДоговора</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Договор</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
@@ -1465,17 +1527,7 @@
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
-					<dcsset:item xsi:type="dcsset:OrderItemAuto">
-						<dcsset:use>false</dcsset:use>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:OrderItemField">
-						<dcsset:field>Контрагент</dcsset:field>
-						<dcsset:orderType>Asc</dcsset:orderType>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:OrderItemField">
-						<dcsset:field>Договор</dcsset:field>
-						<dcsset:orderType>Asc</dcsset:orderType>
-					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
@@ -1483,14 +1535,45 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Контрагент</dcsset:field>
+							<dcsset:field>Договор</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Договор</dcsset:field>
+							<dcsset:field>Контрагент</dcsset:field>
 						</dcsset:item>
 						<dcsset:placement>Together</dcsset:placement>
 					</dcsset:item>
 				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Договор</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">НомерДоговора</dcsset:left>
+								<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>&lt;...&gt;</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>РасположениеРесурсов</dcscor:parameter>

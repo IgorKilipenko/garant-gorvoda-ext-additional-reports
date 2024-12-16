@@ -87,7 +87,7 @@
 		<Metadata name="Language.Русский" id="44f6a684-9fe1-469e-9a55-91239dd938e6" configVersion="44ad2cfdada2925adf58ec52fbf069567f42dd12"/>
 		<Metadata name="Report.ГП_CписокCчетчиков" id="ad0a1d23-b059-4e00-8508-8d449d63c55d" configVersion="cd4fe32254b083c5c87d8f37008216e38d4108d2"/>
 		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c" configVersion="b8c43f7675d91832a088b4c614f095f677cd749e"/>
-		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c.0" configVersion="3a733c2ac7e000b2494e3be4ae9cb2413ac1988b"/>
+		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c.0" configVersion="f8fbaf6537ecaca09cf7e966ae10a2e0f0dd9d22"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов" id="4c0008ad-186c-462b-9a41-7463b356a0d0" configVersion="1be5e5e431a369a5dbbf47740954b5d463845baf"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ObjectModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.0" configVersion="53796f4c48786f61838272161d26f66cb2b39047"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae" configVersion="3bedb74d9be45424a3b719e3db502036357e8244"/>
