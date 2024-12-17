@@ -14,6 +14,13 @@
 				<IsFolder>false</IsFolder>
 				<ExtensionState>AdoptedCheck</ExtensionState>
 			</Item>
+			<Item id="b2ed0efd-a3f6-4e5d-a9b1-070f791e02af">
+				<Name>ТелефонКонтрагента</Name>
+				<Code/>
+				<Description>Телефон</Description>
+				<IsFolder>false</IsFolder>
+				<ExtensionState>AdoptedCheck</ExtensionState>
+			</Item>
 		</ChildItems>
 	</Item>
 </PredefinedData>
