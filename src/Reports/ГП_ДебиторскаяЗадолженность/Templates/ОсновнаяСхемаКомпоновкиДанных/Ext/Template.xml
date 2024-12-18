@@ -283,6 +283,10 @@
     И РеализацияБУ.ВидСубконтоДт2 = &amp;ПВХ_Договоры
     И РеализацияБУ.ВидСубконтоКт1 = &amp;ПВХ_НоменклатурныеГруппы
     И РеализацияБУ.ВидСубконтоКт3 = &amp;ПВХ_Номенклатура
+{ГДЕ
+    ((ВЫРАЗИТЬ(РеализацияБУ.СубконтоДт1 КАК Справочник.Контрагенты)) = &amp;Контрагент),
+    ((ВЫРАЗИТЬ(РеализацияБУ.СубконтоДт2 КАК Справочник.ДоговорыКонтрагентов)) = &amp;Договор),
+    ((ВЫРАЗИТЬ(РеализацияБУ.СубконтоКт1 КАК Справочник.НоменклатурныеГруппы)) = &amp;НоменклатурнаяГруппа)}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -538,6 +542,48 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
+		<name>Контрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Договор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НоменклатурнаяГруппа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатурная группа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -789,6 +835,24 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контрагент</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>247a6250-0fbd-4840-8ec0-21bfaa3aca94</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Договор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>5af0414c-ce6c-4fde-a6fd-086c1584bfff</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатурнаяГруппа</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>36e393d9-44a1-4a1a-abda-df425eaa3c9c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НачалоПериода</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>0e546444-0a15-4239-b5a2-ff5e5769ba28</dcsset:userSettingID>
@@ -880,6 +944,10 @@
 					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>Текст</dcscor:parameter>
 							<dcscor:value xsi:type="v8:LocalStringType">
 								<v8:item>
@@ -901,6 +969,10 @@
 					</dcsset:selection>
 					<dcsset:filter/>
 					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>Текст</dcscor:parameter>
 							<dcscor:value xsi:type="v8:LocalStringType">
@@ -924,6 +996,10 @@
 					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>Текст</dcscor:parameter>
 							<dcscor:value xsi:type="v8:LocalStringType">
 								<v8:item>
@@ -946,6 +1022,10 @@
 					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>Текст</dcscor:parameter>
 							<dcscor:value xsi:type="v8:LocalStringType">
 								<v8:item>
@@ -967,6 +1047,10 @@
 					</dcsset:selection>
 					<dcsset:filter/>
 					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>Текст</dcscor:parameter>
 							<dcscor:value xsi:type="v8:LocalStringType">
@@ -1006,37 +1090,12 @@
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:groupItems>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>Номенклатура</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-					</dcsset:groupItems>
 					<dcsset:order>
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
-					<dcsset:item xsi:type="dcsset:StructureItemGroup">
-						<dcsset:order>
-							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-						</dcsset:order>
-						<dcsset:selection>
-							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-						</dcsset:selection>
-					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
