@@ -21,10 +21,10 @@
 			</Synonym>
 			<Comment>// Гарант+</Comment>
 			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>Report.ГП_ОтчетПоКлиентам.Form.ФормаОтчета</DefaultForm>
+			<DefaultForm/>
 			<AuxiliaryForm/>
 			<MainDataCompositionSchema>Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
-			<DefaultSettingsForm>Report.ГП_ОтчетПоКлиентам.Form.ФормаНастроек</DefaultSettingsForm>
+			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>
 			<VariantsStorage/>

@@ -107,6 +107,14 @@
 					<v8:content>Сумма (руб.)</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Сумма</dataPath>
@@ -117,6 +125,14 @@
 					<v8:content>Всего (руб.)</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>АдресЛС</dataPath>
@@ -137,6 +153,14 @@
 					<v8:content>Объем (м3)</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Счет</dataPath>
@@ -225,6 +249,13 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Содержание</dataPath>
 			<field>Содержание</field>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ЛицевойСчет</dataPath>
@@ -258,6 +289,10 @@
 					<v8:content>Здание</v8:content>
 				</v8:item>
 			</title>
+			<presentationExpression>ВЫБОР КОГДА СТРОКА(Здание) = "" ТОГДА "&lt;..&gt;" ИНАЧЕ СТРОКА(Здание) КОНЕЦ</presentationExpression>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.КВП_Здания</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ГруппаУслуг</dataPath>
@@ -281,16 +316,6 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Вид потребления</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Финансирование</dataPath>
-			<field>Финансирование</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Финансирование</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -367,12 +392,138 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВидПотребителя</dataPath>
-			<field>ВидПотребителя</field>
+			<dataPath>СчетДт</dataPath>
+			<field>СчетДт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубконтоКт2</dataPath>
+			<field>СубконтоКт2</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Вид потребителя</v8:content>
+					<v8:content>Субконто кт2</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетКт</dataPath>
+			<field>СчетКт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубконтоДт1</dataPath>
+			<field>СубконтоДт1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто дт1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубконтоДт2</dataPath>
+			<field>СубконтоДт2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто дт2</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубконтоДт3</dataPath>
+			<field>СубконтоДт3</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто дт3</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубконтоКт1</dataPath>
+			<field>СубконтоКт1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто кт1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаКор</dataPath>
+			<field>ВалютаКор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СубконтоКт3</dataPath>
+			<field>СубконтоКт3</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто кт3</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто1</dataPath>
+			<field>Субконто1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто2</dataPath>
+			<field>Субконто2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто3</dataPath>
+			<field>Субконто3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто1</dataPath>
+			<field>КорСубконто1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто2</dataPath>
+			<field>КорСубконто2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто3</dataPath>
+			<field>КорСубконто3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаДт</dataPath>
+			<field>ВалютаДт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаКт</dataPath>
+			<field>ВалютаКт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКор</dataPath>
+			<field>ПодразделениеКор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеДт</dataPath>
+			<field>ПодразделениеДт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКт</dataPath>
+			<field>ПодразделениеКт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АвтоНомер</dataPath>
+			<field>АвтоНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авто номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СпособФинансирование</dataPath>
+			<field>СпособФинансирование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ финансирование</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -620,8 +771,6 @@
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
     ДинамическиеПоказателиЛицевыхСчетов.Период КАК Период,
     ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет КАК ЛицевойСчет,
-    ДинамическиеПоказателиЛицевыхСчетов.ПроцентВодоотведенияХВС КАК ПроцентВодоотведенияХВС,
-    ДинамическиеПоказателиЛицевыхСчетов.ПроцентВодоотведенияГВС КАК ПроцентВодоотведенияГВС,
     ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
     ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления.Шифр КАК Шифр,
     ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
@@ -632,9 +781,11 @@
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетов
 ИЗ
     РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода, ) КАК ДинамическиеПоказателиЛицевыхСчетов
+    //ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
         ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ЛицевыеСчета КАК ВТ_ЛицевыеСчета
         ПО ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет = ВТ_ЛицевыеСчета.ЛицевойСчет
         ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ГП_ВидыТарифовПотребителейЛицевыхСчетов.СрезПоследних(&amp;КонецПериода, ) КАК ВидыТарифовПотребителейЛицевыхСчетов
+        // ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ВидыТарифовПотребителейЛицевыхСчетов КАК ВидыТарифовПотребителейЛицевыхСчетов
         ПО (ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет = ВидыТарифовПотребителейЛицевыхСчетов.ЛицевойСчет)
 ;
 
@@ -712,8 +863,8 @@
     ВТ_РезультатСоединениеНеуникальные.Здание КАК Здание,
     ВТ_РезультатСоединениеНеуникальные.Собственник КАК Собственник,
     ВТ_РезультатСоединениеНеуникальные.Шифр КАК Шифр,
-    ВЫРАЗИТЬ(ВТ_РезультатСоединениеНеуникальные.ВидПотребления КАК Справочник.lc_ГруппыПотребителей) КАК ВидПотребления,
-    ВТ_РезультатСоединениеНеуникальные.Финансирование КАК Финансирование,
+    ВТ_РезультатСоединениеНеуникальные.ВидПотребления КАК ВидПотребления,
+    ВТ_РезультатСоединениеНеуникальные.Финансирование КАК СпособФинансирование,
     ВТ_РезультатСоединениеНеуникальные.Контролер КАК Контролер,
     ВТ_РезультатСоединениеНеуникальные.Договородержатель КАК Договородержатель,
     ВТ_РезультатСоединениеНеуникальные.Водозабор КАК Водозабор,
@@ -744,7 +895,7 @@
     Здание.* КАК Здание,
     Шифр КАК Шифр,
     ВидПотребления КАК ВидПотребления,
-    Финансирование КАК Финансирование,
+    СпособФинансирование КАК СпособФинансирование,
     Контролер КАК Контролер,
     Договородержатель КАК Договородержатель,
     Водозабор КАК Водозабор,
@@ -765,7 +916,7 @@
     (ВТ_РезультатСоединениеНеуникальные.ЛицевойСчет = &amp;ЛицевойСчет),
     (ВТ_РезультатСоединениеНеуникальные.Водозабор = &amp;Водозабор),
     (ВТ_РезультатСоединениеНеуникальные.Контролер = &amp;Контролер),
-    (ВТ_РезультатСоединениеНеуникальные.Финансирование = &amp;Финансирование),
+    (ВТ_РезультатСоединениеНеуникальные.Финансирование = &amp;СпособФинансирование),
     (ВТ_РезультатСоединениеНеуникальные.ВидПотребления = &amp;ВидПотребления),
     (ВТ_РезультатСоединениеНеуникальные.ВидТарифаПотребителя = &amp;ГруппаПотребителя),
     (ВЫРАЗИТЬ(ВТ_РезультатСоединениеНеуникальные.Регистратор КАК Документ.РеализацияТоваровУслуг)).* КАК Регистратор,
@@ -791,7 +942,6 @@
     ВТ_РезультатСоединениеНеуникальные.Помещение.* КАК Помещение,
     ВТ_РезультатСоединениеНеуникальные.Здание.* КАК Здание,
     ВТ_РезультатСоединениеНеуникальные.Собственник КАК Собственник}</query>
-		<autoFillFields>false</autoFillFields>
 	</dataSet>
 	<totalField>
 		<dataPath>Количество</dataPath>
@@ -809,6 +959,113 @@
 		<dataPath>СуммаНУ</dataPath>
 		<expression>Сумма(СуммаНУ)</expression>
 	</totalField>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СписокНоменклатурныхГрупп</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатурные группы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Контрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Контролер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контролер</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Водозабор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Водозабор</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СпособФинансирование</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Способ финансирование</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидПотребления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид потребления</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
@@ -846,26 +1103,6 @@
 		<useRestriction>true</useRestriction>
 		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 		<availableAsField>false</availableAsField>
-	</parameter>
-	<parameter>
-		<name>ПериодОтчета</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Период отчета</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>v8:StandardPeriod</v8:Type>
-		</valueType>
-		<value xsi:type="v8:StandardPeriod">
-			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
-			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
-			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
-		</value>
-		<useRestriction>false</useRestriction>
-		<denyIncompleteValues>true</denyIncompleteValues>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>НомГруппаВодоотведение</name>
@@ -928,21 +1165,6 @@
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
-		<name>СписокНоменклатурныхГрупп</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Номенклатурные группы</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-		<valueListAllowed>true</valueListAllowed>
-	</parameter>
-	<parameter>
 		<name>СписокНомГруппНВ</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -973,53 +1195,6 @@
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
-		<name>Водозабор</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Водозабор</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Контролер</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Контролер</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ЛицевойСчет</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Лицевой счет</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Финансирование</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Финансирование</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>ГруппаПотребителя</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -1031,28 +1206,22 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ВидПотребителя</name>
+		<name>Первые</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Вид потребителя</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Контрагент</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Контрагент</v8:content>
+				<v8:content>Первые</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
 		</valueType>
-		<value xsi:nil="true"/>
+		<value xsi:type="xs:decimal">0</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -1060,7 +1229,7 @@
 		<dcsset:presentation xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Основной</v8:content>
+				<v8:content>Отчет по клиентам</v8:content>
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
@@ -1121,9 +1290,9 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Водозабор</dcscor:parameter>
+					<dcscor:parameter>Контрагент</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>481d0e1c-d8fd-4fc4-920a-65af2ac5caad</dcsset:userSettingID>
+					<dcsset:userSettingID>8da54b3c-c98e-4b7a-80f7-1c7d7b36902f</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -1135,31 +1304,28 @@
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>b61da6dc-e47a-4442-b44c-f96b1480ff73</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:parameter>Водозабор</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>fb871c82-9361-4758-8cf4-2f7eb2ebb8ef</dcsset:userSettingID>
+					<dcsset:userSettingID>481d0e1c-d8fd-4fc4-920a-65af2ac5caad</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СпособФинансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидПотребления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ГруппаПотребителя</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>4d1f24ca-e846-44ed-bd75-8dc09904f018</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ВидПотребителя</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>547df2bd-1339-4485-b9bd-a2855cf5357f</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Контрагент</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>8da54b3c-c98e-4b7a-80f7-1c7d7b36902f</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -1179,27 +1345,6 @@
 				<dcsset:userSettingID>b67a2cc2-9f41-4ead-98b6-f011ab8aa727</dcsset:userSettingID>
 			</dcsset:order>
 			<dcsset:conditionalAppearance>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Шифр</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter/>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
-					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
-					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-					<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
-					<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
-					<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
-				</dcsset:item>
 				<dcsset:viewMode>Normal</dcsset:viewMode>
 				<dcsset:userSettingID>fac6a7d3-63a7-49e1-b6f0-a47547b2b15b</dcsset:userSettingID>
 			</dcsset:conditionalAppearance>
@@ -1225,6 +1370,18 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаНУ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаНДС</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Сумма</dcsset:field>
+						</dcsset:item>
 					</dcsset:selection>
 				</dcsset:column>
 				<dcsset:row>
@@ -1237,7 +1394,7 @@
 							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Шифр</dcsset:field>
+							<dcsset:field>Контрагент</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1249,16 +1406,18 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Договор</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Контрагент</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Together</dcsset:placement>
+						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:item>
 						<dcsset:groupItems>
-							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Контрагент</dcsset:field>
-								<dcsset:groupType>Items</dcsset:groupType>
-								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
 								<dcsset:field>Здание</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
@@ -1273,42 +1432,6 @@
 						<dcsset:selection>
 							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 						</dcsset:selection>
-						<dcsset:conditionalAppearance>
-							<dcsset:item>
-								<dcsset:selection>
-									<dcsset:item>
-										<dcsset:field>Здание</dcsset:field>
-									</dcsset:item>
-								</dcsset:selection>
-								<dcsset:filter/>
-								<dcsset:appearance>
-									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-										<dcscor:parameter>Текст</dcscor:parameter>
-										<dcscor:value xsi:type="v8:LocalStringType">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Адрес</v8:content>
-											</v8:item>
-										</dcscor:value>
-									</dcscor:item>
-								</dcsset:appearance>
-								<dcsset:useInGroup>DontUse</dcsset:useInGroup>
-								<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
-								<dcsset:useInOverall>DontUse</dcsset:useInOverall>
-								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-							</dcsset:item>
-							<dcsset:item>
-								<dcsset:selection/>
-								<dcsset:filter/>
-								<dcsset:appearance>
-									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-										<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-										<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
-									</dcscor:item>
-								</dcsset:appearance>
-							</dcsset:item>
-						</dcsset:conditionalAppearance>
 						<dcsset:item>
 							<dcsset:use>false</dcsset:use>
 							<dcsset:groupItems>
