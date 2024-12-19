@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
-	<Report uuid="f969bcba-ccf1-4654-b69f-f79883c10581">
+	<Report uuid="9af171e8-046b-4efb-96bd-c16b822c54e7">
 		<InternalInfo>
-			<xr:GeneratedType name="ReportObject.ГП_СписокАбонентовОбъемПпоДоговору" category="Object">
-				<xr:TypeId>220a246a-6db7-43c6-9eec-1c2b584af877</xr:TypeId>
-				<xr:ValueId>9e7dd9e7-4d52-444c-80d5-3c2348a62d91</xr:ValueId>
+			<xr:GeneratedType name="ReportObject.ГП_НевыписанныеСчета" category="Object">
+				<xr:TypeId>db3dfba8-5950-4dcc-af2b-82edd72563b6</xr:TypeId>
+				<xr:ValueId>608dd146-a3e3-4faa-b748-a19378151608</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ReportManager.ГП_СписокАбонентовОбъемПпоДоговору" category="Manager">
-				<xr:TypeId>bd154ccd-0b1c-4e00-8f39-f8f1d1fdcb8f</xr:TypeId>
-				<xr:ValueId>4cf68dcb-7d87-43a5-adc7-d200483bb5e0</xr:ValueId>
+			<xr:GeneratedType name="ReportManager.ГП_НевыписанныеСчета" category="Manager">
+				<xr:TypeId>8a29638f-1914-484a-8e8d-7ab3a2664b5d</xr:TypeId>
+				<xr:ValueId>7e714790-a813-428b-b606-40f19b5dd486</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ГП_СписокАбонентовОбъемПпоДоговору</Name>
+			<Name>ГП_НевыписанныеСчета</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Списки абонентов с датой договора</v8:content>
+					<v8:content>Невыписанные счета</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment>// Гарант+</Comment>
 			<UseStandardCommands>true</UseStandardCommands>
 			<DefaultForm/>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>Report.ГП_СписокАбонентовОбъемПпоДоговору.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>Report.ГП_НевыписанныеСчета.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>

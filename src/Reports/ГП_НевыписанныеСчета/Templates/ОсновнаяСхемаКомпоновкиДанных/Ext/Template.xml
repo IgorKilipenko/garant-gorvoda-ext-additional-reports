@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЛицевойСчет</dataPath>
+			<field>ЛицевойСчет</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Помещение</dataPath>
+			<field>Помещение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Помещение</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеАдреса</dataPath>
+			<field>ПредставлениеАдреса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление адреса</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Телефоны</dataPath>
+			<field>Телефоны</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефоны</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Здание</dataPath>
+			<field>Здание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Здание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПотребления</dataPath>
+			<field>ВидПотребления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид потребления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СпособФинансирование</dataPath>
+			<field>СпособФинансирование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ финансирование</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водозабор</dataPath>
+			<field>Водозабор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водозабор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договородержатель</dataPath>
+			<field>Договородержатель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договородержатель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контролер</dataPath>
+			<field>Контролер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Организации</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорВзаиморасчетов</dataPath>
+			<field>ДоговорВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор взаиморасчетов</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>НомерДоговора</presentationExpression>
+			<orderExpression>
+				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(НомерДоговора)</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтрагентВзаиморасчетов</dataPath>
+			<field>КонтрагентВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент взаиморасчетов</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДоговора</dataPath>
+			<field>НомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВзаиморасчетыПоЛицевымСчетам.Период КАК Период,
+	ВзаиморасчетыПоЛицевымСчетам.Регистратор КАК Регистратор,
+	ВзаиморасчетыПоЛицевымСчетам.НомерСтроки КАК НомерСтроки,
+	ВзаиморасчетыПоЛицевымСчетам.ВидДвижения КАК ВидДвижения,
+	ВзаиморасчетыПоЛицевымСчетам.ЛицевойСчет КАК ЛицевойСчет,
+	ВзаиморасчетыПоЛицевымСчетам.Услуга КАК Услуга,
+	ВзаиморасчетыПоЛицевымСчетам.МесяцНачисления КАК МесяцНачисления,
+	ВзаиморасчетыПоЛицевымСчетам.Договор КАК Договор,
+	ВзаиморасчетыПоЛицевымСчетам.ВидНачисления КАК ВидНачисления,
+	ВзаиморасчетыПоЛицевымСчетам.МесяцРассрочки КАК МесяцРассрочки,
+	ВзаиморасчетыПоЛицевымСчетам.СуммаНачисления КАК СуммаНачисления
+ПОМЕСТИТЬ ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные
+ИЗ
+	РегистрНакопления.КВП_ВзаиморасчетыПоЛицевымСчетам КАК ВзаиморасчетыПоЛицевымСчетам
+ГДЕ
+	ИСТИНА
+	И ВзаиморасчетыПоЛицевымСчетам.Активность = ИСТИНА
+	И ВзаиморасчетыПоЛицевымСчетам.Период &gt;= &amp;НачалоПериода
+	И ВзаиморасчетыПоЛицевымСчетам.Период &lt;= &amp;КонецПериода
+	И ВзаиморасчетыПоЛицевымСчетам.Организация = &amp;Организация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные.ЛицевойСчет КАК ЛицевойСчет,
+	СУММА(ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные.СуммаНачисления) КАК СуммаНачисления
+ПОМЕСТИТЬ ВТ_ЛицевыеСчетаИмеющиеНачисления
+ИЗ
+	ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные КАК ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные
+ГДЕ
+	ИСТИНА
+	И ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+	И ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные.СуммаНачисления &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные.ЛицевойСчет
+
+ИМЕЮЩИЕ
+	СУММА(ВТ_ВзаиморасчетыПоЛицевымСчетам_Детальные.СуммаНачисления) &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(АктивныеЛицевыеСчетаЗаПериод.Период) КАК Период,
+	АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет КАК ЛицевойСчет
+ПОМЕСТИТЬ ВТ_АктивныеЛицевыеСчетаЗаПериод_Подготовка
+ИЗ
+	(ВЫБРАТЬ
+		ЛицевыеСчета.Период КАК Период,
+		ЛицевыеСчета.ЛицевойСчет КАК ЛицевойСчет
+	ИЗ
+		РегистрСведений.КВП_ЛицевыеСчета КАК ЛицевыеСчета
+	ГДЕ
+		ЛицевыеСчета.Активность = ИСТИНА
+		И ЛицевыеСчета.Период &gt;= &amp;НачалоПериода
+		И ЛицевыеСчета.Период &lt;= &amp;КонецПериода
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ЛицевыеСчета.Период,
+		ЛицевыеСчета.ЛицевойСчет
+	ИЗ
+		РегистрСведений.КВП_ЛицевыеСчета.СрезПоследних(&amp;КонецПериода, ) КАК ЛицевыеСчета) КАК АктивныеЛицевыеСчетаЗаПериод
+ГДЕ
+	ИСТИНА
+	И НЕ АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет В
+				(ВЫБРАТЬ РАЗЛИЧНЫЕ
+					Т.ЛицевойСчет
+				ИЗ
+					ВТ_ЛицевыеСчетаИмеющиеНачисления КАК Т)
+
+СГРУППИРОВАТЬ ПО
+	АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЛицевыеСчета.Период КАК Период,
+	ЛицевыеСчета.Объект КАК Помещение,
+	ВЫРАЗИТЬ(ЛицевыеСчета.Объект.Владелец КАК Справочник.КВП_Здания) КАК Здание,
+	ЛицевыеСчета.ЛицевойСчет КАК ЛицевойСчет,
+	ЛицевыеСчета.Действует КАК Действует
+ПОМЕСТИТЬ ВТ_АктивныеЛицевыеСчетаЗаПериод
+ИЗ
+	РегистрСведений.КВП_ЛицевыеСчета КАК ЛицевыеСчета
+ГДЕ
+	(ЛицевыеСчета.Период, ЛицевыеСчета.ЛицевойСчет) В
+			(ВЫБРАТЬ
+				Т.Период,
+				Т.ЛицевойСчет
+			ИЗ
+				ВТ_АктивныеЛицевыеСчетаЗаПериод_Подготовка КАК Т)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(СобственникЛицевогоСчета.Период) КАК Период,
+	СобственникЛицевогоСчета.ЛицевойСчет КАК ЛицевойСчет
+ПОМЕСТИТЬ ВТ_СобственникЛицевогоСчетаЗаПериод_Подготовка
+ИЗ
+	РегистрСведений.УПЖКХ_ОтветственныйСобственникНанимательЛицевогоСчета КАК СобственникЛицевогоСчета
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_АктивныеЛицевыеСчетаЗаПериод КАК ВТ_АктивныеЛицевыеСчетаЗаПериод
+		ПО СобственникЛицевогоСчета.ЛицевойСчет = ВТ_АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет
+			И СобственникЛицевогоСчета.Период &lt;= ВТ_АктивныеЛицевыеСчетаЗаПериод.Период
+			И (СобственникЛицевогоСчета.ОтветственныйВладелец ССЫЛКА Справочник.Контрагенты)
+			И (СобственникЛицевогоСчета.Активность = ИСТИНА)
+
+СГРУППИРОВАТЬ ПО
+	СобственникЛицевогоСчета.ЛицевойСчет
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	СобственникЛицевогоСчета.Период КАК Период,
+	СобственникЛицевогоСчета.ЛицевойСчет КАК ЛицевойСчет,
+	ВЫРАЗИТЬ(СобственникЛицевогоСчета.ОтветственныйВладелец КАК Справочник.Контрагенты) КАК Контрагент
+ПОМЕСТИТЬ ВТ_СобственникЛицевогоСчетаЗаПериод
+ИЗ
+	РегистрСведений.УПЖКХ_ОтветственныйСобственникНанимательЛицевогоСчета КАК СобственникЛицевогоСчета
+ГДЕ
+	(СобственникЛицевогоСчета.Период, СобственникЛицевогоСчета.ЛицевойСчет) В
+			(ВЫБРАТЬ
+				Т.Период,
+				Т.ЛицевойСчет
+			ИЗ
+				ВТ_СобственникЛицевогоСчетаЗаПериод_Подготовка КАК Т)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЕСТЬNULL(КонтрагентыКонтактнаяИнформация.Ссылка, КонтрагентыКонтактнаяИнформация_Телефон.Ссылка) КАК Контрагент,
+	ЕСТЬNULL(КонтрагентыКонтактнаяИнформация.Представление, "") КАК ПредставлениеАдреса,
+	ЕСТЬNULL(КонтрагентыКонтактнаяИнформация_Телефон.Представление, "") КАК Телефоны
+ПОМЕСТИТЬ ВТ_КонтактнаяИнформацияКонтрагентов
+ИЗ
+	Справочник.Контрагенты.КонтактнаяИнформация КАК КонтрагентыКонтактнаяИнформация
+		ПОЛНОЕ СОЕДИНЕНИЕ Справочник.Контрагенты.КонтактнаяИнформация КАК КонтрагентыКонтактнаяИнформация_Телефон
+		ПО КонтрагентыКонтактнаяИнформация.Ссылка = КонтрагентыКонтактнаяИнформация_Телефон.Ссылка
+			И (КонтрагентыКонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента))
+			И (КонтрагентыКонтактнаяИнформация_Телефон.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ТелефонКонтрагента))
+ГДЕ
+	КонтрагентыКонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента)
+	И ЕСТЬNULL(КонтрагентыКонтактнаяИнформация.Ссылка, КонтрагентыКонтактнаяИнформация_Телефон.Ссылка) В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Т.Контрагент
+			ИЗ
+				ВТ_СобственникЛицевогоСчетаЗаПериод КАК Т)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СведенияДляВзаиморасчетовПоЛС.Период КАК Период,
+	СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет КАК ЛицевойСчет,
+	СведенияДляВзаиморасчетовПоЛС.Договор КАК Договор,
+	СведенияДляВзаиморасчетовПоЛС.Контрагент КАК Контрагент
+ПОМЕСТИТЬ ВТ_СведенияДляВзаиморасчетовПоЛС
+ИЗ
+	РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;КонецПериода, ) КАК СведенияДляВзаиморасчетовПоЛС
+ГДЕ
+	СведенияДляВзаиморасчетовПоЛС.Организация = &amp;Организация
+	И СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет В
+			(ВЫБРАТЬ
+				Т.ЛицевойСчет
+			ИЗ
+				ВТ_АктивныеЛицевыеСчетаЗаПериод КАК Т)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДинамическиеПоказателиЛицевыхСчетов.Период КАК Период,
+	ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет КАК ЛицевойСчет,
+	ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+	ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК СпособФинансирование,
+	ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
+	ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель,
+	ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
+	ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика
+ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛицевыхСчетов
+ИЗ
+	РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода, ) КАК ДинамическиеПоказателиЛицевыхСчетов
+	// ВТ_lc_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
+ГДЕ
+	ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет В
+			(ВЫБРАТЬ
+				Т.ЛицевойСчет
+			ИЗ
+				ВТ_АктивныеЛицевыеСчетаЗаПериод КАК Т)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_АктивныеЛицевыеСчетаЗаПериод.Помещение КАК Помещение,
+	ВТ_АктивныеЛицевыеСчетаЗаПериод.Здание КАК Здание,
+	ЕСТЬNULL(ВТ_СобственникЛицевогоСчетаЗаПериод.Контрагент, ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)) КАК Контрагент,
+	ЕСТЬNULL(ВТ_КонтактнаяИнформацияКонтрагентов.ПредставлениеАдреса, "") КАК ПредставлениеАдреса,
+	ЕСТЬNULL(ВТ_КонтактнаяИнформацияКонтрагентов.Телефоны, "") КАК Телефоны,
+	ЕСТЬNULL(ВТ_СведенияДляВзаиморасчетовПоЛС.Договор, ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК ДоговорВзаиморасчетов,
+	ЕСТЬNULL(ВТ_СведенияДляВзаиморасчетовПоЛС.Договор.Номер, "") КАК НомерДоговора,
+	ЕСТЬNULL(ВТ_СведенияДляВзаиморасчетовПоЛС.Контрагент, ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)) КАК КонтрагентВзаиморасчетов,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.СпособФинансирование КАК СпособФинансирование,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика
+ИЗ
+	ВТ_АктивныеЛицевыеСчетаЗаПериод КАК ВТ_АктивныеЛицевыеСчетаЗаПериод
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_СобственникЛицевогоСчетаЗаПериод КАК ВТ_СобственникЛицевогоСчетаЗаПериод
+		ПО ВТ_АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет = ВТ_СобственникЛицевогоСчетаЗаПериод.ЛицевойСчет
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СведенияДляВзаиморасчетовПоЛС КАК ВТ_СведенияДляВзаиморасчетовПоЛС
+		ПО ВТ_АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет = ВТ_СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ВТ_ДинамическиеПоказателиЛицевыхСчетов
+		ПО ВТ_АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет = ВТ_ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КонтактнаяИнформацияКонтрагентов КАК ВТ_КонтактнаяИнформацияКонтрагентов
+		ПО (ВТ_СобственникЛицевогоСчетаЗаПериод.Контрагент = ВТ_КонтактнаяИнформацияКонтрагентов.Контрагент)
+{ГДЕ
+    ВТ_АктивныеЛицевыеСчетаЗаПериод.ЛицевойСчет = &amp;ЛицевойСчет,
+    ВТ_СобственникЛицевогоСчетаЗаПериод.Контрагент = &amp;Контрагент,
+    ВТ_СведенияДляВзаиморасчетовПоЛС.Договор = &amp;Договор,
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер
+    }</query>
+	</dataSet>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=dd.MM.yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Контролер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контролер</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Договор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Контрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Невыписанные счета</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Телефоны</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЛицевойСчет</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контролер</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>8bc9aaa3-61d6-4aa8-ab2c-7b8a7b62ae4c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>52eeeebf-aedc-4e86-8245-234c02d99cd6</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контролер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>30f58fc8-d7ff-4bf0-923d-f2bbcb45a12a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Договор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>2209c28b-9a6f-4630-9869-d43c99897fc0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контрагент</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>6dac3b1d-a955-43c7-a47e-e320ecee465a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЛицевойСчет</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контролер</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Телефоны</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Контрагент</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Together</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Телефоны</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Horizontally</dcsset:placement>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДоговорВзаиморасчетов</dcsset:left>
+								<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>&lt;...&gt;</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Договор</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
