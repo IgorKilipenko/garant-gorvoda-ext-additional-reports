@@ -91,7 +91,7 @@
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность" id="e7ea523e-43b8-49d9-abe0-9f4827084717" configVersion="1ebb53ee2d32f0bf357bd3770e1b1f277cdb256f"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.ObjectModule" id="e7ea523e-43b8-49d9-abe0-9f4827084717.0" configVersion="b6dffaa023dd550a457a91b793e8253602e19ef0"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.Template.ОсновнаяСхемаКомпоновкиДанных" id="e0a24969-7d1a-4071-a76b-95fd2a34e770" configVersion="dad2c06a39174d29330fffb93cc2109d5575a450"/>
-		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e0a24969-7d1a-4071-a76b-95fd2a34e770.0" configVersion="a747dc8a45688c3a974fdea487a687ca4ed431d7"/>
+		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e0a24969-7d1a-4071-a76b-95fd2a34e770.0" configVersion="a6b356b2c8cddf5d82c1c692771e3b31a5c420c5"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов" id="4c0008ad-186c-462b-9a41-7463b356a0d0" configVersion="1be5e5e431a369a5dbbf47740954b5d463845baf"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ObjectModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.0" configVersion="53796f4c48786f61838272161d26f66cb2b39047"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae" configVersion="3bedb74d9be45424a3b719e3db502036357e8244"/>
