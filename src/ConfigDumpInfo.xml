@@ -96,7 +96,7 @@
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов" id="4c0008ad-186c-462b-9a41-7463b356a0d0" configVersion="1be5e5e431a369a5dbbf47740954b5d463845baf"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ObjectModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.0" configVersion="53796f4c48786f61838272161d26f66cb2b39047"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae" configVersion="3bedb74d9be45424a3b719e3db502036357e8244"/>
-		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae.0" configVersion="293a9b953058259051b20e6f6bb40787a470b61b"/>
+		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae.0" configVersion="33e5b49efb9cdbf91809aa6e583f1236d9fef8e3"/>
 		<Metadata name="Report.ГП_НевыписанныеСчета" id="9af171e8-046b-4efb-96bd-c16b822c54e7" configVersion="38c9ef7f3c6e7a77334787b307d74ab33131e57c"/>
 		<Metadata name="Report.ГП_НевыписанныеСчета.Template.ОсновнаяСхемаКомпоновкиДанных" id="257574de-f723-49f7-b943-38e987afcaab" configVersion="e5a6b6fe956dba0c5b51be22bfa70a520d529857"/>
 		<Metadata name="Report.ГП_НевыписанныеСчета.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="257574de-f723-49f7-b943-38e987afcaab.0" configVersion="589331049c4368013cbc733953902ef5a42b8d14"/>
@@ -205,7 +205,7 @@
 		<Metadata name="StyleItem.ЗаголовкиСтрокШрифт" id="564cd382-6468-481c-b6c5-9c614e382736" configVersion="7a1b702887e47948116a53f16f239ad26c05c7c7"/>
 		<Metadata name="StyleItem.СодержаниеУслугиШрифт" id="ddbfa630-2c87-480b-852a-f9c4d59e8bf6" configVersion="dd3a768e8831dfe3d2c8590705a7d56179a0470c"/>
 		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг" id="c380ce26-6ef9-420d-8d85-e3ff33483051" configVersion="b9803bbbd8f7aab9198f062cf24e13350cd13fc4"/>
-		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="e0f5b09057aa8493c14887d0c9e5fd08c0652d93"/>
+		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="f30a5bd0b142ed9fcba64757c432fade0692eb26"/>
 		<Metadata name="Subsystem.УПЖКХ_УправлениеЛицевымиСчетами" id="c279f237-515d-4866-814b-af16a938f375" configVersion="7593776dbb3c2fd3e2778019b265e37542020226"/>
 	</ConfigVersions>
 </ConfigDumpInfo>
