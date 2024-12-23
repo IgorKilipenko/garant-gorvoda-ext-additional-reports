@@ -310,16 +310,6 @@
 			</orderExpression>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВидПотребления</dataPath>
-			<field>ВидПотребления</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Группа потребителей</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Шифр</dataPath>
 			<field>Шифр</field>
 			<title xsi:type="v8:LocalStringType">
@@ -378,16 +368,6 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Собственник</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ГруппаПотребителя</dataPath>
-			<field>ГруппаПотребителя</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Вид тарифа</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -534,6 +514,26 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Способ финансирования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидТарифаПотребителя</dataPath>
+			<field>ВидТарифаПотребителя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид тарифа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПотребления</dataPath>
+			<field>ВидПотребления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа потребителей</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -875,13 +875,13 @@
     ВТ_РезультатСоединениеНеуникальные.Здание КАК Здание,
     ВТ_РезультатСоединениеНеуникальные.Собственник КАК Собственник,
     ВТ_РезультатСоединениеНеуникальные.Шифр КАК Шифр,
-    ВТ_РезультатСоединениеНеуникальные.ВидПотребления КАК ВидПотребления,
     ВТ_РезультатСоединениеНеуникальные.Контролер КАК Контролер,
     ВТ_РезультатСоединениеНеуникальные.Договородержатель КАК Договородержатель,
     ВТ_РезультатСоединениеНеуникальные.Водозабор КАК Водозабор,
 	ВТ_РезультатСоединениеНеуникальные.СпособФинансирования КАК СпособФинансирования,
 	ВТ_РезультатСоединениеНеуникальные.Характеристика КАК Характеристика,
-    ВТ_РезультатСоединениеНеуникальные.ВидТарифаПотребителя КАК ГруппаПотребителя
+    ВТ_РезультатСоединениеНеуникальные.ВидТарифаПотребителя КАК ВидТарифаПотребителя,
+	ВТ_РезультатСоединениеНеуникальные.ВидПотребления КАК ВидПотребления
 {ВЫБРАТЬ
     Период КАК Период,
     Регистратор.* КАК Регистратор,
@@ -905,15 +905,7 @@
     АдресЛС КАК АдресЛС,
     ЛицевойСчет.* КАК ЛицевойСчет,
     Помещение.* КАК Помещение,
-    Здание.* КАК Здание,
-    Шифр КАК Шифр,
-    ВидПотребления КАК ВидПотребления,
-    СпособФинансирования КАК СпособФинансирования,
-    Контролер КАК Контролер,
-    Договородержатель КАК Договородержатель,
-    Водозабор КАК Водозабор,
-	Водозабор КАК Водозабор,
-    Характеристика КАК Характеристика}
+    Здание.* КАК Здание}
 ИЗ
     ВТ_РезультатСоединениеНеуникальные КАК ВТ_РезультатСоединениеНеуникальные
         ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РезультатСоединениеНеуникальные КАК Т
@@ -931,8 +923,8 @@
     (ВТ_РезультатСоединениеНеуникальные.Водозабор = &amp;Водозабор),
     (ВТ_РезультатСоединениеНеуникальные.Контролер = &amp;Контролер),
     (ВТ_РезультатСоединениеНеуникальные.СпособФинансирования = &amp;СпособФинансирования),
-    (ВТ_РезультатСоединениеНеуникальные.ВидПотребления = &amp;ВидПотребления),
-    (ВТ_РезультатСоединениеНеуникальные.ВидТарифаПотребителя = &amp;ГруппаПотребителя),
+    (ВТ_РезультатСоединениеНеуникальные.ВидПотребления = &amp;ГруппаПотребителей),
+    (ВТ_РезультатСоединениеНеуникальные.ВидТарифаПотребителя = &amp;ВидТарифа),
     (ВТ_РезультатСоединениеНеуникальные.Характеристика = &amp;Характеристика),
     (ВЫРАЗИТЬ(ВТ_РезультатСоединениеНеуникальные.Регистратор КАК Документ.РеализацияТоваровУслуг)).* КАК Регистратор,
     ВТ_РезультатСоединениеНеуникальные.Организация.* КАК Организация,
@@ -1060,11 +1052,22 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ВидПотребления</name>
+		<name>ГруппаПотребителей</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
 				<v8:content>Группа потребителей</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидТарифа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид тарифа</v8:content>
 			</v8:item>
 		</title>
 		<value xsi:nil="true"/>
@@ -1087,17 +1090,6 @@
 			<v8:item>
 				<v8:lang>ru</v8:lang>
 				<v8:content>Характеристика</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ГруппаПотребителя</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Вид тарифа</v8:content>
 			</v8:item>
 		</title>
 		<value xsi:nil="true"/>
@@ -1334,14 +1326,13 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Характеристика</dcscor:parameter>
+					<dcscor:parameter>ГруппаПотребителей</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ГруппаПотребителя</dcscor:parameter>
+					<dcscor:parameter>ВидТарифа</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>4d1f24ca-e846-44ed-bd75-8dc09904f018</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
