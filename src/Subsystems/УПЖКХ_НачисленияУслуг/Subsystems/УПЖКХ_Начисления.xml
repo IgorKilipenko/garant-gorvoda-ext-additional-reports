@@ -21,6 +21,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_НевыписанныеСчета</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ДебиторскаяЗадолженность</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ЗаполненностьСведенийАбонентов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_СверкаБухгалтерииЖКХ</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
