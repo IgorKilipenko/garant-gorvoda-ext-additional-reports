@@ -63,6 +63,11 @@
 				<dcscom:dimension>true</dcscom:dimension>
 				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
 			</role>
+			<orderExpression>
+				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(Договор.Номер) возр</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
 			<valueType>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
 			</valueType>
@@ -164,6 +169,18 @@
 					<v8:content>Номенклатурная группа</v8:content>
 				</v8:item>
 			</title>
+			<orderExpression>
+				<dcscom:expression>ВЫБОР 
+	КОГДА Строка(НоменклатурнаяГруппа) = "Водоснабжение" ТОГДА 0 
+	КОГДА Строка(НоменклатурнаяГруппа) = "Водоотведение" ТОГДА 1 
+	ИНАЧЕ Строка(НоменклатурнаяГруппа) 
+КОНЕЦ</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПоступленияБУ</dataPath>
@@ -234,6 +251,13 @@
 					<v8:content>Заголовок бухгалтерия</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ЗаголовокЖКХ</dataPath>
@@ -244,6 +268,13 @@
 					<v8:content>Заголовок ЖКХ</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ЗаголовокУслуги</dataPath>
@@ -254,6 +285,13 @@
 					<v8:content>Заголовок услуги</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
@@ -448,11 +486,16 @@
 	"Услуги" КАК ЗаголовокУслуги
 ИЗ
 	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
+{ГДЕ
+	ВТ_Результат_Подготовка.Контрагент = &amp;Контрагент,
+	ВТ_Результат_Подготовка.Договор = &amp;Договор,
+	ВТ_Результат_Подготовка.НоменклатурнаяГруппа В (&amp;НоменклатурныеГруппы)}
 
 СГРУППИРОВАТЬ ПО
     ВТ_Результат_Подготовка.Контрагент,
     ВТ_Результат_Подготовка.Договор,
-    ВТ_Результат_Подготовка.НоменклатурнаяГруппа</query>
+    ВТ_Результат_Подготовка.НоменклатурнаяГруппа
+</query>
 	</dataSet>
 	<totalField>
 		<dataPath>ПоступлениеЖКХ</dataPath>
@@ -505,6 +548,49 @@
 		<useRestriction>false</useRestriction>
 		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НоменклатурныеГруппы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Список услуг</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Договор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Контрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -573,6 +659,7 @@
 		</valueType>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>КорСчетаНачислений</name>
@@ -588,6 +675,7 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>СчетаНачислений</name>
@@ -603,13 +691,14 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>ЗаголовокУслуги2</name>
+		<name>ПустойЗаголовок</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Заголовок услуги2</v8:content>
+				<v8:content>Пустой заголовок</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -619,10 +708,8 @@
 				<v8:AllowedLength>Variable</v8:AllowedLength>
 			</v8:StringQualifiers>
 		</valueType>
-		<value xsi:type="xs:string">Услуги</value>
-		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<denyIncompleteValues>true</denyIncompleteValues>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
 		<use>Always</use>
 	</parameter>
 	<settingsVariant>
@@ -688,6 +775,24 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатурныеГруппы</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>921f9ff4-14fd-465e-bf12-4874aa82a98d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Договор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>7901a0f2-5271-49ba-b70c-3fddb4955a73</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контрагент</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>c7adfdc2-2953-43d4-838e-61419f9a82ef</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>КорСчетаНачислений</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
@@ -743,7 +848,7 @@
 							<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+							<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ПоступленияБУ</dcsset:field>
@@ -753,7 +858,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:filter/>
@@ -954,7 +1059,7 @@
 							<dcsset:field>ЗаголовокЖКХ</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+							<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ПоступлениеЖКХ</dcsset:field>
@@ -964,7 +1069,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:filter/>
@@ -1106,7 +1211,7 @@
 							<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+							<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>НачисленияБУ</dcsset:field>
@@ -1116,7 +1221,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:filter/>
@@ -1317,7 +1422,7 @@
 							<dcsset:field>ЗаголовокЖКХ</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+							<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>НачислениеЖКХ</dcsset:field>
@@ -1327,7 +1432,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>ПараметрыДанных.Организация</dcsset:field>
+									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:filter/>
@@ -1514,6 +1619,50 @@
 						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
 						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Итого</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">НоменклатурнаяГруппа.Наименование</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:string">Плата за негативное воздействие на работу централиз. системы водоотведения</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Плата за негативное воздействие</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 			</dcsset:item>

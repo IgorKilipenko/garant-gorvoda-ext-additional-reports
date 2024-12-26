@@ -133,7 +133,7 @@
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ" id="3c01d062-f12c-48bc-a983-1184668e9ad9" configVersion="77d14cbfe46c9b692597110ea201fa4fc9318ab6"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.ObjectModule" id="3c01d062-f12c-48bc-a983-1184668e9ad9.0" configVersion="12a75c1071259e4f69e9996d5328acd1318828d0"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12" configVersion="2ad0c6c00fa7892c6f59eade657b11adea3c4f2e"/>
-		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12.0" configVersion="bd501a5491e3c3a6718994b584e106dd1b959fc1"/>
+		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12.0" configVersion="2ee61d6323382a3ab59fdc485239435efee1cb68"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством" id="24183566-4402-46c5-8a8a-2307ef99b9f9" configVersion="d8c3a1b1b3afa625088c71892b5bb85af1ab735b">
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Attribute.Перерасчет" id="2c5f2c5d-9e38-4608-8b42-056341b5d987"/>
 			<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.TabularSection.Группировка.Attribute.Поле" id="4e951adf-11e4-4857-8b25-9e27839fd307"/>
