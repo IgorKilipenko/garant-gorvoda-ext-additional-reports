@@ -708,7 +708,6 @@
 			</dcsset:order>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
 				<dcsset:column>
-					<dcsset:name>НачисленияБУ</dcsset:name>
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>ЗаголовокОплата</dcsset:field>
@@ -719,20 +718,6 @@
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ЗаголовокУслуги</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -753,101 +738,161 @@
 							<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ЗаголовокУслуги</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ПоступленияБУ</dcsset:field>
-							</dcsset:item>
-							<dcsset:placement>Auto</dcsset:placement>
+							<dcsset:field>ПоступленияБУ</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:use>false</dcsset:use>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>НачисленияБУ</dcsset:field>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:field>ПоступленияБУ</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter/>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Текст</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Бухгалтерия</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-							<dcsset:useInGroup>DontUse</dcsset:useInGroup>
-							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
-							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
-							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>НачислениеЖКХ</dcsset:field>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:field>НачисленияБУ</dcsset:field>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:field>ПоступлениеЖКХ</dcsset:field>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:field>ПоступленияБУ</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter/>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
-									<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-							<dcsset:useInGroup>DontUse</dcsset:useInGroup>
-							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
-							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
-							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
 					<dcsset:outputParameters>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:use>false</dcscor:use>
-							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:use>false</dcscor:use>
 							<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+							<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">End</dcscor:value>
 						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>РасположениеОбщихИтогов</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ТипЗаголовкаПолей</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionFieldsTitleType">Short</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:use>false</dcscor:use>
-							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
 						</dcscor:item>
 					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:name>НачисленияБУ</dcsset:name>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ЗаголовокОплата</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ЗаголовокУслуги</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+								<dcsset:use>false</dcsset:use>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаголовокОплата</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаголовокУслуги</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПоступленияБУ</dcsset:field>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>НачисленияБУ</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>ПоступленияБУ</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Текст</dcscor:parameter>
+										<dcscor:value xsi:type="v8:LocalStringType">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Бухгалтерия</v8:content>
+											</v8:item>
+										</dcscor:value>
+									</dcscor:item>
+								</dcsset:appearance>
+								<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+								<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+								<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>НачислениеЖКХ</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>НачисленияБУ</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>ПоступлениеЖКХ</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>ПоступленияБУ</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+									</dcscor:item>
+								</dcsset:appearance>
+								<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+								<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+								<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>РасположениеОбщихИтогов</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ТипЗаголовкаПолей</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionFieldsTitleType">Short</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:item>
 				</dcsset:column>
 				<dcsset:column>
 					<dcsset:groupItems>
