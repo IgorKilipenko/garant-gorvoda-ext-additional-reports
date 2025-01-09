@@ -418,6 +418,58 @@
         ИНАЧЕ ИСТИНА
     КОНЕЦ</query>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Контакты</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Телефоны</dataPath>
+			<field>Телефоны</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефоны</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеАдреса</dataPath>
+			<field>ПредставлениеАдреса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    ЕСТЬNULL(КонтрагентыКонтактнаяИнформация.Ссылка, КонтрагентыКонтактнаяИнформация_Телефон.Ссылка) КАК Контрагент,
+    ЕСТЬNULL(КонтрагентыКонтактнаяИнформация.Представление, "") КАК ПредставлениеАдреса,
+    ЕСТЬNULL(КонтрагентыКонтактнаяИнформация_Телефон.Представление, "") КАК Телефоны
+ИЗ
+    Справочник.Контрагенты.КонтактнаяИнформация КАК КонтрагентыКонтактнаяИнформация
+        ПОЛНОЕ СОЕДИНЕНИЕ Справочник.Контрагенты.КонтактнаяИнформация КАК КонтрагентыКонтактнаяИнформация_Телефон
+        ПО КонтрагентыКонтактнаяИнформация.Ссылка = КонтрагентыКонтактнаяИнформация_Телефон.Ссылка
+            И (КонтрагентыКонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента))
+            И (КонтрагентыКонтактнаяИнформация_Телефон.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ТелефонКонтрагента))
+ГДЕ
+    КонтрагентыКонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента)</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных1</sourceDataSet>
+		<destinationDataSet>Контакты</destinationDataSet>
+		<sourceExpression>Контрагент</sourceExpression>
+		<destinationExpression>Контрагент</destinationExpression>
+	</dataSetLink>
 	<totalField>
 		<dataPath>СуммаКонечныйОстаток</dataPath>
 		<expression>Сумма(СуммаКонечныйОстаток)</expression>
@@ -461,6 +513,38 @@
 	<totalField>
 		<dataPath>СуммаОборотКт</dataPath>
 		<expression>Сумма(СуммаОборотКт)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Телефоны</dataPath>
+		<expression>Максимум(Телефоны)</expression>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>ДокументРасчетов</group>
+		<group>ДокументРасчетов Иерархия</group>
+		<group>Контрагент</group>
+		<group>Контрагент Иерархия</group>
+		<group>НомерДоговора</group>
+		<group>ПериодДень</group>
+		<group>ПериодМесяц</group>
+		<group>ПериодМинута</group>
+		<group>ПериодСекунда</group>
+		<group>ПредставлениеАдреса</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПредставлениеАдреса</dataPath>
+		<expression>Максимум(ПредставлениеАдреса)</expression>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>ДокументРасчетов</group>
+		<group>ДокументРасчетов Иерархия</group>
+		<group>Контрагент</group>
+		<group>Контрагент Иерархия</group>
+		<group>НомерДоговора</group>
+		<group>ПериодДень</group>
+		<group>ПериодМесяц</group>
+		<group>ПериодМинута</group>
+		<group>ПериодСекунда</group>
+		<group>ОбщийИтог</group>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -787,6 +871,12 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Счет</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПредставлениеАдреса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Телефоны</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1020,7 +1110,45 @@
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>СуммаКонечныйОстаток</dcsset:field>
 					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Контакты</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Телефоны</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Together</dcsset:placement>
+					</dcsset:item>
 				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Телефоны</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПредставлениеАдреса</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Отступ</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:use>false</dcscor:use>
