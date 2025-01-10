@@ -1019,7 +1019,12 @@
     ВТ_Результат.ЛицевойСчет.* КАК ЛицевойСчет,
     ВТ_Результат.Наименование КАК Наименование,
     ВТ_Результат.Помещение.* КАК Помещение,
-    ВТ_Результат.Здание.* КАК Здание}</query>
+    ВТ_Результат.Здание.* КАК Здание,
+    ВТ_Результат.ВидПотребления.* КАК ВидПотребления,
+    ВТ_Результат.Финансирование.* КАК Финансирование,
+    ВТ_Результат.Контролер.* КАК Контролер,
+    ВТ_Результат.Договородержатель.* КАК Договородержатель,
+    ВТ_Результат.Водозабор.* КАК Водозабор}</query>
 	</dataSet>
 	<totalField>
 		<dataPath>Количество</dataPath>
@@ -1137,7 +1142,7 @@
 			</v8:item>
 		</title>
 		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>НомГруппаВодоснабжение</name>
@@ -1336,7 +1341,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -1353,7 +1358,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
 		<name>Период</name>
@@ -1370,26 +1375,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Первые</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Первые</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:decimal</v8:Type>
-			<v8:NumberQualifiers>
-				<v8:Digits>0</v8:Digits>
-				<v8:FractionDigits>0</v8:FractionDigits>
-				<v8:AllowedSign>Any</v8:AllowedSign>
-			</v8:NumberQualifiers>
-		</valueType>
-		<value xsi:type="xs:decimal">0</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<template>
 		<name>Макет1</name>
