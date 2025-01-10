@@ -126,7 +126,7 @@
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет" id="2ff397f3-e820-4018-a265-17abca5c39e9" configVersion="683f35c6b5a6e33799610ffd7028b7e9ac1b7874"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет.Template" id="2ff397f3-e820-4018-a265-17abca5c39e9.0" configVersion="e416ee38eea3882395812fbf4f5de359da548fe3"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных" id="0d2107ac-6134-4474-9748-754ecfc5bb74" configVersion="668be2f48b40be674cb89810625a3f9b9a704e34"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="f88514eb5dc3c59eae4e7b5c04e15dafb2b9df77"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="20c2f17a471a30db7d68d90e6816481ce7f36304"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам" id="4f7d5920-f762-4c30-8a86-d70355273789" configVersion="2d8479a69c83e7f24ef52ddd6b970876758f2600"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.ObjectModule" id="4f7d5920-f762-4c30-8a86-d70355273789.0" configVersion="a4652dfe876f8ea06724b506948953280483456d"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9" configVersion="20c45866a8d9f33198fc03828f03e02b2412c190"/>
