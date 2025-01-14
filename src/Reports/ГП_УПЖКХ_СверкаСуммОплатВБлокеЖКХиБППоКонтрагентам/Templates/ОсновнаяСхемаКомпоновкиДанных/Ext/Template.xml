@@ -62,10 +62,6 @@
 			<field>ЛицевойСчет</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>НомерСтроки</dataPath>
-			<field>НомерСтроки</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаДокументаРеестра</dataPath>
 			<field>СуммаДокументаРеестра</field>
 			<title xsi:type="v8:LocalStringType">
@@ -133,6 +129,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор контрагента</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<item xsi:type="DataSetQuery">
 			<name>СверкаПоДокументуРегистрацииОплат</name>
 			<field xsi:type="DataSetFieldField">
@@ -181,14 +187,6 @@
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Контрагент</dataPath>
 				<field>Контрагент</field>
-			</field>
-			<field xsi:type="DataSetFieldField">
-				<dataPath>ЛицевойСчет</dataPath>
-				<field>ЛицевойСчет</field>
-			</field>
-			<field xsi:type="DataSetFieldField">
-				<dataPath>НомерСтроки</dataPath>
-				<field>НомерСтроки</field>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>СуммаДокументаРеестра</dataPath>
@@ -257,6 +255,16 @@
 					</v8:item>
 				</title>
 			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДоговорКонтрагента</dataPath>
+				<field>ДоговорКонтрагента</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор контрагента</v8:content>
+					</v8:item>
+				</title>
+			</field>
 			<dataSource>ИсточникДанных1</dataSource>
 			<query>ВЫБРАТЬ
 	КВП_РегистрацияОплатыЛицевыеСчета.Ссылка КАК Ссылка,
@@ -299,7 +307,8 @@
 	втЛицевыеСчетаИРегистрацииОплат.ЛицевойСчет КАК ЛицевойСчет,
 	втЛицевыеСчетаИРегистрацииОплат.Период КАК Период,
 	втЛицевыеСчетаИРегистрацииОплат.Ссылка КАК Ссылка,
-	УПЖКХ_СведенияДляВзаиморасчетовПоЛС.Контрагент КАК Контрагент
+	УПЖКХ_СведенияДляВзаиморасчетовПоЛС.Контрагент КАК Контрагент,
+	УПЖКХ_СведенияДляВзаиморасчетовПоЛС.Договор КАК Договор
 ПОМЕСТИТЬ втАктуальныеКонтрагенты
 ИЗ
 	втЛицевыеСчетаИРегистрацииОплат КАК втЛицевыеСчетаИРегистрацииОплат
@@ -314,6 +323,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	втАктуальныеКонтрагенты.Контрагент КАК Контрагент,
+	втАктуальныеКонтрагенты.Договор КАК Договор,
 	втДокументыРегистрацииОплат.Ссылка КАК Ссылка,
 	МИНИМУМ(втДокументыРегистрацииОплат.НомерСтроки) КАК НомерСтроки,
 	СУММА(втДокументыРегистрацииОплат.Сумма) КАК Сумма,
@@ -330,7 +340,8 @@
 СГРУППИРОВАТЬ ПО
 	втАктуальныеКонтрагенты.Контрагент,
 	втДокументыРегистрацииОплат.Ссылка,
-	втДокументыРегистрацииОплат.ОператорПлатежей
+	втДокументыРегистрацииОплат.ОператорПлатежей,
+	втАктуальныеКонтрагенты.Договор
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -386,6 +397,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	втДанныеБлокаЖКХ.Контрагент КАК Контрагент,
+	втДанныеБлокаЖКХ.Договор КАК Договор,
 	втДанныеБлокаЖКХ.Ссылка КАК Ссылка,
 	втДанныеБлокаЖКХ.НомерСтроки КАК НомерСтроки,
 	втДанныеБлокаЖКХ.Сумма КАК Сумма,
@@ -432,6 +444,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	втИтоговыеДанныеБезСуммыРеестра.Контрагент КАК Контрагент,
+	втИтоговыеДанныеБезСуммыРеестра.Договор КАК ДоговорКонтрагента,
 	втИтоговыеДанныеБезСуммыРеестра.Ссылка КАК ДокументРегистрацииОплаты,
 	СУММА(втИтоговыеДанныеБезСуммыРеестра.Сумма) КАК Сумма,
 	втИтоговыеДанныеБезСуммыРеестра.КонтрагентДокументаОтражения КАК КонтрагентДокументаОтражения,
@@ -449,6 +462,7 @@
 		ПО втИтоговыеДанныеБезСуммыРеестра.ДокументРеестра = втСуммаДокументаРеестра.ДокументРеестра
 СГРУППИРОВАТЬ ПО
     втИтоговыеДанныеБезСуммыРеестра.Контрагент,
+    втИтоговыеДанныеБезСуммыРеестра.Договор,
     втИтоговыеДанныеБезСуммыРеестра.Ссылка,
     втИтоговыеДанныеБезСуммыРеестра.КонтрагентДокументаОтражения,
     втИтоговыеДанныеБезСуммыРеестра.ДокументОтражения,
@@ -496,6 +510,10 @@
 						<v8:content>Сумма документа отражения</v8:content>
 					</v8:item>
 				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДоговорКонтрагента</dataPath>
+				<field>ДоговорКонтрагента</field>
 			</field>
 			<dataSource>ИсточникДанных1</dataSource>
 			<query>ВЫБРАТЬ
@@ -600,7 +618,8 @@
 ВЫБРАТЬ
 	втТиповыеДокументыБезСвязиСРО.ДокументОтражения КАК ДокументОтражения,
 	втТиповыеДокументыБезСвязиСРО.КонтрагентДокументаОтражения КАК КонтрагентДокументаОтражения,
-	втТиповыеДокументыБезСвязиСРО.СуммаДокументаОтражения КАК СуммаДокументаОтражения
+	втТиповыеДокументыБезСвязиСРО.СуммаДокументаОтражения КАК СуммаДокументаОтражения,
+	втТиповыеДокументыБезСвязиСРО.ДоговорКонтрагента КАК ДоговорКонтрагента
 ИЗ
 	втТиповыеДокументыБезСвязиСРО КАК втТиповыеДокументыБезСвязиСРО
 {ГДЕ
@@ -797,6 +816,22 @@
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -1049,6 +1084,54 @@
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Договор</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#D9EAD3</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.625</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
@@ -1726,13 +1809,21 @@
 							<dcscor:parameter>Размещение</dcscor:parameter>
 							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
 						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">18.25</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">30.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">18.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -1786,6 +1877,14 @@
 						<dcscor:item>
 							<dcscor:parameter>Размещение</dcscor:parameter>
 							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10.875</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -2234,6 +2333,9 @@
 						</dcsset:lwsTitle>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>Контрагент</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДоговорКонтрагента</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ДокументРегистрацииОплаты</dcsset:field>
