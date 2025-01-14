@@ -1105,7 +1105,7 @@
 		<width>199</width>
 	</format>
 	<format>
-		<font>2</font>
+		<font>3</font>
 		<leftBorder>1</leftBorder>
 		<topBorder>0</topBorder>
 		<rightBorder>1</rightBorder>
@@ -1133,7 +1133,7 @@
 		<controlType>381ed624-9217-4e63-85db-c4c3cb87daae</controlType>
 	</format>
 	<format>
-		<font>2</font>
+		<font>3</font>
 		<leftBorder>1</leftBorder>
 		<topBorder>0</topBorder>
 		<rightBorder>0</rightBorder>
