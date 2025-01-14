@@ -152,7 +152,7 @@
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Взаиморасчеты за период [ЗаПериод]</v8:content>
+							<v8:content>Взаиморасчеты [ЗаПериод]</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -356,8 +356,8 @@
 			</c>
 			<c>
 				<c>
-					<f>37</f>
-					<parameter>КорСчет</parameter>
+					<f>36</f>
+					<parameter>КорСчетПредставление</parameter>
 					<detailParameter>КорСчет</detailParameter>
 				</c>
 			</c>
@@ -520,7 +520,7 @@
 			<c>
 				<c>
 					<f>51</f>
-					<parameter>ОстатокНаКонецДт</parameter>
+					<parameter>ОстатокНаКонецКт</parameter>
 				</c>
 			</c>
 		</row>
