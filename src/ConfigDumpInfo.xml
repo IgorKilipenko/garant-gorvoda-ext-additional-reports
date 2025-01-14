@@ -111,15 +111,13 @@
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d8a3e70a-2b04-48bc-9e69-995edb4e375c.0" configVersion="e8c6eb67b493fa66fa21d244209d4a77b13d07e5"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ПФ_MXL_АктСверки" id="6795e01b-1485-4dc4-87e7-5dc6d3273c63" configVersion="cea894b21001b133b58dd36e9d5ea83e1d11c242"/>
 		<Metadata name="Report.ГП_ОСВПоАбоненту.Template.ПФ_MXL_АктСверки.Template" id="6795e01b-1485-4dc4-87e7-5dc6d3273c63.0" configVersion="fd4b0abe46d915ec7be1fffff5e7320878fa98ea"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3" configVersion="13b6fd80a8a51a16d6e643b14ff2269f35208d93"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.ManagerModule" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3.2" configVersion="1ae8595ecb65a3aaec75fbe24e9922ebd74d1333"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.ObjectModule" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3.0" configVersion="3477742a8a829acbf645287608a2b7763fbb5184"/>
+		<Metadata name="Report.ГП_ОСВПоУслугам" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3" configVersion="1a69b5dae21866f950ee4b40d8b74133109c5cf9"/>
+		<Metadata name="Report.ГП_ОСВПоУслугам.ManagerModule" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3.2" configVersion="b1f20ee6ac2a66327ce82e76871d7782a05df844"/>
+		<Metadata name="Report.ГП_ОСВПоУслугам.ObjectModule" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3.0" configVersion="4df6857f78a75a63f439a406125742779e4c987f"/>
 		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ОсновнаяСхемаКомпоновкиДанных" id="8124d2a5-7eec-446b-ab5d-ec5fc11fe60b" configVersion="f5779ffdd78a9d429b7b94fe50500b3af8789490"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="8124d2a5-7eec-446b-ab5d-ec5fc11fe60b.0" configVersion="4704e93c338263ac28aa0c5ca3ee04245744261f"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверки1" id="f8aaa8d6-d1ef-4766-ad88-94cdafac4647" configVersion="51e78eee27e91d99bc8312fe703b718e6c151fca"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверки1.Template" id="f8aaa8d6-d1ef-4766-ad88-94cdafac4647.0" configVersion="fd4b0abe46d915ec7be1fffff5e7320878fa98ea"/>
+		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="8124d2a5-7eec-446b-ab5d-ec5fc11fe60b.0" configVersion="9ac7dde028df950ab837e28e754ab7bc45657876"/>
 		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверкиПоУслугам" id="4d0d1d0a-4708-4208-a0de-e25dff9ffc30" configVersion="7ed0e94eb9f69bffdc0945ed19aea6584e3e0c6b"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверкиПоУслугам.Template" id="4d0d1d0a-4708-4208-a0de-e25dff9ffc30.0" configVersion="571d5fa6cac3581e0b1dd0a12deea9e5395b113d"/>
+		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверкиПоУслугам.Template" id="4d0d1d0a-4708-4208-a0de-e25dff9ffc30.0" configVersion="9b06d7c2b5a52ad306f9db7eb7a4a0d5b85a0e69"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="ad02c261ac49f0a6f8a11402de795aa574a53c60"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="3334c1f10ed80ac603da3bcfeb02ff7d11edc184"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных" id="70dbc91c-669d-409b-a542-8da098f5f619" configVersion="2c09505ef1da6a647f461c50ef6c579963ead567"/>

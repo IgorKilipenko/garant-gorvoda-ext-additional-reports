@@ -36,7 +36,6 @@
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
 			<Template>ПФ_MXL_АктСверкиПоУслугам</Template>
-			<Template>ПФ_MXL_АктСверки1</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
