@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>1.6.15.1-rc1</Version>
+			<Version>1.6.16.0-dev1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -106,6 +106,7 @@
 			<Report>ГП_ДебиторскаяЗадолженность</Report>
 			<Report>ГП_СверкаБухгалтерииЖКХ</Report>
 			<Report>ГП_ВедомостьОплатыУслугВКХ</Report>
+			<Report>ГП_ОСВПоУслугам</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
