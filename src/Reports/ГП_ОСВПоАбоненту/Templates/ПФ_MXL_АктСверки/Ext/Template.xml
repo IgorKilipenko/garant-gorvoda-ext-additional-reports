@@ -140,7 +140,7 @@
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Взаиморасчеты за период [ЗаПериод]</v8:content>
+							<v8:content>Взаиморасчеты [ЗаПериод]</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -880,6 +880,7 @@
 	<font faceName="Arial" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 	<font faceName="Arial" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 	<font faceName="Arial" height="10" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+	<font faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 	<font faceName="Arial" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 	<font faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 	<format>
@@ -992,14 +993,14 @@
 		<height>24</height>
 	</format>
 	<format>
-		<font>0</font>
+		<font>4</font>
 		<border>0</border>
 		<horizontalAlignment>Center</horizontalAlignment>
 		<verticalAlignment>Center</verticalAlignment>
 		<textPlacement>Cut</textPlacement>
 	</format>
 	<format>
-		<font>0</font>
+		<font>4</font>
 		<border>0</border>
 		<width>89</width>
 		<horizontalAlignment>Center</horizontalAlignment>
@@ -1007,7 +1008,7 @@
 		<textPlacement>Cut</textPlacement>
 	</format>
 	<format>
-		<font>0</font>
+		<font>4</font>
 		<border>0</border>
 		<width>129</width>
 		<horizontalAlignment>Center</horizontalAlignment>
@@ -1015,12 +1016,12 @@
 		<textPlacement>Cut</textPlacement>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<fillType>Text</fillType>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<width>95</width>
 		<verticalAlignment>Center</verticalAlignment>
@@ -1035,7 +1036,7 @@
 		</format>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<width>115</width>
 		<verticalAlignment>Center</verticalAlignment>
@@ -1108,13 +1109,13 @@
 		</format>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<leftBorder>0</leftBorder>
 		<topBorder>0</topBorder>
 		<width>313</width>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<width>102</width>
 		<verticalAlignment>Center</verticalAlignment>
@@ -1129,7 +1130,7 @@
 		</format>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<width>106</width>
 		<verticalAlignment>Center</verticalAlignment>
@@ -1144,13 +1145,13 @@
 		</format>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<width>313</width>
 		<fillType>Text</fillType>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<border>0</border>
 		<width>97</width>
 		<verticalAlignment>Center</verticalAlignment>
@@ -1177,7 +1178,7 @@
 		<textPlacement>Wrap</textPlacement>
 	</format>
 	<format>
-		<font>4</font>
+		<font>5</font>
 		<width>64</width>
 		<horizontalAlignment>Left</horizontalAlignment>
 		<textPlacement>Wrap</textPlacement>
@@ -1188,7 +1189,7 @@
 		<width>96</width>
 	</format>
 	<format>
-		<font>5</font>
+		<font>6</font>
 		<horizontalAlignment>Left</horizontalAlignment>
 		<textPlacement>Wrap</textPlacement>
 		<fillType>Parameter</fillType>
