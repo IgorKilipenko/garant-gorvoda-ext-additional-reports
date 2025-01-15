@@ -74,11 +74,6 @@
 				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
 			</role>
 			<presentationExpression>Договор.Номер</presentationExpression>
-			<orderExpression>
-				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(ЕСТЬNULL(Договор.Номер, ""))</dcscom:expression>
-				<dcscom:orderType>Asc</dcscom:orderType>
-				<dcscom:autoOrder>false</dcscom:autoOrder>
-			</orderExpression>
 			<valueType>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
 			</valueType>
