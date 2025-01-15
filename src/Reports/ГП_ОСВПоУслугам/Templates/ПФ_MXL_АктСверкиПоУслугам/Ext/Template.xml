@@ -295,7 +295,12 @@
 				<i>1</i>
 				<c>
 					<f>31</f>
-					<parameter>НаименованиеКонтрагента</parameter>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>[НаименованиеКонтрагента] ([НомерДоговора])</v8:content>
+						</v8:item>
+					</tl>
 					<detailParameter>Контрагент</detailParameter>
 				</c>
 			</c>
@@ -1098,7 +1103,7 @@
 		<bottomBorder>1</bottomBorder>
 		<width>99</width>
 		<textPlacement>Wrap</textPlacement>
-		<fillType>Parameter</fillType>
+		<fillType>Template</fillType>
 	</format>
 	<format>
 		<font>0</font>
