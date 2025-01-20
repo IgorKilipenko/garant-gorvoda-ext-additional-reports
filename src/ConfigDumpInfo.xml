@@ -121,7 +121,7 @@
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги" id="b25920d0-4b01-470f-a05a-4c06b4c693a5" configVersion="e4ddc46bf2bf090c4ba82b6969559658e89267f0"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.ObjectModule" id="b25920d0-4b01-470f-a05a-4c06b4c693a5.0" configVersion="687f795f0448c16a7f842e708a4bb2456df6aceb"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef" configVersion="a28c663e6f8eb0c5d479ff7ae08de0a50b062e66"/>
-		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef.0" configVersion="dcb89bbef1b775656b7a2ba80b722f7587053a49"/>
+		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef.0" configVersion="502183e68948c6307addee1d72ff1d2485002ae0"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="ad02c261ac49f0a6f8a11402de795aa574a53c60"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="3334c1f10ed80ac603da3bcfeb02ff7d11edc184"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных" id="70dbc91c-669d-409b-a542-8da098f5f619" configVersion="2c09505ef1da6a647f461c50ef6c579963ead567"/>
