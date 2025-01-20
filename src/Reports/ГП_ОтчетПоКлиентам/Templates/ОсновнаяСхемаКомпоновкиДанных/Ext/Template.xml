@@ -749,7 +749,7 @@
     ВЫБОР
         КОГДА ВТ_БУРеализацияИСодержание.Номенклатура &lt;&gt; ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
             ТОГДА ВЫБОР
-                    КОГДА ВТ_БУРеализацияИСодержание.Номенклатура &lt;&gt; &amp;НоменклатураХВС
+                    КОГДА ВТ_БУРеализацияИСодержание.Номенклатура = &amp;НоменклатураВодоотведение 
                         ТОГДА СТРЗАМЕНИТЬ(ВТ_БУРеализацияИСодержание.Содержание, ВТ_БУРеализацияИСодержание.НоменклатурнаяГруппа.Наименование + ", ", "")
                     ИНАЧЕ СТРЗАМЕНИТЬ(ВТ_БУРеализацияИСодержание.Содержание, ВТ_БУРеализацияИСодержание.Номенклатура.Наименование + ", ", "")
                 КОНЕЦ
@@ -845,7 +845,8 @@
     ВТ_РезультатПодготовка КАК ВТ_РезультатПодготовка
         ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЛицевыеСчета КАК ВТ_ЛицевыеСчета
         ПО (ВТ_ЛицевыеСчета.Контрагент = ВТ_РезультатПодготовка.Контрагент)
-            И (ВТ_ЛицевыеСчета.Здание.Наименование = ВТ_РезультатПодготовка.АдресЛС)
+            И (ВТ_ЛицевыеСчета.Здание.Наименование = ВТ_РезультатПодготовка.АдресЛС
+				ИЛИ (ВТ_РезультатПодготовка.АдресЛС ПОДОБНО ВТ_ЛицевыеСчета.Здание.Наименование + "%, Показания счетчиков: %"))
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -979,7 +980,7 @@
     ВидПотребления.* КАК ВидПотребления,
     ВидТарифаПотребителя.* КАК ВидТарифаПотребителя,
     Характеристика.* КАК Характеристика,
-    Договородержатель КАК Договородержатель}
+    Договородержатель.* КАК Договородержатель}
 ИЗ
     ВТ_РезультатСоединениеНеуникальные КАК ВТ_РезультатСоединениеНеуникальные
         ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РезультатСоединениеНеуникальные КАК Т
@@ -1029,7 +1030,7 @@
     ВТ_РезультатСоединениеНеуникальные.ВидПотребления.* КАК ВидПотребления,
     ВТ_РезультатСоединениеНеуникальные.ВидТарифаПотребителя.* КАК ВидТарифаПотребителя,
     ВТ_РезультатСоединениеНеуникальные.Характеристика.* КАК Характеристика,
-    ВТ_РезультатСоединениеНеуникальные.Договородержатель КАК Договородержатель}</query>
+    ВТ_РезультатСоединениеНеуникальные.Договородержатель.* КАК Договородержатель}</query>
 	</dataSet>
 	<totalField>
 		<dataPath>Количество</dataPath>
@@ -1322,6 +1323,25 @@
 		</valueType>
 		<value xsi:type="xs:decimal">0</value>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -1401,6 +1421,11 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Водозабор</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>481d0e1c-d8fd-4fc4-920a-65af2ac5caad</dcsset:userSettingID>
@@ -1409,11 +1434,25 @@
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ГруппаПотребителей</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>79c73d61-f1ea-48f7-aae3-c252db86c96c</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ВидТарифа</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>0405172e-9517-4569-a9b5-76f38c778fa4</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СпособФинансирования</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>e5164988-a2c1-4888-b05a-aee3707543a2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Характеристика</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>3ad260c6-959b-4584-aa43-bcb06a6a0104</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
