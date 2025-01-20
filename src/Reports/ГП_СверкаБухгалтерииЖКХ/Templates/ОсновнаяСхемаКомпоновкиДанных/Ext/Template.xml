@@ -293,6 +293,69 @@
 				</v8:StringQualifiers>
 			</valueType>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасхождениеНачислений</dataPath>
+			<field>РасхождениеНачислений</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расхождение начислений</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасхождениеПоступлений</dataPath>
+			<field>РасхождениеПоступлений</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расхождение поступлений</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасхождениеПоступленийНачислений</dataPath>
+			<field>РасхождениеПоступленийНачислений</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расхождение поступлений начислений</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ОплатаПоУслугамОбороты.Контрагент КАК Контрагент,
@@ -302,6 +365,7 @@
 ПОМЕСТИТЬ ВТ_ПоступленияБУ
 ИЗ
 	РегистрНакопления.ГП_ОплатаПоУслугам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК ОплатаПоУслугамОбороты
+	   // ВТ_ОплатаПоУслугамОбороты### КАК ОплатаПоУслугамОбороты
 
 СГРУППИРОВАТЬ ПО
 	ОплатаПоУслугамОбороты.Контрагент,
@@ -319,6 +383,7 @@
 	ВзаиморасчетыПоЛицевымСчетам.Договор КАК Договор,
 	ВзаиморасчетыПоЛицевымСчетам.СуммаНачисленияРасход КАК Сумма,
 	ЕСТЬNULL(СведенияДляВзаиморасчетовПоЛС.Контрагент, ВзаиморасчетыПоЛицевымСчетам.Договор.Владелец) КАК Контрагент
+	// ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка) КАК Контрагент // ###
 ПОМЕСТИТЬ ВТ_ПоступленияЖКХ_Подготовка
 ИЗ
 	РегистрНакопления.КВП_ВзаиморасчетыПоЛицевымСчетам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , Организация = &amp;Организация) КАК ВзаиморасчетыПоЛицевымСчетам
@@ -409,6 +474,7 @@
 	ВзаиморасчетыПоЛицевымСчетам.Договор КАК Договор,
 	ВзаиморасчетыПоЛицевымСчетам.СуммаНачисленияПриход КАК Сумма,
 	ЕСТЬNULL(СведенияДляВзаиморасчетовПоЛС.Контрагент, ВзаиморасчетыПоЛицевымСчетам.Договор.Владелец) КАК Контрагент
+	// ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка) КАК Контрагент // ###
 ПОМЕСТИТЬ ВТ_НачисленияЖКХ_Подготовка
 ИЗ
 	РегистрНакопления.КВП_ВзаиморасчетыПоЛицевымСчетам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , Организация = &amp;Организация) КАК ВзаиморасчетыПоЛицевымСчетам
@@ -483,7 +549,11 @@
 	"НАЧИСЛЕНИЯ" КАК ЗаголовокНачисления,
 	"БУХГАЛТЕРИЯ" КАК ЗаголовокБухгалтерия,
 	"ЖКХ" КАК ЗаголовокЖКХ,
-	"Услуги" КАК ЗаголовокУслуги
+	"Услуги" КАК ЗаголовокУслуги,
+	СУММА(ВТ_Результат_Подготовка.ПоступленияБУ) - СУММА(ВТ_Результат_Подготовка.ПоступлениеЖКХ) КАК РасхождениеПоступлений,
+	СУММА(ВТ_Результат_Подготовка.НачисленияБУ) - СУММА(ВТ_Результат_Подготовка.НачислениеЖКХ) КАК РасхождениеНачислений,
+	(СУММА(ВТ_Результат_Подготовка.ПоступленияБУ) - СУММА(ВТ_Результат_Подготовка.ПоступлениеЖКХ))
+	   - (СУММА(ВТ_Результат_Подготовка.НачисленияБУ) - СУММА(ВТ_Результат_Подготовка.НачислениеЖКХ)) КАК РасхождениеПоступленийНачислений
 ИЗ
 	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
 {ГДЕ
@@ -512,6 +582,18 @@
 	<totalField>
 		<dataPath>НачисленияБУ</dataPath>
 		<expression>Сумма(НачисленияБУ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасхождениеНачислений</dataPath>
+		<expression>Сумма(РасхождениеНачислений)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасхождениеПоступлений</dataPath>
+		<expression>Сумма(РасхождениеПоступлений)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасхождениеПоступленийНачислений</dataPath>
+		<expression>Сумма(РасхождениеПоступленийНачислений)</expression>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -1587,20 +1669,6 @@
 					<dcsset:item>
 						<dcsset:selection>
 							<dcsset:item>
-								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
-					</dcsset:item>
-					<dcsset:item>
-						<dcsset:selection>
-							<dcsset:item>
 								<dcsset:field>НачислениеЖКХ</dcsset:field>
 							</dcsset:item>
 							<dcsset:item>
@@ -1618,6 +1686,44 @@
 							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 								<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Размещение</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
 							</dcscor:item>
 						</dcsset:appearance>
 						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
@@ -1692,6 +1798,102 @@
 								<dcscor:value xsi:type="xs:decimal">7</dcscor:value>
 							</dcscor:item>
 						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Контрагент</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>НачислениеЖКХ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>НачисленияБУ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Договор</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemGroup">
+								<dcsset:groupType>OrGroup</dcsset:groupType>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">РасхождениеНачислений</dcsset:left>
+									<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">РасхождениеПоступленийНачислений</dcsset:left>
+									<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:MistyRose</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Контрагент</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПоступленияБУ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПоступлениеЖКХ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Договор</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemGroup">
+								<dcsset:groupType>OrGroup</dcsset:groupType>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">РасхождениеПоступлений</dcsset:left>
+									<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">РасхождениеПоступленийНачислений</dcsset:left>
+									<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:MistyRose</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 			</dcsset:item>
