@@ -998,7 +998,7 @@
     (ВЫРАЗИТЬ(ВТ_Результат.Контролер КАК Справочник.lc_Контролеры)) = &amp;Контролер,
     (ВЫРАЗИТЬ(ВТ_Результат.Договородержатель КАК Справочник.lc_Контролеры)) = &amp;Договородержатель,
     (ВЫРАЗИТЬ(ВТ_Результат.Финансирование КАК Справочник.lc_СпособыФинансирования)) = &amp;Финансирование,
-    (ВЫРАЗИТЬ(ВТ_Результат.ВидПотребления КАК Справочник.lc_ГруппыПотребителей)) = &amp;ВидПотребления,
+    (ВЫРАЗИТЬ(ВТ_Результат.ВидПотребления КАК Справочник.lc_ГруппыПотребителей)) В ИЕРАРХИИ (&amp;ВидПотребления),
     ВТ_Результат.Регистратор.* КАК Регистратор,
     ВТ_Результат.Организация.* КАК Организация,
     ВТ_Результат.Подразделение.* КАК Подразделение,
@@ -1773,6 +1773,9 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СуммаНУ</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНДС</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1816,6 +1819,12 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>62e42053-52af-407d-8f1b-cc90f6032f4f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НоменклатураВодоотведение</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
@@ -1828,6 +1837,18 @@
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>СписокНоменклатурныхГрупп</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидПотребления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>e0200258-b8bd-4c3e-958e-1dfec0b58a2e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Договородержатель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>68eb830f-c92a-4a83-93e5-a7148bd52bfe</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -2040,6 +2061,56 @@
 						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
 						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СуммаНДС</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>НДС (руб.)</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СуммаНДС</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сумма НДС (руб.)</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
