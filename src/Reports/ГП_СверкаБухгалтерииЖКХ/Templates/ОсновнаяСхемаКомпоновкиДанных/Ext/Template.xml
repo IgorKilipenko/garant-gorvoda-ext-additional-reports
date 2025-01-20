@@ -365,7 +365,7 @@
 ПОМЕСТИТЬ ВТ_ПоступленияБУ
 ИЗ
 	РегистрНакопления.ГП_ОплатаПоУслугам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК ОплатаПоУслугамОбороты
-	   // ВТ_ОплатаПоУслугамОбороты### КАК ОплатаПоУслугамОбороты
+	//   ВТ_ОплатаПоУслугамОбороты### КАК ОплатаПоУслугамОбороты
 
 СГРУППИРОВАТЬ ПО
 	ОплатаПоУслугамОбороты.Контрагент,
@@ -551,9 +551,8 @@
 	"ЖКХ" КАК ЗаголовокЖКХ,
 	"Услуги" КАК ЗаголовокУслуги,
 	СУММА(ВТ_Результат_Подготовка.ПоступленияБУ) - СУММА(ВТ_Результат_Подготовка.ПоступлениеЖКХ) КАК РасхождениеПоступлений,
-	СУММА(ВТ_Результат_Подготовка.НачисленияБУ) - СУММА(ВТ_Результат_Подготовка.НачислениеЖКХ) КАК РасхождениеНачислений,
-	(СУММА(ВТ_Результат_Подготовка.ПоступленияБУ) - СУММА(ВТ_Результат_Подготовка.ПоступлениеЖКХ))
-	   - (СУММА(ВТ_Результат_Подготовка.НачисленияБУ) - СУММА(ВТ_Результат_Подготовка.НачислениеЖКХ)) КАК РасхождениеПоступленийНачислений
+	СУММА(ВТ_Результат_Подготовка.НачисленияБУ) - СУММА(ВТ_Результат_Подготовка.НачислениеЖКХ) КАК РасхождениеНачислений
+ПОМЕСТИТЬ ВТ_Результат
 ИЗ
 	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
 {ГДЕ
@@ -565,6 +564,37 @@
     ВТ_Результат_Подготовка.Контрагент,
     ВТ_Результат_Подготовка.Договор,
     ВТ_Результат_Подготовка.НоменклатурнаяГруппа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_Результат.Контрагент КАК Контрагент,
+	ВТ_Результат.Договор КАК Договор,
+	ВТ_Результат.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	ВТ_Результат.ПоступленияБУ КАК ПоступленияБУ,
+	ВТ_Результат.НачисленияБУ КАК НачисленияБУ,
+	ВТ_Результат.ПоступлениеЖКХ КАК ПоступлениеЖКХ,
+	ВТ_Результат.НачислениеЖКХ КАК НачислениеЖКХ,
+	ВТ_Результат.ЗаголовокОплата КАК ЗаголовокОплата,
+	ВТ_Результат.ЗаголовокНачисления КАК ЗаголовокНачисления,
+	ВТ_Результат.ЗаголовокБухгалтерия КАК ЗаголовокБухгалтерия,
+	ВТ_Результат.ЗаголовокЖКХ КАК ЗаголовокЖКХ,
+	ВТ_Результат.ЗаголовокУслуги КАК ЗаголовокУслуги,
+	ВТ_Результат.РасхождениеПоступлений КАК РасхождениеПоступлений,
+	ВТ_Результат.РасхождениеНачислений КАК РасхождениеНачислений,
+	(ВТ_Результат.ПоступлениеЖКХ - ВТ_Результат.НачислениеЖКХ) + (ВТ_Результат.ПоступленияБУ - ВТ_Результат.НачисленияБУ) КАК РасхождениеПоступленийНачислений
+ИЗ
+	ВТ_Результат КАК ВТ_Результат
+ГДЕ
+    ИСТИНА
+    И ВЫБОР
+        КОГДА &amp;ТолькоСРасхождениями = ЛОЖЬ
+            ТОГДА ИСТИНА
+        ИНАЧЕ
+            (ВТ_Результат.РасхождениеПоступлений &lt;&gt; 0)
+            ИЛИ (ВТ_Результат.РасхождениеНачислений &lt;&gt; 0)
+            ИЛИ ((ВТ_Результат.ПоступлениеЖКХ - ВТ_Результат.НачислениеЖКХ) + (ВТ_Результат.ПоступленияБУ - ВТ_Результат.НачисленияБУ) &lt;&gt; 0)
+    КОНЕЦ
 </query>
 	</dataSet>
 	<totalField>
@@ -675,6 +705,21 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
+		<name>ТолькоСРасхождениями</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Только с расхождениями</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -691,6 +736,8 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
 		<expression>НАЧАЛОПЕРИОДА(&amp;ПериодОтчета.ДатаНачала, "ДЕНЬ")</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -709,6 +756,8 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
 		<expression>КОНЕЦПЕРИОДА(&amp;ПериодОтчета.ДатаОкончания, "ДЕНЬ")</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Период</name>
@@ -875,6 +924,12 @@
 					<dcscor:parameter>Контрагент</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>c7adfdc2-2953-43d4-838e-61419f9a82ef</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТолькоСРасхождениями</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>8bf71ea4-7750-462a-98f4-4fe661b29259</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -1699,12 +1754,24 @@
 							<dcsset:item>
 								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
 							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>НачислениеЖКХ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>НачисленияБУ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПоступлениеЖКХ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПоступленияБУ</dcsset:field>
+							</dcsset:item>
 						</dcsset:selection>
 						<dcsset:filter/>
 						<dcsset:appearance>
 							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+								<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
 							</dcscor:item>
 						</dcsset:appearance>
 					</dcsset:item>
