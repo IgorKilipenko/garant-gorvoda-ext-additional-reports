@@ -364,7 +364,7 @@
     ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор,
     ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер,
     ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование,
-    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления = &amp;ВидПотребления
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
 }  
 ;
 
@@ -383,7 +383,7 @@
     ВТ_ДинамическиеПоказателиЛС.Водозабор = &amp;Водозабор,
     ВТ_ДинамическиеПоказателиЛС.Контролер = &amp;Контролер,
     ВТ_ДинамическиеПоказателиЛС.Финансирование = &amp;Финансирование,
-    ВТ_ДинамическиеПоказателиЛС.ВидПотребления = &amp;ВидПотребления
+    ВТ_ДинамическиеПоказателиЛС.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
 }    
 ;
 
@@ -604,6 +604,9 @@
         ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ОстаткиИОборотыОбщие КАК ВТ_ОстаткиИОборотыОбщие
         ПО ВТ_Результат.Контрагент = ВТ_ОстаткиИОборотыОбщие.Контрагент
         И ВТ_Результат.Договор = ВТ_ОстаткиИОборотыОбщие.Договор
+{ГДЕ
+    (ЕСТЬNULL(ВТ_Результат.Договор, ВТ_ОстаткиИОборотыОбщие.Договор)).lc_ВидДоговора В (&amp;ДополнительныеВидыДоговоров)
+}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -766,6 +769,17 @@
 		<useRestriction>false</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ДополнительныеВидыДоговоров</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дополнительные виды договоров</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<parameter>
 		<name>СчетаНДСПоАренде</name>
@@ -976,6 +990,12 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДополнительныеВидыДоговоров</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>be4ec97c-bf08-4372-acb3-e52b9dbebf0f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>СчетаНДСПоАренде</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>6f483fa4-7ece-4ab5-b613-fa412d67023c</dcsset:userSettingID>
@@ -985,6 +1005,30 @@
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>fa4f7359-414a-4462-baf1-23cec7a0b326</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Водозабор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>0cc50689-8532-4a28-a608-9e92fe2b8c1f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контролер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>422bc111-9777-4b59-bcbb-a631238d6932</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидПотребления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>a55793fd-bfef-43c6-8f34-c12db0bd0380</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>4cbe78a5-0513-47ac-a28d-29a4f3c4334e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
