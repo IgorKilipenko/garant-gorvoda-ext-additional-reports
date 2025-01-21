@@ -115,7 +115,7 @@
 		<Metadata name="Report.ГП_ОСВПоУслугам.ManagerModule" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3.2" configVersion="b70eb3cd69b15598c19835f874273f4ad56ce530"/>
 		<Metadata name="Report.ГП_ОСВПоУслугам.ObjectModule" id="0f292b5a-f792-4a08-892f-8ca64a52ffa3.0" configVersion="7a3b3f4f056ec936784838858faef38e4ac0a85a"/>
 		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ОсновнаяСхемаКомпоновкиДанных" id="8124d2a5-7eec-446b-ab5d-ec5fc11fe60b" configVersion="f5779ffdd78a9d429b7b94fe50500b3af8789490"/>
-		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="8124d2a5-7eec-446b-ab5d-ec5fc11fe60b.0" configVersion="18121b9724d0f8ca82716509967192914ebe623d"/>
+		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="8124d2a5-7eec-446b-ab5d-ec5fc11fe60b.0" configVersion="de634f66f41f16ff636733ea8a3440e300f1ff1c"/>
 		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверкиПоУслугам" id="4d0d1d0a-4708-4208-a0de-e25dff9ffc30" configVersion="7ed0e94eb9f69bffdc0945ed19aea6584e3e0c6b"/>
 		<Metadata name="Report.ГП_ОСВПоУслугам.Template.ПФ_MXL_АктСверкиПоУслугам.Template" id="4d0d1d0a-4708-4208-a0de-e25dff9ffc30.0" configVersion="ed35273a06f5361f7c24ced71fdd0723c027da18"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги" id="b25920d0-4b01-470f-a05a-4c06b4c693a5" configVersion="e4ddc46bf2bf090c4ba82b6969559658e89267f0"/>

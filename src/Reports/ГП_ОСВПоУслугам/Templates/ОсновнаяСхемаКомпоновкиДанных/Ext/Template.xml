@@ -351,7 +351,8 @@
     ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
     ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
     ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
-    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+    ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛС
 ИЗ
     РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;КонецПериода) КАК СведенияДляВзаиморасчетовПоЛС
@@ -364,6 +365,7 @@
     ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор,
     ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер,
     ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование,
+    ДинамическиеПоказателиЛицевыхСчетов.Характеристика = &amp;Характеристика,
     ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
 }  
 ;
@@ -383,6 +385,7 @@
     ВТ_ДинамическиеПоказателиЛС.Водозабор = &amp;Водозабор,
     ВТ_ДинамическиеПоказателиЛС.Контролер = &amp;Контролер,
     ВТ_ДинамическиеПоказателиЛС.Финансирование = &amp;Финансирование,
+    ВТ_ДинамическиеПоказателиЛС.Характеристика = &amp;Характеристика,
     ВТ_ДинамическиеПоказателиЛС.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
 }    
 ;
@@ -854,20 +857,6 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ЛицевойСчет</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Лицевой счет</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>ВидПотребления</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -886,6 +875,31 @@
 				<v8:content>Способ финансирования</v8:content>
 			</v8:item>
 		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Характеристика</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Характеристика</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
@@ -1029,6 +1043,12 @@
 					<dcscor:parameter>Финансирование</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>4cbe78a5-0513-47ac-a28d-29a4f3c4334e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Характеристика</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>e231f158-5c6d-43ff-a9f4-d4e1312c82a1</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
