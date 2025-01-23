@@ -517,33 +517,15 @@
 	<totalField>
 		<dataPath>Телефоны</dataPath>
 		<expression>Максимум(Телефоны)</expression>
-		<group>Договор</group>
-		<group>Договор Иерархия</group>
-		<group>ДокументРасчетов</group>
-		<group>ДокументРасчетов Иерархия</group>
 		<group>Контрагент</group>
 		<group>Контрагент Иерархия</group>
-		<group>НомерДоговора</group>
-		<group>ПериодДень</group>
-		<group>ПериодМесяц</group>
-		<group>ПериодМинута</group>
-		<group>ПериодСекунда</group>
 		<group>ПредставлениеАдреса</group>
 	</totalField>
 	<totalField>
 		<dataPath>ПредставлениеАдреса</dataPath>
 		<expression>Максимум(ПредставлениеАдреса)</expression>
-		<group>Договор</group>
-		<group>Договор Иерархия</group>
-		<group>ДокументРасчетов</group>
-		<group>ДокументРасчетов Иерархия</group>
 		<group>Контрагент</group>
 		<group>Контрагент Иерархия</group>
-		<group>НомерДоговора</group>
-		<group>ПериодДень</group>
-		<group>ПериодМесяц</group>
-		<group>ПериодМинута</group>
-		<group>ПериодСекунда</group>
 		<group>ОбщийИтог</group>
 	</totalField>
 	<parameter>
@@ -818,7 +800,7 @@
 		<dcsset:presentation xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Ведомость оплаты услуг ВКХ</v8:content>
+				<v8:content>Дебиторка для контролеров</v8:content>
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
