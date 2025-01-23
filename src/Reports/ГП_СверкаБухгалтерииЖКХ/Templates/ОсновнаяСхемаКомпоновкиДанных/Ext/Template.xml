@@ -1028,7 +1028,8 @@
 			</v8:StringQualifiers>
 		</valueType>
 		<value xsi:type="xs:string"/>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
 	<parameter>
