@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.0.0.6-rc1</Version>
+			<Version>2.0.1.0-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -70,6 +70,7 @@
 			<StyleItem>СодержаниеУслугиШрифт</StyleItem>
 			<Role>ГП_ИспользованиеДополнительныхОтчетов</Role>
 			<CommonModule>ГП_РаботаСОтчетами</CommonModule>
+			<CommonModule>ГП_РаботаСОтчетамиПовтИсп</CommonModule>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
 			<Catalog>Валюты</Catalog>
