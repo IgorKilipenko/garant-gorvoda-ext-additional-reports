@@ -545,8 +545,14 @@
 	СУММА(ВТ_Результат_Подготовка.НачисленияБУ) КАК НачисленияБУ,
 	СУММА(ВТ_Результат_Подготовка.ПоступлениеЖКХ) КАК ПоступлениеЖКХ,
 	СУММА(ВТ_Результат_Подготовка.НачислениеЖКХ) КАК НачислениеЖКХ,
-	"ОПЛАТА" КАК ЗаголовокОплата,
-	"НАЧИСЛЕНИЯ" КАК ЗаголовокНачисления,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Начисления" ИЛИ &amp;ВидОтчета = "Общий" ТОГДА "НАЧИСЛЕНИЯ"
+	   ИНАЧЕ NULL
+	КОНЕЦ КАК ЗаголовокНачисления,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Поступления" ИЛИ &amp;ВидОтчета = "Общий" ТОГДА "ОПЛАТА"
+	   ИНАЧЕ NULL
+	КОНЕЦ КАК ЗаголовокОплата,
 	"БУХГАЛТЕРИЯ" КАК ЗаголовокБухгалтерия,
 	"ЖКХ" КАК ЗаголовокЖКХ,
 	"Услуги" КАК ЗаголовокУслуги,
@@ -571,22 +577,51 @@
 	ВТ_Результат.Контрагент КАК Контрагент,
 	ВТ_Результат.Договор КАК Договор,
 	ВТ_Результат.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
-	ВТ_Результат.ПоступленияБУ КАК ПоступленияБУ,
-	ВТ_Результат.НачисленияБУ КАК НачисленияБУ,
-	ВТ_Результат.ПоступлениеЖКХ КАК ПоступлениеЖКХ,
-	ВТ_Результат.НачислениеЖКХ КАК НачислениеЖКХ,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Начисления" ТОГДА 0
+	   ИНАЧЕ ВТ_Результат.ПоступленияБУ
+	КОНЕЦ КАК ПоступленияБУ,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Начисления" ТОГДА 0
+	   ИНАЧЕ ВТ_Результат.ПоступлениеЖКХ
+	КОНЕЦ КАК ПоступлениеЖКХ,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Поступления" ТОГДА 0
+	   ИНАЧЕ ВТ_Результат.НачисленияБУ
+	КОНЕЦ КАК НачисленияБУ,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Поступления" ТОГДА 0
+	   ИНАЧЕ ВТ_Результат.НачислениеЖКХ
+	КОНЕЦ КАК НачислениеЖКХ,
 	ВТ_Результат.ЗаголовокОплата КАК ЗаголовокОплата,
 	ВТ_Результат.ЗаголовокНачисления КАК ЗаголовокНачисления,
 	ВТ_Результат.ЗаголовокБухгалтерия КАК ЗаголовокБухгалтерия,
 	ВТ_Результат.ЗаголовокЖКХ КАК ЗаголовокЖКХ,
 	ВТ_Результат.ЗаголовокУслуги КАК ЗаголовокУслуги,
-	ВТ_Результат.РасхождениеПоступлений КАК РасхождениеПоступлений,
-	ВТ_Результат.РасхождениеНачислений КАК РасхождениеНачислений,
-	(ВТ_Результат.ПоступлениеЖКХ - ВТ_Результат.НачислениеЖКХ) + (ВТ_Результат.ПоступленияБУ - ВТ_Результат.НачисленияБУ) КАК РасхождениеПоступленийНачислений
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Начисления" ТОГДА 0
+	   ИНАЧЕ ВТ_Результат.РасхождениеПоступлений
+	КОНЕЦ КАК РасхождениеПоступлений,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Поступления" ТОГДА 0
+	   ИНАЧЕ ВТ_Результат.РасхождениеНачислений
+	КОНЕЦ КАК РасхождениеНачислений,
+	ВЫБОР
+	   КОГДА &amp;ВидОтчета &lt;&gt; "Общий" ТОГДА (ВТ_Результат.ПоступлениеЖКХ - ВТ_Результат.НачислениеЖКХ) + (ВТ_Результат.ПоступленияБУ - ВТ_Результат.НачисленияБУ)
+	   ИНАЧЕ 0
+	КОНЕЦ КАК РасхождениеПоступленийНачислений
 ИЗ
 	ВТ_Результат КАК ВТ_Результат
 ГДЕ
     ИСТИНА
+    И ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Начисления" ТОГДА ВТ_Результат.НачислениеЖКХ &lt;&gt; 0 И ВТ_Результат.НачисленияБУ &lt;&gt; 0
+	   ИНАЧЕ ИСТИНА
+	КОНЕЦ
+	И ВЫБОР
+	   КОГДА &amp;ВидОтчета = "Поступления" ТОГДА ВТ_Результат.ПоступлениеЖКХ &lt;&gt; 0 И ВТ_Результат.ПоступленияБУ &lt;&gt; 0
+	   ИНАЧЕ ИСТИНА
+	КОНЕЦ
     И ВЫБОР
         КОГДА &amp;ТолькоСРасхождениями = ЛОЖЬ
             ТОГДА ИСТИНА
@@ -658,6 +693,53 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВидОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:string">Общий</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общий</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:string">Начисления</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начисления</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:string">Поступления</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступления</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
 		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
@@ -909,6 +991,12 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+					<dcsset:userSettingID>de3396bb-03dd-4500-b7c3-696131f54230</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НоменклатурныеГруппы</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>921f9ff4-14fd-465e-bf12-4874aa82a98d</dcsset:userSettingID>
@@ -956,6 +1044,82 @@
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:use>false</dcsset:use>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗаголовокНачисления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НачислениеЖКХ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НачисленияБУ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ЗаголовокУслуги</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ЗаголовокЖКХ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ЗаголовокНачисления</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:use>false</dcsset:use>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗаголовокОплата</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
 				<dcsset:column>
 					<dcsset:groupItems>
@@ -1001,7 +1165,12 @@
 									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
-							<dcsset:filter/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
 							<dcsset:appearance>
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>Текст</dcscor:parameter>
@@ -1011,6 +1180,32 @@
 											<v8:content>Итого</v8:content>
 										</v8:item>
 									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+									<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>СтильГраницы</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+										<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+									</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="xs:string"/>
 								</dcscor:item>
 							</dcsset:appearance>
 						</dcsset:item>
@@ -1113,6 +1308,7 @@
 								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 							</dcsset:item>
 							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
 								<dcsset:selection>
 									<dcsset:item>
 										<dcsset:field>НачислениеЖКХ</dcsset:field>
@@ -1139,6 +1335,29 @@
 								<dcsset:useInOverall>DontUse</dcsset:useInOverall>
 								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
+								<dcsset:selection/>
+								<dcsset:filter>
+									<dcsset:item xsi:type="dcsset:FilterItemComparison">
+										<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+										<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+									</dcsset:item>
+								</dcsset:filter>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+									</dcscor:item>
+								</dcsset:appearance>
+								<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+								<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+								<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+								<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+								<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
 							</dcsset:item>
 						</dcsset:conditionalAppearance>
 						<dcsset:outputParameters>
@@ -1212,7 +1431,12 @@
 									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
-							<dcsset:filter/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
 							<dcsset:appearance>
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>Текст</dcscor:parameter>
@@ -1222,6 +1446,32 @@
 											<v8:content>Итого</v8:content>
 										</v8:item>
 									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+									<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>СтильГраницы</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+										<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+									</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="xs:string"/>
 								</dcscor:item>
 							</dcsset:appearance>
 						</dcsset:item>
@@ -1364,7 +1614,12 @@
 									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
-							<dcsset:filter/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокНачисления</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
 							<dcsset:appearance>
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>Текст</dcscor:parameter>
@@ -1374,6 +1629,32 @@
 											<v8:content>Итого</v8:content>
 										</v8:item>
 									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокНачисления</dcsset:left>
+									<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>СтильГраницы</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+										<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+									</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="xs:string"/>
 								</dcscor:item>
 							</dcsset:appearance>
 						</dcsset:item>
@@ -1476,6 +1757,7 @@
 								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 							</dcsset:item>
 							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
 								<dcsset:selection>
 									<dcsset:item>
 										<dcsset:field>НачислениеЖКХ</dcsset:field>
@@ -1575,7 +1857,12 @@
 									<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
-							<dcsset:filter/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокНачисления</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
 							<dcsset:appearance>
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>Текст</dcscor:parameter>
@@ -1585,6 +1872,32 @@
 											<v8:content>Итого</v8:content>
 										</v8:item>
 									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗаголовокНачисления</dcsset:left>
+									<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>СтильГраницы</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+										<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+									</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="xs:string"/>
 								</dcscor:item>
 							</dcsset:appearance>
 						</dcsset:item>
@@ -1800,6 +2113,7 @@
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 					</dcsset:item>
 					<dcsset:item>
+						<dcsset:use>false</dcsset:use>
 						<dcsset:selection>
 							<dcsset:item>
 								<dcsset:field>ПараметрыДанных.ПустойЗаголовок</dcsset:field>
@@ -1961,6 +2275,76 @@
 						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
 						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
 						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЗаголовокОплата</dcsset:left>
+								<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>СтильГраницы</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Размещение</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Block</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string"/>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЗаголовокНачисления</dcsset:left>
+								<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>СтильГраницы</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Размещение</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Block</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">0.1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string"/>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 					</dcsset:item>
 				</dcsset:conditionalAppearance>
 			</dcsset:item>
