@@ -358,6 +358,52 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет КАК ЛицевойСчет,
+    СведенияДляВзаиморасчетовПоЛС.Контрагент КАК Контрагент,
+    ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
+    ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
+    ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+    ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика
+ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛС
+ИЗ
+    РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;КонецПериода) КАК СведенияДляВзаиморасчетовПоЛС
+    ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода) КАК ДинамическиеПоказателиЛицевыхСчетов
+    // ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
+    ПО СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет = ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет
+{ГДЕ
+    СведенияДляВзаиморасчетовПоЛС.Контрагент В (&amp;Контраген),
+    ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет = &amp;ЛицевойСчет,
+    ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор,
+    ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер,
+    ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование,
+    ДинамическиеПоказателиЛицевыхСчетов.Характеристика = &amp;Характеристика,
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
+}  
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+    Контрагенты.Ссылка КАК Контрагент
+ПОМЕСТИТЬ ВТ_ФильтрДинамическихПоказателейКонтрагентов
+ИЗ
+    Справочник.Контрагенты КАК Контрагенты
+    ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛС КАК ВТ_ДинамическиеПоказателиЛС
+    ПО Контрагенты.Ссылка = ВТ_ДинамическиеПоказателиЛС.Контрагент
+{ГДЕ
+    Контрагенты.Ссылка В (&amp;Контраген),
+    ВТ_ДинамическиеПоказателиЛС.Контрагент В (&amp;Контраген),
+    ВТ_ДинамическиеПоказателиЛС.ЛицевойСчет = &amp;ЛицевойСчет,
+    ВТ_ДинамическиеПоказателиЛС.Водозабор = &amp;Водозабор,
+    ВТ_ДинамическиеПоказателиЛС.Контролер = &amp;Контролер,
+    ВТ_ДинамическиеПоказателиЛС.Финансирование = &amp;Финансирование,
+    ВТ_ДинамическиеПоказателиЛС.Характеристика = &amp;Характеристика,
+    ВТ_ДинамическиеПоказателиЛС.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
+}    
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ОплатаПоУслугамОбороты.Контрагент КАК Контрагент,
 	ОплатаПоУслугамОбороты.Договор КАК Договор,
 	ОплатаПоУслугамОбороты.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
@@ -562,8 +608,8 @@
 ИЗ
 	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
 {ГДЕ
-	ВТ_Результат_Подготовка.Контрагент = &amp;Контрагент,
-	ВТ_Результат_Подготовка.Договор = &amp;Договор,
+	ВТ_Результат_Подготовка.Контрагент В (&amp;Контрагент),
+	ВТ_Результат_Подготовка.Договор В (&amp;Договор),
 	ВТ_Результат_Подготовка.НоменклатурнаяГруппа В (&amp;НоменклатурныеГруппы)}
 
 СГРУППИРОВАТЬ ПО
@@ -651,7 +697,8 @@
             (ВТ_Результат.РасхождениеПоступлений &lt;&gt; 0)
             ИЛИ (ВТ_Результат.РасхождениеНачислений &lt;&gt; 0)
             ИЛИ (ВТ_Результат.РасхождениеПоступленийНачислений &lt;&gt; 0)
-    КОНЕЦ</query>
+    КОНЕЦ
+    И  ВТ_Результат.Контрагент В (ВЫБРАТЬ Т.Контрагент ИЗ ВТ_ФильтрДинамическихПоказателейКонтрагентов КАК Т)</query>
 	</dataSet>
 	<totalField>
 		<dataPath>ПоступлениеЖКХ</dataPath>
@@ -784,28 +831,40 @@
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Договор</v8:content>
+				<v8:content>Договоры</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
 		</valueType>
-		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+				<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+					<dcscor:item>
+						<dcscor:choiceParameter>Отбор.Владелец</dcscor:choiceParameter>
+						<dcscor:value>ПараметрыДанных.Контрагент</dcscor:value>
+						<dcscor:mode xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d7p1:LinkedValueChangeMode">Clear</dcscor:mode>
+					</dcscor:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
 	</parameter>
 	<parameter>
 		<name>Контрагент</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Контрагент</v8:content>
+				<v8:content>Контрагенты</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
 		</valueType>
-		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<parameter>
 		<name>ТолькоСРасхождениями</name>
@@ -823,62 +882,88 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>НачалоПериода</name>
+		<name>Водозабор</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Начало периода</v8:content>
+				<v8:content>Водозабор</v8:content>
 			</v8:item>
 		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-		<expression>НАЧАЛОПЕРИОДА(&amp;ПериодОтчета.ДатаНачала, "ДЕНЬ")</expression>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>КонецПериода</name>
+		<name>Контролер</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Конец периода</v8:content>
+				<v8:content>Контролер</v8:content>
 			</v8:item>
 		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-		<expression>КОНЕЦПЕРИОДА(&amp;ПериодОтчета.ДатаОкончания, "ДЕНЬ")</expression>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>Период</name>
+		<name>Контраген</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Контраген</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
 		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Характеристика</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Характеристика</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидПотребления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа потребителей</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Финансирование</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Способ финансирования</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>АналитикаСчетовНачислений</name>
@@ -945,6 +1030,64 @@
 		<value xsi:type="xs:string"/>
 		<useRestriction>false</useRestriction>
 		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;ПериодОтчета.ДатаНачала, "ДЕНЬ")</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;ПериодОтчета.ДатаОкончания, "ДЕНЬ")</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -1039,6 +1182,43 @@
 					<dcscor:parameter>ТолькоСРасхождениями</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					<dcsset:userSettingID>8bf71ea4-7750-462a-98f4-4fe661b29259</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Водозабор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контролер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контраген</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Характеристика</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидПотребления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>58ed5a64-4e80-4b3a-b211-2ca55603c125</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>24c2aed0-f533-425f-bfc0-05295525c184</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
