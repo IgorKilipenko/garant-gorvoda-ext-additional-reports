@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Report uuid="40ac345a-16da-45b3-b43e-8dca8635ce3c">
+		<InternalInfo>
+			<xr:GeneratedType name="ReportObject.ЗадолженностьПокупателейПоСрокамДолга" category="Object">
+				<xr:TypeId>b86c52a4-fd20-420f-952f-9c3bcf12e5b3</xr:TypeId>
+				<xr:ValueId>67bec656-d03b-47fb-a0d0-ce5f6a608033</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ReportManager.ЗадолженностьПокупателейПоСрокамДолга" category="Manager">
+				<xr:TypeId>abd79e50-d426-4334-b01c-e5f0bba92e62</xr:TypeId>
+				<xr:ValueId>7d52ba59-e3c7-431a-a050-230e9f5d71df</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ЗадолженностьПокупателейПоСрокамДолга</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>808fc4bd-d6a1-44dd-97de-50010f7b70e8</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+		</ChildObjects>
+	</Report>
+</MetaDataObject>

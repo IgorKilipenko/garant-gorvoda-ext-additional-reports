@@ -58,7 +58,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="b5472775965ca84fbfff80204eefd338d6ad7632"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="34e9d75feb851ea99812563204ec6d83d05d7bb4"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="213a072f3e146d42abadf3a74b475b2f07cb1f28"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="fa626ce483b8ca9df56b2b52b1896017d4a74cef"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="a42b690d17671e3c86d84e3716636523dc6d13d5"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -215,6 +215,10 @@
 		<Metadata name="Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам.ObjectModule" id="36ade520-1157-4907-89bd-2b98a434479b.0" configVersion="7079918ff828c862f660b4552c0c01c155a9b49f"/>
 		<Metadata name="Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам.Template.ОсновнаяСхемаКомпоновкиДанных" id="dd1c5fc6-2e4f-4ac4-8424-03f6da8b0549" configVersion="162483573f67a9588accf8bd018a10acba62b1fc"/>
 		<Metadata name="Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="dd1c5fc6-2e4f-4ac4-8424-03f6da8b0549.0" configVersion="05a0ae15f7746067bfad0e923b67a561794d22a4"/>
+		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга" id="40ac345a-16da-45b3-b43e-8dca8635ce3c" configVersion="3649bff47ddcf05299a6c89519ea1df5ad1e6615"/>
+		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга.ManagerModule" id="40ac345a-16da-45b3-b43e-8dca8635ce3c.2" configVersion="7cd43d311adefd017418f71dc10d128cf522583e"/>
+		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга.Template.ОсновнаяСхемаКомпоновкиДанных" id="17b26a32-c66d-4033-839c-993d841853b3" configVersion="7d6af82331e985c49ee62cd0e05eeb79795950f8"/>
+		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="17b26a32-c66d-4033-839c-993d841853b3.0" configVersion="1d5e6bf716678cadb56a94204b00f05515ebfeca"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП" id="49d418b2-77d3-48e4-9b25-e85578e1b41d" configVersion="9b027995d814f25a3081fb36e98e10c7fdd31b4a"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
