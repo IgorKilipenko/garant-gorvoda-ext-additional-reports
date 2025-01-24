@@ -173,6 +173,7 @@
 				<dcscom:expression>ВЫБОР 
 	КОГДА Строка(НоменклатурнаяГруппа) = "Водоснабжение" ТОГДА 0 
 	КОГДА Строка(НоменклатурнаяГруппа) = "Водоотведение" ТОГДА 1 
+	КОГДА Строка(НоменклатурнаяГруппа) = "" ТОГДА "ЯЯЯ"
 	ИНАЧЕ Строка(НоменклатурнаяГруппа) 
 КОНЕЦ</dcscom:expression>
 				<dcscom:orderType>Asc</dcscom:orderType>
@@ -683,11 +684,11 @@
 ГДЕ
     ИСТИНА
     И ВЫБОР
-	   КОГДА &amp;ВидОтчета = "Начисления" ТОГДА ВТ_Результат.НачислениеЖКХ &lt;&gt; 0 И ВТ_Результат.НачисленияБУ &lt;&gt; 0
+	   КОГДА &amp;ВидОтчета = "Начисления" ТОГДА (ВТ_Результат.НачислениеЖКХ &lt;&gt; 0) ИЛИ (ВТ_Результат.НачисленияБУ &lt;&gt; 0)
 	   ИНАЧЕ ИСТИНА
 	КОНЕЦ
 	И ВЫБОР
-	   КОГДА &amp;ВидОтчета = "Поступления" ТОГДА ВТ_Результат.ПоступлениеЖКХ &lt;&gt; 0 И ВТ_Результат.ПоступленияБУ &lt;&gt; 0
+	   КОГДА &amp;ВидОтчета = "Поступления" ТОГДА (ВТ_Результат.ПоступлениеЖКХ &lt;&gt; 0) ИЛИ (ВТ_Результат.ПоступленияБУ &lt;&gt; 0)
 	   ИНАЧЕ ИСТИНА
 	КОНЕЦ
     И ВЫБОР
@@ -1977,6 +1978,27 @@
 					<dcsset:item>
 						<dcsset:selection>
 							<dcsset:item>
+								<dcsset:field>Контрагент</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Договор</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Размещение</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
 								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
@@ -2018,6 +2040,30 @@
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>Плата за негативное воздействие</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">НоменклатурнаяГруппа</dcsset:left>
+								<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Текст</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Прочие</v8:content>
 									</v8:item>
 								</dcscor:value>
 							</dcscor:item>
