@@ -36,6 +36,7 @@
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
 			<Template>ПФ_MXL_Макет</Template>
+			<Template>Удалить_ПФ_MXL_Макет</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>

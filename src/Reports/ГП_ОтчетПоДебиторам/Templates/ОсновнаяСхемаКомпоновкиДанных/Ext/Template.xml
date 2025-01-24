@@ -64,6 +64,11 @@
 				<dcscom:dimension>true</dcscom:dimension>
 				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
 			</role>
+			<orderExpression>
+				<dcscom:expression>НаименованиеПолное</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
 			<valueType>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
 			</valueType>
@@ -195,6 +200,15 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаОстаток</dataPath>
 			<field>СуммаОстаток</field>
+			<orderExpression>
+				<dcscom:expression>ВЫБОР
+	КОГДА &amp;ВидЗадолженности = "Дебиторская" ТОГДА СуммаКонечныйОстаток
+	КОГДА &amp;ВидЗадолженности = "Кредиторская" ТОГДА СуммаПросрочено
+	ИНАЧЕ СуммаОстаток
+КОНЕЦ</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаПросрочено</dataPath>
@@ -577,13 +591,14 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>false</useRestriction>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидДоговора</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Вид договора</v8:content>
+				<v8:content>Вид договора (дополнительный)</v8:content>
 			</v8:item>
 		</title>
 		<value xsi:nil="true"/>
@@ -650,6 +665,7 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -2096,9 +2112,6 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Счет</dcsset:field>
 				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ВидДоговора</dcsset:field>
-				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -2133,6 +2146,12 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДляПечати</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>bf6be9f4-6faa-4e3a-9737-e2572b96309e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ВидДоговора</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>e5dd2a93-e285-40c1-861b-663eca12a75c</dcsset:userSettingID>
@@ -2140,7 +2159,11 @@
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>НаименованиеПолное</dcsset:field>
+					<dcsset:field>СуммаОстаток</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контрагент</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
