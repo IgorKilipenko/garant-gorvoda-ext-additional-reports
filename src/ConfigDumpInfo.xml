@@ -50,17 +50,19 @@
 		<Metadata name="Catalog.НоменклатурныеГруппы" id="5039b57c-2983-42ea-af33-b38706544d1c" configVersion="d0cc3f267b113fe566f4c5ddc3b409ee48028da3"/>
 		<Metadata name="Catalog.Организации" id="ea331b04-48bc-46b9-a941-198417732110" configVersion="c6962b9b50af6273c87a9feec922d5579a5b9575"/>
 		<Metadata name="Catalog.ПодразделенияОрганизаций" id="f0818814-901e-47cd-816b-4b6348d393a4" configVersion="86dc03b7adad72022cbc3c26aca22de7fbea8e35"/>
+		<Metadata name="Catalog.Пользователи" id="5a7f491e-2d0e-416d-83d9-41703405f785" configVersion="97a073ac2c182cc62515a6bddedaa620a511d560"/>
 		<Metadata name="Catalog.УПЖКХ_ВидыПлощадей" id="2858fdff-111f-444e-b426-fe8463d10dda" configVersion="4def2e7d8deb0e06a8584dedcf8d7d2ed9fb793c"/>
 		<Metadata name="ChartOfAccounts.Хозрасчетный" id="6bb79fc0-b442-4037-b869-ad6bac28686f" configVersion="49bf89c9f5bca3008dff01a427f0bad23f5f8c05"/>
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2" configVersion="af2a18ac4d840ec0af3f04c274ce3e5b12947e27"/>
-		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="9694ae76429f7afd15c2f9d6894dface1ed213e4"/>
+		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="b5472775965ca84fbfff80204eefd338d6ad7632"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="34e9d75feb851ea99812563204ec6d83d05d7bb4"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="213a072f3e146d42abadf3a74b475b2f07cb1f28"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="0336ced4e1607eb3651adbecc14f3cd76b7885ef"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="fa626ce483b8ca9df56b2b52b1896017d4a74cef"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
+		<Metadata name="Enum.ВидыДоговоровКонтрагентов" id="59b60edc-1f03-4bf2-b181-ea6024982d3e" configVersion="fa2f52ead231c1a0e34b843a97f1eadef396c460"/>
 		<Metadata name="Enum.ДоступныеПериодыОтчета" id="4e31257d-31c5-493c-b925-1ebcb3cf2511" configVersion="877acfa11aafb1758fed12d38c8aa0179652f8e3"/>
 		<Metadata name="Enum.КВП_ВидыТарифов" id="ffacf866-925e-47ee-8350-8cf84d7e97da" configVersion="6e1079d4236d05ba5857be39e475fc68e73166a8">
 			<Metadata name="Enum.КВП_ВидыТарифов.EnumValue.Дневной" id="ede59c15-84dc-40d0-84e0-890e3fcb9900"/>

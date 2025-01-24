@@ -85,12 +85,14 @@
 			<Catalog>БанковскиеСчета</Catalog>
 			<Catalog>Банки</Catalog>
 			<Catalog>КВП_Здания</Catalog>
+			<Catalog>Пользователи</Catalog>
 			<Document>РеализацияТоваровУслуг</Document>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
 			<Enum>УПЖКХ_РазделыУчета</Enum>
 			<Enum>ДоступныеПериодыОтчета</Enum>
 			<Enum>УПЖКХ_ПричиныОтключенияПриборовУчета</Enum>
 			<Enum>КВП_ВидыТарифов</Enum>
+			<Enum>ВидыДоговоровКонтрагентов</Enum>
 			<Report>ГП_СводнаяВедомостьСКоличеством</Report>
 			<Report>ГП_ОтчетПоКлиентам</Report>
 			<Report>ГП_ОСВПоАбоненту</Report>
