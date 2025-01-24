@@ -253,7 +253,11 @@
     СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет КАК ЛицевойСчет,
     СведенияДляВзаиморасчетовПоЛС.Контрагент КАК Контрагент,
     ДинамическиеПоказателиЛицевыхСчетов.Водозабор КАК Водозабор,
-    ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер
+    ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Контролер,
+    ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Договородержатель,
+    ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
+    ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛС
 ИЗ
     РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;КонецПериода) КАК СведенияДляВзаиморасчетовПоЛС
@@ -264,7 +268,11 @@
     СведенияДляВзаиморасчетовПоЛС.Контрагент = &amp;Контрагент,
     ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет = &amp;ЛицевойСчет,
     ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор,
-    ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер
+    ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер,
+    ДинамическиеПоказателиЛицевыхСчетов.Договородержатель = &amp;Договородержатель,
+    ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование,
+    ДинамическиеПоказателиЛицевыхСчетов.Характеристика = &amp;Характеристика,
+    ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
 }  
 ;
 
@@ -280,7 +288,11 @@
     ВТ_ДинамическиеПоказателиЛС.Контрагент = &amp;Контрагент,
     ВТ_ДинамическиеПоказателиЛС.ЛицевойСчет = &amp;ЛицевойСчет,
     ВТ_ДинамическиеПоказателиЛС.Водозабор = &amp;Водозабор,
-    ВТ_ДинамическиеПоказателиЛС.Контролер = &amp;Контролер
+    ВТ_ДинамическиеПоказателиЛС.Контролер = &amp;Контролер,
+    ВТ_ДинамическиеПоказателиЛС.Договородержатель = &amp;Договородержатель,
+    ВТ_ДинамическиеПоказателиЛС.Финансирование = &amp;Финансирование,
+    ВТ_ДинамическиеПоказателиЛС.Характеристика = &amp;Характеристика,
+    ВТ_ДинамическиеПоказателиЛС.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)
 }    
 ;
 
@@ -674,6 +686,61 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
+		<name>ВидПотребления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа потребителей</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Финансирование</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Способ финансирования</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Договородержатель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договородержатель</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Характеристика</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Характеристика объекта</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -739,17 +806,6 @@
 		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ЛицевойСчет</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Лицевой счет</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
 		<name>Период</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -764,7 +820,8 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -912,6 +969,30 @@
 					<dcscor:parameter>Контролер</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>15a786eb-1a9d-4910-8827-8e81dfc0e8db</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидПотребления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>54caaa00-75df-465c-a318-c51cf5965fd0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>e228d9ce-02c5-44b8-abf8-1f318df38470</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Договородержатель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>fcfc1a70-1ffc-4c87-9788-36a6e6e3449e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Характеристика</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>566fec4d-5d0b-42ad-a077-de7673f6200b</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
