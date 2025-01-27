@@ -25,6 +25,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ВедомостьОплатыУслугВКХ</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ОСВПоУслугам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ОСВПоУслугамИтоги</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_ДублированиеДокументовРеализации</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
