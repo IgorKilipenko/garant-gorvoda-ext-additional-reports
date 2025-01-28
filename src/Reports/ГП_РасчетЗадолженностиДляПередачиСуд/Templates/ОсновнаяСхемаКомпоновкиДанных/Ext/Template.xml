@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счет</dataPath>
+			<field>Счет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто1</dataPath>
+			<field>Субконто1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто2</dataPath>
+			<field>Субконто2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто2</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Организации</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто3</dataPath>
+			<field>Субконто3</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Субконто3</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоНачисления</dataPath>
+			<field>КоличествоНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество начисления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто2</dataPath>
+			<field>КорСубконто2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кор субконто2</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто1</dataPath>
+			<field>КорСубконто1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кор субконто1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаБезНДСНачисления</dataPath>
+			<field>СуммаБезНДСНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма без НДСНачисления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто3</dataPath>
+			<field>КорСубконто3</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кор субконто3</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаКор</dataPath>
+			<field>ВалютаКор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКор</dataPath>
+			<field>ПодразделениеКор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСчет</dataPath>
+			<field>КорСчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месяц</dataPath>
+			<field>Месяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='MMMM yyyy'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НоменклатурнаяГруппа</dataPath>
+			<field>НоменклатурнаяГруппа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатурная группа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНачисления</dataPath>
+			<field>СуммаНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма начисления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНДСНачисления</dataPath>
+			<field>СуммаНДСНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма НДСНачисления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОплаты</dataPath>
+			<field>СуммаОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма оплаты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаБезНДСОплаты</dataPath>
+			<field>СуммаБезНДСОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма без НДСОплаты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНДСОплатый</dataPath>
+			<field>СуммаНДСОплатый</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма НДСОплатый</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументНачисления</dataPath>
+			<field>ДокументНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ начисления</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументОплаты</dataPath>
+			<field>ДокументОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ оплаты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗадолженности</dataPath>
+			<field>СуммаЗадолженности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма задолженности</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Хозрасчетный.Ссылка КАК Счет
+ПОМЕСТИТЬ ВТ_ФильтрСписокСчетов
+ИЗ
+	ПланСчетов.Хозрасчетный КАК Хозрасчетный
+ГДЕ
+	Хозрасчетный.Ссылка В ИЕРАРХИИ(&amp;ФильтрСписокСчетов)
+
+ИНДЕКСИРОВАТЬ ПО
+	Счет
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Хозрасчетный.Ссылка КАК Счет
+ПОМЕСТИТЬ ВТ_ФильтрСписокСчетовРеализации
+ИЗ
+	ПланСчетов.Хозрасчетный КАК Хозрасчетный
+ГДЕ
+	Хозрасчетный.Ссылка В ИЕРАРХИИ(&amp;СписокСчетовВыручки)
+
+ИНДЕКСИРОВАТЬ ПО
+	Счет
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ХозрасчетныйОстаткиНаКонец.Период КАК ПериодМесяц,
+	ХозрасчетныйОстаткиНаКонец.Счет КАК Счет,
+	ХозрасчетныйОстаткиНаКонец.Субконто1 КАК Контрагент,
+	ХозрасчетныйОстаткиНаКонец.Субконто2 КАК Договор,
+	ХозрасчетныйОстаткиНаКонец.Субконто3 КАК ДокументРасчетов,
+	ХозрасчетныйОстаткиНаКонец.Организация КАК Организация,
+	ХозрасчетныйОстаткиНаКонец.Валюта КАК Валюта,
+	ХозрасчетныйОстаткиНаКонец.Подразделение КАК Подразделение,
+	ХозрасчетныйОстаткиНаКонец.СуммаКонечныйОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ ВТ_ОстаткиНаКонецБУ
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(
+			&amp;НачалоПериода,
+			&amp;КонецПериода,
+			МЕСЯЦ,
+			,
+			Счет В 
+				(ВЫБРАТЬ
+					Т.Счет
+				ИЗ
+					ВТ_ФильтрСписокСчетов КАК Т),
+			&amp;АналитикаРасчетов,
+			Организация = &amp;Организация 
+				И Субконто2.lc_ВидДоговора В (&amp;ДополнительныеВидыДоговоров) 
+				{(Субконто1 В (&amp;МассивКонтрагентов)), (Субконто2 В (&amp;МассивДоговоров))}
+					) КАК ХозрасчетныйОстаткиНаКонец
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	НАЧАЛОПЕРИОДА(ВТ_ОстаткиНаКонецБУ.ПериодМесяц, МЕСЯЦ) КАК Месяц,
+	ВТ_ОстаткиНаКонецБУ.Контрагент КАК Контрагент,
+	ВТ_ОстаткиНаКонецБУ.Договор КАК Договор,
+	СУММА(ВТ_ОстаткиНаКонецБУ.СуммаОстаток) КАК СуммаЗадолженности
+ПОМЕСТИТЬ ВТ_ЗадолженникиКонтрагенты
+ИЗ
+	ВТ_ОстаткиНаКонецБУ КАК ВТ_ОстаткиНаКонецБУ
+	
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ВТ_ОстаткиНаКонецБУ.ПериодМесяц, МЕСЯЦ),
+	ВТ_ОстаткиНаКонецБУ.Контрагент,
+	ВТ_ОстаткиНаКонецБУ.Договор
+ИМЕЮЩИЕ СУММА(ВТ_ОстаткиНаКонецБУ.СуммаОстаток) &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОборотыРеализацииБУ.Период КАК Период,
+	НАЧАЛОПЕРИОДА(ОборотыРеализацииБУ.Период, МЕСЯЦ) КАК Месяц,
+	ОборотыРеализацииБУ.УточнениеПериода КАК УточнениеПериода,
+	ОборотыРеализацииБУ.Регистратор КАК Регистратор,
+	ОборотыРеализацииБУ.Счет КАК Счет,
+	ОборотыРеализацииБУ.КорСчет КАК КорСчет,
+	ОборотыРеализацииБУ.Субконто1 КАК Контрагент,
+	ОборотыРеализацииБУ.Субконто2 КАК Договор,
+	ОборотыРеализацииБУ.Субконто3 КАК ДокументРасчетов,
+	ОборотыРеализацииБУ.КорСубконто1 КАК НоменклатурнаяГруппа,
+	ОборотыРеализацииБУ.КорСубконто2 КАК СтавкаНДС,
+	ОборотыРеализацииБУ.СуммаОборот КАК СуммаОборот,
+	ОборотыРеализацииБУ.СуммаОборотДт КАК СуммаОборотДт,
+	ОборотыРеализацииБУ.СуммаОборотКт КАК СуммаОборотКт,
+	ОборотыРеализацииБУ.СуммаНУКорОборот КАК СуммаОборотБезНДС,
+	ОборотыРеализацииБУ.КоличествоКорОборот КАК КоличествоОборот,
+	ОборотыРеализацииБУ.СуммаНУОборот - ОборотыРеализацииБУ.СуммаНУКорОборот КАК СуммаНДС
+ПОМЕСТИТЬ ВТ_ОборотыРеализацииБУ_Подготовка
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор,
+		Счет В
+				(ВЫБРАТЬ
+					Т.Счет
+				ИЗ
+					ВТ_ФильтрСписокСчетов КАК Т),
+				&amp;АналитикаРасчетов,
+				Организация = &amp;Организация
+					И Субконто2.lc_ВидДоговора В (&amp;ДополнительныеВидыДоговоров)
+					И (Субконто1, Субконто2) В (ВЫБРАТЬ Т.Контрагент, Т.Договор ИЗ ВТ_ЗадолженникиКонтрагенты КАК Т)
+					{(Субконто2 В (&amp;МассивДоговоров)), (КорСубконто1 В (&amp;СписокНоменклатурныхГрупп))},
+					КорСчет В (ВЫБРАТЬ Т.Счет ИЗ ВТ_ФильтрСписокСчетовРеализации КАК Т) 
+					) КАК ОборотыРеализацииБУ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ОборотыРеализацииБУ_Подготовка.Месяц КАК Месяц,
+	ВТ_ОборотыРеализацииБУ_Подготовка.ДокументРасчетов КАК ДокументНачисления,
+	ВТ_ОборотыРеализацииБУ_Подготовка.Контрагент КАК Контрагент,
+	ВТ_ОборотыРеализацииБУ_Подготовка.Договор КАК Договор,
+	ВТ_ОборотыРеализацииБУ_Подготовка.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	СУММА(ВТ_ОборотыРеализацииБУ_Подготовка.СуммаОборот) КАК Сумма,
+	СУММА(ВТ_ОборотыРеализацииБУ_Подготовка.СуммаОборотБезНДС) КАК СуммаБезНДС,
+	СУММА(ВТ_ОборотыРеализацииБУ_Подготовка.СуммаНДС) КАК СуммаНДС,
+	СУММА(ВТ_ОборотыРеализацииБУ_Подготовка.КоличествоОборот) КАК Количество
+	
+ПОМЕСТИТЬ ВТ_ОборотыРеализацииБУ
+ИЗ
+	ВТ_ОборотыРеализацииБУ_Подготовка КАК ВТ_ОборотыРеализацииБУ_Подготовка
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ЗадолженникиКонтрагенты КАК ВТ_ЗадолженникиКонтрагенты
+	ПО ВТ_ОборотыРеализацииБУ_Подготовка.Контрагент = ВТ_ЗадолженникиКонтрагенты.Контрагент
+	И ВТ_ОборотыРеализацииБУ_Подготовка.Договор = ВТ_ЗадолженникиКонтрагенты.Договор
+	И ВТ_ОборотыРеализацииБУ_Подготовка.Месяц = ВТ_ЗадолженникиКонтрагенты.Месяц
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ОборотыРеализацииБУ_Подготовка.Месяц,
+	ВТ_ОборотыРеализацииБУ_Подготовка.ДокументРасчетов,
+	ВТ_ОборотыРеализацииБУ_Подготовка.Контрагент,
+	ВТ_ОборотыРеализацииБУ_Подготовка.Договор,
+	ВТ_ОборотыРеализацииБУ_Подготовка.НоменклатурнаяГруппа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОплатаПоУслугам.Период КАК Период,
+	НАЧАЛОПЕРИОДА(ОплатаПоУслугам.Период, МЕСЯЦ) КАК Месяц,
+	ОплатаПоУслугам.Регистратор КАК ДокументОплаты,
+	ОплатаПоУслугам.Контрагент КАК Контрагент,
+	ОплатаПоУслугам.Договор КАК Договор,
+	ОплатаПоУслугам.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	ОплатаПоУслугам.СуммаОборот КАК СуммаОборот,
+	ОплатаПоУслугам.СуммаОборот - ОплатаПоУслугам.СуммаНДСОборот КАК СуммаБезНДСОборот,
+	ОплатаПоУслугам.СуммаНДСОборот КАК СуммаНДСОборот
+ПОМЕСТИТЬ ВТ_ОборотыОплатаПоУслугам_Подготовка
+ИЗ
+	РегистрНакопления.ГП_ОплатаПоУслугам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор,
+		(Контрагент, Договор) В (ВЫБРАТЬ Т.Контрагент, Т.Договор ИЗ ВТ_ЗадолженникиКонтрагенты КАК Т)
+		{(НоменклатурнаяГруппа В (&amp;СписокНоменклатурныхГрупп))}) КАК ОплатаПоУслугам
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.Месяц КАК Месяц,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.ДокументОплаты КАК ДокументОплаты,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.Контрагент КАК Контрагент,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.Договор КАК Договор,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	СУММА(ВТ_ОборотыОплатаПоУслугам_Подготовка.СуммаОборот) КАК Сумма,
+	СУММА(ВТ_ОборотыОплатаПоУслугам_Подготовка.СуммаБезНДСОборот) КАК СуммаБезНДС,
+	СУММА(ВТ_ОборотыОплатаПоУслугам_Подготовка.СуммаНДСОборот) КАК СуммаНДС
+ПОМЕСТИТЬ ВТ_ОборотыОплатаПоУслугам
+ИЗ
+	ВТ_ОборотыОплатаПоУслугам_Подготовка КАК ВТ_ОборотыОплатаПоУслугам_Подготовка
+СГРУППИРОВАТЬ ПО
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.Месяц,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.ДокументОплаты,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.Контрагент,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.Договор,
+	ВТ_ОборотыОплатаПоУслугам_Подготовка.НоменклатурнаяГруппа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.Месяц, ВТ_ОборотыОплатаПоУслугам.Месяц) КАК Месяц,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.Контрагент, ВТ_ОборотыОплатаПоУслугам.Контрагент) КАК Контрагент,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.Договор, ВТ_ОборотыОплатаПоУслугам.Договор) КАК Договор,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.НоменклатурнаяГруппа, ВТ_ОборотыОплатаПоУслугам.НоменклатурнаяГруппа) КАК НоменклатурнаяГруппа,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.Сумма, 0) КАК СуммаНачисления,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.СуммаБезНДС, 0) КАК СуммаБезНДСНачисления,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.СуммаНДС, 0) КАК СуммаНДСНачисления,
+	ЕСТЬNULL(ВТ_ОборотыОплатаПоУслугам.Сумма, 0) КАК СуммаОплаты,
+	ЕСТЬNULL(ВТ_ОборотыОплатаПоУслугам.СуммаБезНДС, 0) КАК СуммаБезНДСОплаты,
+	ЕСТЬNULL(ВТ_ОборотыОплатаПоУслугам.СуммаНДС, 0) КАК СуммаНДСОплатый,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.Количество, 0) КАК КоличествоНачисления,
+	ЕСТЬNULL(ВТ_ОборотыРеализацииБУ.ДокументНачисления, НЕОПРЕДЕЛЕНО) КАК ДокументНачисления,
+	ЕСТЬNULL(ВТ_ОборотыОплатаПоУслугам.ДокументОплаты, НЕОПРЕДЕЛЕНО) КАК ДокументОплаты
+ПОМЕСТИТЬ ВТ_НачисленияИОплаты
+ИЗ
+	ВТ_ОборотыРеализацииБУ КАК ВТ_ОборотыРеализацииБУ
+	ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ОборотыОплатаПоУслугам КАК ВТ_ОборотыОплатаПоУслугам
+		ПО ВТ_ОборотыРеализацииБУ.Контрагент = ВТ_ОборотыОплатаПоУслугам.Контрагент
+		И ВТ_ОборотыРеализацииБУ.Договор = ВТ_ОборотыОплатаПоУслугам.Договор
+		И ВТ_ОборотыРеализацииБУ.НоменклатурнаяГруппа = ВТ_ОборотыОплатаПоУслугам.НоменклатурнаяГруппа
+		И ВТ_ОборотыРеализацииБУ.Месяц = ВТ_ОборотыРеализацииБУ.Месяц
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_НачисленияИОплаты.Месяц КАК Месяц,
+	ВТ_НачисленияИОплаты.Контрагент КАК Контрагент,
+	ВТ_НачисленияИОплаты.Договор КАК Договор,
+	ВТ_НачисленияИОплаты.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	ВТ_НачисленияИОплаты.СуммаНачисления КАК СуммаНачисления,
+	ВТ_НачисленияИОплаты.СуммаБезНДСНачисления КАК СуммаБезНДСНачисления,
+	ВТ_НачисленияИОплаты.СуммаНДСНачисления КАК СуммаНДСНачисления,
+	ВТ_НачисленияИОплаты.СуммаОплаты КАК СуммаОплаты,
+	ВТ_НачисленияИОплаты.СуммаБезНДСОплаты КАК СуммаБезНДСОплаты,
+	ВТ_НачисленияИОплаты.СуммаНДСОплатый КАК СуммаНДСОплатый,
+	ВТ_НачисленияИОплаты.КоличествоНачисления КАК КоличествоНачисления,
+	ВТ_НачисленияИОплаты.ДокументНачисления КАК ДокументНачисления,
+	ВТ_НачисленияИОплаты.ДокументОплаты КАК ДокументОплаты,
+	ВТ_ЗадолженникиКонтрагенты.СуммаЗадолженности КАК СуммаЗадолженности
+ИЗ
+	ВТ_НачисленияИОплаты КАК ВТ_НачисленияИОплаты
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ЗадолженникиКонтрагенты КАК ВТ_ЗадолженникиКонтрагенты
+		ПО ВТ_ЗадолженникиКонтрагенты.Контрагент = ВТ_НачисленияИОплаты.Контрагент
+		И ВТ_ЗадолженникиКонтрагенты.Договор = ВТ_НачисленияИОплаты.Договор</query>
+	</dataSet>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=dd.MM.yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ДополнительныеВидыДоговоров</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид договора (дополнительный)</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>МассивКонтрагентов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>МассивДоговоров</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договоры</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СписокНоменклатурныхГрупп</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатурные группы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>АналитикаРасчетов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика расчетов</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>АналитикаРасчетовВыручки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика расчетов выручки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СписокСчетовВыручки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Список счетов выручки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ФильтрСписокСчетов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Фильтр список счетов</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Месяц</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Договор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументНачисления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументОплаты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНачисления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаБезНДСНачисления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаБезНДСОплаты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗадолженности</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНачисления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНДСНачисления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНДСОплатый</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОплаты</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>8f6365c2-4936-4ce8-9723-5752da92ebc0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>41731571-320b-4233-931e-112b3c6bbead</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МассивКонтрагентов</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+					<dcsset:userSettingID>3aff4436-cd32-4fe1-82c6-3d0cd8cd15de</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МассивДоговоров</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+					<dcsset:userSettingID>35efafcb-83da-4927-bda4-67aa34162703</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДополнительныеВидыДоговоров</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>fcebf6bc-86d4-4fa6-94db-d98f6e7645c9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СписокНоменклатурныхГрупп</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>9c1df15c-f150-4126-a07b-6052ae55119d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>АналитикаРасчетов</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СписокСчетовВыручки</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФильтрСписокСчетов</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Договор</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Месяц</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
