@@ -35,6 +35,7 @@
 		</Properties>
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+			<Template>ПФ_Макет</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
