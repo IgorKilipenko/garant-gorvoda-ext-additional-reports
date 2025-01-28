@@ -58,7 +58,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="b5472775965ca84fbfff80204eefd338d6ad7632"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="34e9d75feb851ea99812563204ec6d83d05d7bb4"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="213a072f3e146d42abadf3a74b475b2f07cb1f28"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="d454e35332a7b42b71be7fc20a493bb4c70f47fe"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="cb6899aa1fb3a7ece213f621e6779cc75d796a1d"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -156,12 +156,12 @@
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных" id="f2f6c224-82d3-45a1-9560-b19090b4efaa" configVersion="a232870a9c034e004d82970d4d1f0f259c58119f"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f2f6c224-82d3-45a1-9560-b19090b4efaa.0" configVersion="f11c1bc8692bfc506a5fd9b6e75d1fe5a39ff4ff"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд" id="b2687348-939b-40f4-a131-91297bd7143b" configVersion="42459629da512ab6a9d3f5d9debb94b4d321e18e"/>
-		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ManagerModule" id="b2687348-939b-40f4-a131-91297bd7143b.2" configVersion="0bf5defe207ec221a3ae50907471a4300e155cf1"/>
+		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ManagerModule" id="b2687348-939b-40f4-a131-91297bd7143b.2" configVersion="82159a1b6b2c21c2314cec7e0f8b570022feca40"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ObjectModule" id="b2687348-939b-40f4-a131-91297bd7143b.0" configVersion="522bc1aaf17f268510856057d58498a67514cc83"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.Template.ОсновнаяСхемаКомпоновкиДанных" id="759aed95-6e5d-4730-ae60-2aa1fdb611c3" configVersion="3ea321338f6ffa484dd23d4df2938b58db8ed8cd"/>
-		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="759aed95-6e5d-4730-ae60-2aa1fdb611c3.0" configVersion="8eb49fdeac8c7b7c789c3bb8a045dd39bd26d5a6"/>
+		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="759aed95-6e5d-4730-ae60-2aa1fdb611c3.0" configVersion="0510126e5d189bdf79f8663fca37b7e51b287327"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.Template.ПФ_Макет" id="ca3abb20-232e-438b-a433-a61ca970dea1" configVersion="bf6911a51f02efc826dbbc3ec02ba718ae0120fb"/>
-		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.Template.ПФ_Макет.Template" id="ca3abb20-232e-438b-a433-a61ca970dea1.0" configVersion="58cd480609d03fa02d5f4eba3d246855199685b7"/>
+		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.Template.ПФ_Макет.Template" id="ca3abb20-232e-438b-a433-a61ca970dea1.0" configVersion="3287bd27d4a8a66d30ab31c6dae5709f0069a035"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ" id="3c01d062-f12c-48bc-a983-1184668e9ad9" configVersion="77d14cbfe46c9b692597110ea201fa4fc9318ab6"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.ObjectModule" id="3c01d062-f12c-48bc-a983-1184668e9ad9.0" configVersion="12a75c1071259e4f69e9996d5328acd1318828d0"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12" configVersion="2ad0c6c00fa7892c6f59eade657b11adea3c4f2e"/>
