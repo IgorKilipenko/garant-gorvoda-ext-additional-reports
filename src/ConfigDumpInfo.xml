@@ -106,9 +106,10 @@
 		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.Template.ОсновнаяСхемаКомпоновкиДанных" id="1cc7fa4e-df82-410f-9858-4e2ed5c82939" configVersion="e054f0da751e416c542424a2ec4aa50b43af5c65"/>
 		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="1cc7fa4e-df82-410f-9858-4e2ed5c82939.0" configVersion="933fba24f77ca5b2e3fbff44a489f6d5b1d13977"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов" id="4c0008ad-186c-462b-9a41-7463b356a0d0" configVersion="1be5e5e431a369a5dbbf47740954b5d463845baf"/>
-		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ObjectModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.0" configVersion="53796f4c48786f61838272161d26f66cb2b39047"/>
+		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ManagerModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.2" configVersion="f1976298b03571432f320cab8e4d676af1bf10f5"/>
+		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ObjectModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.0" configVersion="eb09df8cde8d253be906634b61eca5094a4058dc"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae" configVersion="3bedb74d9be45424a3b719e3db502036357e8244"/>
-		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae.0" configVersion="45242f7cc3f6ed0417a06f692d1cdf2a4a3be84e"/>
+		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="4bdaa432-ce2c-402f-90ee-feb66ab78bae.0" configVersion="2122b7b7d79e07a79e931a0461f7fc899502f274"/>
 		<Metadata name="Report.ГП_НевыписанныеСчета" id="9af171e8-046b-4efb-96bd-c16b822c54e7" configVersion="38c9ef7f3c6e7a77334787b307d74ab33131e57c"/>
 		<Metadata name="Report.ГП_НевыписанныеСчета.Template.ОсновнаяСхемаКомпоновкиДанных" id="257574de-f723-49f7-b943-38e987afcaab" configVersion="e5a6b6fe956dba0c5b51be22bfa70a520d529857"/>
 		<Metadata name="Report.ГП_НевыписанныеСчета.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="257574de-f723-49f7-b943-38e987afcaab.0" configVersion="589331049c4368013cbc733953902ef5a42b8d14"/>
