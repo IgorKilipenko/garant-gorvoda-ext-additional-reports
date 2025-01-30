@@ -1255,22 +1255,7 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Водозабор</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Контролер</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Контраген</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Характеристика</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1284,11 +1269,6 @@
 					<dcscor:parameter>Финансирование</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>24c2aed0-f533-425f-bfc0-05295525c184</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -1448,6 +1428,37 @@
 								<dcsset:placement>Auto</dcsset:placement>
 							</dcsset:item>
 						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>ПоступленияБУ</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>ЗаголовокБухгалтерия</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>ЗаголовокОплата</dcsset:field>
+									</dcsset:item>
+									<dcsset:item>
+										<dcsset:field>ЗаголовокУслуги</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+									</dcscor:item>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+									</dcscor:item>
+								</dcsset:appearance>
+								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
 						<dcsset:outputParameters>
 							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 								<dcscor:use>false</dcscor:use>
