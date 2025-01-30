@@ -721,6 +721,25 @@
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВТ_Результат.Контрагент КАК Контрагент,
 	ВТ_Результат.Договор КАК Договор,
+	СУММА(ВТ_Результат.ПоступленияБУ) КАК ВсегоПоступленияБУ,
+	СУММА(ВТ_Результат.ПоступлениеЖКХ) КАК ВсегоПоступлениеЖКХ,
+	СУММА(ВТ_Результат.РасхождениеПоступлений) КАК ВсегоРасхождениеПоступлений
+ПОМЕСТИТЬ ВТ_ИтогиПоПоступлению
+ИЗ
+	ВТ_Результат КАК ВТ_Результат
+ГДЕ
+    ИСТИНА
+    И  ВТ_Результат.Контрагент В (ВЫБРАТЬ Т.Контрагент ИЗ ВТ_ФильтрДинамическихПоказателейКонтрагентов КАК Т)
+    И  ВТ_Результат.Договор В (ВЫБРАТЬ Т.Договор ИЗ ВТ_ФильтрДинамическихПоказателейДоговоров КАК Т)
+СГРУППИРОВАТЬ ПО
+    ВТ_Результат.Контрагент,
+    ВТ_Результат.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_Результат.Контрагент КАК Контрагент,
+	ВТ_Результат.Договор КАК Договор,
 	ВТ_Результат.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
 	ВТ_Результат.ПоступленияБУ КАК ПоступленияБУ,
 	ВТ_Результат.ПоступлениеЖКХ КАК ПоступлениеЖКХ,
@@ -736,6 +755,9 @@
 	ВТ_Результат.РасхождениеПоступленийНачислений КАК РасхождениеПоступленийНачислений
 ИЗ
 	ВТ_Результат КАК ВТ_Результат
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ИтогиПоПоступлению КАК ВТ_ИтогиПоПоступлению
+	ПО ВТ_Результат.Договор = ВТ_ИтогиПоПоступлению.Договор
+	   И ВТ_Результат.Контрагент = ВТ_ИтогиПоПоступлению.Контрагент
 ГДЕ
     ИСТИНА
     И ВЫБОР
@@ -750,7 +772,11 @@
         КОГДА &amp;ТолькоСРасхождениями = ЛОЖЬ
             ТОГДА ИСТИНА
         ИНАЧЕ
-            (ВТ_Результат.РасхождениеПоступлений &lt;&gt; 0)
+            //(ВТ_Результат.РасхождениеПоступлений &lt;&gt; 0)
+            ВЫБОР
+                КОГДА &amp;ВыполнятьПолныйКонтрольРасходенийОплатБУ = Истина ТОГДА (ВТ_Результат.РасхождениеПоступлений &lt;&gt; 0)
+                ИНАЧЕ ВТ_ИтогиПоПоступлению.ВсегоРасхождениеПоступлений &lt;&gt; 0
+            КОНЕЦ
             ИЛИ (ВТ_Результат.РасхождениеНачислений &lt;&gt; 0)
             ИЛИ (ВТ_Результат.РасхождениеПоступленийНачислений &lt;&gt; 0)
     КОНЕЦ
@@ -758,6 +784,29 @@
     И  ВТ_Результат.Договор В (ВЫБРАТЬ Т.Договор ИЗ ВТ_ФильтрДинамическихПоказателейДоговоров КАК Т)
 </query>
 	</dataSet>
+	<calculatedField>
+		<dataPath>ЕстьРасхожденияПоИтогам</dataPath>
+		<expression>ВЫБОР
+   КОГДА &amp;ТолькоСРасхождениями = ЛОЖЬ ТОГДА ЛОЖЬ
+   КОГДА &amp;ВидОтчета = "Начисления" И РасхождениеНачислений = 0 ТОГДА ЛОЖЬ
+   КОГДА &amp;ВидОтчета = "Поступления" И РасхождениеПоступлений = 0 ТОГДА ЛОЖЬ
+   ИНАЧЕ (РасхождениеПоступлений = 0) И (РасхождениеНачислений = 0) И (РасхождениеПоступленийНачислений = 0)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Есть расхождения по итогам</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<field>true</field>
+			<group>true</group>
+			<order>true</order>
+		</useRestriction>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+	</calculatedField>
 	<totalField>
 		<dataPath>ПоступлениеЖКХ</dataPath>
 		<expression>Сумма(ПоступлениеЖКХ)</expression>
@@ -785,6 +834,16 @@
 	<totalField>
 		<dataPath>РасхождениеПоступленийНачислений</dataPath>
 		<expression>Сумма(РасхождениеПоступленийНачислений)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЕстьРасхожденияПоИтогам</dataPath>
+		<expression>Минимум(ЕстьРасхожденияПоИтогам)</expression>
+		<group>Договор</group>
+		<group>Контрагент</group>
+		<group>РасхождениеНачислений</group>
+		<group>РасхождениеПоступлений</group>
+		<group>РасхождениеПоступленийНачислений</group>
+		<group>ОбщийИтог</group>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -1159,6 +1218,22 @@
 		<useRestriction>true</useRestriction>
 		<availableAsField>false</availableAsField>
 	</parameter>
+	<parameter>
+		<name>ВыполнятьПолныйКонтрольРасходенийОплатБУ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выполнять полный контроль расходений оплат БУ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -1206,6 +1281,15 @@
 					<dcsset:placement>Auto</dcsset:placement>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ЕстьРасхожденияПоИтогам</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -1430,6 +1514,7 @@
 						</dcsset:selection>
 						<dcsset:conditionalAppearance>
 							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
 								<dcsset:selection>
 									<dcsset:item>
 										<dcsset:field>ПоступленияБУ</dcsset:field>
