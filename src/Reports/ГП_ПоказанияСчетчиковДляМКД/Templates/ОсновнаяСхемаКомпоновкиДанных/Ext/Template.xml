@@ -20,6 +20,9 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ЛицевойСчетДействует</dataPath>
@@ -57,6 +60,13 @@
 					<v8:content>Заводской номер</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СчетчикДействует</dataPath>
@@ -81,6 +91,9 @@
 					<v8:content>Услуга</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.КВП_Услуги</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Расход</dataPath>
@@ -91,6 +104,14 @@
 					<v8:content>Расход</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КодМКД</dataPath>
@@ -99,6 +120,73 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Код МКД</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПотребления</dataPath>
+			<field>ВидПотребления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа потребителей</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Финансирование</dataPath>
+			<field>Финансирование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ финансирование</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водозабор</dataPath>
+			<field>Водозабор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водозабор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договородержатель</dataPath>
+			<field>Договородержатель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договородержатель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контролер</dataPath>
+			<field>Контролер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -382,19 +470,31 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ВТ_ДинамическиеПоказателиЛицевыхСчетов
 		ПО ВТ_СчетчикиЛицевыхСчетов.ЛицевойСчет = ВТ_ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет
 ГДЕ
-	ВЫБОР
-			КОГДА ВТ_РасчетПриборовУчета.ЛицевойСчет ЕСТЬ NULL
-				ТОГДА ВТ_СчетчикиЛицевыхСчетов.ЛицевойСчетДействует
-						И (ВТ_СчетчикиЛицевыхСчетов.СчетчикДействует
-							ИЛИ ВТ_СчетчикиЛицевыхСчетов.ПричинаОтключения = ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ПричиныОтключенияПриборовУчета.Поверка))
-			ИНАЧЕ ИСТИНА
-		КОНЕЦ
+    ВЫБОР
+        КОГДА &amp;ТолькоСПоказаниями = ИСТИНА ТОГДА (НЕ ВТ_РасчетПриборовУчета.Счетчик ЕСТЬ NULL)
+        ИНАЧЕ ИСТИНА
+    КОНЕЦ
+	И ВЫБОР
+        КОГДА ВТ_РасчетПриборовУчета.ЛицевойСчет ЕСТЬ NULL
+            ТОГДА ВТ_СчетчикиЛицевыхСчетов.ЛицевойСчетДействует
+                    И (ВТ_СчетчикиЛицевыхСчетов.СчетчикДействует
+                        ИЛИ ВТ_СчетчикиЛицевыхСчетов.ПричинаОтключения = ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ПричиныОтключенияПриборовУчета.Поверка))
+        ИНАЧЕ ИСТИНА
+    КОНЕЦ
 {ГДЕ
 	(ВТ_СчетчикиЛицевыхСчетов.ЛицевойСчет = &amp;ЛицевойСчет),
 	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер = &amp;Контролер),
 	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель = &amp;Договородержатель),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления = &amp;ВидПотребления),
-	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор)}
+	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления В ИЕРАРХИИ (&amp;ВидПотребления)),
+	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор = &amp;Водозабор),
+	(ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование = &amp;Финансирование),
+	ВТ_СчетчикиЛицевыхСчетов.ЛицевойСчет.* КАК ЛицевойСчет,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер.* КАК Контролер,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель.* КАК Договородержатель,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления.* КАК ВидПотребления,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Водозабор.* КАК Водозабор,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование.* КАК Финансирование,
+	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика.* КАК Характеристика}
 </query>
 	</dataSet>
 	<parameter>
@@ -446,21 +546,89 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>Период</name>
+		<name>ТолькоСПоказаниями</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Только с показаниями</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
+			<v8:Type>xs:boolean</v8:Type>
 		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ЛицевойСчет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Лицевой счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидПотребления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа потребителей</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Водозабор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Водозабор</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Договородержатель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договородержатель</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Контролер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контролер</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Финансирование</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Способ финансирование</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -479,6 +647,7 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
 		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -497,6 +666,25 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
 		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -523,6 +711,43 @@
 					<dcscor:parameter>Услуги</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>3e16034e-7384-4f71-92eb-7e02a5e3a633</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТолькоСПоказаниями</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>dc219912-e637-4260-8fcb-26157ba1c3b1</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>f3e69ef4-9dbd-4349-badf-28e11972ee0d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидПотребления</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Водозабор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Договородержатель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Контролер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Финансирование</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
