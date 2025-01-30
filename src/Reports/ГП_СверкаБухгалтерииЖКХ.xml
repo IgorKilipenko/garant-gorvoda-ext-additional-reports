@@ -35,6 +35,7 @@
 		</Properties>
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+			<Template>Удалить_ОсновнаяСхемаКомпоновкиДанных</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
