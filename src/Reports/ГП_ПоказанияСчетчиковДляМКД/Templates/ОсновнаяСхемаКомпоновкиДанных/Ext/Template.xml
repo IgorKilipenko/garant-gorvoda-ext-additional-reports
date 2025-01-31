@@ -558,7 +558,6 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>false</useRestriction>
-		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
