@@ -58,7 +58,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="1d5bbe0899b06f1e5de29d018d5af63dc1c725f8"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="34e9d75feb851ea99812563204ec6d83d05d7bb4"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="213a072f3e146d42abadf3a74b475b2f07cb1f28"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="d73a4a0dd237da5b57e9636d311fe6eb02c1a911"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="388e86891522796491a24343acd64a62a470c346"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -101,7 +101,7 @@
 		<Metadata name="Report.ГП_ВзаимозадолженностьКт" id="5aca5131-11a9-449a-98fe-d395da8413c0" configVersion="8b35423ab782d5c014c14d4acf17dd68b82a4677"/>
 		<Metadata name="Report.ГП_ВзаимозадолженностьКт.ObjectModule" id="5aca5131-11a9-449a-98fe-d395da8413c0.0" configVersion="99d688579150c6d8ac192175dc495050fa3eaad2"/>
 		<Metadata name="Report.ГП_ВзаимозадолженностьКт.Template.ОсновнаяСхемаКомпоновкиДанных" id="1795b687-7387-42d8-8f1f-ee8fc0e3034b" configVersion="260d9dab0bf47b210f7bd85da50a1d21c9d93d13"/>
-		<Metadata name="Report.ГП_ВзаимозадолженностьКт.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="1795b687-7387-42d8-8f1f-ee8fc0e3034b.0" configVersion="ca83e68a2621bc8e2ca1b8b6af444b538dac346e"/>
+		<Metadata name="Report.ГП_ВзаимозадолженностьКт.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="1795b687-7387-42d8-8f1f-ee8fc0e3034b.0" configVersion="3e0c90c3ffa2ee37b64c7cd6af4e818bd5a5ff9e"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность" id="e7ea523e-43b8-49d9-abe0-9f4827084717" configVersion="1ebb53ee2d32f0bf357bd3770e1b1f277cdb256f"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.ObjectModule" id="e7ea523e-43b8-49d9-abe0-9f4827084717.0" configVersion="b6dffaa023dd550a457a91b793e8253602e19ef0"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.Template.ОсновнаяСхемаКомпоновкиДанных" id="e0a24969-7d1a-4071-a76b-95fd2a34e770" configVersion="dad2c06a39174d29330fffb93cc2109d5575a450"/>
