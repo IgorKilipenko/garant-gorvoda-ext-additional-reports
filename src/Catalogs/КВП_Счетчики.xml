@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Catalog uuid="9b1f87d4-0697-4518-af21-9f1d99718c40">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.КВП_Счетчики" category="Object">
+				<xr:TypeId>5e4e96b6-bfe8-4e67-a282-8fdffb352678</xr:TypeId>
+				<xr:ValueId>bfeaf93f-a8c6-4a99-810c-946e5f2d0245</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.КВП_Счетчики" category="Ref">
+				<xr:TypeId>1f89297b-560c-481f-8777-a7a37c0e679f</xr:TypeId>
+				<xr:ValueId>aae7c708-aef6-4116-ad3b-ebd5d05f2b08</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.КВП_Счетчики" category="Selection">
+				<xr:TypeId>19f5f764-4d38-4c61-83bc-437271495a12</xr:TypeId>
+				<xr:ValueId>438249e6-13da-4477-a5be-35788c39555f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.КВП_Счетчики" category="List">
+				<xr:TypeId>5464dc2d-8eb4-445e-a17f-04d2cb930534</xr:TypeId>
+				<xr:ValueId>a4c29e89-85a5-45e9-aeb6-0269bf1110a7</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.КВП_Счетчики" category="Manager">
+				<xr:TypeId>f0d7fe95-5c61-40be-81dc-6e95397f3757</xr:TypeId>
+				<xr:ValueId>fc0844b1-db4e-4ea1-aaa6-9e3511d417cf</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>КВП_Счетчики</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>35f90fee-cf39-4691-8cbd-0e1d17c39a92</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>

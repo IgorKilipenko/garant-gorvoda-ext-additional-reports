@@ -121,6 +121,15 @@
 					<ExtendedConfigurationObject>3747cd32-5f45-4d55-b68f-6aa0b9008ff2</ExtendedConfigurationObject>
 				</Properties>
 			</EnumValue>
+			<EnumValue uuid="f3858f6b-b9ed-4e9e-8f09-14cfa6cff699">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НачислениеПоИПУ</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>61288f7f-07a0-4061-9c6d-1598ca776d9b</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
 		</ChildObjects>
 	</Enum>
 </MetaDataObject>

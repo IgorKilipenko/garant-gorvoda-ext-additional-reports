@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="1a67d6c0-5dd5-40e6-bc97-c3ddff23c7dc">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.КВП_СпособыРегистрацииПоказанийСчетчиков" category="Ref">
+				<xr:TypeId>8faf4a63-13de-4532-81a5-a725ae306be5</xr:TypeId>
+				<xr:ValueId>913fa5ea-37de-43eb-8896-31c10c60c3aa</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.КВП_СпособыРегистрацииПоказанийСчетчиков" category="Manager">
+				<xr:TypeId>e689bc3d-0f9f-4baf-bad9-fce3d805f342</xr:TypeId>
+				<xr:ValueId>9f23e359-477b-4625-bc94-d5359ec2869d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.КВП_СпособыРегистрацииПоказанийСчетчиков" category="List">
+				<xr:TypeId>ad8a845d-4b4a-4e3d-94cd-1ae915732e96</xr:TypeId>
+				<xr:ValueId>9f6bbc2e-9d8e-4478-afaa-04e565ad2c5d</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>КВП_СпособыРегистрацииПоказанийСчетчиков</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>9727ca37-a838-48e1-9bf5-ea00f9c50d58</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="4808929a-f475-4bdd-8fc2-7554b2b6c6eb">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>РасходЗаПериодРасчета</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>0556188b-2289-4f5d-9e58-f0d1aa527e20</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="9a8a7220-4741-4c0e-8724-c69c3763c4ed">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НарастающимИтогом</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>8086b2ec-d92d-4b20-bce1-a675e74fae64</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

@@ -1,0 +1,1044 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Группа</dataPath>
+			<field>Группа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЛицевойСчет</dataPath>
+			<field>ЛицевойСчет</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.КВП_ЛицевыеСчета</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.КВП_Услуги</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Расход</dataPath>
+			<field>Расход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расход</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счетчик</dataPath>
+			<field>Счетчик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счетчик</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидТарифа</dataPath>
+			<field>ВидТарифа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Номенклатура</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НоменклатурнаяГруппа</dataPath>
+			<field>НоменклатурнаяГруппа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатурная группа</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ГП_РаботаСОтчетами.ПолучитьПредставлениеНоменклатурнойГруппыВодаСток(НоменклатурнаяГруппа)</presentationExpression>
+			<orderExpression>
+				<dcscom:expression>ВЫБОР 
+	КОГДА Строка(НоменклатурнаяГруппа) = "Водоснабжение" ТОГДА 0 
+	КОГДА Строка(НоменклатурнаяГруппа) = "Водоотведение" ТОГДА 1 
+	КОГДА Строка(НоменклатурнаяГруппа) = "" ТОГДА "ЯЯЯ"
+	ИНАЧЕ Строка(НоменклатурнаяГруппа) 
+КОНЕЦ возр</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидУслуги</dataPath>
+			<field>ВидУслуги</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид услуги</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РасчетПриборовУчета.Период КАК Период,
+	РасчетПриборовУчета.Регистратор КАК Регистратор,
+	РасчетПриборовУчета.ВидДвижения КАК ВидДвижения,
+	РасчетПриборовУчета.Объект КАК Объект,
+	РасчетПриборовУчета.Счетчик КАК Счетчик,
+	РасчетПриборовУчета.Услуга КАК Услуга,
+	РасчетПриборовУчета.ВидПоказания КАК ВидПоказания,
+	РасчетПриборовУчета.Показание КАК Показание
+ПОМЕСТИТЬ ВТ_РасходУслуг
+ИЗ
+	РегистрНакопления.УПЖКХ_РасчетПриборовУчета КАК РасчетПриборовУчета
+ГДЕ
+	РасчетПриборовУчета.Активность = ИСТИНА
+	И РасчетПриборовУчета.Период &gt;= &amp;НачалоПериода
+	И РасчетПриборовУчета.Период &lt;= &amp;КонецПериода
+	И РасчетПриборовУчета.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Начисления.Период КАК Период,
+	Начисления.Регистратор КАК Регистратор,
+	Начисления.НомерСтроки КАК НомерСтроки,
+	Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	Начисления.Услуга КАК Услуга,
+	Начисления.Договор КАК Договор,
+	Начисления.УслугаОснование КАК УслугаОснование,
+	Начисления.СоставнаяУслуга КАК СоставнаяУслуга,
+	Начисления.РазделУчета КАК РазделУчета,
+	Начисления.ВидНачисления КАК ВидНачисления,
+	Начисления.ИсточникОплаты КАК ИсточникОплаты,
+	Начисления.МесяцНачисления КАК МесяцНачисления,
+	Начисления.Тариф КАК Тариф,
+	Начисления.ВидТарифа КАК ВидТарифа,
+	Начисления.МесяцРассрочки КАК МесяцРассрочки,
+	Начисления.Количество КАК Количество,
+	Начисления.УровеньРаспределения КАК УровеньРаспределения,
+	Начисления.ОснованиеКорректировки КАК ОснованиеКорректировки,
+	Начисления.ТипНачисления КАК ТипНачисления,
+	Начисления.СуммаНачисления КАК СуммаНачисления,
+	Начисления.ДнейНачислено КАК ДнейНачислено,
+	Начисления.Начало КАК Начало,
+	Начисления.Окончание КАК Окончание,
+	Начисления.Тарифность КАК Тарифность,
+	Начисления.КоличествоУчетное КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_Начисления
+ИЗ
+	РегистрНакопления.УПЖКХ_Начисления КАК Начисления
+ГДЕ
+	Начисления.Активность = ИСТИНА
+	И Начисления.Период &gt;= &amp;НачалоПериода
+	И Начисления.Период &lt;= &amp;КонецПериода
+	И Начисления.Организация = &amp;Организация
+	И Начисления.РазделУчета В (ЗНАЧЕНИЕ(Перечисление.УПЖКХ_РазделыУчета.НачислениеПоПУ), ЗНАЧЕНИЕ(Перечисление.УПЖКХ_РазделыУчета.НачислениеУслуг))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// Начисления по Показаниям счетчиков. НАЧАЛО
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Период КАК Период,
+	ВТ_Начисления.Регистратор КАК Регистратор,
+	ВТ_Начисления.НомерСтроки КАК НомерСтроки,
+	ВТ_Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_Начисления.Услуга КАК Услуга,
+	ВТ_Начисления.Договор КАК Договор,
+	ВТ_Начисления.УслугаОснование КАК УслугаОснование,
+	ВТ_Начисления.СоставнаяУслуга КАК СоставнаяУслуга,
+	ВТ_Начисления.РазделУчета КАК РазделУчета,
+	ВТ_Начисления.ВидНачисления КАК ВидНачисления,
+	ВТ_Начисления.ИсточникОплаты КАК ИсточникОплаты,
+	ВТ_Начисления.МесяцНачисления КАК МесяцНачисления,
+	ВТ_Начисления.Тариф КАК Тариф,
+	ВТ_Начисления.ВидТарифа КАК ВидТарифа,
+	ВТ_Начисления.МесяцРассрочки КАК МесяцРассрочки,
+	ВТ_Начисления.Количество КАК Количество,
+	ВТ_Начисления.УровеньРаспределения КАК УровеньРаспределения,
+	ВТ_Начисления.ОснованиеКорректировки КАК ОснованиеКорректировки,
+	ВТ_Начисления.ТипНачисления КАК ТипНачисления,
+	ВТ_Начисления.СуммаНачисления КАК СуммаНачисления,
+	ВТ_Начисления.ДнейНачислено КАК ДнейНачислено,
+	ВТ_Начисления.Начало КАК Начало,
+	ВТ_Начисления.Окончание КАК Окончание,
+	ВТ_Начисления.Тарифность КАК Тарифность,
+	ВТ_Начисления.КоличествоУчетное КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_НачисленияПоИПУ_Подготовка
+ИЗ
+	ВТ_Начисления КАК ВТ_Начисления
+ГДЕ
+	ИСТИНА
+	//И ВТ_Начисления.ВидНачисления В (ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПоИПУ), ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПриОтсутствииПоказанийИПУПоНормативу))
+	И ВТ_Начисления.ВидНачисления В (ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПоИПУ))
+	И ВТ_Начисления.СуммаНачисления &lt;&gt; 0
+	И ВТ_Начисления.Количество &lt;&gt; 0
+	//И ВТ_Начисления.УслугаОснование = ЗНАЧЕНИЕ(Справочник.КВП_Услуги.ПустаяСсылка)
+	И ВТ_Начисления.ВидТарифа = ЗНАЧЕНИЕ(Перечисление.КВП_ВидыТарифов.Дневной)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Период КАК Период,
+	ВТ_Начисления.Регистратор КАК Регистратор,
+	ВТ_Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_Начисления.Услуга КАК Услуга,
+	ВТ_Начисления.ВидТарифа КАК ВидТарифа,
+	СУММА(ВТ_Начисления.Количество) КАК Количество,
+	СУММА(ВТ_Начисления.СуммаНачисления) КАК СуммаНачисления,
+	СУММА(ВТ_Начисления.КоличествоУчетное) КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_НачисленияПоИПУ
+ИЗ
+	ВТ_НачисленияПоИПУ_Подготовка КАК ВТ_Начисления
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Начисления.Период,
+	ВТ_Начисления.Регистратор,
+	ВТ_Начисления.ЛицевойСчет,
+	ВТ_Начисления.Услуга,
+	ВТ_Начисления.ВидТарифа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_НачисленияПоИПУ.Период КАК Период,
+	ВТ_НачисленияПоИПУ.Регистратор КАК Регистратор,
+	ВТ_НачисленияПоИПУ.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_НачисленияПоИПУ.Услуга КАК Услуга,
+	ВТ_НачисленияПоИПУ.ВидТарифа КАК ВидТарифа,
+	ЕСТЬNULL(ВТ_РасходУслуг.Счетчик, ЗНАЧЕНИЕ(Справочник.КВП_Счетчики.ПустаяСсылка)) КАК Счетчик,
+	ВЫБОР
+	   КОГДА ВТ_РасходУслуг.Счетчик ЕСТЬ NULL ТОГДА ВТ_НачисленияПоИПУ.Количество
+	   ИНАЧЕ ЕСТЬNULL(ВТ_РасходУслуг.Показание, 0)
+	КОНЕЦ КАК Количество
+ПОМЕСТИТЬ ВТ_РасходПоПУ_Подготовка
+ИЗ
+	ВТ_НачисленияПоИПУ КАК ВТ_НачисленияПоИПУ
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РасходУслуг КАК ВТ_РасходУслуг
+		ПО ВТ_НачисленияПоИПУ.Период = ВТ_РасходУслуг.Период
+			И ВТ_НачисленияПоИПУ.Регистратор = ВТ_РасходУслуг.Регистратор
+			И ВТ_НачисленияПоИПУ.ЛицевойСчет = ВТ_РасходУслуг.Объект
+			И ВТ_НачисленияПоИПУ.Услуга = ВТ_РасходУслуг.Услуга
+			И ВТ_НачисленияПоИПУ.ВидТарифа = ВТ_РасходУслуг.ВидПоказания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА ВТ_РасходПоПУ_Подготовка.Счетчик.СпособРегистрацииПоказаний = ЗНАЧЕНИЕ(Перечисление.КВП_СпособыРегистрацииПоказанийСчетчиков.НарастающимИтогом)
+			ТОГДА "Водоиер"
+		КОГДА ВТ_РасходПоПУ_Подготовка.Счетчик.СпособРегистрацииПоказаний = ЗНАЧЕНИЕ(Перечисление.КВП_СпособыРегистрацииПоказанийСчетчиков.РасходЗаПериодРасчета)
+			ТОГДА "По среднему"
+		ИНАЧЕ
+			"Неопределено"
+	КОНЕЦ КАК Группа,
+	ВТ_РасходПоПУ_Подготовка.Период КАК Период,
+	ВТ_РасходПоПУ_Подготовка.Регистратор КАК Регистратор,
+	ВТ_РасходПоПУ_Подготовка.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_РасходПоПУ_Подготовка.Услуга КАК Услуга,
+	ВТ_РасходПоПУ_Подготовка.ВидТарифа КАК ВидТарифа,
+	ВТ_РасходПоПУ_Подготовка.Счетчик КАК Счетчик,
+	ВТ_РасходПоПУ_Подготовка.Количество КАК Расход
+ПОМЕСТИТЬ ВТ_РасходПоПУ
+ИЗ
+	ВТ_РасходПоПУ_Подготовка КАК ВТ_РасходПоПУ_Подготовка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Начисления по Показаниям счетчиков. КОНЕЦ
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Начисления Без показаний. НАЧАЛО
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Период КАК Период,
+	ВТ_Начисления.Регистратор КАК Регистратор,
+	ВТ_Начисления.НомерСтроки КАК НомерСтроки,
+	ВТ_Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_Начисления.Услуга КАК Услуга,
+	ВТ_Начисления.Договор КАК Договор,
+	ВТ_Начисления.УслугаОснование КАК УслугаОснование,
+	ВТ_Начисления.СоставнаяУслуга КАК СоставнаяУслуга,
+	ВТ_Начисления.РазделУчета КАК РазделУчета,
+	ВТ_Начисления.ВидНачисления КАК ВидНачисления,
+	ВТ_Начисления.ИсточникОплаты КАК ИсточникОплаты,
+	ВТ_Начисления.МесяцНачисления КАК МесяцНачисления,
+	ВТ_Начисления.Тариф КАК Тариф,
+	ВТ_Начисления.ВидТарифа КАК ВидТарифа,
+	ВТ_Начисления.МесяцРассрочки КАК МесяцРассрочки,
+	ВТ_Начисления.Количество КАК Количество,
+	ВТ_Начисления.УровеньРаспределения КАК УровеньРаспределения,
+	ВТ_Начисления.ОснованиеКорректировки КАК ОснованиеКорректировки,
+	ВТ_Начисления.ТипНачисления КАК ТипНачисления,
+	ВТ_Начисления.СуммаНачисления КАК СуммаНачисления,
+	ВТ_Начисления.ДнейНачислено КАК ДнейНачислено,
+	ВТ_Начисления.Начало КАК Начало,
+	ВТ_Начисления.Окончание КАК Окончание,
+	ВТ_Начисления.Тарифность КАК Тарифность,
+	ВТ_Начисления.КоличествоУчетное КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_НачисленияПоИПУБезПоказаний_Подготовка
+ИЗ
+	ВТ_Начисления КАК ВТ_Начисления
+ГДЕ
+	ИСТИНА
+	И ВТ_Начисления.ВидНачисления В (
+		ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПриОтсутствииПоказанийИПУПоНормативу), 
+		ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПриОтсутствииДействующегоИПУПоНормативу),
+		ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПриОтсутствииДействующегоИПУПоНормативуЗаСчетПовышающегоКоэффициента))
+	И ВТ_Начисления.СуммаНачисления &lt;&gt; 0
+	И ВТ_Начисления.Количество &lt;&gt; 0
+	И ВТ_Начисления.УслугаОснование = ЗНАЧЕНИЕ(Справочник.КВП_Услуги.ПустаяСсылка)
+	И ВТ_Начисления.ВидТарифа = ЗНАЧЕНИЕ(Перечисление.КВП_ВидыТарифов.Общий)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Период КАК Период,
+	ВТ_Начисления.Регистратор КАК Регистратор,
+	ВТ_Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_Начисления.Услуга КАК Услуга,
+	ВТ_Начисления.ВидТарифа КАК ВидТарифа,
+	СУММА(ВТ_Начисления.Количество) КАК Количество,
+	СУММА(ВТ_Начисления.СуммаНачисления) КАК СуммаНачисления,
+	СУММА(ВТ_Начисления.КоличествоУчетное) КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_НачисленияПоИПУБезПоказаний
+ИЗ
+	ВТ_НачисленияПоИПУБезПоказаний_Подготовка КАК ВТ_Начисления
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Начисления.Период,
+	ВТ_Начисления.Регистратор,
+	ВТ_Начисления.ЛицевойСчет,
+	ВТ_Начисления.Услуга,
+	ВТ_Начисления.ВидТарифа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	"По нормативу (без показаний)" КАК Группа,
+	ВТ_НачисленияПоИПУБезПоказаний.Период КАК Период,
+	ВТ_НачисленияПоИПУБезПоказаний.Регистратор КАК Регистратор,
+	ВТ_НачисленияПоИПУБезПоказаний.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_НачисленияПоИПУБезПоказаний.Услуга КАК Услуга,
+	ВТ_НачисленияПоИПУБезПоказаний.ВидТарифа КАК ВидТарифа,
+	ЗНАЧЕНИЕ(Справочник.КВП_Счетчики.ПустаяСсылка) КАК Счетчик,
+	ВТ_НачисленияПоИПУБезПоказаний.Количество КАК Расход
+ПОМЕСТИТЬ ВТ_РасходПоПУБезПоказаний
+ИЗ
+	ВТ_НачисленияПоИПУБезПоказаний КАК ВТ_НачисленияПоИПУБезПоказаний
+;
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Начисления Без показаний. КОНЕЦ
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Начисления По нормативу. НАЧАЛО
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Период КАК Период,
+	ВТ_Начисления.Регистратор КАК Регистратор,
+	ВТ_Начисления.НомерСтроки КАК НомерСтроки,
+	ВТ_Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_Начисления.Услуга КАК Услуга,
+	ВТ_Начисления.Договор КАК Договор,
+	ВТ_Начисления.УслугаОснование КАК УслугаОснование,
+	ВТ_Начисления.СоставнаяУслуга КАК СоставнаяУслуга,
+	ВТ_Начисления.РазделУчета КАК РазделУчета,
+	ВТ_Начисления.ВидНачисления КАК ВидНачисления,
+	ВТ_Начисления.ИсточникОплаты КАК ИсточникОплаты,
+	ВТ_Начисления.МесяцНачисления КАК МесяцНачисления,
+	ВТ_Начисления.Тариф КАК Тариф,
+	ВТ_Начисления.ВидТарифа КАК ВидТарифа,
+	ВТ_Начисления.МесяцРассрочки КАК МесяцРассрочки,
+	ВТ_Начисления.Количество КАК Количество,
+	ВТ_Начисления.УровеньРаспределения КАК УровеньРаспределения,
+	ВТ_Начисления.ОснованиеКорректировки КАК ОснованиеКорректировки,
+	ВТ_Начисления.ТипНачисления КАК ТипНачисления,
+	ВТ_Начисления.СуммаНачисления КАК СуммаНачисления,
+	ВТ_Начисления.ДнейНачислено КАК ДнейНачислено,
+	ВТ_Начисления.Начало КАК Начало,
+	ВТ_Начисления.Окончание КАК Окончание,
+	ВТ_Начисления.Тарифность КАК Тарифность,
+	ВТ_Начисления.КоличествоУчетное КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_НачисленияПоНормативу_Подготовка
+ИЗ
+	ВТ_Начисления КАК ВТ_Начисления
+ГДЕ
+	ИСТИНА
+	И ВТ_Начисления.РазделУчета В (ЗНАЧЕНИЕ(Перечисление.УПЖКХ_РазделыУчета.НачислениеУслуг))
+	И ВТ_Начисления.ВидНачисления В (
+		ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.Начисление))
+	И ВТ_Начисления.СуммаНачисления &lt;&gt; 0
+	И ВТ_Начисления.Количество &lt;&gt; 0
+	И ВТ_Начисления.УслугаОснование = ЗНАЧЕНИЕ(Справочник.КВП_Услуги.ПустаяСсылка)
+	И ВТ_Начисления.ВидТарифа = ЗНАЧЕНИЕ(Перечисление.КВП_ВидыТарифов.Общий)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Период КАК Период,
+	ВТ_Начисления.Регистратор КАК Регистратор,
+	ВТ_Начисления.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_Начисления.Услуга КАК Услуга,
+	ВТ_Начисления.ВидТарифа КАК ВидТарифа,
+	СУММА(ВТ_Начисления.Количество) КАК Количество,
+	СУММА(ВТ_Начисления.СуммаНачисления) КАК СуммаНачисления,
+	СУММА(ВТ_Начисления.КоличествоУчетное) КАК КоличествоУчетное
+ПОМЕСТИТЬ ВТ_НачисленияПоНормативу
+ИЗ
+	ВТ_НачисленияПоНормативу_Подготовка КАК ВТ_Начисления
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Начисления.Период,
+	ВТ_Начисления.Регистратор,
+	ВТ_Начисления.ЛицевойСчет,
+	ВТ_Начисления.Услуга,
+	ВТ_Начисления.ВидТарифа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	"По нормативу" КАК Группа,
+	ВТ_НачисленияПоНормативу.Период КАК Период,
+	ВТ_НачисленияПоНормативу.Регистратор КАК Регистратор,
+	ВТ_НачисленияПоНормативу.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_НачисленияПоНормативу.Услуга КАК Услуга,
+	ВТ_НачисленияПоНормативу.ВидТарифа КАК ВидТарифа,
+	ЗНАЧЕНИЕ(Справочник.КВП_Счетчики.ПустаяСсылка) КАК Счетчик,
+	ВТ_НачисленияПоНормативу.Количество КАК Расход
+ПОМЕСТИТЬ ВТ_РасходПоПУПоНормативу
+ИЗ
+	ВТ_НачисленияПоНормативу КАК ВТ_НачисленияПоНормативу
+;
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Начисления По нормативу. КОНЕЦ
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_РасходПоПУ.Группа КАК Группа,
+	ВТ_РасходПоПУ.Период КАК Период,
+	ВТ_РасходПоПУ.Регистратор КАК Регистратор,
+	ВТ_РасходПоПУ.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_РасходПоПУ.Услуга КАК Услуга,
+	ВТ_РасходПоПУ.ВидТарифа КАК ВидТарифа,
+	ВТ_РасходПоПУ.Счетчик КАК Счетчик,
+	ВТ_РасходПоПУ.Расход КАК Расход
+ПОМЕСТИТЬ ВТ_РасходОбщий
+ИЗ
+	ВТ_РасходПоПУ КАК ВТ_РасходПоПУ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	*
+ИЗ
+	ВТ_РасходПоПУБезПоказаний КАК ВТ_РасходПоПУБезПоказаний
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	*
+ИЗ
+	ВТ_РасходПоПУПоНормативу КАК ВТ_РасходПоПУПоНормативу
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ЕСТЬNULL(СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет, Собственники.ЛицевойСчет) КАК ЛицевойСчет,
+	ЕСТЬNULL(СведенияДляВзаиморасчетовПоЛС.Контрагент, Собственники.ОтветственныйВладелец) КАК Контрагент,
+	ЕСТЬNULL(СведенияДляВзаиморасчетовПоЛС.Договор, ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор
+ПОМЕСТИТЬ ВТ_КонтрагентыЛС
+ИЗ
+	РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;КонецПериода) КАК СведенияДляВзаиморасчетовПоЛС
+	ПОЛНОЕ СОЕДИНЕНИЕ РегистрСведений.УПЖКХ_ОтветственныйСобственникНанимательЛицевогоСчета КАК Собственники
+	ПО СведенияДляВзаиморасчетовПоЛС.Организация = &amp;Организация
+	И СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет = Собственники.ЛицевойСчет
+	И Собственники.ОтветственныйВладелец ССЫЛКА Справочник.Контрагенты
+ГДЕ
+	ИСТИНА
+	И СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет В (ВЫБРАТЬ Т.ЛицевойСчет ИЗ ВТ_РасходОбщий КАК Т)
+	И Собственники.ЛицевойСчет В (ВЫБРАТЬ Т.ЛицевойСчет ИЗ ВТ_РасходОбщий КАК Т)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_РасходОбщий.Группа КАК Группа,
+	ВТ_РасходОбщий.Период КАК Период,
+	ВТ_РасходОбщий.Регистратор КАК Регистратор,
+	ВТ_РасходОбщий.ЛицевойСчет КАК ЛицевойСчет,
+	ВТ_РасходОбщий.Услуга КАК Услуга,
+	ВТ_РасходОбщий.Услуга.Услуга КАК Номенклатура,
+	ВТ_РасходОбщий.Услуга.Услуга.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	ВТ_РасходОбщий.Услуга.ВидУслуги КАК ВидУслуги,
+	ВТ_РасходОбщий.ВидТарифа КАК ВидТарифа,
+	ВТ_РасходОбщий.Счетчик КАК Счетчик,
+	ВТ_РасходОбщий.Расход КАК Расход,
+	ЕСТЬNULL(ВТ_КонтрагентыЛС.Контрагент, ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)) КАК Контрагент,
+	ЕСТЬNULL(ВТ_КонтрагентыЛС.Договор, ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор
+ИЗ
+	ВТ_РасходОбщий КАК ВТ_РасходОбщий
+	ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КонтрагентыЛС КАК ВТ_КонтрагентыЛС
+	ПО ВТ_РасходОбщий.ЛицевойСчет = ВТ_КонтрагентыЛС.ЛицевойСчет
+	</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Расход</dataPath>
+		<expression>Сумма(Расход)</expression>
+	</totalField>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Потребление услуг по нормативам за период</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Группа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Регистратор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Договор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЛицевойСчет</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидТарифа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Расход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Счетчик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Услуга</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>8cfa9b52-aff6-4566-af4f-09fe4fbd4483</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>54a620cb-729b-45b3-89ce-806d21b7f33f</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Группа</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Договор</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Расход</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Расход</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Together</dcsset:placement>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>Расход</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>МаксимальнаяВысота</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">-0.1</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объем (м3)</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>РазделительМножественныхЗначений</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType"/>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>Расход</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>РазделительМножественныхЗначений</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType"/>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Группа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Группа</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Контрагент</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>Договор</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Контрагент</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>Договор</dcsset:field>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Расход</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидТарифа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидУслуги</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Группа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Договор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЛицевойСчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Номенклатура</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Период</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Расход</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Регистратор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Счетчик</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Услуга</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Основной1</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной1</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Группа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Регистратор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Договор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЛицевойСчет</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидТарифа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Расход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Счетчик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Услуга</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НоменклатурнаяГруппа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидУслуги</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>8cfa9b52-aff6-4566-af4f-09fe4fbd4483</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>54a620cb-729b-45b3-89ce-806d21b7f33f</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

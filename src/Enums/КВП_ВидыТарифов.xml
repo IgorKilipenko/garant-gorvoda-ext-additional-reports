@@ -31,6 +31,24 @@
 					<ExtendedConfigurationObject>11c13422-2a99-410d-80fc-1f657c135255</ExtendedConfigurationObject>
 				</Properties>
 			</EnumValue>
+			<EnumValue uuid="a6305b6b-b67e-4727-98b6-3543f2b30054">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Общий</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>018da80c-dd75-4725-be62-504de44f569b</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="316e9aa3-281a-4690-bf9b-a563e42c7eea">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Ночной</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>21dae575-b497-4879-9f95-29e4ea403c08</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
 		</ChildObjects>
 	</Enum>
 </MetaDataObject>
