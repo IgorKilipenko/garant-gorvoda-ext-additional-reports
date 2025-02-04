@@ -171,7 +171,7 @@
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f2f6c224-82d3-45a1-9560-b19090b4efaa.0" configVersion="344658b2b24fdeea21fa17c83a67590b40a375a1"/>
 		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам" id="9a25bb6a-40a2-4f9c-9e20-ace6f49bbf0d" configVersion="fb285b21d48890d8b11efc4be1394967fa3a8283"/>
 		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам.Template.ОсновнаяСхемаКомпоновкиДанных" id="09de582d-e83b-430f-80c8-9bc9a94622bb" configVersion="b05f112ad53b460893547698f09ab2423f17d6a5"/>
-		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="09de582d-e83b-430f-80c8-9bc9a94622bb.0" configVersion="f2ded977c70bb6c584067928dcdba2b08d6e2bd3"/>
+		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="09de582d-e83b-430f-80c8-9bc9a94622bb.0" configVersion="81d5be4d837c413f80da51097122e4e405e2d580"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд" id="b2687348-939b-40f4-a131-91297bd7143b" configVersion="42459629da512ab6a9d3f5d9debb94b4d321e18e"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ManagerModule" id="b2687348-939b-40f4-a131-91297bd7143b.2" configVersion="82159a1b6b2c21c2314cec7e0f8b570022feca40"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ObjectModule" id="b2687348-939b-40f4-a131-91297bd7143b.0" configVersion="522bc1aaf17f268510856057d58498a67514cc83"/>
