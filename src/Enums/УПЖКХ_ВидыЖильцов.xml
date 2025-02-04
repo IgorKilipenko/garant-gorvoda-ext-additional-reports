@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="2bca93ad-3c89-420a-a640-ba3ee6702298">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.УПЖКХ_ВидыЖильцов" category="Ref">
+				<xr:TypeId>44a1c705-a1fc-45fb-a1db-5bb26f86db86</xr:TypeId>
+				<xr:ValueId>cf2b4d69-108e-49e3-8706-08ff013a5261</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.УПЖКХ_ВидыЖильцов" category="Manager">
+				<xr:TypeId>e99d76cc-78fc-492f-8f63-e728148606a7</xr:TypeId>
+				<xr:ValueId>18e28c69-bca8-4f09-aa33-b5755ecc0907</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.УПЖКХ_ВидыЖильцов" category="List">
+				<xr:TypeId>d74ac0b1-3a8c-41c3-a759-d025d4b8eee4</xr:TypeId>
+				<xr:ValueId>1b130f13-8307-4ff0-bb96-800af659b290</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>УПЖКХ_ВидыЖильцов</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>07bffd3d-3829-45b6-ba6b-7d7b3c864c32</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="61339219-def5-4d59-8640-d63780dad779">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Зарегистрированные</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>95672309-de03-4120-94f0-305fba2590a1</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

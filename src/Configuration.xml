@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.0.11.0-dev1</Version>
+			<Version>2.0.11.0-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -96,6 +96,8 @@
 			<Enum>ВидыДоговоровКонтрагентов</Enum>
 			<Enum>СтавкиНДС</Enum>
 			<Enum>КВП_СпособыРегистрацииПоказанийСчетчиков</Enum>
+			<Enum>КВП_ОснованияНормПотребления</Enum>
+			<Enum>УПЖКХ_ВидыЖильцов</Enum>
 			<Report>ГП_СводнаяВедомостьСКоличеством</Report>
 			<Report>ГП_ОтчетПоКлиентам</Report>
 			<Report>ГП_ОСВПоАбоненту</Report>
