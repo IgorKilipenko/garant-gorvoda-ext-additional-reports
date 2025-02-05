@@ -169,9 +169,9 @@
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных" id="0d2107ac-6134-4474-9748-754ecfc5bb74" configVersion="668be2f48b40be674cb89810625a3f9b9a704e34"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="04183a5cdb3ab4e2ef6539a04111076ae3073e33"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам" id="4f7d5920-f762-4c30-8a86-d70355273789" configVersion="2d8479a69c83e7f24ef52ddd6b970876758f2600"/>
-		<Metadata name="Report.ГП_ОтчетПоШифрам.ObjectModule" id="4f7d5920-f762-4c30-8a86-d70355273789.0" configVersion="5915903338c87a050ddcf8ad898e57a948d085c0"/>
+		<Metadata name="Report.ГП_ОтчетПоШифрам.ObjectModule" id="4f7d5920-f762-4c30-8a86-d70355273789.0" configVersion="32e587ffc9f603f48e9a4c69679832c4511be38f"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9" configVersion="20c45866a8d9f33198fc03828f03e02b2412c190"/>
-		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9.0" configVersion="3bd1897516eee3a2585435c5d7f5ab58efc8ecdb"/>
+		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9.0" configVersion="7d0b129bfafe76e351456611af67d62585ab87c5"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД" id="1afa3534-494a-408b-92a6-e5cff1465755" configVersion="38b4fe0984f0ae33c5bba5d3d8c4803cc53b8f29"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных" id="f2f6c224-82d3-45a1-9560-b19090b4efaa" configVersion="a232870a9c034e004d82970d4d1f0f259c58119f"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f2f6c224-82d3-45a1-9560-b19090b4efaa.0" configVersion="cc1dcbd0ba2197544d41f323e6d169c15ac09de6"/>
