@@ -163,9 +163,9 @@
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Form.ФормаНастроек.Form" id="7e601bb2-ea48-40b4-a409-a95b26e3bdea.0" configVersion="e21321ca27c9ddd0f98ec7f920945d8609db82fa"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Form.ФормаОтчета" id="bc77bd3d-b146-4c94-a446-aafd7606362a" configVersion="0d8976cb09ce688ca882167639cb37ebe4a805ea"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Form.ФормаОтчета.Form" id="bc77bd3d-b146-4c94-a446-aafd7606362a.0" configVersion="dc87252778e6bc8df95d7624a4fd39b7c1e82322"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентам.ObjectModule" id="29e299d6-9c0c-4475-9ca3-25cde982d00b.0" configVersion="4a2a335d4091142190bfda497370cd222f419b9f"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентам.ObjectModule" id="29e299d6-9c0c-4475-9ca3-25cde982d00b.0" configVersion="62fd2664e94bbbda151423a16d85d8c6cb4be555"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет" id="2ff397f3-e820-4018-a265-17abca5c39e9" configVersion="683f35c6b5a6e33799610ffd7028b7e9ac1b7874"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет.Template" id="2ff397f3-e820-4018-a265-17abca5c39e9.0" configVersion="e416ee38eea3882395812fbf4f5de359da548fe3"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.Макет.Template" id="2ff397f3-e820-4018-a265-17abca5c39e9.0" configVersion="07ca31199c2c3284b257bfb2016356cd669bf569"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных" id="0d2107ac-6134-4474-9748-754ecfc5bb74" configVersion="668be2f48b40be674cb89810625a3f9b9a704e34"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="04183a5cdb3ab4e2ef6539a04111076ae3073e33"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам" id="4f7d5920-f762-4c30-8a86-d70355273789" configVersion="2d8479a69c83e7f24ef52ddd6b970876758f2600"/>
