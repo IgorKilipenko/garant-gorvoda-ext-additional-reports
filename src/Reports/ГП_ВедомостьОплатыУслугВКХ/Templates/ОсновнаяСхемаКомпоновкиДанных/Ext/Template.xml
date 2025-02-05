@@ -704,6 +704,7 @@
 		</title>
 		<useRestriction>false</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
