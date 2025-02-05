@@ -360,11 +360,11 @@
 		<expression>Сумма(СуммаОстатокКт)</expression>
 	</totalField>
 	<parameter>
-		<name>Период</name>
+		<name>ПериодОтчета</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Период отчета</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -375,7 +375,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
-		<expression>ТекущаяДатаСеанса()</expression>
+		<availableAsField>false</availableAsField>
 		<inputParameters>
 			<dcscor:item>
 				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
@@ -561,7 +561,6 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;Период</expression>
 		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
@@ -594,6 +593,35 @@
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=dd.MM.yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -640,9 +668,9 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>28c22482-ece1-446d-b424-642739bc801d</dcsset:userSettingID>
+					<dcsset:userSettingID>9327d428-39a5-4762-bbc0-bf983163224e</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -706,13 +734,9 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ЛицевойСчет</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>СтавкаНДС</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>28c22482-ece1-446d-b424-642739bc801d</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -765,6 +789,34 @@
 							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
 						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">50</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">50</dcscor:value>
 						</dcscor:item>
