@@ -113,7 +113,7 @@
 		<Metadata name="Report.ГП_ВедомостьОплатыУслугВКХ.Template.ОсновнаяСхемаКомпоновкиДанных" id="b46290de-124e-48dc-8551-c8aeaf3e4ad8" configVersion="4b6df5b635e8e5978f20bc20b1d9f8d5f394cad3"/>
 		<Metadata name="Report.ГП_ВедомостьОплатыУслугВКХ.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b46290de-124e-48dc-8551-c8aeaf3e4ad8.0" configVersion="93126dde2b75fe798ded4c5ea8abb9113bdcb6ae"/>
 		<Metadata name="Report.ГП_ВзаимозадолженностьКт" id="5aca5131-11a9-449a-98fe-d395da8413c0" configVersion="8b35423ab782d5c014c14d4acf17dd68b82a4677"/>
-		<Metadata name="Report.ГП_ВзаимозадолженностьКт.ObjectModule" id="5aca5131-11a9-449a-98fe-d395da8413c0.0" configVersion="02a33276cccaaa47fa0263bc273ed07af1c7c51c"/>
+		<Metadata name="Report.ГП_ВзаимозадолженностьКт.ObjectModule" id="5aca5131-11a9-449a-98fe-d395da8413c0.0" configVersion="6c9da6091487e659e18adf4d1f104a67a9eb09ac"/>
 		<Metadata name="Report.ГП_ВзаимозадолженностьКт.Template.ОсновнаяСхемаКомпоновкиДанных" id="1795b687-7387-42d8-8f1f-ee8fc0e3034b" configVersion="260d9dab0bf47b210f7bd85da50a1d21c9d93d13"/>
 		<Metadata name="Report.ГП_ВзаимозадолженностьКт.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="1795b687-7387-42d8-8f1f-ee8fc0e3034b.0" configVersion="1221e6d47be0661ce17f077b71b98d747fd7cd94"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность" id="e7ea523e-43b8-49d9-abe0-9f4827084717" configVersion="1ebb53ee2d32f0bf357bd3770e1b1f277cdb256f"/>
