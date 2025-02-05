@@ -563,6 +563,7 @@
 		<useRestriction>true</useRestriction>
 		<expression>&amp;Период</expression>
 		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>СтавкаНДС</name>

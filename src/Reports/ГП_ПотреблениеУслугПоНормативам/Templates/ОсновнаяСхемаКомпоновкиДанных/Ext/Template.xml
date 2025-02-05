@@ -1101,12 +1101,10 @@
 	<totalField>
 		<dataPath>КоличествоПроживающих</dataPath>
 		<expression>Максимум(КоличествоПроживающих)</expression>
-		<group>ЛицевойСчет</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоЗарегистрированных</dataPath>
 		<expression>Максимум(КоличествоЗарегистрированных)</expression>
-		<group>ЛицевойСчет</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПроживающих</dataPath>
@@ -1287,6 +1285,7 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
 		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -1305,6 +1304,7 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
 		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Период</name>
@@ -1322,6 +1322,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<settingsVariant>
