@@ -1101,10 +1101,12 @@
 	<totalField>
 		<dataPath>КоличествоПроживающих</dataPath>
 		<expression>Максимум(КоличествоПроживающих)</expression>
+		<group>ЛицевойСчет</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоЗарегистрированных</dataPath>
 		<expression>Максимум(КоличествоЗарегистрированных)</expression>
+		<group>ЛицевойСчет</group>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПроживающих</dataPath>
