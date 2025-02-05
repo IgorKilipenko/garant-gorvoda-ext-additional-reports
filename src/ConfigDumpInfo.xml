@@ -121,9 +121,9 @@
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.Template.ОсновнаяСхемаКомпоновкиДанных" id="e0a24969-7d1a-4071-a76b-95fd2a34e770" configVersion="dad2c06a39174d29330fffb93cc2109d5575a450"/>
 		<Metadata name="Report.ГП_ДебиторскаяЗадолженность.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e0a24969-7d1a-4071-a76b-95fd2a34e770.0" configVersion="2e17ff2211d5f2634ad0687c1529d375cfa8b4de"/>
 		<Metadata name="Report.ГП_ДублированиеДокументовРеализации" id="07907524-8e5f-4c76-a749-b3ecf0acc78c" configVersion="2015118ee58c141471aefbb1fc674e535bcb2cc0"/>
-		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.ObjectModule" id="07907524-8e5f-4c76-a749-b3ecf0acc78c.0" configVersion="3a227dc3de2ecd1a39ff00980467c861dad4cb1c"/>
+		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.ObjectModule" id="07907524-8e5f-4c76-a749-b3ecf0acc78c.0" configVersion="57e058f683b0d4c1a657b3a7b8e4bf1bee664f3a"/>
 		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.Template.ОсновнаяСхемаКомпоновкиДанных" id="1cc7fa4e-df82-410f-9858-4e2ed5c82939" configVersion="e054f0da751e416c542424a2ec4aa50b43af5c65"/>
-		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="1cc7fa4e-df82-410f-9858-4e2ed5c82939.0" configVersion="1a6f2260781c412156cbaec54047eafd3ab28978"/>
+		<Metadata name="Report.ГП_ДублированиеДокументовРеализации.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="1cc7fa4e-df82-410f-9858-4e2ed5c82939.0" configVersion="00ff74ca3fafb3e40fb881d86fa0e20b1cca9960"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов" id="4c0008ad-186c-462b-9a41-7463b356a0d0" configVersion="1be5e5e431a369a5dbbf47740954b5d463845baf"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ManagerModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.2" configVersion="f1976298b03571432f320cab8e4d676af1bf10f5"/>
 		<Metadata name="Report.ГП_ЗаполненностьСведенийАбонентов.ObjectModule" id="4c0008ad-186c-462b-9a41-7463b356a0d0.0" configVersion="eb09df8cde8d253be906634b61eca5094a4058dc"/>
