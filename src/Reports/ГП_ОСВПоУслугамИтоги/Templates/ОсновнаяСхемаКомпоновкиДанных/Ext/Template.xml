@@ -63,7 +63,7 @@
 			</role>
 			<presentationExpression>НомерДоговора</presentationExpression>
 			<orderExpression>
-				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(НомерДоговора)</dcscom:expression>
+				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(Строка(НомерДоговора))</dcscom:expression>
 				<dcscom:orderType>Asc</dcscom:orderType>
 				<dcscom:autoOrder>false</dcscom:autoOrder>
 			</orderExpression>
