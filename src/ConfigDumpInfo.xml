@@ -151,7 +151,7 @@
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef" configVersion="a28c663e6f8eb0c5d479ff7ae08de0a50b062e66"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef.0" configVersion="97f84753fe6cad974e111df155bb67c2e324106c"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="eb8cb2e45e8e8b5c29725110760008854aab795c"/>
-		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="14542a631eb456d4fd02386478395a57cdb8c082"/>
+		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="05c8519b58790d6a45031268b304673a926c1703"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных" id="70dbc91c-669d-409b-a542-8da098f5f619" configVersion="2c09505ef1da6a647f461c50ef6c579963ead567"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="70dbc91c-669d-409b-a542-8da098f5f619.0" configVersion="4fcfe5deb4a98e3bc08ced008e97945f647310f2"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ПФ_MXL_Макет" id="e397c215-881c-479f-91a3-a28888079109" configVersion="a34b3698eb20a8aed73824baa310a540cfe8aca8"/>
