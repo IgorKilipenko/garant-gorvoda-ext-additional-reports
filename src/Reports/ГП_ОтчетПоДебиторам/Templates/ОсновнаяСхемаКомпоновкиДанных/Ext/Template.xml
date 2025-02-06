@@ -25,23 +25,6 @@
 			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Договор</dataPath>
-			<field>Договор</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Договор</v8:content>
-				</v8:item>
-			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
-			</role>
-			<valueType>
-				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
-			</valueType>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ПредставлениеАдреса</dataPath>
 			<field>ПредставлениеАдреса</field>
 			<title xsi:type="v8:LocalStringType">
@@ -121,16 +104,6 @@
 			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ДокументРеализации</dataPath>
-			<field>ДокументРеализации</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Документ реализации</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>АдресБанка</dataPath>
 			<field>АдресБанка</field>
 			<title xsi:type="v8:LocalStringType">
@@ -190,7 +163,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Счет</v8:content>
+					<v8:content>Банковский счет</v8:content>
 				</v8:item>
 			</title>
 			<valueType>
@@ -209,6 +182,14 @@
 				<dcscom:orderType>Asc</dcscom:orderType>
 				<dcscom:autoOrder>false</dcscom:autoOrder>
 			</orderExpression>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаПросрочено</dataPath>
@@ -219,10 +200,21 @@
 					<v8:content>Сумма просрочено</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
 			<field>Организация</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Организации</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Валюта</dataPath>
@@ -231,6 +223,42 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Подразделение</dataPath>
 			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетБУ</dataPath>
+			<field>СчетБУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет БУ</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРеализации</dataPath>
+			<field>ДокументРеализации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ реализации</v8:content>
+				</v8:item>
+			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
@@ -243,19 +271,36 @@
     ХозрасчетныйОстатки.Подразделение КАК Подразделение,
     ХозрасчетныйОстатки.СуммаОстаток КАК СуммаОстаток,
 	ВЫБОР
-		КОГДА ХозрасчетныйОстатки.Счет В ИЕРАРХИИ (&amp;СчетаДт) ТОГДА ХозрасчетныйОстатки.СуммаОстаток
-		ИНАЧЕ 0
+		КОГДА ХозрасчетныйОстатки.Счет.Код В ИЕРАРХИИ (&amp;СчетаДт) ТОГДА ХозрасчетныйОстатки.СуммаОстаток
+		ИНАЧЕ ХозрасчетныйОстатки.СуммаОстаток
 	КОНЕЦ КАК СуммаОстатокДт,
 	ВЫБОР
 		КОГДА ХозрасчетныйОстатки.Счет В ИЕРАРХИИ (&amp;СчетаКт) ТОГДА -ХозрасчетныйОстатки.СуммаОстаток
-		ИНАЧЕ 0
+		ИНАЧЕ -ХозрасчетныйОстатки.СуммаОстаток
 	КОНЕЦ КАК СуммаОстатокКт
 ПОМЕСТИТЬ ВТ_ДанныеБУ
 ИЗ
-    РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;ПериодГраница, Счет В ИЕРАРХИИ (&amp;ФильтрСписокСчетов), &amp;ВидыСубконто, Организация = &amp;Организация {(Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК ДокументРеализации}) КАК ХозрасчетныйОстатки
+    РегистрБухгалтерии.Хозрасчетный.Остатки(
+        &amp;ПериодГраница,
+        Счет В ИЕРАРХИИ (&amp;ФильтрСписокСчетов), 
+        &amp;ВидыСубконто, Организация = &amp;Организация 
+        {
+            //ВЫРАЗИТЬ(Субконто1 КАК Справочник.Контрагенты) = &amp;Контрагент),
+            //(ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов)).lc_ВидДоговора = &amp;ВидДоговора,
+            (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК ДокументРеализации}
+        ) КАК ХозрасчетныйОстатки
 {ГДЕ
-    ((ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто1 КАК Справочник.Контрагенты)) = &amp;Контрагент),
-    (ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Справочник.ДоговорыКонтрагентов)).lc_ВидДоговора = &amp;ВидДоговора}
+    ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто1 КАК Справочник.Контрагенты) = &amp;Контрагент,
+    (ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Справочник.ДоговорыКонтрагентов)).lc_ВидДоговора = &amp;ВидДоговора,
+    ХозрасчетныйОстатки.Счет.* КАК СчетБУ,
+    ХозрасчетныйОстатки.Субконто1.* КАК Контрагент,
+    // ХозрасчетныйОстатки.Субконто2.* КАК Договор,
+    // ХозрасчетныйОстатки.Субконто3.* КАК ДокументРеализации,
+    // ХозрасчетныйОстатки.Организация.* КАК Организация,
+    ХозрасчетныйОстатки.Валюта.* КАК Валюта,
+    ХозрасчетныйОстатки.Подразделение.* КАК Подразделение,
+    ХозрасчетныйОстатки.СуммаОстаток  КАК СуммаОстаток
+}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -303,13 +348,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
     МАКСИМУМ(БанковскиеСчета.Ссылка) КАК Счет,
-    ВЫРАЗИТЬ(БанковскиеСчета.Владелец КАК Справочник.Контрагенты) КАК Контрагент
+    //ВЫРАЗИТЬ(БанковскиеСчета.Владелец КАК Справочник.Контрагенты) КАК Контрагент
+    НЕОПРЕДЕЛЕНО КАК Контрагент
 ПОМЕСТИТЬ ВТ_НеосновныеБанковскиеСчета
 ИЗ
     Справочник.БанковскиеСчета КАК БанковскиеСчета
 ГДЕ
     БанковскиеСчета.ПометкаУдаления = ЛОЖЬ
-    И БанковскиеСчета.Владелец ССЫЛКА Справочник.Контрагенты
+    //И БанковскиеСчета.Владелец ССЫЛКА Справочник.Контрагенты
     И БанковскиеСчета.Владелец В
             (ВЫБРАТЬ РАЗЛИЧНЫЕ
                 Т.Контрагент
@@ -319,8 +365,7 @@
                 Т.Банк = НЕОПРЕДЕЛЕНО)
     И БанковскиеСчета.Валютный = ЛОЖЬ
 
-СГРУППИРОВАТЬ ПО
-    ВЫРАЗИТЬ(БанковскиеСчета.Владелец КАК Справочник.Контрагенты)
+
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -469,17 +514,17 @@
     ВТ_ДанныеБУКонтрагенты.ПредставлениеАдресаБанка</query>
 	</dataSet>
 	<parameter>
-		<name>Период</name>
+		<name>ПериодОтчета</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Период отчета</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>Date</v8:DateFractions>
+				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
@@ -662,6 +707,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
+		<expression>ДОБАВИТЬКДАТЕ(КОНЕЦПЕРИОДА(&amp;ПериодОтчета, "ДЕНЬ"), "СЕКУНДА", 1)</expression>
 		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
@@ -679,6 +725,7 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Организация</name>
@@ -697,36 +744,56 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>СчктаКт</name>
+		<name>СчетаДт</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>СчктаКт</v8:content>
+				<v8:content>СчетаДт</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>СчктаДт</name>
+		<name>СчетаКт</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>СчктаДт</v8:content>
+				<v8:content>СчетаКт</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
 		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -2177,9 +2244,9 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>23bce1b7-0f2e-4506-b28a-e992c385da91</dcsset:userSettingID>
+					<dcsset:userSettingID>c8ef63c6-eb95-4efb-a7b0-e3186335f01d</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -2216,6 +2283,22 @@
 					<dcscor:parameter>ВидДоговора</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>e5dd2a93-e285-40c1-861b-663eca12a75c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетаДт</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетаКт</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>23bce1b7-0f2e-4506-b28a-e992c385da91</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
