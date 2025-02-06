@@ -306,7 +306,9 @@
 ИЗ
     Справочник.Контрагенты.КонтактнаяИнформация КАК КонтактнаяИнформация  
 ГДЕ
-    КонтактнаяИнформация.Ссылка В
+    ИСТИНА
+    И КонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента)
+    И КонтактнаяИнформация.Ссылка В
             (ВЫБРАТЬ РАЗЛИЧНЫЕ
                 Т.Контрагент
             ИЗ
@@ -524,6 +526,17 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=dd.MM.yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -702,7 +715,6 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>ДОБАВИТЬКДАТЕ(КОНЕЦПЕРИОДА(&amp;ПериодОтчета, "ДЕНЬ"), "СЕКУНДА", 1)</expression>
 		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
