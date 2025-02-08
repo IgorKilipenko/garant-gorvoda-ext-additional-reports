@@ -89,6 +89,9 @@
 				<dcscom:dimension>true</dcscom:dimension>
 				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
 			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Дебет</dataPath>
@@ -372,12 +375,12 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Субконто1</dataPath>
-			<field>Субконто1</field>
+			<dataPath>ОборотДт</dataPath>
+			<field>ОборотДт</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Субконто1</v8:content>
+					<v8:content>Оборот дт</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -390,60 +393,6 @@
 					<v8:content>Оборот кт</v8:content>
 				</v8:item>
 			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Субконто2</dataPath>
-			<field>Субконто2</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Субконто2</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Организация</dataPath>
-			<field>Организация</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Субконто3</dataPath>
-			<field>Субконто3</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Субконто3</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Подразделение</dataPath>
-			<field>Подразделение</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ВалютаКор</dataPath>
-			<field>ВалютаКор</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ПодразделениеКор</dataPath>
-			<field>ПодразделениеКор</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ОборотДт</dataPath>
-			<field>ОборотДт</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Оборот дт</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>0</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</valueType>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
@@ -460,13 +409,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ ПЕРВЫЕ 1
-	ХозрасчетныйОстаткиНаНачало.СуммаОстаток КАК ОстатокНаНачало
+	СУММА(ХозрасчетныйОстаткиНаНачало.СуммаОстаток) КАК ОстатокНаНачало
 ПОМЕСТИТЬ ВТ_ОстатокНаНачало
 {ВЫБРАТЬ
 	ОстатокНаНачало КАК ОстатокНаНачало}
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.Остатки(
-			&amp;НачалоПериода,
+			&amp;НачалоПериодаВключая,
 			Счет В
 				(ВЫБРАТЬ
 					Т.Счет
@@ -673,6 +622,8 @@
 	Счет.* КАК Счет,
 	ЦифровойИндексОбособленногоПодразделения КАК ЦифровойИндексОбособленногоПодразделения,
 	Оборот КАК Оборот,
+	ОборотДт КАК ОборотДт,
+	ОборотКт КАК ОборотКт,
 	ОстатокНаКонец КАК ОстатокНаКонец,
 	ОстатокНаКонецДт КАК ОстатокНаКонецДт,
 	ОстатокНаКонецКт КАК ОстатокНаКонецКт,
@@ -685,7 +636,27 @@
 		ПО (ИСТИНА)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СчетФактурыВыданные КАК ВТ_СчетФактурыВыданные
 		ПО ВТ_Результат.Документ = ВТ_СчетФактурыВыданные.Документ
+{ГДЕ
+    ВТ_Результат.Дата КАК Дата,
+	ВТ_Результат.Номер КАК Номер,
+	ВТ_Результат.Документ.* КАК Документ,
+	ВТ_Результат.Договор.* КАК Договор,
+	ВТ_Результат.Кредит КАК Кредит,
+	ВТ_Результат.НомерВходящегоДокумента КАК НомерВходящегоДокумента,
+	ВТ_Результат.ДатаВходящегоДокумента КАК ДатаВходящегоДокумента,
+	ВТ_Результат.ЭтоУниверсальныйДокумент КАК ЭтоУниверсальныйДокумент,
+	ВТ_Результат.ЭтоКорректировочныйДокумент КАК ЭтоКорректировочныйДокумент,
+	ВТ_Результат.КорСчет.* КАК КорСчет,
+	ВТ_Результат.КорСубконто1.* КАК КорСубконто1,
+	ВТ_Результат.КорСубконто2.* КАК КорСубконто2,
+	ВТ_Результат.КорСубконто3.* КАК КорСубконто3,
+	ВТ_Результат.Валюта.* КАК Валюта,
+	ВТ_Результат.ВидПрочихДоходовИРасходов.* КАК ВидПрочихДоходовИРасходов,
+	ВТ_Результат.Счет.* КАК Счет,
+	ВТ_Результат.ЦифровойИндексОбособленногоПодразделения КАК ЦифровойИндексОбособленногоПодразделения,
+	ВТ_СчетФактурыВыданные.СчетФактура.* КАК СчетФактура}
 </query>
+		<autoFillFields>false</autoFillFields>
 	</dataSet>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -807,6 +778,7 @@
 				<dcscor:value xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d5p1:FoldersAndItemsUse">Items</dcscor:value>
 			</dcscor:item>
 		</inputParameters>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>МассивДоговоров</name>
@@ -868,6 +840,7 @@
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
 		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>АналитикаРасчетов</name>
@@ -883,13 +856,14 @@
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>Период</name>
+		<name>НачалоПериодаВключая</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Начало периода включая</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -900,8 +874,25 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
-		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериодаВключая</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода включая</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -1049,12 +1040,6 @@
 					<dcscor:parameter>АналитикаРасчетов</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>c23c8177-023d-4990-9578-7d399fcb4197</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Период</dcscor:parameter>
-					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>fa4f7359-414a-4462-baf1-23cec7a0b326</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
