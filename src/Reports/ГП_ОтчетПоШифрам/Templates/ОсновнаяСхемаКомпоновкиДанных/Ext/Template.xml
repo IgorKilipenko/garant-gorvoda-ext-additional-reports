@@ -495,6 +495,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаголовокИтогов</dataPath>
+			<field>ЗаголовокИтогов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок итогов</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
     РеализацияУслуг.Период КАК Период,
@@ -958,7 +968,8 @@
     ВТ_Результат.Финансирование КАК Финансирование,
     ВТ_Результат.Контролер КАК Контролер,
     ВТ_Результат.Договородержатель КАК Договородержатель,
-    ВТ_Результат.Водозабор КАК Водозабор
+    ВТ_Результат.Водозабор КАК Водозабор,
+	"Итого" КАК ЗаголовокИтогов
 {ВЫБРАТЬ
     Период КАК Период,
     Регистратор.* КАК Регистратор,
@@ -988,7 +999,8 @@
     Финансирование.* КАК Финансирование,
     Контролер.* КАК Контролер,
     Договородержатель.* КАК Договородержатель,
-    Водозабор.* КАК Водозабор}
+    Водозабор.* КАК Водозабор,
+	ЗаголовокИтогов КАК ЗаголовокИтогов}
 ИЗ
     ВТ_Результат КАК ВТ_Результат
 {ГДЕ
@@ -1862,6 +1874,11 @@
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:name>Заголовок</dcsset:name>
@@ -1914,6 +1931,40 @@
 							<dcscor:value xsi:type="v8:LocalStringType"/>
 						</dcscor:item>
 					</dcsset:outputParameters>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЗаголовокИтогов</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЗаголовокИтогов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаНУ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаНДС</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Сумма</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Horizontally</dcsset:placement>
+						</dcsset:item>
+					</dcsset:selection>
 				</dcsset:column>
 				<dcsset:row>
 					<dcsset:groupItems>
@@ -2176,7 +2227,7 @@
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
-						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
