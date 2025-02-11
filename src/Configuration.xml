@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.0.21.1-rc1</Version>
+			<Version>2.0.21.2-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -89,6 +89,9 @@
 			<Catalog>КВП_Счетчики</Catalog>
 			<Document>РеализацияТоваровУслуг</Document>
 			<Document>КВП_РегистрацияОплаты</Document>
+			<Document>ПоступлениеНаРасчетныйСчет</Document>
+			<Document>ОплатаПлатежнойКартой</Document>
+			<Document>ПриходныйКассовыйОрдер</Document>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
 			<Enum>УПЖКХ_РазделыУчета</Enum>
 			<Enum>ДоступныеПериодыОтчета</Enum>
