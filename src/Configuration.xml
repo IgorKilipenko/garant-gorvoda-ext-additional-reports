@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.0.20.0-rc1</Version>
+			<Version>2.0.21.0-dev1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -88,6 +88,7 @@
 			<Catalog>Пользователи</Catalog>
 			<Catalog>КВП_Счетчики</Catalog>
 			<Document>РеализацияТоваровУслуг</Document>
+			<Document>КВП_РегистрацияОплаты</Document>
 			<Enum>УПЖКХ_ВидыНачислений</Enum>
 			<Enum>УПЖКХ_РазделыУчета</Enum>
 			<Enum>ДоступныеПериодыОтчета</Enum>
@@ -121,6 +122,7 @@
 			<Report>ГП_РасчетЗадолженностиДляПередачиСуд</Report>
 			<Report>ГП_ВзаимозадолженностьКт</Report>
 			<Report>ГП_ПотреблениеУслугПоНормативам</Report>
+			<Report>ГП_ОтчетДляВыгрузкаДанныхОФД</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>

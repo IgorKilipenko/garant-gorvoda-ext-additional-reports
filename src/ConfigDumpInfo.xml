@@ -59,7 +59,8 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="0cf8847564e1d43ce35225fc295f177cd25445a9"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="34e9d75feb851ea99812563204ec6d83d05d7bb4"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="213a072f3e146d42abadf3a74b475b2f07cb1f28"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="d0694b2e433bd5da76a0dbff22788ccc8a348f93"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="04cdce4af6f73c41e4c9c5c8bd4d16c710fb4a17"/>
+		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.РеализацияТоваровУслуг" id="dda5b373-f217-4dec-a55a-5999ef27f4ff" configVersion="595d4caa7531b7f765cdd2d5d4f3e6c648109e35">
 			<Metadata name="Document.РеализацияТоваровУслуг.TabularSection.Услуги" id="4d33500c-e8c2-457b-beaa-0f542f05f9c6"/>
 		</Metadata>
@@ -150,6 +151,10 @@
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.ObjectModule" id="b25920d0-4b01-470f-a05a-4c06b4c693a5.0" configVersion="7e5a5adb7db77d38f3f9b16a5afca2225e63b0a9"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef" configVersion="a28c663e6f8eb0c5d479ff7ae08de0a50b062e66"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef.0" configVersion="97f84753fe6cad974e111df155bb67c2e324106c"/>
+		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД" id="a028df5b-5996-424e-927f-20f47d611504" configVersion="112d04ca62a69b87ed2b847e7cb4d9b1393fa64e"/>
+		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.ObjectModule" id="a028df5b-5996-424e-927f-20f47d611504.0" configVersion="d82feaa5aacb3ab98bc4e2ad1571b8d2dc4ec20a"/>
+		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.Template.ОсновнаяСхемаКомпоновкиДанных" id="269ce60e-fff4-4b75-aea2-d1e3c2fd5394" configVersion="22d53194cb6bd3d1e2e3c9b1d0fb30894614eeea"/>
+		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="269ce60e-fff4-4b75-aea2-d1e3c2fd5394.0" configVersion="39fa96b0cbff6ee51b298b9cf69dfd04d40c350a"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="eb8cb2e45e8e8b5c29725110760008854aab795c"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="05c8519b58790d6a45031268b304673a926c1703"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных" id="70dbc91c-669d-409b-a542-8da098f5f619" configVersion="2c09505ef1da6a647f461c50ef6c579963ead567"/>
@@ -270,7 +275,7 @@
 		<Metadata name="StyleItem.ЗаголовкиСтрокШрифт" id="564cd382-6468-481c-b6c5-9c614e382736" configVersion="7a1b702887e47948116a53f16f239ad26c05c7c7"/>
 		<Metadata name="StyleItem.СодержаниеУслугиШрифт" id="ddbfa630-2c87-480b-852a-f9c4d59e8bf6" configVersion="dd3a768e8831dfe3d2c8590705a7d56179a0470c"/>
 		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг" id="c380ce26-6ef9-420d-8d85-e3ff33483051" configVersion="b9803bbbd8f7aab9198f062cf24e13350cd13fc4"/>
-		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="030d3bdb3bb027500120cd3ddd7d7118e392776d"/>
+		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="d03e9215b84194cc716f979f136817f766d90ee1"/>
 		<Metadata name="Subsystem.УПЖКХ_УправлениеЛицевымиСчетами" id="c279f237-515d-4866-814b-af16a938f375" configVersion="7593776dbb3c2fd3e2778019b265e37542020226"/>
 	</ConfigVersions>
 </ConfigDumpInfo>
