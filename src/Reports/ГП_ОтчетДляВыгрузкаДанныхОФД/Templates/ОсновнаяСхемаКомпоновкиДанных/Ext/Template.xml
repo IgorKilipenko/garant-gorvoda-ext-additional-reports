@@ -251,6 +251,24 @@
 				</v8:NumberQualifiers>
 			</valueType>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОбщая</dataPath>
+			<field>СуммаОбщая</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма общая</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
     ВЫРАЗИТЬ(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Ссылка КАК Документ.КВП_РегистрацияОплаты) КАК ДокументРегистрации,
@@ -273,7 +291,7 @@
 	КОНЕЦ КАК ПолнаяОплата,
 	ВЫБОР
 	   КОГДА ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Сумма, 0) &lt; ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.ДолгСумма, 0)
-	       ТОГДА ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Сумма, 0) - ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Пени, 0)
+	       ТОГДА ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Сумма, 0)
 	   ИНАЧЕ
 	       0
 	КОНЕЦ КАК ЧастичнаяОплата,
@@ -281,7 +299,6 @@
 	   КОГДА ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Сумма, 0) &gt; ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.ДолгСумма, 0)
 	       ТОГДА ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Сумма, 0) 
 	           - ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.ДолгСумма, 0)
-	           - ЕСТЬNULL(ВТ_РегистрацияОплатыРасшифровкаПлатежа.Пени, 0)
 	   ИНАЧЕ
 	       0
 	КОНЕЦ КАК Аванс
@@ -318,6 +335,7 @@
 	ВТ_Результат_Подготовка.Услуга КАК Услуга,
 	ВТ_Результат_Подготовка.ДокументОплаты КАК ДокументОплаты,
 	ВТ_Результат_Подготовка.ЭтоАванс КАК ЭтоАванс,
+	ВТ_Результат_Подготовка.Сумма + ВТ_Результат_Подготовка.Пени КАК СуммаОбщая,
 	ВТ_Результат_Подготовка.Сумма КАК Сумма,
 	ВТ_Результат_Подготовка.Пени КАК Пени,
 	ВТ_Результат_Подготовка.АвансСумма КАК АвансСумма,
@@ -337,6 +355,7 @@
     ЭтоАванс,
     Сумма,
     Пени,
+    СуммаОбщая,
     АвансСумма,
     ДолгСумма,
     ПолнаяОплата,
@@ -346,7 +365,8 @@
     ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
 {ГДЕ
     ВТ_Результат_Подготовка.ЭтоАванс КАК ЭтоАванс,
-    ВТ_Результат_Подготовка.Сумма КАК Сумма}
+    ВТ_Результат_Подготовка.Сумма КАК Сумма,
+    ВТ_Результат_Подготовка.Сумма + ВТ_Результат_Подготовка.Пени КАК СуммаОбщая}
 </query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
@@ -377,6 +397,10 @@
 	<totalField>
 		<dataPath>Аванс</dataPath>
 		<expression>Сумма(Аванс)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаОбщая</dataPath>
+		<expression>Сумма(СуммаОбщая)</expression>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -651,11 +675,11 @@
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ОбщееКоличествоЗаписей</dcsat:name>
-			<dcsat:expression>КОЛИЧЕСТВО(Сумма)</dcsat:expression>
+			<dcsat:expression>КОЛИЧЕСТВО(СуммаОбщая)</dcsat:expression>
 		</parameter>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ОбщаяСумма</dcsat:name>
-			<dcsat:expression>СУММА(Сумма)</dcsat:expression>
+			<dcsat:expression>СУММА(СуммаОбщая)</dcsat:expression>
 		</parameter>
 	</template>
 	<groupTemplate>
@@ -729,10 +753,13 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ЧастичнаяОплата</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОбщая</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Сумма</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">СуммаОбщая</dcsset:left>
 					<dcsset:comparisonType>Filled</dcsset:comparisonType>
 				</dcsset:item>
 			</dcsset:filter>
@@ -813,7 +840,7 @@
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>Сумма</dcsset:field>
+					<dcsset:field>СуммаОбщая</dcsset:field>
 					<dcsset:orderType>Desc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
@@ -932,7 +959,7 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Сумма</dcsset:field>
+							<dcsset:field>СуммаОбщая</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 							<dcsset:lwsTitle>
@@ -962,7 +989,7 @@
 					<dcsset:item>
 						<dcsset:selection>
 							<dcsset:item>
-								<dcsset:field>Сумма</dcsset:field>
+								<dcsset:field>СуммаОбщая</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 						<dcsset:filter/>
