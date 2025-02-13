@@ -109,6 +109,11 @@
 					<v8:content>Договор</v8:content>
 				</v8:item>
 			</title>
+			<orderExpression>
+				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(Строка(Договор.Номер))</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
 			<valueType>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
 			</valueType>
@@ -311,6 +316,16 @@
 				</v8:NumberQualifiers>
 			</valueType>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаголовокОбщихДанных</dataPath>
+			<field>ЗаголовокОбщихДанных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок общих данных</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	РасчетПриборовУчета.Период КАК Период,
@@ -458,11 +473,9 @@
 	ВТ_Начисления КАК ВТ_Начисления
 ГДЕ
 	ИСТИНА
-	//И ВТ_Начисления.ВидНачисления В (ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПоИПУ), ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПриОтсутствииПоказанийИПУПоНормативу))
 	И ВТ_Начисления.ВидНачисления В (ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПоИПУ), ЗНАЧЕНИЕ(Перечисление.УПЖКХ_ВидыНачислений.НачислениеПоОПУ))
 	И ВТ_Начисления.СуммаНачисления &lt;&gt; 0
 	И ВТ_Начисления.Количество &lt;&gt; 0
-	//И ВТ_Начисления.УслугаОснование = ЗНАЧЕНИЕ(Справочник.КВП_Услуги.ПустаяСсылка)
 	И ВТ_Начисления.ВидТарифа = ЗНАЧЕНИЕ(Перечисление.КВП_ВидыТарифов.Дневной)
 ;
 
@@ -763,10 +776,6 @@
 ПОМЕСТИТЬ ВТ_ФактическийРасходОсновныхУслугПоИПУ
 ИЗ
 	ВТ_ОбщийРасходПоФактическимДанным КАК ВТ_ОбщийРасходПоФактическимДанным
-ГДЕ
-	ИСТИНА
-	//И ВТ_ОбщийРасходПоФактическимДанным.Группа В ("Водомер", "По среднему")
-	//И ВТ_ОбщийРасходПоФактическимДанным.УслугаОснование = ЗНАЧЕНИЕ(Справочник.КВП_Услуги.ПустаяСсылка)
 ;
 
 ВЫБРАТЬ
@@ -865,15 +874,6 @@
 ПОМЕСТИТЬ ВТ_Результат_Начисления
 ИЗ
 	ВТ_РасходОсновныхУслугПоПУНормы КАК ВТ_ОбщийРасходПоФактическимДанным
-//ГДЕ
-//	ВТ_ОбщийРасходПоФактическимДанным.ВременныйИдентификаторСтроки НЕ В (ВЫБРАТЬ Т.ВременныйИдентификаторСтроки ИЗ ВТ_ФактическийРасходОсновныхУслугПоИПУ КАК Т)
-//
-//ОБЪЕДИНИТЬ ВСЕ
-//
-//ВЫБРАТЬ
-//	*
-//ИЗ
-//	ВТ_РасходОсновныхУслугПоПУНормы КАК ВТ_РасходОсновныхУслугПоПУНормы
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -929,8 +929,8 @@
     ВТ_ДинамическиеПоказателиЛицевыхСчетов.Контролер КАК Договородержатель,
     ВТ_ДинамическиеПоказателиЛицевыхСчетов.Финансирование КАК Финансирование,
     ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления КАК ВидПотребления,
-    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика
-//ПОМЕСТИТЬ ВТ_РезультатДляКонтроля
+    ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика КАК Характеристика,
+    "Общие данные" КАК ЗаголовокОбщихДанных
 {ВЫБРАТЬ
     Группа КАК Группа,
 	Период КАК Период,
@@ -955,7 +955,8 @@
     Договородержатель.*,
     Финансирование.*,
     ВидПотребления.*,
-    Характеристика.*}
+    Характеристика.*,
+    ЗаголовокОбщихДанных}
 ИЗ
 	ВТ_Результат_Начисления КАК ВТ_Результат_Начисления
 	ЛЕВОЕ СОЕДИНЕНИЕ ВТ_УточненияГрупп КАК ВТ_УточненияГрупп
@@ -1001,22 +1002,16 @@
     ВТ_ДинамическиеПоказателиЛицевыхСчетов.Характеристика.*,
     ВТ_ДинамическиеПоказателиЛицевыхСчетов.ВидПотребления.*
 }
-//;
-//
-//////////////////////////////////////////////////////////////////////////////////
-//ВЫБРАТЬ
-//	СУММА(Расход) КАК РасходИтогоПоОтчету
-//ИЗ
-//	ВТ_РезультатДляКонтроля</query>
+</query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
 	<totalField>
 		<dataPath>КоличествоЗарегистрированных</dataPath>
-		<expression>Сумма(КоличествоЗарегистрированных)</expression>
+		<expression>ГП_РаботаСОтчетами.РасчитатьСуммуЖильцовПоЛицевымСчетам(ВычислитьВыражениеСГруппировкойТаблицаЗначений("ВЫРАЗИТЬ(ЛицевойСчет, ""Справочник.КВП_ЛицевыеСчета"") КАК ЛицевойСчет, ВЫРАЗИТЬ(КоличествоЗарегистрированных, ""ЧИСЛО(21,6)"") КАК КоличествоЗарегистрированных"), "КоличествоЗарегистрированных")</expression>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПроживающих</dataPath>
-		<expression>Сумма(КоличествоПроживающих)</expression>
+		<expression>ГП_РаботаСОтчетами.РасчитатьСуммуЖильцовПоЛицевымСчетам(ВычислитьВыражениеСГруппировкойТаблицаЗначений("ВЫРАЗИТЬ(ЛицевойСчет, ""Справочник.КВП_ЛицевыеСчета"") КАК ЛицевойСчет, ВЫРАЗИТЬ(КоличествоПроживающих, ""ЧИСЛО(21,6)"") КАК КоличествоПроживающих"), "КоличествоПроживающих")</expression>
 	</totalField>
 	<totalField>
 		<dataPath>Норма</dataPath>
@@ -1029,6 +1024,16 @@
 	<totalField>
 		<dataPath>Расход</dataPath>
 		<expression>Сумма(Расход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗарегистрированных</dataPath>
+		<expression>Максимум(КоличествоЗарегистрированных)</expression>
+		<group>ЛицевойСчет</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПроживающих</dataPath>
+		<expression>Максимум(КоличествоПроживающих)</expression>
+		<group>ЛицевойСчет</group>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -1428,6 +1433,15 @@
 			</dcsset:order>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
 				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЗаголовокОбщихДанных</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
 					<dcsset:order>
 						<dcsset:item xsi:type="dcsset:OrderItemAuto">
 							<dcsset:use>false</dcsset:use>
@@ -1437,17 +1451,21 @@
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto">
 							<dcsset:use>false</dcsset:use>
 						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЗаголовокОбщихДанных</dcsset:field>
+						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 							<dcsset:lwsTitle>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Кол. жильцов</v8:content>
+									<v8:content>Кол. жильцов:</v8:content>
 								</v8:item>
 							</dcsset:lwsTitle>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>КоличествоПроживающих</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
 								<dcsset:field>КоличествоЗарегистрированных</dcsset:field>
 							</dcsset:item>
 							<dcsset:placement>Vertically</dcsset:placement>
@@ -1524,6 +1542,12 @@
 							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 						</dcsset:item>
 					</dcsset:conditionalAppearance>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
 				</dcsset:column>
 				<dcsset:column>
 					<dcsset:groupItems>
