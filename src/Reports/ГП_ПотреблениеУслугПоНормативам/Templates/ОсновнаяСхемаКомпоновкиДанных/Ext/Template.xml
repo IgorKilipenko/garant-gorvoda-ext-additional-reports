@@ -271,7 +271,7 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>[Группа потребителей]</dataPath>
+			<dataPath>ВидПотребления</dataPath>
 			<field>ВидПотребления</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
@@ -1099,17 +1099,71 @@
 </query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
+	<calculatedField>
+		<dataPath>СуммаНорма</dataPath>
+		<expression>ВычислитьВыражениеСГруппировкойМассив("Максимум(Норма)", "ЛицевойСчет, Услуга")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Норма</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СуммаКоличествоПроживающих</dataPath>
+		<expression>ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоПроживающих)", "ЛицевойСчет")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма количество проживающих</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СуммаКоличествоЗарегистрированных</dataPath>
+		<expression>ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоЗарегистрированных)", "ЛицевойСчет")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма количество зарегистрированных</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
 	<totalField>
 		<dataPath>КоличествоЗарегистрированных</dataPath>
-		<expression>ГП_РаботаСОтчетами.РасчитатьСуммуЖильцовПоЛицевымСчетам(ВычислитьВыражениеСГруппировкойТаблицаЗначений("ВЫРАЗИТЬ(ЛицевойСчет, ""Справочник.КВП_ЛицевыеСчета"") КАК ЛицевойСчет, ВЫРАЗИТЬ(КоличествоЗарегистрированных, ""ЧИСЛО(21,6)"") КАК КоличествоЗарегистрированных"), "КоличествоЗарегистрированных")</expression>
+		<expression>Сумма(КоличествоЗарегистрированных)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПроживающих</dataPath>
-		<expression>ГП_РаботаСОтчетами.РасчитатьСуммуЖильцовПоЛицевымСчетам(ВычислитьВыражениеСГруппировкойТаблицаЗначений("ВЫРАЗИТЬ(ЛицевойСчет, ""Справочник.КВП_ЛицевыеСчета"") КАК ЛицевойСчет, ВЫРАЗИТЬ(КоличествоПроживающих, ""ЧИСЛО(21,6)"") КАК КоличествоПроживающих"), "КоличествоПроживающих")</expression>
+		<expression>Сумма(КоличествоПроживающих)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>Норма</dataPath>
-		<expression>ГП_РаботаСОтчетами.РасчитатьСуммуНормативаПоЛицевымСчетам(ВычислитьВыражениеСГруппировкойТаблицаЗначений("ВЫРАЗИТЬ(ЛицевойСчет, ""Справочник.КВП_ЛицевыеСчета"") КАК ЛицевойСчет, ВЫРАЗИТЬ(Услуга, ""Справочник.КВП_Услуги"") КАК ЛицевойСчет, ВЫРАЗИТЬ(Норма, ""ЧИСЛО(21,6)"") КАК Норма"), "Норма")</expression>
+		<expression>Сумма(Норма)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>НормативныйРасход</dataPath>
@@ -1120,14 +1174,16 @@
 		<expression>Сумма(Расход)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоЗарегистрированных</dataPath>
-		<expression>Максимум(КоличествоЗарегистрированных)</expression>
-		<group>ЛицевойСчет</group>
+		<dataPath>СуммаКоличествоЗарегистрированных</dataPath>
+		<expression>Сумма(СуммаКоличествоЗарегистрированных)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоПроживающих</dataPath>
-		<expression>Максимум(КоличествоПроживающих)</expression>
-		<group>ЛицевойСчет</group>
+		<dataPath>СуммаКоличествоПроживающих</dataPath>
+		<expression>Сумма(СуммаКоличествоПроживающих)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаНорма</dataPath>
+		<expression>Сумма(СуммаНорма)</expression>
 	</totalField>
 	<parameter>
 		<name>ПериодОтчета</name>
@@ -1461,6 +1517,15 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Норма</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаКоличествоЗарегистрированных</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаКоличествоПроживающих</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНорма</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1587,6 +1652,14 @@
 								</v8:item>
 							</dcsset:lwsTitle>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаКоличествоПроживающих</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>СуммаКоличествоЗарегистрированных</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
 								<dcsset:field>КоличествоПроживающих</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -1596,7 +1669,11 @@
 							<dcsset:placement>Vertically</dcsset:placement>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
 							<dcsset:field>Норма</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаНорма</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
@@ -1604,6 +1681,9 @@
 							<dcsset:selection>
 								<dcsset:item>
 									<dcsset:field>КоличествоПроживающих</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>СуммаКоличествоПроживающих</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:filter/>
@@ -1637,6 +1717,9 @@
 							<dcsset:selection>
 								<dcsset:item>
 									<dcsset:field>КоличествоЗарегистрированных</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>СуммаКоличествоЗарегистрированных</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:filter/>
@@ -1840,7 +1923,11 @@
 								<dcsset:field>Расход</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
 								<dcsset:field>Норма</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаНорма</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 					</dcsset:item>
