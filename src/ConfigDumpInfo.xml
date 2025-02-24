@@ -59,7 +59,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="85b79d09318433cac90c991521505c9cd68e3aac"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="3a7b1e631032a23b4523560dabe087d5fd717092"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="cab051b43f02f02101f80e9d9c043fb0cd2643be"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="48ca8cf331d095dbc1801524216fa69aad27acc4"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -155,7 +155,7 @@
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef" configVersion="a28c663e6f8eb0c5d479ff7ae08de0a50b062e66"/>
 		<Metadata name="Report.ГП_ОСВПоУслугамИтоги.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f23eab3b-8ccb-4c13-8105-ba01c84efdef.0" configVersion="97f84753fe6cad974e111df155bb67c2e324106c"/>
 		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД" id="a028df5b-5996-424e-927f-20f47d611504" configVersion="112d04ca62a69b87ed2b847e7cb4d9b1393fa64e"/>
-		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.ObjectModule" id="a028df5b-5996-424e-927f-20f47d611504.0" configVersion="d82feaa5aacb3ab98bc4e2ad1571b8d2dc4ec20a"/>
+		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.ObjectModule" id="a028df5b-5996-424e-927f-20f47d611504.0" configVersion="92e06c04e1202129b94a234791ab8d35fb7ff057"/>
 		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.Template.ОсновнаяСхемаКомпоновкиДанных" id="269ce60e-fff4-4b75-aea2-d1e3c2fd5394" configVersion="22d53194cb6bd3d1e2e3c9b1d0fb30894614eeea"/>
 		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="269ce60e-fff4-4b75-aea2-d1e3c2fd5394.0" configVersion="9b554ca1eba5809a9fa5b942ff7ed3ee868624ed"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="eb8cb2e45e8e8b5c29725110760008854aab795c"/>
@@ -235,9 +235,9 @@
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c" configVersion="27e02ca9158a6e51f6cbfbd6b439061530eccc3a"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством.Template.ПФ_MXL_Ведомость.Template" id="06ed9a60-6182-4cac-8e65-6ed1f86f9e3c.0" configVersion="91dbac5e42e06f15b6507faee7c6b50119e018c7"/>
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами" id="c50dc0d7-7039-4857-a37d-6a9c270370a5" configVersion="5a0a0792a0f86dc9ee9e36dd6baf601103fd2689"/>
-		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.ObjectModule" id="c50dc0d7-7039-4857-a37d-6a9c270370a5.0" configVersion="acf322ffc73781529098ec6d9aef458b7690625f"/>
+		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.ObjectModule" id="c50dc0d7-7039-4857-a37d-6a9c270370a5.0" configVersion="8cd6d893a8c3bfa1bbc61495cffbd349c8af6610"/>
 		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5" configVersion="480d3c1bf979a1641ef9bb560456d11d5a28a23d"/>
-		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5.0" configVersion="c875e0848f2b99bc21dd5ad4d16058728c3b60df"/>
+		<Metadata name="Report.ГП_СпискиАбонентовСЮрАдресами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0df9c7ff-d3cd-464a-ab66-a90d87c23ae5.0" configVersion="d6f5f20b17b9283cb11420e5dfb70d988b685e8f"/>
 		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговору" id="f969bcba-ccf1-4654-b69f-f79883c10581" configVersion="2d332ff80806787d39e8306ff8bed983b73fa215"/>
 		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговору.ObjectModule" id="f969bcba-ccf1-4654-b69f-f79883c10581.0" configVersion="6f30233262b4a3da9216db783b347ac5b9f3e5d3"/>
 		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговору.Template.ОсновнаяСхемаКомпоновкиДанных" id="94ce10ed-e41b-4575-8995-464dbf60a78d" configVersion="dd072b6e6e3362b8f864f9eeab6aa3378dbbd347"/>
