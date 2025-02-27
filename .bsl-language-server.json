@@ -23,5 +23,11 @@
             "MagicNumber": false,
             "UsingHardcodeNetworkAddress": false
         }
+    },
+    "inlayHint": {
+        "parameters": {
+            "cognitiveComplexity": false,
+            "cyclomaticComplexity": false
+        }
     }
 }
