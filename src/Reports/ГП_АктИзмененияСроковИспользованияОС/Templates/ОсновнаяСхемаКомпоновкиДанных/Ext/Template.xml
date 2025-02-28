@@ -1025,12 +1025,13 @@
 		<expression>Сумма(СрокПолезногоИспользования)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>СрокПолезногоИспользованияПредыдущееЗначение</dataPath>
-		<expression>Сумма(СрокПолезногоИспользованияПредыдущееЗначение)</expression>
-	</totalField>
-	<totalField>
 		<dataPath>СтоимостьДляВычисленияАмортизации</dataPath>
 		<expression>Сумма(СтоимостьДляВычисленияАмортизации)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СрокПолезногоИспользованияПредыдущееЗначение</dataPath>
+		<expression>Максимум(ВычислитьВыражениеСГруппировкойМассив("Максимум(СрокПолезногоИспользованияПредыдущееЗначение)", "ОсновноеСредство, Организация"))</expression>
+		<group>ОсновноеСредство</group>
 	</totalField>
 	<parameter>
 		<name>Период</name>
@@ -1623,52 +1624,6 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ГруппаОС</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ПервоначальнаяСтоимость</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Срок полезного использования</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>СрокПолезногоИспользованияПредыдущееЗначение</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>СрокПолезногоИспользования</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ОстатокСрокаПолезногоИспользованияБУ</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Horizontally</dcsset:placement>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ИзносДоИзмененияСПИ</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ПересчитанныйИзносПослеИзмененияСПИ</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ОстаточнаяСтоимостьДоИзмененияСПИ</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ИзменениеОстаточнойСтоимости</dcsset:field>
-					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:order>
@@ -1679,68 +1634,6 @@
 							<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ГруппаОС</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ОсновноеСредство</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ИнвентарныйНомер</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ДатаПринятияКУчету</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>КодПоОКОФ</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ПервоначальнаяСтоимость</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Срок полезного использования</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>СрокПолезногоИспользованияПредыдущееЗначение</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>СрокПолезногоИспользования</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>ОстатокСрокаПолезногоИспользованияБУ</dcsset:field>
-							</dcsset:item>
-							<dcsset:placement>Horizontally</dcsset:placement>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ИзносДоИзмененияСПИ</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ПересчитанныйИзносПослеИзмененияСПИ</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ОстаточнаяСтоимостьДоИзмененияСПИ</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ИзменениеОстаточнойСтоимости</dcsset:field>
-						</dcsset:item>
 					</dcsset:selection>
 				</dcsset:item>
 			</dcsset:item>
