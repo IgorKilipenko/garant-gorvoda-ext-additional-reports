@@ -259,6 +259,40 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НакоплениеИнформацииЗаГод</dataPath>
+			<field>НакоплениеИнформацииЗаГод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокПолезногоИспользованияПредыдущееЗначение</dataPath>
+			<field>СрокПолезногоИспользованияПредыдущееЗначение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок полезного использования предыдущее значение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение</dataPath>
+			<field>ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток срока полезного использования БУПредыдущее значение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокСрокаПолезногоИспользованияБУ</dataPath>
+			<field>ОстатокСрокаПолезногоИспользованияБУ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток срока полезного использования БУ</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ПланСчетов.Ссылка КАК Счет
@@ -274,7 +308,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ИзменениеПараметровНачисленияАмортизацииОС.Ссылка КАК Ссылка,
-	ИзменениеПараметровНачисленияАмортизацииОС.Дата КАК Дата
+	ИзменениеПараметровНачисленияАмортизацииОС.Дата КАК Дата,
+	ИзменениеПараметровНачисленияАмортизацииОС.НакоплениеИнформацииЗаГод КАК НакоплениеИнформацииЗаГод
 ПОМЕСТИТЬ ВТ_ДокументыИзменениеПараметровНачисленияАмортизацииОС
 ИЗ
 	Документ.ИзменениеПараметровНачисленияАмортизацииОС КАК ИзменениеПараметровНачисленияАмортизацииОС
@@ -286,6 +321,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+// Параметры амортизации ОС - Текущие (измененные) значения
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ПараметрыАмортизацииОСБухгалтерскийУчет.Период КАК Период,
 	ДОБАВИТЬКДАТЕ(ПараметрыАмортизацииОСБухгалтерскийУчет.Период, СЕКУНДА, 1) КАК ПериодДляОтборов,
@@ -300,7 +336,8 @@
 	ПараметрыАмортизацииОСБухгалтерскийУчет.КоэффициентАмортизации КАК КоэффициентАмортизации,
 	ПараметрыАмортизацииОСБухгалтерскийУчет.КоэффициентУскорения КАК КоэффициентУскорения,
 	ПараметрыАмортизацииОСБухгалтерскийУчет.ЛиквидационнаяСтоимость КАК ЛиквидационнаяСтоимость,
-	ПараметрыАмортизацииОСБухгалтерскийУчет.СпособНачисленияАмортизации КАК СпособНачисленияАмортизации
+	ПараметрыАмортизацииОСБухгалтерскийУчет.СпособНачисленияАмортизации КАК СпособНачисленияАмортизации,
+	ВТ_ДокументыИзменениеПараметровНачисленияАмортизацииОС.НакоплениеИнформацииЗаГод КАК НакоплениеИнформацииЗаГод
 ПОМЕСТИТЬ ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет
 ИЗ
 	РегистрСведений.ПараметрыАмортизацииОСБухгалтерскийУчет КАК ПараметрыАмортизацииОСБухгалтерскийУчет
@@ -308,6 +345,52 @@
 		ПО ПараметрыАмортизацииОСБухгалтерскийУчет.Регистратор = ВТ_ДокументыИзменениеПараметровНачисленияАмортизацииОС.Ссылка
 			И (ПараметрыАмортизацииОСБухгалтерскийУчет.Активность = ИСТИНА)
 			И ПараметрыАмортизацииОСБухгалтерскийУчет.Период = ВТ_ДокументыИзменениеПараметровНачисленияАмортизацииОС.Дата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// Параметры амортизации ОС - Предыдущие значения
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(ПараметрыАмортизацииОСБухгалтерскийУчет.Период) КАК Период,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.ОсновноеСредство КАК ОсновноеСредство,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.Организация КАК Организация
+ПОМЕСТИТЬ ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет_Периоды
+ИЗ
+	РегистрСведений.ПараметрыАмортизацииОСБухгалтерскийУчет КАК ПараметрыАмортизацииОСБухгалтерскийУчет
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет КАК ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет
+		ПО ПараметрыАмортизацииОСБухгалтерскийУчет.ОсновноеСредство = ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство
+			И (ПараметрыАмортизацииОСБухгалтерскийУчет.Активность = ИСТИНА)
+			И ПараметрыАмортизацииОСБухгалтерскийУчет.Период &lt; ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период
+			И ПараметрыАмортизацииОСБухгалтерскийУчет.Организация = ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Организация
+
+СГРУППИРОВАТЬ ПО
+	ПараметрыАмортизацииОСБухгалтерскийУчет.ОсновноеСредство,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.Организация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// Параметры амортизации ОС - Предыдущие значения
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПараметрыАмортизацииОСБухгалтерскийУчет.Период КАК Период,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.Регистратор КАК Регистратор,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.ОсновноеСредство КАК ОсновноеСредство,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.Организация КАК Организация,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.СрокПолезногоИспользования КАК СрокПолезногоИспользования,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.ОбъемПродукцииРабот КАК ОбъемПродукцииРабот,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.СрокИспользованияДляВычисленияАмортизации КАК СрокИспользованияДляВычисленияАмортизации,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.СтоимостьДляВычисленияАмортизации КАК СтоимостьДляВычисленияАмортизации,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.ОбъемПродукцииРаботДляВычисленияАмортизации КАК ОбъемПродукцииРаботДляВычисленияАмортизации,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.КоэффициентАмортизации КАК КоэффициентАмортизации,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.КоэффициентУскорения КАК КоэффициентУскорения,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.ЛиквидационнаяСтоимость КАК ЛиквидационнаяСтоимость,
+	ПараметрыАмортизацииОСБухгалтерскийУчет.СпособНачисленияАмортизации КАК СпособНачисленияАмортизации
+ПОМЕСТИТЬ ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет
+ИЗ
+	РегистрСведений.ПараметрыАмортизацииОСБухгалтерскийУчет КАК ПараметрыАмортизацииОСБухгалтерскийУчет
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет_Периоды КАК ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет_Периоды
+		ПО ПараметрыАмортизацииОСБухгалтерскийУчет.ОсновноеСредство = ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет_Периоды.ОсновноеСредство
+			И (ПараметрыАмортизацииОСБухгалтерскийУчет.Активность = ИСТИНА)
+			И ПараметрыАмортизацииОСБухгалтерскийУчет.Период = ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет_Периоды.Период
+			И ПараметрыАмортизацииОСБухгалтерскийУчет.Организация = ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет_Периоды.Организация
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -395,6 +478,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+// Состояние ОС - Текущие (измененные) значения
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	СостоянияОСОрганизаций.Период КАК Период,
 	СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство,
@@ -410,6 +494,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+// Состояние ОС - Текущие (измененные) значения
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	МАКСИМУМ(СостоянияОСОрганизаций.Период) КАК Период,
 	СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство
@@ -422,6 +507,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+// Состояние ОС - Текущие (измененные) значения
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	СостоянияОСОрганизаций.Период КАК Период,
 	СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство,
@@ -435,6 +521,52 @@
 	ПО СостоянияОСОрганизаций.Период = ВТ_СостоянияОСОрганизаций_Периоды.Период
 		И СостоянияОСОрганизаций.Активность = ИСТИНА
 		И СостоянияОСОрганизаций.ОсновноеСредство = ВТ_СостоянияОСОрганизаций_Периоды.ОсновноеСредство
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// Состояние ОС - Предыдущие значения
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СостоянияОСОрганизаций.Период КАК Период,
+	СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство,
+	СостоянияОСОрганизаций.Организация КАК Организация,
+	СостоянияОСОрганизаций.Состояние КАК Состояние
+ПОМЕСТИТЬ ВТ_ИсходныеСостоянияОСОрганизаций_Подготовка
+ИЗ
+	РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет КАК ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет
+	ПО СостоянияОСОрганизаций.ОсновноеСредство = ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство
+		И СостоянияОСОрганизаций.Активность = ИСТИНА
+		И СостоянияОСОрганизаций.Период &lt; ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// Состояние ОС - Предыдущие значения
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(СостоянияОСОрганизаций.Период) КАК Период,
+	СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство
+ПОМЕСТИТЬ ВТ_ИсходныеСостоянияОСОрганизаций_Периоды
+ИЗ
+	ВТ_ИсходныеСостоянияОСОрганизаций_Подготовка КАК СостоянияОСОрганизаций
+
+СГРУППИРОВАТЬ ПО
+	СостоянияОСОрганизаций.ОсновноеСредство
+;
+
+////////////////////////////////////////////////////////////////////////////////
+// Состояние ОС - Предыдущие значения
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СостоянияОСОрганизаций.Период КАК Период,
+	СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство,
+	СостоянияОСОрганизаций.Организация КАК Организация,
+	СостоянияОСОрганизаций.ДатаСостояния КАК ДатаСостояния,
+	СостоянияОСОрганизаций.Состояние КАК Состояние
+ПОМЕСТИТЬ ВТ_ИсходныеСостоянияОСОрганизаций
+ИЗ
+	РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ИсходныеСостоянияОСОрганизаций_Периоды КАК ВТ_ИсходныеСостоянияОСОрганизаций_Периоды
+	ПО СостоянияОСОрганизаций.Период = ВТ_ИсходныеСостоянияОСОрганизаций_Периоды.Период
+		И СостоянияОСОрганизаций.Активность = ИСТИНА
+		И СостоянияОСОрганизаций.ОсновноеСредство = ВТ_ИсходныеСостоянияОСОрганизаций_Периоды.ОсновноеСредство
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -617,6 +749,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период КАК Период,
+	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.НакоплениеИнформацииЗаГод КАК НакоплениеИнформацииЗаГод,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Регистратор КАК ДокументИзмененияПараметровАмортизацииОС,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство КАК ОсновноеСредство,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство.ГруппаОС КАК ГруппаОС,
@@ -651,7 +784,23 @@
 	ЕСТЬNULL(ВТ_ОстаткиОСНаКонец.СуммаОстатокНаКонец, 0) КАК ПервоначальнаяСтоимость,
 	-ЕСТЬNULL(ВТ_ОстаткиАмортизацииОСНаНачало.СуммаОстатокНаНачало, 0) КАК ИзносДоИзмененияСПИ,
 	ЕСТЬNULL(ВТ_ОстаткиОСНаНачало.СуммаОстатокНаНачало, 0) - (-ЕСТЬNULL(ВТ_ОстаткиАмортизацииОСНаНачало.СуммаОстатокНаНачало, 0)) КАК ОстаточнаяСтоимостьДоИзмененияСПИ,
-	ЕСТЬNULL(ВТ_ИзмененияОстаточнойСтоимостиОС.СуммаОборот, 0) КАК ИзменениеОстаточнойСтоимости
+	ЕСТЬNULL(ВТ_ИзмененияОстаточнойСтоимостиОС.СуммаОборот, 0) КАК ИзменениеОстаточнойСтоимости,
+	// Исходные параметры амортизации ОС
+	ЕСТЬNULL(ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет.СрокПолезногоИспользования, 0) КАК СрокПолезногоИспользованияПредыдущееЗначение,
+	РАЗНОСТЬДАТ(
+		ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период, 
+		ДОБАВИТЬКДАТЕ(
+			ЕСТЬNULL(ВТ_ИсходныеСостоянияОСОрганизаций.ДатаСостояния,
+				ВЫБОР 
+					КОГДА ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.НакоплениеИнформацииЗаГод
+						ТОГДА НАЧАЛОПЕРИОДА(ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период, ГОД)
+					КОГДА &amp;ЗадерживатьПериодДействия 
+						ТОГДА ДОБАВИТЬКДАТЕ(КОНЕЦПЕРИОДА(ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период, МЕСЯЦ), СЕКУНДА, 1) 
+					ИНАЧЕ ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период 
+				КОНЕЦ), МЕСЯЦ,
+			ЕСТЬNULL(ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет.СрокПолезногоИспользования, 0)),
+		МЕСЯЦ)
+		КАК ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение
 ПОМЕСТИТЬ ВТ_Результат_Подготовка
 ИЗ
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет КАК ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет
@@ -676,6 +825,11 @@
 			ПО ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство = ВТ_СостоянияОСОрганизаций.ОсновноеСредство
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДатыПринятияКУчетуОС КАК ВТ_ДатыПринятияКУчетуОС
 			ПО ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство = ВТ_ДатыПринятияКУчетуОС.ОсновноеСредство
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет КАК ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет
+			ПО ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство = ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет.ОсновноеСредство
+			И ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Организация = ВТ_ИсходныеПараметрыАмортизацииОСБухгалтерскийУчет.Организация
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИсходныеСостоянияОСОрганизаций КАК ВТ_ИсходныеСостоянияОСОрганизаций
+			ПО ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство = ВТ_ИсходныеСостоянияОСОрганизаций.ОсновноеСредство
 {ГДЕ
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Организация = &amp;Организация,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство В ИЕРАРХИИ (&amp;ОсновноеСредство),
@@ -683,6 +837,7 @@
 	ВТ_МестонахождениеОС.МОЛ = &amp;МОЛ,
 	ВТ_МестонахождениеОС.Контрагент = &amp;Контрагент,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Период КАК Период,
+	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.НакоплениеИнформацииЗаГод КАК НакоплениеИнформацииЗаГод,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Регистратор.* КАК ДокументИзмененияПараметровАмортизацииОС,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.ОсновноеСредство.* КАК ОсновноеСредство,
 	ВТ_ИзменениеПараметровАмортизацииОСБухгалтерскийУчет.Организация.* КАК Организация,
@@ -713,6 +868,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВТ_Результат_Подготовка.Период КАК Период,
+	ВТ_Результат_Подготовка.НакоплениеИнформацииЗаГод КАК НакоплениеИнформацииЗаГод,
 	ВТ_Результат_Подготовка.ДокументИзмененияПараметровАмортизацииОС КАК ДокументИзмененияПараметровАмортизацииОС,
 	ВТ_Результат_Подготовка.ОсновноеСредство КАК ОсновноеСредство,
 	ВТ_Результат_Подготовка.ГруппаОС КАК ГруппаОС,
@@ -748,15 +904,21 @@
 	ВТ_Результат_Подготовка.ИзносДоИзмененияСПИ КАК ИзносДоИзмененияСПИ,
 	ВТ_Результат_Подготовка.ОстаточнаяСтоимостьДоИзмененияСПИ КАК ОстаточнаяСтоимостьДоИзмененияСПИ,
 	ВТ_Результат_Подготовка.ИзменениеОстаточнойСтоимости КАК ИзменениеОстаточнойСтоимости,
-	ВТ_Результат_Подготовка.ИзносДоИзмененияСПИ - ВТ_Результат_Подготовка.ИзменениеОстаточнойСтоимости КАК ПересчитанныйИзносПослеИзмененияСПИ
+	ВТ_Результат_Подготовка.ИзносДоИзмененияСПИ - ВТ_Результат_Подготовка.ИзменениеОстаточнойСтоимости КАК ПересчитанныйИзносПослеИзмененияСПИ,
+	// Исходные параметры амортизации ОС
+	ВТ_Результат_Подготовка.СрокПолезногоИспользованияПредыдущееЗначение КАК СрокПолезногоИспользованияПредыдущееЗначение,
+	ВТ_Результат_Подготовка.ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение КАК ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение,
+	(ВТ_Результат_Подготовка.СрокПолезногоИспользования - ВТ_Результат_Подготовка.СрокПолезногоИспользованияПредыдущееЗначение)
+		+ ВТ_Результат_Подготовка.ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение КАК ОстатокСрокаПолезногоИспользованияБУ
 {ВЫБРАТЬ
 	Период,
+	НакоплениеИнформацииЗаГод,
 	ДокументИзмененияПараметровАмортизацииОС.*,
 	ОсновноеСредство.*,
 	ГруппаОС.*,
 	КодПоОКОФ,
 	Организация.*,
-	СрокПолезногоИспользования,
+	СрокПолезногоИспользования, // Гр. 8
 	ОбъемПродукцииРабот,
 	СрокИспользованияДляВычисленияАмортизации,
 	СтоимостьДляВычисленияАмортизации,
@@ -782,7 +944,10 @@
 	ИзносДоИзмененияСПИ,
 	ОстаточнаяСтоимостьДоИзмененияСПИ,
 	ИзменениеОстаточнойСтоимости,
-	ПересчитанныйИзносПослеИзмененияСПИ
+	ПересчитанныйИзносПослеИзмененияСПИ,
+	СрокПолезногоИспользованияПредыдущееЗначение, // Гр. 7
+	ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение,
+	ОстатокСрокаПолезногоИспользованияБУ // Гр. 9
 }
 ИЗ
 	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
@@ -791,7 +956,11 @@
 	ИзносДоИзмененияСПИ КАК ИзносДоИзмененияСПИ,
 	ОстаточнаяСтоимостьДоИзмененияСПИ КАК ОстаточнаяСтоимостьДоИзмененияСПИ,
 	ИзменениеОстаточнойСтоимости КАК ИзменениеОстаточнойСтоимости,
-	ИзносДоИзмененияСПИ - ИзменениеОстаточнойСтоимости КАК ПересчитанныйИзносПослеИзмененияСПИ
+	ИзносДоИзмененияСПИ - ИзменениеОстаточнойСтоимости КАК ПересчитанныйИзносПослеИзмененияСПИ,
+	СрокПолезногоИспользованияПредыдущееЗначение КАК СрокПолезногоИспользованияПредыдущееЗначение,
+	ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение КАК ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение,
+	(ВТ_Результат_Подготовка.СрокПолезногоИспользования - ВТ_Результат_Подготовка.СрокПолезногоИспользованияПредыдущееЗначение)
+		+ ВТ_Результат_Подготовка.ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение КАК ОстатокСрокаПолезногоИспользованияБУ
 }</query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
@@ -824,6 +993,14 @@
 		<expression>Сумма(ОбъемПродукцииРаботДляВычисленияАмортизации)</expression>
 	</totalField>
 	<totalField>
+		<dataPath>ОстатокСрокаПолезногоИспользованияБУ</dataPath>
+		<expression>Сумма(ОстатокСрокаПолезногоИспользованияБУ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение</dataPath>
+		<expression>Сумма(ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение)</expression>
+	</totalField>
+	<totalField>
 		<dataPath>ОстаточнаяСтоимостьДоИзмененияСПИ</dataPath>
 		<expression>Сумма(ОстаточнаяСтоимостьДоИзмененияСПИ)</expression>
 	</totalField>
@@ -846,6 +1023,10 @@
 	<totalField>
 		<dataPath>СрокПолезногоИспользования</dataPath>
 		<expression>Сумма(СрокПолезногоИспользования)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СрокПолезногоИспользованияПредыдущееЗначение</dataPath>
+		<expression>Сумма(СрокПолезногоИспользованияПредыдущееЗначение)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>СтоимостьДляВычисленияАмортизации</dataPath>
@@ -942,6 +1123,7 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -1022,6 +1204,36 @@
 			<v8:item>
 				<v8:lang>ru</v8:lang>
 				<v8:content>Счет02</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Счет02_01</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет02 01</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Счет84_01</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет84 01</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -1128,32 +1340,20 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>Счет02_01</name>
+		<name>ЗадерживатьПериодДействия</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Счет02 01</v8:content>
+				<v8:content>Задерживать период действия</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+			<v8:Type>xs:boolean</v8:Type>
 		</valueType>
-		<value xsi:nil="true"/>
+		<value xsi:type="xs:boolean">true</value>
 		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Счет84_01</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Счет84 01</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -1258,82 +1458,69 @@
 					<dcsset:field>ГруппаОС</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДатаСостояния</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДоговорКонтрагента</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДокументИзмененияПараметровАмортизацииОС</dcsset:field>
+					<dcsset:field>ОсновноеСредство</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ИнвентарныйНомер</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПринятияКУчету</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КодПоОКОФ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:field>ПервоначальнаяСтоимость</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ПервоначальнаяСтоимость</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СрокПолезногоИспользованияПредыдущееЗначение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СрокПолезногоИспользования</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОстатокСрокаПолезногоИспользованияБУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Horizontally</dcsset:placement>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоэффициентАмортизации</dcsset:field>
+					<dcsset:field>ИзносДоИзмененияСПИ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоэффициентУскорения</dcsset:field>
+					<dcsset:field>ПересчитанныйИзносПослеИзмененияСПИ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ЛиквидационнаяСтоимость</dcsset:field>
+					<dcsset:field>ОстаточнаяСтоимостьДоИзмененияСПИ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Местонахождение</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ОбъемПродукцииРабот</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ОбъемПродукцииРаботДляВычисленияАмортизации</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Организация</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ОсновноеСредство</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПараметрВыработки</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПервоначальныеСведенияПервоначальнаяСтоимость</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПорядокПогашенияСтоимости</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Состояние</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СпособНачисленияАмортизации</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СпособПоступления</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СрокИспользованияДляВычисленияАмортизации</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СрокПолезногоИспользования</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СтоимостьДляВычисленияАмортизации</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Период</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДатаПринятияКУчету</dcsset:field>
+					<dcsset:field>ИзменениеОстаточнойСтоимости</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>9298cbb8-ecee-4d67-a2aa-682aafb2f3de</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаАкта</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>8157b1ef-2754-44d5-80da-f8fbf3eaea8b</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НомерАкта</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+					<dcsset:userSettingID>87f6d301-bf79-41f3-bc0b-134173a6d601</dcsset:userSettingID>
+				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Организация</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
@@ -1356,6 +1543,11 @@
 					<dcscor:parameter>ОсновноеСредство</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>b6d18dc3-e3ef-43c7-8280-9a77b7a02e0a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЗадерживатьПериодДействия</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -1395,26 +1587,20 @@
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ГруппаОС</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ОсновноеСредство</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Horizontally</dcsset:placement>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ИнвентарныйНомер</dcsset:field>
-					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>МакетОформления</dcscor:parameter>
 						<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
@@ -1436,40 +1622,127 @@
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ГруппаОС</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ОсновноеСредство</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Vertically</dcsset:placement>
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаОС</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ИнвентарныйНомер</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ДатаПринятияКУчету</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КодПоОКОФ</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
 						<dcsset:field>ПервоначальнаяСтоимость</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:use>false</dcsset:use>
 						<dcsset:lwsTitle>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Срок полезного использования</v8:content>
 							</v8:item>
 						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>СрокПолезногоИспользованияПредыдущееЗначение</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>СрокПолезногоИспользования</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ОстатокСрокаПолезногоИспользованияБУ</dcsset:field>
+						</dcsset:item>
 						<dcsset:placement>Horizontally</dcsset:placement>
 					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ИзносДоИзмененияСПИ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ПересчитанныйИзносПослеИзмененияСПИ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ОстаточнаяСтоимостьДоИзмененияСПИ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ИзменениеОстаточнойСтоимости</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ГруппаОС</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ОсновноеСредство</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ИнвентарныйНомер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ДатаПринятияКУчету</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>КодПоОКОФ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ПервоначальнаяСтоимость</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок полезного использования</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>СрокПолезногоИспользованияПредыдущееЗначение</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>СрокПолезногоИспользования</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ОстатокСрокаПолезногоИспользованияБУ</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Horizontally</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ИзносДоИзмененияСПИ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ПересчитанныйИзносПослеИзмененияСПИ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ОстаточнаяСтоимостьДоИзмененияСПИ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ИзменениеОстаточнойСтоимости</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>
