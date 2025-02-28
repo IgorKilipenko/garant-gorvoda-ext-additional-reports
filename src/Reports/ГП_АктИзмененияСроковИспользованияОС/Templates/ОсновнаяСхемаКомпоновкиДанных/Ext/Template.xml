@@ -29,6 +29,9 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ОсновныеСредства</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>МОЛ</dataPath>
@@ -995,10 +998,12 @@
 	<totalField>
 		<dataPath>ОстатокСрокаПолезногоИспользованияБУ</dataPath>
 		<expression>Сумма(ОстатокСрокаПолезногоИспользованияБУ)</expression>
+		<group>ОсновноеСредство</group>
 	</totalField>
 	<totalField>
 		<dataPath>ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение</dataPath>
 		<expression>Сумма(ОстатокСрокаПолезногоИспользованияБУПредыдущееЗначение)</expression>
+		<group>ОсновноеСредство</group>
 	</totalField>
 	<totalField>
 		<dataPath>ОстаточнаяСтоимостьДоИзмененияСПИ</dataPath>
@@ -1023,6 +1028,7 @@
 	<totalField>
 		<dataPath>СрокПолезногоИспользования</dataPath>
 		<expression>Сумма(СрокПолезногоИспользования)</expression>
+		<group>ОсновноеСредство</group>
 	</totalField>
 	<totalField>
 		<dataPath>СтоимостьДляВычисленияАмортизации</dataPath>
@@ -1030,7 +1036,7 @@
 	</totalField>
 	<totalField>
 		<dataPath>СрокПолезногоИспользованияПредыдущееЗначение</dataPath>
-		<expression>Максимум(ВычислитьВыражениеСГруппировкойМассив("Максимум(СрокПолезногоИспользованияПредыдущееЗначение)", "ОсновноеСредство, Организация"))</expression>
+		<expression>Сумма(СрокПолезногоИспользованияПредыдущееЗначение)</expression>
 		<group>ОсновноеСредство</group>
 	</totalField>
 	<parameter>
