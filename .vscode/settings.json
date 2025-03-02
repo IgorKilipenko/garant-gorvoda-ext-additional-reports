@@ -3,7 +3,7 @@
 	//  - off: No traces
 	//  - messages: Error only
 	//  - verbose: Full log
-	"bsl.trace.server": "off",
+	"bsl.trace.server": "verbose",
 
 	// Controls whether auto detection of opm scripts is on or off. Default is on.
 	"language-1c-bsl.autoDetect": "off",
@@ -48,7 +48,7 @@
 	"language-1c-bsl.languageServerExternalJarPath": "",
 
 	// BSL Language server download channel. Use `prerelease` if you want to check latest release candidates
-	"language-1c-bsl.languageServerReleaseChannel": "prerelease",
+	"language-1c-bsl.languageServerReleaseChannel": "stable",
 
 	// Entry point for OneScriptLinter. Relative path from project root folder
 	"language-1c-bsl.linterEntryPoint": "",

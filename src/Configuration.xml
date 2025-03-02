@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.0.22.3-rc1</Version>
+			<Version>2.0.23.0-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -87,6 +87,8 @@
 			<Catalog>КВП_Здания</Catalog>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>КВП_Счетчики</Catalog>
+			<Catalog>ФизическиеЛица</Catalog>
+			<Catalog>ОсновныеСредства</Catalog>
 			<Document>РеализацияТоваровУслуг</Document>
 			<Document>КВП_РегистрацияОплаты</Document>
 			<Document>ПоступлениеНаРасчетныйСчет</Document>
@@ -102,6 +104,7 @@
 			<Enum>КВП_СпособыРегистрацииПоказанийСчетчиков</Enum>
 			<Enum>КВП_ОснованияНормПотребления</Enum>
 			<Enum>УПЖКХ_ВидыЖильцов</Enum>
+			<Enum>СостоянияОС</Enum>
 			<Report>ГП_СводнаяВедомостьСКоличеством</Report>
 			<Report>ГП_ОтчетПоКлиентам</Report>
 			<Report>ГП_ОСВПоАбоненту</Report>
@@ -126,6 +129,7 @@
 			<Report>ГП_ВзаимозадолженностьКт</Report>
 			<Report>ГП_ПотреблениеУслугПоНормативам</Report>
 			<Report>ГП_ОтчетДляВыгрузкаДанныхОФД</Report>
+			<Report>ГП_АктИзмененияСроковИспользованияОС</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
