@@ -4106,6 +4106,7 @@
 							<dcscor:value xsi:type="xs:decimal">-1</dcscor:value>
 						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
 							<dcscor:parameter>МаксимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
 						</dcscor:item>

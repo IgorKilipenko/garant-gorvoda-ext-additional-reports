@@ -118,9 +118,9 @@
 		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c" configVersion="b8c43f7675d91832a088b4c614f095f677cd749e"/>
 		<Metadata name="Report.ГП_CписокCчетчиков.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b6c85e5b-4f7b-414b-b0a5-8430b77f9a5c.0" configVersion="ebc490c78440bd0cf1e3ceabcf12153b84f69ae0"/>
 		<Metadata name="Report.ГП_АктИзмененияСроковИспользованияОС" id="9676bca2-8f91-46fd-b942-b227830327bf" configVersion="19c33c279fbcd19300da1e27c7bff82c22bf819b"/>
-		<Metadata name="Report.ГП_АктИзмененияСроковИспользованияОС.ObjectModule" id="9676bca2-8f91-46fd-b942-b227830327bf.0" configVersion="41e8f89ec9c7f55492395f1e21aea2f5c504f39c"/>
+		<Metadata name="Report.ГП_АктИзмененияСроковИспользованияОС.ObjectModule" id="9676bca2-8f91-46fd-b942-b227830327bf.0" configVersion="ededf3e60e1a10b006b2dd79f1387dd4469d0212"/>
 		<Metadata name="Report.ГП_АктИзмененияСроковИспользованияОС.Template.ОсновнаяСхемаКомпоновкиДанных" id="e1c0f30c-5609-459c-a6d0-1222bab65d93" configVersion="0e82fb5ac0f405c0efb7e742cd0f0d6218b9f45a"/>
-		<Metadata name="Report.ГП_АктИзмененияСроковИспользованияОС.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e1c0f30c-5609-459c-a6d0-1222bab65d93.0" configVersion="277510fb5a4815753851e6917804bd45850c33c5"/>
+		<Metadata name="Report.ГП_АктИзмененияСроковИспользованияОС.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e1c0f30c-5609-459c-a6d0-1222bab65d93.0" configVersion="c74b38a9cff625558a4eea2136061cd087796915"/>
 		<Metadata name="Report.ГП_ВедомостьОплатыУслугВКХ" id="9c82738f-1f42-4cbe-8a18-9e3561831523" configVersion="1925731183742b2755843bbeb3eea468fcd481ac"/>
 		<Metadata name="Report.ГП_ВедомостьОплатыУслугВКХ.ObjectModule" id="9c82738f-1f42-4cbe-8a18-9e3561831523.0" configVersion="cb5966efd5cebcc0b3ba8da8a92d4292b2d1ce16"/>
 		<Metadata name="Report.ГП_ВедомостьОплатыУслугВКХ.Template.ОсновнаяСхемаКомпоновкиДанных" id="b46290de-124e-48dc-8551-c8aeaf3e4ad8" configVersion="4b6df5b635e8e5978f20bc20b1d9f8d5f394cad3"/>
