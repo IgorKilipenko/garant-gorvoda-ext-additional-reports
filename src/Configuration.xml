@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.0.23.0-rc1</Version>
+			<Version>2.0.23.1-rc1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -65,10 +65,12 @@
 			<Language>Русский</Language>
 			<Subsystem>УПЖКХ_НачисленияУслуг</Subsystem>
 			<Subsystem>УПЖКХ_УправлениеЛицевымиСчетами</Subsystem>
+			<Subsystem>ОСИНМА</Subsystem>
 			<StyleItem>ЗаголовкиСтрокШрифт</StyleItem>
 			<StyleItem>ЗаголовкиСтрокЦветТекста</StyleItem>
 			<StyleItem>СодержаниеУслугиШрифт</StyleItem>
 			<Role>ГП_ИспользованиеДополнительныхОтчетов</Role>
+			<Role>ГП_ИспользованиеОтчетаАктИзмененияСПИОС</Role>
 			<CommonModule>ГП_РаботаСОтчетами</CommonModule>
 			<CommonModule>ГП_РаботаСОтчетамиПовтИсп</CommonModule>
 			<Catalog>Организации</Catalog>
