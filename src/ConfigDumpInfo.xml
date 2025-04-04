@@ -61,7 +61,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="85b79d09318433cac90c991521505c9cd68e3aac"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="3a7b1e631032a23b4523560dabe087d5fd717092"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="bc0acacafd4d2d7cae51ba9c2c6fa735dbd636c7"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="3a139d22f57a733048c0e4d9d33d5759d2c5c991"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -188,7 +188,7 @@
 		<Metadata name="Report.ГП_ОтчетПоШифрам" id="4f7d5920-f762-4c30-8a86-d70355273789" configVersion="2d8479a69c83e7f24ef52ddd6b970876758f2600"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.ObjectModule" id="4f7d5920-f762-4c30-8a86-d70355273789.0" configVersion="32e587ffc9f603f48e9a4c69679832c4511be38f"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9" configVersion="20c45866a8d9f33198fc03828f03e02b2412c190"/>
-		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9.0" configVersion="7e6cdbc34406f084c6145c9456375e2f95279cdb"/>
+		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9.0" configVersion="153a89c185bcdf8fbc9611660f175d42ec1e7a2d"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД" id="1afa3534-494a-408b-92a6-e5cff1465755" configVersion="38b4fe0984f0ae33c5bba5d3d8c4803cc53b8f29"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных" id="f2f6c224-82d3-45a1-9560-b19090b4efaa" configVersion="a232870a9c034e004d82970d4d1f0f259c58119f"/>
 		<Metadata name="Report.ГП_ПоказанияСчетчиковДляМКД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f2f6c224-82d3-45a1-9560-b19090b4efaa.0" configVersion="cc1dcbd0ba2197544d41f323e6d169c15ac09de6"/>
