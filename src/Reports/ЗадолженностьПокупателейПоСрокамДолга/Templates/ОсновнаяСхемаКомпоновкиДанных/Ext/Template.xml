@@ -162,58 +162,76 @@
 			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ЛицевойСчет</dataPath>
-			<field>ЛицевойСчет</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Водозабор</dataPath>
-			<field>Водозабор</field>
+			<dataPath>СрокОплаты</dataPath>
+			<field>СрокОплаты</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Водозабор</v8:content>
+					<v8:content>Дата ожидаемой оплаты</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Контролер</dataPath>
-			<field>Контролер</field>
+			<dataPath>ДнейПросрочки</dataPath>
+			<field>ДнейПросрочки</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Контролер</v8:content>
+					<v8:content>Срок просрочки (дней)</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ГруппаПотребителей</dataPath>
-			<field>ГруппаПотребителей</field>
+			<dataPath>ДатаОтгрузки</dataPath>
+			<field>ДатаОтгрузки</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа потребителей</v8:content>
+					<v8:content>Дата отгрузки</v8:content>
 				</v8:item>
 			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СпособФинансирования</dataPath>
-			<field>СпособФинансирования</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Способ финансирования</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ХарактеристикаОбъекта</dataPath>
-			<field>ХарактеристикаОбъекта</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Характеристика объекта</v8:content>
-				</v8:item>
-			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<dataSource>ИнформационнаяБаза</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
@@ -222,19 +240,17 @@
 	ВЫРАЗИТЬ(ВзаиморасчетыОстатки.Субконто2 КАК Справочник.ДоговорыКонтрагентов) КАК Договор,
 	ВзаиморасчетыОстатки.Счет КАК Счет,
 	ВзаиморасчетыОстатки.СуммаРазвернутыйОстатокДт КАК ОстатокДолга0,
-	ВзаиморасчетыОстатки.Подразделение,
+	ВзаиморасчетыОстатки.Подразделение КАК Подразделение,
 	НЕОПРЕДЕЛЕНО КАК Документ,
 	НЕОПРЕДЕЛЕНО КАК Ответственный
+ПОМЕСТИТЬ ВзаиморасчетыОстатки
 {ВЫБРАТЬ
 	Организация.*,
 	Контрагент.*,
 	Договор.*,
 	Счет.* КАК Счет}
-ПОМЕСТИТЬ ВзаиморасчетыОстатки
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;Период, Счет В (&amp;СчетаБезДокументаРасчетов), &amp;ВидыСубконтоКД,
-		ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров) {(Организация).*,
-		(Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор}) КАК ВзаиморасчетыОстатки
+	РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;Период, Счет В (&amp;СчетаБезДокументаРасчетов), &amp;ВидыСубконтоКД, ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров) {(Организация).*, (Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор}) КАК ВзаиморасчетыОстатки
 
 ОБЪЕДИНИТЬ ВСЕ
 
@@ -245,13 +261,10 @@
 	ВзаиморасчетыОстатки.Счет,
 	ВзаиморасчетыОстатки.СуммаРазвернутыйОстатокДт,
 	ВзаиморасчетыОстатки.Подразделение,
-	ВзаиморасчетыОстатки.Субконто3,
+	ВЫРАЗИТЬ(ВзаиморасчетыОстатки.Субконто3 КАК Документ.РеализацияТоваровУслуг),
 	&amp;ТекстПоляВзаиморасчетыОстаткиОтветственный
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;Период, Счет В (&amp;СчетаСДокументомРасчетов), &amp;ВидыСубконтоКДД,
-		ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров) {(Организация).*,
-		(Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК Документ}) КАК
-		ВзаиморасчетыОстатки
+	РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;Период, Счет В (&amp;СчетаСДокументомРасчетов), &amp;ВидыСубконтоКДД, ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров) {(Организация).*, (Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК Документ}) КАК ВзаиморасчетыОстатки
 
 ИНДЕКСИРОВАТЬ ПО
 	Организация,
@@ -261,7 +274,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ РАЗРЕШЕННЫЕ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВзаиморасчетыОбороты.Организация КАК Организация,
 	ВЫРАЗИТЬ(ВзаиморасчетыОбороты.Субконто1 КАК Справочник.Контрагенты) КАК Контрагент,
 	ВЫРАЗИТЬ(ВзаиморасчетыОбороты.Субконто2 КАК Справочник.ДоговорыКонтрагентов) КАК Договор,
@@ -274,18 +287,15 @@
 			ТОГДА ВзаиморасчетыОбороты.СуммаОборотКт
 		ИНАЧЕ 0
 	КОНЕЦ КАК УвеличениеДолга1,
-	ВзаиморасчетыОбороты.Подразделение,
+	ВзаиморасчетыОбороты.Подразделение КАК Подразделение,
 	НЕОПРЕДЕЛЕНО КАК Документ
+ПОМЕСТИТЬ Обороты1
 {ВЫБРАТЬ
 	Организация.*,
 	Контрагент.*,
 	Договор.*}
-ПОМЕСТИТЬ Обороты1
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоИнтервала1, &amp;КонецИнтервала1,, Счет В (&amp;СчетаБезДокументаРасчетов),
-		&amp;ВидыСубконтоКД, ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров)
-		{(Организация).*, (Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор},,) КАК
-		ВзаиморасчетыОбороты
+	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоИнтервала1, &amp;КонецИнтервала1, , Счет В (&amp;СчетаБезДокументаРасчетов), &amp;ВидыСубконтоКД, ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров) {(Организация).*, (Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор}, , ) КАК ВзаиморасчетыОбороты
 
 ОБЪЕДИНИТЬ ВСЕ
 
@@ -303,12 +313,9 @@
 		ИНАЧЕ 0
 	КОНЕЦ,
 	ВзаиморасчетыОбороты.Подразделение,
-	ВзаиморасчетыОбороты.Субконто3
+	ВЫРАЗИТЬ(ВзаиморасчетыОбороты.Субконто3 КАК Документ.РеализацияТоваровУслуг)
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоИнтервала1, &amp;КонецИнтервала1,, Счет В (&amp;СчетаСДокументомРасчетов),
-		&amp;ВидыСубконтоКДД, ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров)
-		{(Организация).*, (Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК
-		Документ},,) КАК ВзаиморасчетыОбороты
+	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоИнтервала1, &amp;КонецИнтервала1, , Счет В (&amp;СчетаСДокументомРасчетов), &amp;ВидыСубконтоКДД, ВЫРАЗИТЬ(Субконто2 КАК Справочник.ДоговорыКонтрагентов).ВидДоговора В (&amp;ВидыДоговоров) {(Организация).*, (Подразделение).*, (Субконто1).* КАК Контрагент, (Субконто2).* КАК Договор, (Субконто3).* КАК Документ}, , ) КАК ВзаиморасчетыОбороты
 
 ИНДЕКСИРОВАТЬ ПО
 	Организация,
@@ -318,43 +325,59 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
-	ВзаиморасчетыОстатки.Организация,
-	ВзаиморасчетыОстатки.Подразделение,
-	ВзаиморасчетыОстатки.Контрагент,
-	ВзаиморасчетыОстатки.Договор,
+ВЫБРАТЬ
+	ВзаиморасчетыОстатки.Организация КАК Организация,
+	ВзаиморасчетыОстатки.Подразделение КАК Подразделение,
+	ВзаиморасчетыОстатки.Контрагент КАК Контрагент,
+	ВзаиморасчетыОстатки.Договор КАК Договор,
 	ЕСТЬNULL(Обороты1.УвеличениеДолга1, 0) КАК УвеличениеДолга1,
-	ВзаиморасчетыОстатки.ОстатокДолга0,
-	ВзаиморасчетыОстатки.Документ,
-	ВзаиморасчетыОстатки.Ответственный
+	ВзаиморасчетыОстатки.ОстатокДолга0 КАК ОстатокДолга0,
+	ВзаиморасчетыОстатки.Документ КАК Документ,
+	ВзаиморасчетыОстатки.Ответственный КАК Ответственный,
+	ВЫБОР
+		КОГДА ВзаиморасчетыОстатки.Договор.УстановленСрокОплаты
+			ТОГДА ВзаиморасчетыОстатки.Договор.СрокОплаты
+		ИНАЧЕ &amp;СтандартныйСрокОплаты
+	КОНЕЦ КАК СрокОплаты,
+	ВзаиморасчетыОстатки.Договор.ДатаОплаты КАК ДатаОплатыИзДоговора
 ПОМЕСТИТЬ ОстатокИОбороты
 ИЗ
 	ВзаиморасчетыОстатки КАК ВзаиморасчетыОстатки
 		ЛЕВОЕ СОЕДИНЕНИЕ Обороты1 КАК Обороты1
 		ПО ВзаиморасчетыОстатки.Организация = Обороты1.Организация
-		И ВзаиморасчетыОстатки.Контрагент = Обороты1.Контрагент
-		И ВзаиморасчетыОстатки.Договор = Обороты1.Договор
-		И ВзаиморасчетыОстатки.Подразделение = Обороты1.Подразделение
-		И ВзаиморасчетыОстатки.Документ = Обороты1.Документ
+			И ВзаиморасчетыОстатки.Контрагент = Обороты1.Контрагент
+			И ВзаиморасчетыОстатки.Договор = Обороты1.Договор
+			И ВзаиморасчетыОстатки.Подразделение = Обороты1.Подразделение
+			И ВзаиморасчетыОстатки.Документ = Обороты1.Документ
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
-	ОстатокИОбороты.Организация,
-	ОстатокИОбороты.Подразделение,
-	ОстатокИОбороты.Контрагент,
-	ОстатокИОбороты.Договор,
+ВЫБРАТЬ
+	ОстатокИОбороты.Организация КАК Организация,
+	ОстатокИОбороты.Подразделение КАК Подразделение,
+	ОстатокИОбороты.Контрагент КАК Контрагент,
+	ОстатокИОбороты.Договор КАК Договор,
 	ВЫБОР
 		КОГДА ОстатокИОбороты.ОстатокДолга0 - ОстатокИОбороты.УвеличениеДолга1 &gt; 0
 			ТОГДА ОстатокИОбороты.ОстатокДолга0 - ОстатокИОбороты.УвеличениеДолга1
 		ИНАЧЕ 0
 	КОНЕЦ КАК ОстатокДолга1,
-	ОстатокИОбороты.ОстатокДолга0,
-	ОстатокИОбороты.Документ,
-	ОстатокИОбороты.Ответственный
+	ОстатокИОбороты.ОстатокДолга0 КАК ОстатокДолга0,
+	ОстатокИОбороты.Документ КАК Документ,
+	ОстатокИОбороты.Ответственный КАК Ответственный,
+	ВЫБОР
+		КОГДА НЕ СрокиОплатыДокументов.СрокОплаты ЕСТЬ NULL
+			ТОГДА СрокиОплатыДокументов.СрокОплаты
+		КОГДА ОстатокИОбороты.ДатаОплатыИзДоговора &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ОстатокИОбороты.ДатаОплатыИзДоговора
+		ИНАЧЕ ДОБАВИТЬКДАТЕ(ОстатокИОбороты.Документ.Дата, ДЕНЬ, ОстатокИОбороты.СрокОплаты)
+	КОНЕЦ КАК СрокОплаты
 ПОМЕСТИТЬ ОстаткиПоПериодам
 ИЗ
 	ОстатокИОбороты КАК ОстатокИОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СрокиОплатыДокументов КАК СрокиОплатыДокументов
+		ПО ОстатокИОбороты.Организация = СрокиОплатыДокументов.Организация
+			И ОстатокИОбороты.Документ = СрокиОплатыДокументов.Документ
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -381,9 +404,8 @@
 	ХарактеристикаОбъекта.*}
 ПОМЕСТИТЬ ВТ_ДинамическиеПоказателиЛС
 ИЗ
-    РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;КонецПериода) КАК СведенияДляВзаиморасчетовПоЛС
-    ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;КонецПериода) КАК ДинамическиеПоказателиЛицевыхСчетов
-    // ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ДинамическиеПоказателиЛицевыхСчетов
+    РегистрСведений.УПЖКХ_СведенияДляВзаиморасчетовПоЛС.СрезПоследних(&amp;Период) КАК СведенияДляВзаиморасчетовПоЛС
+    ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.lc_ДинамическиеПоказателиЛицевыхСчетов.СрезПоследних(&amp;Период) КАК ДинамическиеПоказателиЛицевыхСчетов
     ПО СведенияДляВзаиморасчетовПоЛС.ЛицевойСчет = ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет
 {ГДЕ
     ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет.*,
@@ -419,17 +441,24 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
+ВЫБРАТЬ
 	ОстаткиПоПериодам.Организация КАК Организация,
-	ЕСТЬNULL(ОстаткиПоПериодам.Подразделение, ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка)) КАК
-		Подразделение,
+	ЕСТЬNULL(ОстаткиПоПериодам.Подразделение, ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка)) КАК Подразделение,
 	ОстаткиПоПериодам.Контрагент КАК Контрагент,
 	ОстаткиПоПериодам.Договор КАК Договор,
 	ОстаткиПоПериодам.ОстатокДолга0 - ОстаткиПоПериодам.ОстатокДолга1 КАК ОстатокПериода1,
 	ОстаткиПоПериодам.ОстатокДолга1 КАК ОстатокПериода2,
 	ОстаткиПоПериодам.ОстатокДолга0 КАК ОстатокДолга,
 	ОстаткиПоПериодам.Документ КАК Документ,
-	ОстаткиПоПериодам.Ответственный КАК Ответственный
+	ОстаткиПоПериодам.Ответственный КАК Ответственный,
+	ОстаткиПоПериодам.СрокОплаты КАК СрокОплаты,
+	ОстаткиПоПериодам.Документ.Дата КАК ДатаОтгрузки,
+	ВЫБОР
+		КОГДА ОстаткиПоПериодам.СрокОплаты &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+				И ОстаткиПоПериодам.СрокОплаты &lt; &amp;ПериодФормированияОтчета
+			ТОГДА РАЗНОСТЬДАТ(ОстаткиПоПериодам.СрокОплаты, &amp;ПериодФормированияОтчета, ДЕНЬ)
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДнейПросрочки
 {ВЫБРАТЬ
 	Организация.*,
 	Подразделение.*,
@@ -439,28 +468,20 @@
 	ОстатокПериода2,
 	ОстатокДолга,
 	Документ.*,
-	Ответственный}
+	Ответственный,
+	СрокОплаты,
+	ДатаОтгрузки,
+	ДнейПросрочки}
 ИЗ
 	ОстаткиПоПериодам КАК ОстаткиПоПериодам
-////////////////////////////////////////////////////////////////////////////////
-// Гарант+ Килипенко 23.01.2024 Отборы по динамическим показателям л/с ++
-// #ВСТАВКА
-////////////////////////////////////////////////////////////////////////////////
-
-ГДЕ
-    ОстаткиПоПериодам.Контрагент В (ВЫБРАТЬ Т.Контрагент ИЗ ВТ_ФильтрДинамическихПоказателейКонтрагентов КАК Т)
-
-////////////////////////////////////////////////////////////////////////////////
-// Гарант+ Килипенко 23.01.2024 Отборы по динамическим показателям л/с --
-// #КОНЕЦ_ВСТАВКИ
-///////////////////////////////////////////////////////////////////////////////
-
 {ГДЕ
 	ОстаткиПоПериодам.Организация.*,
 	ОстаткиПоПериодам.Подразделение.*,
 	ОстаткиПоПериодам.Контрагент.*,
 	ОстаткиПоПериодам.Договор.*,
-	ОстаткиПоПериодам.Ответственный}</query>
+	ОстаткиПоПериодам.Ответственный,
+	ОстаткиПоПериодам.СрокОплаты КАК СрокОплаты,
+	ОстаткиПоПериодам.Документ.Дата КАК ДатаОтгрузки}</query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
 	<dataSet xsi:type="DataSetObject">
@@ -737,6 +758,48 @@
 		<dataPath>ПросроченнаяЗадолженность</dataPath>
 		<expression>Сумма(ПросроченнаяЗадолженность)</expression>
 	</totalField>
+	<totalField>
+		<dataPath>СрокОплаты</dataPath>
+		<expression>Минимум(СрокОплаты)</expression>
+		<group>ДатаОтгрузки</group>
+		<group>ДнейПросрочки</group>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>Контрагент</group>
+		<group>Контрагент Иерархия</group>
+		<group>ОстатокДолга</group>
+		<group>ОстатокПериода1</group>
+		<group>ОстатокПериода2</group>
+		<group>СрокОплаты</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДнейПросрочки</dataPath>
+		<expression>Максимум(ДнейПросрочки)</expression>
+		<group>ДатаОтгрузки</group>
+		<group>ДнейПросрочки</group>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>Контрагент</group>
+		<group>Контрагент Иерархия</group>
+		<group>ОстатокДолга</group>
+		<group>ОстатокПериода1</group>
+		<group>ОстатокПериода2</group>
+		<group>СрокОплаты</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаОтгрузки</dataPath>
+		<expression>Минимум(ДатаОтгрузки)</expression>
+		<group>ДатаОтгрузки</group>
+		<group>ДнейПросрочки</group>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>Контрагент</group>
+		<group>Контрагент Иерархия</group>
+		<group>ОстатокДолга</group>
+		<group>ОстатокПериода1</group>
+		<group>ОстатокПериода2</group>
+		<group>СрокОплаты</group>
+	</totalField>
 	<parameter>
 		<name>ВидыСубконтоКД</name>
 		<title xsi:type="v8:LocalStringType">
@@ -912,16 +975,39 @@
 				<v8:content>Текст поля взаиморасчеты остатки ответственный</v8:content>
 			</v8:item>
 		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
+		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
-		<name>КонецПериода</name>
+		<name>СтандартныйСрокОплаты</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Конец периода</v8:content>
+				<v8:content>Стандартный срок оплаты</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>5</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ПериодФормированияОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период формирования отчета</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -944,10 +1030,19 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаОтгрузки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрокОплаты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ОстатокДолга</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ПросроченнаяЗадолженность</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДнейПросрочки</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -961,24 +1056,15 @@
 					<dcsset:left xsi:type="dcscor:Field">Ответственный</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">СпособФинансирования</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:right xsi:type="dcscor:Field"/>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ГруппаПотребителей</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:right xsi:type="dcscor:Field"/>
-				</dcsset:item>
 			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
-						<v8:variant xsi:type="v8:StandardPeriodVariant">Today</v8:variant>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 					</dcscor:value>
 					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>df1ad2d4-12fc-47fb-955e-72a7a249dde7</dcsset:userSettingID>
@@ -989,6 +1075,11 @@
 					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>51ac7787-2a6d-4a45-8d38-0262f5648d1a</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СтандартныйСрокОплаты</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
@@ -998,8 +1089,17 @@
 			</dcsset:order>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
-					<dcsset:use>false</dcsset:use>
-					<dcsset:selection/>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ОстатокДолга</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОстатокПериода1</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОстатокПериода2</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
 					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1020,8 +1120,17 @@
 					</dcsset:presentation>
 				</dcsset:item>
 				<dcsset:item>
-					<dcsset:use>false</dcsset:use>
-					<dcsset:selection/>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ОстатокДолга</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОстатокПериода1</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОстатокПериода2</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
 					<dcsset:filter/>
 					<dcsset:appearance>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -1090,12 +1199,21 @@
 			<dcsset:item xsi:type="dcsset:StructureItemChart">
 				<dcsset:name>Диаграмма</dcsset:name>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОстатокДолга</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПросроченнаяЗадолженность</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:ChartType">Pie</dcscor:value>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.ПропускатьБазовоеЗначение</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ТипДиаграммы.ВидПодписей</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:ChartLabelType">SeriesValue</dcscor:value>
