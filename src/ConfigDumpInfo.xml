@@ -61,7 +61,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="85b79d09318433cac90c991521505c9cd68e3aac"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="3a7b1e631032a23b4523560dabe087d5fd717092"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="fad185ed87ec85db54446384d92513f286b10dca"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="06ad84fdab59dd109eb8289951a49f96070019f6"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -168,9 +168,9 @@
 		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.Template.ОсновнаяСхемаКомпоновкиДанных" id="269ce60e-fff4-4b75-aea2-d1e3c2fd5394" configVersion="22d53194cb6bd3d1e2e3c9b1d0fb30894614eeea"/>
 		<Metadata name="Report.ГП_ОтчетДляВыгрузкаДанныхОФД.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="269ce60e-fff4-4b75-aea2-d1e3c2fd5394.0" configVersion="9b554ca1eba5809a9fa5b942ff7ed3ee868624ed"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам" id="08b08e99-f2f1-42c9-ad3d-da202574a94b" configVersion="eb8cb2e45e8e8b5c29725110760008854aab795c"/>
-		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="bff4f081772a7d7d325696bea6e3d54f9c9270f8"/>
+		<Metadata name="Report.ГП_ОтчетПоДебиторам.ObjectModule" id="08b08e99-f2f1-42c9-ad3d-da202574a94b.0" configVersion="2e1eaf3d6e59fd66f1e437cd68a0e9143c611211"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных" id="70dbc91c-669d-409b-a542-8da098f5f619" configVersion="2c09505ef1da6a647f461c50ef6c579963ead567"/>
-		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="70dbc91c-669d-409b-a542-8da098f5f619.0" configVersion="12fe03b2fc45b4fa928e823722f58c8627290624"/>
+		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="70dbc91c-669d-409b-a542-8da098f5f619.0" configVersion="8f97edad638444a1c69d7a77d083effa6e579e02"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ПФ_MXL_Макет" id="e397c215-881c-479f-91a3-a28888079109" configVersion="a34b3698eb20a8aed73824baa310a540cfe8aca8"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.ПФ_MXL_Макет.Template" id="e397c215-881c-479f-91a3-a28888079109.0" configVersion="8f2c7df9fb4bef50db44fcc40cd9afaf4b2410a0"/>
 		<Metadata name="Report.ГП_ОтчетПоДебиторам.Template.Удалить_ПФ_MXL_Макет" id="5f3067cf-f457-45bf-bc91-0cdb8686a212" configVersion="e4624b330144979c2ed642b2257177e31bf376a5"/>
