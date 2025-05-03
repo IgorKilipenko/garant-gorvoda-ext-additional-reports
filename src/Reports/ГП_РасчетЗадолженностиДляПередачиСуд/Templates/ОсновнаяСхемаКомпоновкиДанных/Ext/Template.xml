@@ -307,8 +307,8 @@
 ПОМЕСТИТЬ ВТ_ОстаткиНаКонецБУ
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(
-			&amp;НачалоПериода,
-			&amp;КонецПериода,
+			&amp;НачалоПериодаВключая,
+			&amp;КонецПериодаВключая,
 			МЕСЯЦ,
 			,
 			Счет В 
@@ -319,7 +319,6 @@
 			&amp;АналитикаРасчетов,
 			Организация = &amp;Организация 
 				И Субконто2.lc_ВидДоговора В (&amp;ДополнительныеВидыДоговоров)
-				// И Субконто1 В (&amp;МассивКонтрагентов) ///////////////////////////////////////////////////////////
 				{(Субконто1 В (&amp;МассивКонтрагентов)), (Субконто2 В (&amp;МассивДоговоров))}
 					) КАК ХозрасчетныйОстаткиНаКонец
 ;
@@ -378,7 +377,7 @@
 	ОборотыРеализацииБУ.СуммаНУОборот - ОборотыРеализацииБУ.СуммаНУКорОборот КАК СуммаНДС
 ПОМЕСТИТЬ ВТ_ОборотыРеализацииБУ_Подготовка
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор,
+	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;НачалоПериодаВключая, &amp;КонецПериодаВключая, Регистратор,
 		Счет В
 				(ВЫБРАТЬ
 					Т.Счет
@@ -437,7 +436,7 @@
 	ОплатаПоУслугам.СуммаНДСОборот КАК СуммаНДСОборот
 ПОМЕСТИТЬ ВТ_ОборотыОплатаПоУслугам_Подготовка
 ИЗ
-	РегистрНакопления.ГП_ОплатаПоУслугам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор,
+	РегистрНакопления.ГП_ОплатаПоУслугам.Обороты(&amp;НачалоПериодаВключая, &amp;КонецПериодаВключая, Регистратор,
 		(Контрагент, Договор) В (ВЫБРАТЬ Т.Контрагент, Т.Договор ИЗ ВТ_ЗадолженникиКонтрагенты КАК Т)
 		{(НоменклатурнаяГруппа В (&amp;СписокНоменклатурныхГрупп))}) КАК ОплатаПоУслугам
 ;
@@ -701,6 +700,18 @@
 		</valueType>
 		<useRestriction>false</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+				<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+					<dcscor:item>
+						<dcscor:choiceParameter>Отбор.Владелец</dcscor:choiceParameter>
+						<dcscor:value>ПараметрыДанных.МассивКонтрагентов</dcscor:value>
+						<dcscor:mode xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d7p1:LinkedValueChangeMode">Clear</dcscor:mode>
+					</dcscor:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
 	</parameter>
 	<parameter>
 		<name>СписокНоменклатурныхГрупп</name>
@@ -716,6 +727,45 @@
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">Упрощенный</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:string">Основной</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:string">Упрощенный</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Упрощенный</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -819,6 +869,44 @@
 		<valueListAllowed>true</valueListAllowed>
 		<availableAsField>false</availableAsField>
 	</parameter>
+	<parameter>
+		<name>НачалоПериодаВключая</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода включая</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериодаВключая</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода включая</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -874,7 +962,6 @@
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
 						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
@@ -884,13 +971,11 @@
 					<dcsset:userSettingID>8f6365c2-4936-4ce8-9723-5752da92ebc0</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Организация</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>41731571-320b-4233-931e-112b3c6bbead</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ДополнительныеВидыДоговоров</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>fcebf6bc-86d4-4fa6-94db-d98f6e7645c9</dcsset:userSettingID>
@@ -912,6 +997,11 @@
 					<dcscor:parameter>СписокНоменклатурныхГрупп</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>9c1df15c-f150-4126-a07b-6052ae55119d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Упрощенный</dcscor:value>
+					<dcsset:userSettingID>535cfb7a-b999-42b5-b40d-15fc84624a84</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
