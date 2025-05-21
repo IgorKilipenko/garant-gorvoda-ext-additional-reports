@@ -41,6 +41,12 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<presentationExpression>ВЫБОР КОГДА Договор.Номер &lt;&gt; "" ТОГДА Договор.Номер ИНАЧЕ Договор.Наименование КОНЕЦ</presentationExpression>
+			<orderExpression>
+				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(Строка(Договор.Номер))</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Здание</dataPath>
@@ -644,6 +650,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаДоговора</dataPath>
+			<field>ДатаДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>втАдресаЗданий</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	СУММА(ЕСТЬNULL(КВП_НачисленныеЛьготыОбороты.СуммаНачисленияОборот, 0)) КАК Льгота,
@@ -1191,6 +1207,7 @@
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВТ_Результат_Подготовка.ЛицевойСчет КАК ЛицевойСчет,
 	ВТ_Результат_Подготовка.Договор КАК Договор,
+	ВТ_Результат_Подготовка.Договор.Дата КАК ДатаДоговора,
 	ВТ_Результат_Подготовка.Помещение КАК Помещение,
 	ВТ_Результат_Подготовка.Здание КАК Здание,
 	ВТ_Результат_Подготовка.ЛицевойСчетОписание КАК ЛицевойСчетОписание,
@@ -1271,7 +1288,11 @@
 	Помещение.*,
 	ВладелецЛС.*,
 	ЛицевойСчет.*,
-	Договор.*}
+	Договор.*,
+	ДатаДоговора,
+	ВидУслуги.*,
+	Услуга.*,
+	НоменклатурнаяГруппа.*}
 ИЗ
 	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
 {ГДЕ
@@ -1279,7 +1300,39 @@
 		КОГДА &amp;ТолькоСНачислениями
 			ТОГДА ВТ_Результат_Подготовка.ФлагНачисления &lt;&gt; 0
 		ИНАЧЕ ИСТИНА 
-	КОНЕЦ}
+	КОНЕЦ,
+	ВТ_Результат_Подготовка.ЛицевойСчет.* КАК ЛицевойСчет,
+	ВТ_Результат_Подготовка.Договор.* КАК Договор,
+	ВТ_Результат_Подготовка.Договор.Дата КАК ДатаДоговора,
+	ВТ_Результат_Подготовка.Помещение.* КАК Помещение,
+	ВТ_Результат_Подготовка.Здание.* КАК Здание,
+	ВТ_Результат_Подготовка.ЛицевойСчетОписание КАК ЛицевойСчетОписание,
+	ВТ_Результат_Подготовка.Услуга.* КАК Услуга,
+	ВТ_Результат_Подготовка.ВидУслуги.* КАК ВидУслуги,
+	ВТ_Результат_Подготовка.Услуга.Услуга.НоменклатурнаяГруппа.* КАК НоменклатурнаяГруппа,
+	ВТ_Результат_Подготовка.СуммаЗадолженности КАК СуммаЗадолженности,
+	ВТ_Результат_Подготовка.СуммаНаКонецМесяца КАК ИтоговаяСуммаНаКонецМесяца,
+	ВТ_Результат_Подготовка.СуммаНачисления КАК СуммаНачисления,
+	ВТ_Результат_Подготовка.СуммаЛьготы КАК СуммаЛьготы,
+	ВТ_Результат_Подготовка.СуммаПерерасчета КАК СуммаПерерасчета,
+	ВТ_Результат_Подготовка.СуммаПени КАК СуммаПени,
+	ВТ_Результат_Подготовка.СуммаПовышающийКоэффициент КАК СуммаПовышающийКоэффициент,
+	ВТ_Результат_Подготовка.СуммаОплатыПени КАК СуммаОплатыПени,
+	ВТ_Результат_Подготовка.СуммаНаКонецМесяцаПени КАК СуммаНаКонецМесяцаПени,
+	ВТ_Результат_Подготовка.СуммаНаКонецМесяца КАК СуммаНаКонецМесяца,
+	ВТ_Результат_Подготовка.СуммаОплаты КАК СуммаОплаты,
+	ВТ_Результат_Подготовка.ИтоговаяСуммаНачисления КАК ИтоговаяСуммаНачисления,
+	ВТ_Результат_Подготовка.КОплате КАК КОплате,
+	ВТ_Результат_Подготовка.КоличествоНачисления КАК КоличествоНачисления,
+	ВТ_Результат_Подготовка.КоличествоЛьготы КАК КоличествоЛьготы,
+	ВТ_Результат_Подготовка.КоличествоПерерасчета КАК КоличествоПерерасчета,
+	ВТ_Результат_Подготовка.КоличествоПени КАК КоличествоПени,
+	ВТ_Результат_Подготовка.КоличествоПовышающийКоэффициент КАК КоличествоПовышающийКоэффициент,
+	ВТ_Результат_Подготовка.КоличествоОплаты КАК КоличествоОплаты,
+	ВТ_Результат_Подготовка.КоличествоОплатыПени КАК КоличествоОплатыПени,
+	ВТ_Результат_Подготовка.ИтоговоеКоличествоНачисления КАК ИтоговоеКоличествоНачисления,
+	ВТ_Результат_Подготовка.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор
+}
 </query>
 	</dataSet>
 	<dataSet xsi:type="DataSetObject">
@@ -1770,6 +1823,7 @@
 				</dcscor:value>
 			</dcscor:item>
 		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -1785,6 +1839,7 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -1818,6 +1873,26 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
+		<name>ВидОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>21</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -1833,7 +1908,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -1852,7 +1927,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -1871,7 +1946,8 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Льгота</name>
@@ -1886,6 +1962,8 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Перерасчет</name>
@@ -1900,24 +1978,8 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ВидОтчета</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Вид отчета</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:string</v8:Type>
-			<v8:StringQualifiers>
-				<v8:Length>21</v8:Length>
-				<v8:AllowedLength>Variable</v8:AllowedLength>
-			</v8:StringQualifiers>
-		</valueType>
-		<value xsi:type="xs:string"/>
-		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Пени</name>
@@ -1932,6 +1994,8 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ПовышающийКоэффициент</name>
@@ -1946,6 +2010,8 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидыПлощадейОбщаяПлощадь</name>
@@ -1961,6 +2027,7 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиВодоотведение</name>
@@ -1975,6 +2042,8 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиГВС</name>
@@ -1989,6 +2058,8 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиНегативноеВоздействие</name>
@@ -2003,6 +2074,8 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиХВС</name>
@@ -2017,6 +2090,8 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -2028,6 +2103,9 @@
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ППНомер</dcsset:field>
 				</dcsset:item>
@@ -2148,7 +2226,6 @@
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
 						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
@@ -2158,21 +2235,18 @@
 					<dcsset:userSettingID>60db75af-2efc-4646-a985-2fc7b5001d37</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Организация</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>cb7f1650-f483-47b7-98f6-b1de7acfe78f</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ИсключаяВводНачальногоСальдо</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					<dcsset:userSettingID>fe0726c5-d511-49d2-99e9-9ed79ba8dc8c</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ТолькоСНачислениями</dcscor:parameter>
-					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
 					<dcsset:userSettingID>bde4e4ee-f52b-4b51-973d-3f108080128d</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
@@ -2193,7 +2267,7 @@
 						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Договор.Дата</dcsset:field>
+						<dcsset:field>ДатаДоговора</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -2218,13 +2292,19 @@
 						<dcsset:use>false</dcsset:use>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Договор</dcsset:field>
+						<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
 					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КонтрагентДляВзаиморасчетов</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Договор.Дата</dcsset:field>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Договор</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДатаДоговора</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КонтрагентДляВзаиморасчетов</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Horizontally</dcsset:placement>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 						<dcsset:lwsTitle>
@@ -2396,6 +2476,58 @@
 						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
 						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
 						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>АвтоОтступ</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Договор</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Отступ</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>АвтоОтступ</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
 						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 					</dcsset:item>
