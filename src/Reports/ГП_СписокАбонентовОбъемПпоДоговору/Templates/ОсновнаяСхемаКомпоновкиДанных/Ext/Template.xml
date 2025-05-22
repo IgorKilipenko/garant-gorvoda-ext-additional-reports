@@ -1234,6 +1234,8 @@
 ГДЕ
 	ИСТИНА
 	И ЛицевыеСчетаСостояние.Действует
+{ГДЕ
+	&amp;ТолькоДействующиеЛицевыеСчета = ИСТИНА}
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1371,6 +1373,11 @@
 			ТОГДА ВТ_Результат_Подготовка.ФлагНачисления = 0
 		ИНАЧЕ ИСТИНА
 	КОНЕЦ,
+	ВЫБОР
+		КОГДА &amp;ТолькоДействующиеЛицевыеСчета = ИСТИНА
+			ТОГДА ВТ_Результат_Подготовка.ЛицевойСчет В (ВЫБРАТЬ Т.ЛицевойСчет ИЗ ВТ_ФильтрДействующихЛицевызСчетов КАК Т)
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ,
 	ВТ_Результат_Подготовка.ЛицевойСчет.* КАК ЛицевойСчет,
 	ВТ_Результат_Подготовка.Договор.* КАК Договор,
 	ВТ_Результат_Подготовка.Договор.Дата КАК ДатаДоговора,
@@ -1471,8 +1478,7 @@
 	Услуга.*,
 	НоменклатурнаяГруппа.*}
 ИЗ
-	ВТ_ДанныеПоАбонентам_Подготовка КАК Результат
-</query>
+	ВТ_ДанныеПоАбонентам_Подготовка КАК Результат</query>
 	</dataSet>
 	<dataSet xsi:type="DataSetObject">
 		<name>АдресаЗданий</name>
@@ -2104,6 +2110,21 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
+		<name>ТолькоДействующиеЛицевыеСчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Только действующие лицевые счета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
 		<name>ТолькоСНачислениями</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -2564,6 +2585,11 @@
 					<dcscor:parameter>ТолькоБезНачислений</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					<dcsset:userSettingID>4846409c-e102-4303-8b7d-3003c2bbe34d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТолькоДействующиеЛицевыеСчета</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:userSettingID>bb30303f-66fe-40c3-8ab5-d2092fa666f6</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
