@@ -41,12 +41,6 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
-			<presentationExpression>ВЫБОР КОГДА Договор.Номер &lt;&gt; "" ТОГДА Договор.Номер ИНАЧЕ Договор.Наименование КОНЕЦ</presentationExpression>
-			<orderExpression>
-				<dcscom:expression>ГП_РаботаСДоговорами.ПреобразоватьНомерДоговораВЧислоПринудительно(Строка(Договор.Номер))</dcscom:expression>
-				<dcscom:orderType>Asc</dcscom:orderType>
-				<dcscom:autoOrder>false</dcscom:autoOrder>
-			</orderExpression>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Здание</dataPath>
@@ -650,20 +644,6 @@
 				</v8:item>
 			</title>
 		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ДатаДоговора</dataPath>
-			<field>ДатаДоговора</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дата договора</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Объект</dataPath>
-			<field>Объект</field>
-		</field>
 		<dataSource>втАдресаЗданий</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	СУММА(ЕСТЬNULL(КВП_НачисленныеЛьготыОбороты.СуммаНачисленияОборот, 0)) КАК Льгота,
@@ -672,7 +652,7 @@
 	КВП_НачисленныеЛьготыОбороты.Услуга.ВидУслуги КАК ВидУслугиЛьгот
 ПОМЕСТИТЬ врЛьготаСправочно
 ИЗ
-	РегистрНакопления.КВП_НачисленныеЛьготы.Обороты(&amp;НачалоПериодаВключая, &amp;КонецПериодаВключая, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение, (Услуга.ВидУслуги) КАК Услуга}) КАК КВП_НачисленныеЛьготыОбороты
+	РегистрНакопления.КВП_НачисленныеЛьготы.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение, (Услуга.ВидУслуги) КАК Услуга}) КАК КВП_НачисленныеЛьготыОбороты
 
 СГРУППИРОВАТЬ ПО
 	КВП_НачисленныеЛьготыОбороты.ЛицевойСчет,
@@ -720,7 +700,7 @@
 		РегистрСведений.УПЖКХ_СведенияОПроживающих.СрезПоследних(, ДатаИзменения &lt;= &amp;КонецПериода {(ЛицевойСчет) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение}) КАК УПЖКХ_СведенияОПроживающихСрезПоследних
 	ГДЕ
 		УПЖКХ_СведенияОПроживающихСрезПоследних.Проживает
-
+	
 	СГРУППИРОВАТЬ ПО
 		УПЖКХ_СведенияОПроживающихСрезПоследних.ЛицевойСчет) КАК СведенияОПроживающих
 		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
@@ -730,7 +710,7 @@
 			РегистрСведений.УПЖКХ_СведенияОЗарегистрированных.СрезПоследних(, ДатаИзменения &lt;= &amp;КонецПериода {(ЛицевойСчет) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение}) КАК УПЖКХ_СведенияОЗарегистрированныхСрезПоследних
 		ГДЕ
 			УПЖКХ_СведенияОЗарегистрированныхСрезПоследних.Зарегистрирован
-
+		
 		СГРУППИРОВАТЬ ПО
 			УПЖКХ_СведенияОЗарегистрированныхСрезПоследних.ЛицевойСчет) КАК СведенияОЗарегистрированных
 		ПО СведенияОПроживающих.ЛицевойСчет = СведенияОЗарегистрированных.ЛицевойСчет
@@ -786,13 +766,13 @@
 	-СУММА(КВП_ВзаиморасчетыПоЛицевымСчетам.СуммаНачисленияОборот) КАК СуммаНаКонецМесяца
 ПОМЕСТИТЬ ВТ_ОборотыПоНачальномуСальдо
 ИЗ
-	РегистрНакопления.КВП_ВзаиморасчетыПоЛицевымСчетам.Обороты(&amp;НачалоПериодаВключая, &amp;КонецПериодаВключая, Регистратор, Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение, (Услуга.ВидУслуги) КАК Услуга, (Договор).* КАК Договор}) КАК КВП_ВзаиморасчетыПоЛицевымСчетам
+	РегистрНакопления.КВП_ВзаиморасчетыПоЛицевымСчетам.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение, (Услуга.ВидУслуги) КАК Услуга, (Договор).* КАК Договор}) КАК КВП_ВзаиморасчетыПоЛицевымСчетам	
 ГДЕ
-	ВЫБОР
+	ВЫБОР 
 		КОГДА &amp;ИсключаяВводНачальногоСальдо = ЛОЖЬ ТОГДА ЛОЖЬ
 		ИНАЧЕ КВП_ВзаиморасчетыПоЛицевымСчетам.Регистратор ССЫЛКА Документ.КВП_ВводНачальногоСальдо
 	КОНЕЦ
-
+	
 СГРУППИРОВАТЬ ПО
 	КВП_ВзаиморасчетыПоЛицевымСчетам.Услуга,
 	КВП_ВзаиморасчетыПоЛицевымСчетам.Услуга.ВидУслуги,
@@ -820,7 +800,7 @@
 	КВП_ВзаиморасчетыПоЛицевымСчетам.Услуга.ВидУслуги,
 	КВП_ВзаиморасчетыПоЛицевымСчетам.ЛицевойСчет,
 	КВП_ВзаиморасчетыПоЛицевымСчетам.Договор
-
+	
 ОБЪЕДИНИТЬ ВСЕ
 
 ВЫБРАТЬ
@@ -972,9 +952,9 @@
 		КОНЕЦ) КАК КоличествоОплатыПени
 ПОМЕСТИТЬ КВП_ОборотыПоЛицевымСчетам
 ИЗ
-	РегистрНакопления.УПЖКХ_Начисления.Обороты(&amp;НачалоПериодаВключая, &amp;КонецПериодаВключая, Регистратор, Организация = &amp;Организация {(Договор).* КАК Договор}) КАК УПЖКХ_Начисления
+	РегистрНакопления.УПЖКХ_Начисления.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, Организация = &amp;Организация {(Договор).* КАК Договор}) КАК УПЖКХ_Начисления
 ГДЕ
-	ВЫБОР
+	ВЫБОР 
 		КОГДА &amp;ИсключаяВводНачальногоСальдо = ЛОЖЬ ТОГДА ИСТИНА
 		ИНАЧЕ НЕ УПЖКХ_Начисления.Регистратор ССЫЛКА Документ.КВП_ВводНачальногоСальдо
 	КОНЕЦ
@@ -1168,8 +1148,7 @@
 	УПЖКХ_СведенияДляВзаиморасчетовПоЛССрезПоследних.Договор КАК ДоговорДляВзаиморасчетов,
 	УПЖКХ_ОтветственныйСобственникНанимательЛицевогоСчетаСрезПоследних.ОтветственныйВладелец КАК ВладелецЛС,
 	ТаблицаНачислений.СуммаОплаты КАК ИтогоОплачено,
-	ТаблицаНачислений.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор,
-	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель КАК Договородержатель
+	ТаблицаНачислений.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор
 ПОМЕСТИТЬ ВТ_Результат_Подготовка
 ИЗ
 	ТаблицаНачислений КАК ТаблицаНачислений
@@ -1187,15 +1166,13 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДинамическиеПоказателиЛицевыхСчетов КАК ВТ_ДинамическиеПоказателиЛицевыхСчетов
 		ПО ТаблицаНачислений.ЛицевойСчет = ВТ_ДинамическиеПоказателиЛицевыхСчетов.ЛицевойСчет
 ГДЕ
-	//(&amp;ВидОтчета = " недоплаты "
-	//			И ТаблицаНачислений.СуммаНаКонецМесяца &gt; 0
-	//		ИЛИ &amp;ВидОтчета = " переплаты "
-	//			И ТаблицаНачислений.СуммаНаКонецМесяца &lt; 0
-	//		ИЛИ &amp;ВидОтчета = " недоплаты И переплаты ")
-	ИСТИНА
+	(&amp;ВидОтчета = "недоплаты"
+				И ТаблицаНачислений.СуммаНаКонецМесяца &gt; 0
+			ИЛИ &amp;ВидОтчета = "переплаты"
+				И ТаблицаНачислений.СуммаНаКонецМесяца &lt; 0
+			ИЛИ &amp;ВидОтчета = "недоплаты и переплаты")
 	И УПЖКХ_СведенияДляВзаиморасчетовПоЛССрезПоследних.Договор = ТаблицаНачислений.Договор
 {ГДЕ
-	ВТ_ДинамическиеПоказателиЛицевыхСчетов.Договородержатель = &amp;Договородержатель,
 	ТаблицаНачислений.Услуга КАК УслугаДляОтбора,
 	ТаблицаНачислений.ВидУслуги КАК ВидУслугиДляОтбора,
 	УПЖКХ_ОтветственныйСобственникНанимательЛицевогоСчетаСрезПоследних.ОтветственныйВладелец,
@@ -1212,78 +1189,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
-   ЛицевыеСчетаСостояние.ЛицевойСчет КАК ЛицевойСчет
-ПОМЕСТИТЬ ВТ_ДействющиеЛицевыеСчета_ВПериоде
-ИЗ
-   РегистрСведений.КВП_ЛицевыеСчета КАК ЛицевыеСчетаСостояние
-ГДЕ
-	ЛицевыеСчетаСостояние.Активность = ИСТИНА
-	И ЛицевыеСчетаСостояние.Период &gt; &amp;НачалоПериода
-	И ЛицевыеСчетаСостояние.Период &lt; &amp;КонецПериода
-	И ЛицевыеСчетаСостояние.Действует
-	И ЛицевыеСчетаСостояние.ЛицевойСчет В (ВЫБРАТЬ РАЗЛИЧНЫЕ Т.ЛицевойСчет ИЗ ВТ_Результат_Подготовка КАК Т ГДЕ НЕ Т.ЛицевойСчет ЕСТЬ NULL)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
-   ЛицевыеСчетаСостояние.ЛицевойСчет
-ПОМЕСТИТЬ ВТ_ДействющиеЛицевыеСчета_НаНчалоПериода
-ИЗ
-   РегистрСведений.КВП_ЛицевыеСчета.СрезПоследних(&amp;НачалоПериода,
-   	ЛицевойСчет В (ВЫБРАТЬ РАЗЛИЧНЫЕ Т.ЛицевойСчет ИЗ ВТ_Результат_Подготовка КАК Т ГДЕ НЕ Т.ЛицевойСчет ЕСТЬ NULL)) КАК ЛицевыеСчетаСостояние
-ГДЕ
-	ИСТИНА
-	И ЛицевыеСчетаСостояние.Действует
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
-   ЛицевыеСчетаСостояние.ЛицевойСчет
-ПОМЕСТИТЬ ВТ_ДействющиеЛицевыеСчета_НаКонецПериода
-ИЗ
-   РегистрСведений.КВП_ЛицевыеСчета.СрезПоследних(&amp;КонецПериода,
-   	ЛицевойСчет В (ВЫБРАТЬ РАЗЛИЧНЫЕ Т.ЛицевойСчет ИЗ ВТ_Результат_Подготовка КАК Т ГДЕ НЕ Т.ЛицевойСчет ЕСТЬ NULL)) КАК ЛицевыеСчетаСостояние
-ГДЕ
-	ИСТИНА
-	И ЛицевыеСчетаСостояние.Действует
-	И НЕ ЛицевыеСчетаСостояние.ЛицевойСчет В (ВЫБРАТЬ РАЗЛИЧНЫЕ Т.ЛицевойСчет ИЗ ВТ_ДействющиеЛицевыеСчета_НаНчалоПериода КАК Т)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
-   ЛицевыеСчетаСостояние.ЛицевойСчет КАК ЛицевойСчет
-ПОМЕСТИТЬ ВТ_ФильтрДействующихЛицевызСчетов_Подготовка
-ИЗ
-   ВТ_ДействющиеЛицевыеСчета_ВПериоде КАК ЛицевыеСчетаСостояние
-
-ОБЪЕДИНИТЬ ВСЕ
-
-ВЫБРАТЬ
-   ЛицевыеСчетаСостояние.ЛицевойСчет
-ИЗ
-   ВТ_ДействющиеЛицевыеСчета_НаНчалоПериода КАК ЛицевыеСчетаСостояние
-	
-ОБЪЕДИНИТЬ ВСЕ
-
-ВЫБРАТЬ
-   ЛицевыеСчетаСостояние.ЛицевойСчет
-ИЗ
-   ВТ_ДействющиеЛицевыеСчета_НаКонецПериода КАК ЛицевыеСчетаСостояние
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
-   ЛицевыеСчетаСостояние.ЛицевойСчет КАК ЛицевойСчет
-ПОМЕСТИТЬ ВТ_ФильтрДействующихЛицевызСчетов
-ИЗ
-   ВТ_ФильтрДействующихЛицевызСчетов_Подготовка КАК ЛицевыеСчетаСостояние
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВТ_Результат_Подготовка.ЛицевойСчет КАК ЛицевойСчет,
 	ВТ_Результат_Подготовка.Договор КАК Договор,
-	ВТ_Результат_Подготовка.Договор.Дата КАК ДатаДоговора,
 	ВТ_Результат_Подготовка.Помещение КАК Помещение,
 	ВТ_Результат_Подготовка.Здание КАК Здание,
 	ВТ_Результат_Подготовка.ЛицевойСчетОписание КАК ЛицевойСчетОписание,
@@ -1355,108 +1262,7 @@
 	ВТ_Результат_Подготовка.Договор КАК ДоговорДляВзаиморасчетов,
 	ВТ_Результат_Подготовка.ВладелецЛС КАК ВладелецЛС,
 	ВТ_Результат_Подготовка.СуммаОплаты КАК ИтогоОплачено,
-	ВТ_Результат_Подготовка.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор,
-	ВТ_Результат_Подготовка.Договородержатель КАК Договородержатель
-ПОМЕСТИТЬ ВТ_ДанныеПоАбонентам_Подготовка
-ИЗ
-	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
-{ГДЕ
-	ВЫБОР
-		КОГДА &amp;ТолькоСНачислениями
-			ТОГДА ВТ_Результат_Подготовка.ФлагНачисления &lt;&gt; 0
-		ИНАЧЕ ИСТИНА
-	КОНЕЦ,
-	ВЫБОР
-		КОГДА &amp;ТолькоБезНачислений
-			ТОГДА ВТ_Результат_Подготовка.ФлагНачисления = 0
-		ИНАЧЕ ИСТИНА
-	КОНЕЦ,
-	ВТ_Результат_Подготовка.ЛицевойСчет.* КАК ЛицевойСчет,
-	ВТ_Результат_Подготовка.Договор.* КАК Договор,
-	ВТ_Результат_Подготовка.Договор.Дата КАК ДатаДоговора,
-	ВТ_Результат_Подготовка.Помещение.* КАК Помещение,
-	ВТ_Результат_Подготовка.Здание.* КАК Здание,
-	ВТ_Результат_Подготовка.ЛицевойСчетОписание КАК ЛицевойСчетОписание,
-	ВТ_Результат_Подготовка.Услуга.* КАК Услуга,
-	ВТ_Результат_Подготовка.ВидУслуги.* КАК ВидУслуги,
-	ВТ_Результат_Подготовка.Услуга.Услуга.НоменклатурнаяГруппа.* КАК НоменклатурнаяГруппа,
-	ВТ_Результат_Подготовка.СуммаЗадолженности КАК СуммаЗадолженности,
-	ВТ_Результат_Подготовка.СуммаНаКонецМесяца КАК ИтоговаяСуммаНаКонецМесяца,
-	ВТ_Результат_Подготовка.СуммаНачисления КАК СуммаНачисления,
-	ВТ_Результат_Подготовка.СуммаЛьготы КАК СуммаЛьготы,
-	ВТ_Результат_Подготовка.СуммаПерерасчета КАК СуммаПерерасчета,
-	ВТ_Результат_Подготовка.СуммаПени КАК СуммаПени,
-	ВТ_Результат_Подготовка.СуммаПовышающийКоэффициент КАК СуммаПовышающийКоэффициент,
-	ВТ_Результат_Подготовка.СуммаОплатыПени КАК СуммаОплатыПени,
-	ВТ_Результат_Подготовка.СуммаНаКонецМесяцаПени КАК СуммаНаКонецМесяцаПени,
-	ВТ_Результат_Подготовка.СуммаНаКонецМесяца КАК СуммаНаКонецМесяца,
-	ВТ_Результат_Подготовка.СуммаОплаты КАК СуммаОплаты,
-	ВТ_Результат_Подготовка.ИтоговаяСуммаНачисления КАК ИтоговаяСуммаНачисления,
-	ВТ_Результат_Подготовка.КОплате КАК КОплате,
-	ВТ_Результат_Подготовка.КоличествоНачисления КАК КоличествоНачисления,
-	ВТ_Результат_Подготовка.КоличествоЛьготы КАК КоличествоЛьготы,
-	ВТ_Результат_Подготовка.КоличествоПерерасчета КАК КоличествоПерерасчета,
-	ВТ_Результат_Подготовка.КоличествоПени КАК КоличествоПени,
-	ВТ_Результат_Подготовка.КоличествоПовышающийКоэффициент КАК КоличествоПовышающийКоэффициент,
-	ВТ_Результат_Подготовка.КоличествоОплаты КАК КоличествоОплаты,
-	ВТ_Результат_Подготовка.КоличествоОплатыПени КАК КоличествоОплатыПени,
-	ВТ_Результат_Подготовка.ИтоговоеКоличествоНачисления КАК ИтоговоеКоличествоНачисления,
-	ВТ_Результат_Подготовка.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор}
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	Результат.ЛицевойСчет КАК ЛицевойСчет,
-	Результат.Договор КАК Договор,
-	Результат.Договор.Дата КАК ДатаДоговора,
-	Результат.Помещение КАК Помещение,
-	Результат.Здание КАК Здание,
-	Результат.ЛицевойСчетОписание КАК ЛицевойСчетОписание,
-	Результат.Услуга КАК Услуга,
-	Результат.ВидУслуги КАК ВидУслуги,
-	Результат.Услуга.Услуга.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
-	Результат.СуммаЗадолженности КАК СуммаЗадолженности,
-	Результат.СуммаНаКонецМесяца КАК ИтоговаяСуммаНаКонецМесяца,
-	Результат.СуммаНачисления КАК СуммаНачисления,
-	Результат.СуммаЛьготы КАК СуммаЛьготы,
-	Результат.СуммаПерерасчета КАК СуммаПерерасчета,
-	Результат.СуммаПени КАК СуммаПени,
-	Результат.СуммаПовышающийКоэффициент КАК СуммаПовышающийКоэффициент,
-	Результат.СуммаОплатыПени КАК СуммаОплатыПени,
-	Результат.СуммаНаКонецМесяцаПени КАК СуммаНаКонецМесяцаПени,
-	Результат.СуммаНаКонецМесяца КАК СуммаНаКонецМесяца,
-	Результат.СуммаОплаты КАК СуммаОплаты,
-	Результат.ИтоговаяСуммаНачисления КАК ИтоговаяСуммаНачисления,
-	Результат.ИтоговаяСуммаНачисленияВодоснабжениеХВС КАК ИтоговаяСуммаНачисленияВодоснабжениеХВС,
-	Результат.ИтоговаяСуммаНачисленияВодоснабжениеГВС КАК ИтоговаяСуммаНачисленияВодоснабжениеГВС,
-	Результат.ИтоговаяСуммаНачисленияВодоотведение КАК ИтоговаяСуммаНачисленияВодоотведение,
-	Результат.ИтоговаяСуммаНачисленияНегативноеВоздействие КАК ИтоговаяСуммаНачисленияНегативноеВоздействие,
-	Результат.КОплате КАК КОплате,
-	Результат.КоличествоНачисления КАК КоличествоНачисления,
-	Результат.КоличествоЛьготы КАК КоличествоЛьготы,
-	Результат.КоличествоПерерасчета КАК КоличествоПерерасчета,
-	Результат.КоличествоПени КАК КоличествоПени,
-	Результат.КоличествоПовышающийКоэффициент КАК КоличествоПовышающийКоэффициент,
-	Результат.КоличествоОплаты КАК КоличествоОплаты,
-	Результат.КоличествоОплатыПени КАК КоличествоОплатыПени,
-	Результат.ИтоговоеКоличествоНачисления КАК ИтоговоеКоличествоНачисления,
-	Результат.ИтоговоеКоличествоНачисленияВодоснабжениеХВС КАК ИтоговоеКоличествоНачисленияВодоснабжениеХВС,
-	Результат.ИтоговоеКоличествоНачисленияВодоснабжениеГВС КАК ИтоговоеКоличествоНачисленияВодоснабжениеГВС,
-	Результат.ИтоговоеКоличествоНачисленияВодоотведение КАК ИтоговоеКоличествоНачисленияВодоотведение,
-	Результат.ИтоговоеКоличествоНачисленияНегативноеВоздействие КАК ИтоговоеКоличествоНачисленияНегативноеВоздействие,
-	Результат.КОплатеКоличество КАК КОплатеКоличество,
-	Результат.ФлагНачисления КАК ФлагНачисления,
-	Результат.ФлагОплаты КАК ФлагОплаты,
-	Результат.КоличествоПроживающих КАК КоличествоПроживающих,
-	Результат.КоличествоЗарегистрированных КАК КоличествоЗарегистрированных,
-	Результат.ОбщаяПлощадь КАК ОбщаяПлощадь,
-	Результат.ППНомер КАК ППНомер,
-	Результат.ЛицевойСчет.ЭтоГруппа КАК ЭтоГруппаЛС,
-	Результат.КонтрагентДляВзаиморасчетов КАК КонтрагентДляВзаиморасчетов,
-	Результат.Договор КАК ДоговорДляВзаиморасчетов,
-	Результат.ВладелецЛС КАК ВладелецЛС,
-	Результат.СуммаОплаты КАК ИтогоОплачено,
-	Результат.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор
+	ВТ_Результат_Подготовка.ЛицевойСчет.Идентификатор КАК ЛицевойСчетИдентификатор
 {ВЫБРАТЬ
 	ОбщаяПлощадь,
 	КонтрагентДляВзаиморасчетов.*,
@@ -1465,13 +1271,15 @@
 	Помещение.*,
 	ВладелецЛС.*,
 	ЛицевойСчет.*,
-	Договор.*,
-	ДатаДоговора,
-	ВидУслуги.*,
-	Услуга.*,
-	НоменклатурнаяГруппа.*}
+	Договор.*}
 ИЗ
-	ВТ_ДанныеПоАбонентам_Подготовка КАК Результат
+	ВТ_Результат_Подготовка КАК ВТ_Результат_Подготовка
+{ГДЕ
+	ВЫБОР
+		КОГДА &amp;ТолькоСНачислениями
+			ТОГДА ВТ_Результат_Подготовка.ФлагНачисления &lt;&gt; 0
+		ИНАЧЕ ИСТИНА 
+	КОНЕЦ}
 </query>
 	</dataSet>
 	<dataSet xsi:type="DataSetObject">
@@ -1630,7 +1438,7 @@
     СУММА(УПЖКХ_НачисленияОбороты.Количество) КАК Количество
 ПОМЕСТИТЬ ВТ_ОстаткиНачисленийКоличествоНачало
 ИЗ
-    РегистрНакопления.УПЖКХ_Начисления.Обороты(, &amp;НачалоПериодаВключая, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (Договор).* КАК Договор}) КАК УПЖКХ_НачисленияОбороты
+    РегистрНакопления.УПЖКХ_Начисления.Обороты(, &amp;НачалоПериода, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (Договор).* КАК Договор}) КАК УПЖКХ_НачисленияОбороты
 {ГДЕ
     УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги КАК УслугаДляОтбора,
     УПЖКХ_НачисленияОбороты.Договор.Владелец КАК КонтрагентНачисления}
@@ -1651,7 +1459,7 @@
     СУММА(УПЖКХ_НачисленияОбороты.Количество) КАК Количество
 ПОМЕСТИТЬ ВТ_ОстаткиНачисленийКоличествоКонец
 ИЗ
-    РегистрНакопления.УПЖКХ_Начисления.Обороты(, &amp;КонецПериодаВключая, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (Договор).* КАК Договор}) КАК УПЖКХ_НачисленияОбороты
+    РегистрНакопления.УПЖКХ_Начисления.Обороты(, &amp;КонецПериода, , Организация = &amp;Организация {(ЛицевойСчет) КАК ЛицевойСчет, (Договор).* КАК Договор}) КАК УПЖКХ_НачисленияОбороты
 {ГДЕ
     УПЖКХ_НачисленияОбороты.Услуга.ВидУслуги КАК УслугаДляОтбора,
     УПЖКХ_НачисленияОбороты.Договор.Владелец КАК КонтрагентНачисления}
@@ -1706,96 +1514,6 @@
     ВТ_ОстаткиНачисленийКоличествоПодготовка.Договор</query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
-	<dataSet xsi:type="DataSetQuery">
-		<name>КонтактнаяИнформацияКонтрагентовВзаиморасчетов</name>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ПредставлениеАдресаКонтрагента</dataPath>
-			<field>ПредставлениеАдресаКонтрагента</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Адрес</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ПредставлениеТелефонаКонтрагента</dataPath>
-			<field>ПредставлениеТелефонаКонтрагента</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Телефон</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КонтрагентДляВзаиморасчетов</dataPath>
-			<field>КонтрагентДляВзаиморасчетов</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Контрагент для взаиморасчетов</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
-			</valueType>
-		</field>
-		<dataSource>втАдресаЗданий</dataSource>
-		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) КАК Контрагент,
-	МАКСИМУМ(КонтактнаяИнформация.Представление) КАК ПредставлениеАдреса
-ПОМЕСТИТЬ ВТ_ЮрАдресаКонтрагентов
-ИЗ
-	Справочник.Контрагенты.КонтактнаяИнформация КАК КонтактнаяИнформация
-ГДЕ
-	ИСТИНА
-	И КонтактнаяИнформация.Ссылка ССЫЛКА Справочник.Контрагенты
-	И КонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента)
-	И ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) &lt;&gt; ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
-
-СГРУППИРОВАТЬ ПО
-    ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) КАК Контрагент,
-	МАКСИМУМ(КонтактнаяИнформация.Представление) КАК ПредставлениеТелефона
-ПОМЕСТИТЬ ВТ_ТелефоныКонтрагентов
-ИЗ
-	Справочник.Контрагенты.КонтактнаяИнформация КАК КонтактнаяИнформация
-ГДЕ
-	ИСТИНА
-	И КонтактнаяИнформация.Ссылка ССЫЛКА Справочник.Контрагенты
-	И КонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ТелефонКонтрагента)
-	И ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) &lt;&gt; ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
-	
-СГРУППИРОВАТЬ ПО
-    ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ РАЗРЕШЕННЫЕ
-    ЕСТЬNULL(ЮрАдресаКонтрагентов.Контрагент, ТелефоныКонтрагентов.Контрагент) КАК КонтрагентДляВзаиморасчетов,
-    МАКСИМУМ(ЕСТЬNULL(ЮрАдресаКонтрагентов.ПредставлениеАдреса, "")) КАК ПредставлениеАдресаКонтрагента,
-    МАКСИМУМ(ЕСТЬNULL(ТелефоныКонтрагентов.ПредставлениеТелефона, "")) КАК ПредставлениеТелефонаКонтрагента
-{ВЫБРАТЬ
-    КонтрагентДляВзаиморасчетов.*,
-    ПредставлениеАдресаКонтрагента,
-    ПредставлениеТелефонаКонтрагента}
-ИЗ
-    ВТ_ЮрАдресаКонтрагентов КАК ЮрАдресаКонтрагентов
-    ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ТелефоныКонтрагентов КАК ТелефоныКонтрагентов
-    ПО ЮрАдресаКонтрагентов.Контрагент = ТелефоныКонтрагентов.Контрагент
-
-СГРУППИРОВАТЬ ПО
-    ЕСТЬNULL(ЮрАдресаКонтрагентов.Контрагент, ТелефоныКонтрагентов.Контрагент)
-    
-
-    </query>
-		<autoFillFields>false</autoFillFields>
-	</dataSet>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>АдресаЗданий</destinationDataSet>
@@ -1819,12 +1537,6 @@
 		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
 		<sourceExpression>Договор</sourceExpression>
 		<destinationExpression>Договор</destinationExpression>
-	</dataSetLink>
-	<dataSetLink>
-		<sourceDataSet>ЗапросДанных</sourceDataSet>
-		<destinationDataSet>КонтактнаяИнформацияКонтрагентовВзаиморасчетов</destinationDataSet>
-		<sourceExpression>КонтрагентДляВзаиморасчетов</sourceExpression>
-		<destinationExpression>КонтрагентДляВзаиморасчетов</destinationExpression>
 	</dataSetLink>
 	<calculatedField>
 		<dataPath>ВсегоКоличество</dataPath>
@@ -2058,7 +1770,6 @@
 				</dcscor:value>
 			</dcscor:item>
 		</inputParameters>
-		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -2074,7 +1785,6 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
-		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -2093,17 +1803,6 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>Договородержатель</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Договородержатель</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>ТолькоСНачислениями</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -2116,41 +1815,6 @@
 		</valueType>
 		<value xsi:type="xs:boolean">true</value>
 		<useRestriction>false</useRestriction>
-		<use>Always</use>
-	</parameter>
-	<parameter>
-		<name>ТолькоБезНачислений</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Только без начислений</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:boolean</v8:Type>
-		</valueType>
-		<value xsi:type="xs:boolean">false</value>
-		<useRestriction>false</useRestriction>
-		<use>Always</use>
-	</parameter>
-	<parameter>
-		<name>ВидОтчета</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Вид отчета</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:string</v8:Type>
-			<v8:StringQualifiers>
-				<v8:Length>21</v8:Length>
-				<v8:AllowedLength>Variable</v8:AllowedLength>
-			</v8:StringQualifiers>
-		</valueType>
-		<value xsi:type="xs:string"/>
-		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -2169,7 +1833,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -2188,7 +1852,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -2207,8 +1871,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 	</parameter>
 	<parameter>
 		<name>Льгота</name>
@@ -2223,8 +1886,6 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Перерасчет</name>
@@ -2239,8 +1900,24 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВидОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>21</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
 		<name>Пени</name>
@@ -2255,8 +1932,6 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ПовышающийКоэффициент</name>
@@ -2271,8 +1946,6 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидыПлощадейОбщаяПлощадь</name>
@@ -2288,7 +1961,6 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиВодоотведение</name>
@@ -2303,8 +1975,6 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиГВС</name>
@@ -2319,8 +1989,6 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиНегативноеВоздействие</name>
@@ -2335,8 +2003,6 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>ВидУслугиХВС</name>
@@ -2351,46 +2017,6 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
-	</parameter>
-	<parameter>
-		<name>КонецПериодаВключая</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Конец периода включая</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
-	</parameter>
-	<parameter>
-		<name>НачалоПериодаВключая</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Начало периода включая</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-		<availableAsField>false</availableAsField>
-		<use>Always</use>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -2402,9 +2028,6 @@
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
-				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ППНомер</dcsset:field>
 				</dcsset:item>
@@ -2522,15 +2145,10 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КоличествоНаКонецПериода</dcsset:field>
 				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПредставлениеАдресаКонтрагента</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПредставлениеТелефонаКонтрагента</dcsset:field>
-				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
 						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
@@ -2540,30 +2158,22 @@
 					<dcsset:userSettingID>60db75af-2efc-4646-a985-2fc7b5001d37</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Организация</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>cb7f1650-f483-47b7-98f6-b1de7acfe78f</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ИсключаяВводНачальногоСальдо</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					<dcsset:userSettingID>fe0726c5-d511-49d2-99e9-9ed79ba8dc8c</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Договородержатель</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>790fc509-e752-49ab-9d30-38ee1e1f4db1</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ТолькоСНачислениями</dcscor:parameter>
-					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
 					<dcsset:userSettingID>bde4e4ee-f52b-4b51-973d-3f108080128d</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ТолькоБезНачислений</dcscor:parameter>
-					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					<dcsset:userSettingID>4846409c-e102-4303-8b7d-3003c2bbe34d</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
@@ -2583,21 +2193,7 @@
 						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ДатаДоговора</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ПредставлениеАдресаКонтрагента</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ПредставлениеТелефонаКонтрагента</dcsset:field>
+						<dcsset:field>Договор.Дата</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -2622,34 +2218,13 @@
 						<dcsset:use>false</dcsset:use>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+						<dcsset:field>Договор</dcsset:field>
 					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Договор</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ДатаДоговора</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КонтрагентДляВзаиморасчетов</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Контактная информация</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ПредставлениеАдресаКонтрагента</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ПредставлениеТелефонаКонтрагента</dcsset:field>
-							</dcsset:item>
-							<dcsset:placement>Together</dcsset:placement>
-						</dcsset:item>
-						<dcsset:placement>Horizontally</dcsset:placement>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КонтрагентДляВзаиморасчетов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Договор.Дата</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 						<dcsset:lwsTitle>
@@ -2821,58 +2396,6 @@
 						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
 						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
 						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
-						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-					</dcsset:item>
-					<dcsset:item>
-						<dcsset:selection>
-							<dcsset:item>
-								<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>АвтоОтступ</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-								<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
-						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-					</dcsset:item>
-					<dcsset:item>
-						<dcsset:selection>
-							<dcsset:item>
-								<dcsset:field>Договор</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>Отступ</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>АвтоОтступ</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-								<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-								<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
 						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
 						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
 					</dcsset:item>
