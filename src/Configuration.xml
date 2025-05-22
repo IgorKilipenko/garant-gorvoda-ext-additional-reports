@@ -132,7 +132,7 @@
 			<Report>ГП_ПотреблениеУслугПоНормативам</Report>
 			<Report>ГП_ОтчетДляВыгрузкаДанныхОФД</Report>
 			<Report>ГП_АктИзмененияСроковИспользованияОС</Report>
-			<Report>ГП_СписокАбонентовОбъемПпоДоговоруВ2</Report>
+			<Report>Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>

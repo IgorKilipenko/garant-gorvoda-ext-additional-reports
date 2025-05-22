@@ -251,10 +251,6 @@
 		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговору.ObjectModule" id="f969bcba-ccf1-4654-b69f-f79883c10581.0" configVersion="6f30233262b4a3da9216db783b347ac5b9f3e5d3"/>
 		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговору.Template.ОсновнаяСхемаКомпоновкиДанных" id="94ce10ed-e41b-4575-8995-464dbf60a78d" configVersion="dd072b6e6e3362b8f864f9eeab6aa3378dbbd347"/>
 		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговору.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="94ce10ed-e41b-4575-8995-464dbf60a78d.0" configVersion="e5a297461daeabc08c8fdea626832e05a5ffcca1"/>
-		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговоруВ2" id="46f3c990-3f4d-45e3-a93a-81e16e6f1a69" configVersion="e7a50460da15084c97d5dc038b52c1b6246e4b82"/>
-		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговоруВ2.ObjectModule" id="46f3c990-3f4d-45e3-a93a-81e16e6f1a69.0" configVersion="2bf3a688e7084d42fa6e3dfd23b89af4fdba3453"/>
-		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговоруВ2.Template.ОсновнаяСхемаКомпоновкиДанных" id="60ecbca3-b3ff-4e82-b269-8cfb4ead2e47" configVersion="730fc484d39fa34163a33ebd9e65e829790ad9c2"/>
-		<Metadata name="Report.ГП_СписокАбонентовОбъемПпоДоговоруВ2.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="60ecbca3-b3ff-4e82-b269-8cfb4ead2e47.0" configVersion="8fd998e29b379c4f0f6c19a53a4f85c789b55e84"/>
 		<Metadata name="Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам" id="36ade520-1157-4907-89bd-2b98a434479b" configVersion="4828785f06cc0ec2d2223ae14fc940ede0ec4492">
 			<Metadata name="Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам.TabularSection.ДополнительныеПоля.Attribute.Представление" id="06e46b1f-ebd0-4279-942e-9894db9c6659"/>
 			<Metadata name="Report.ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам.TabularSection.ДополнительныеПоля.Attribute.Поле" id="397fbda0-c672-4b9c-a657-3600bfacfab5"/>
@@ -285,6 +281,10 @@
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных.Template" id="01257d0c-c318-4d08-a49d-ade73cb0e733.0" configVersion="43aaa50d5bf0dd4f0374404a25417a6b424b9cf7"/>
+		<Metadata name="Report.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2" id="46f3c990-3f4d-45e3-a93a-81e16e6f1a69" configVersion="20e7851e706f18b33d78721dea9c19cc6b20a3f2"/>
+		<Metadata name="Report.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2.ObjectModule" id="46f3c990-3f4d-45e3-a93a-81e16e6f1a69.0" configVersion="2bf3a688e7084d42fa6e3dfd23b89af4fdba3453"/>
+		<Metadata name="Report.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2.Template.ОсновнаяСхемаКомпоновкиДанных" id="60ecbca3-b3ff-4e82-b269-8cfb4ead2e47" configVersion="730fc484d39fa34163a33ebd9e65e829790ad9c2"/>
+		<Metadata name="Report.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="60ecbca3-b3ff-4e82-b269-8cfb4ead2e47.0" configVersion="d1e245201e23cf72f3803123543a7c7a031f2186"/>
 		<Metadata name="Role.ГП_ИспользованиеДополнительныхОтчетов" id="a91e2477-62c4-488c-a792-b871a337c4f3" configVersion="081d3285f48d439dcc7a38427bb797fa3c5425de"/>
 		<Metadata name="Role.ГП_ИспользованиеДополнительныхОтчетов.Rights" id="a91e2477-62c4-488c-a792-b871a337c4f3.0" configVersion="e88c2a0e0a529dc3904f667c04f1b4791132edf2"/>
 		<Metadata name="Role.ГП_ИспользованиеОтчетаАктИзмененияСПИОС" id="8b71c923-92fd-45ba-8f8a-6636d17b47ee" configVersion="7173e1ca1cf70734548295227133c9bf86ef4356"/>

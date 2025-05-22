@@ -2,17 +2,17 @@
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
 	<Report uuid="46f3c990-3f4d-45e3-a93a-81e16e6f1a69">
 		<InternalInfo>
-			<xr:GeneratedType name="ReportObject.ГП_СписокАбонентовОбъемПпоДоговоруВ2" category="Object">
+			<xr:GeneratedType name="ReportObject.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2" category="Object">
 				<xr:TypeId>288fa7d3-a3bc-4a8f-b8fc-fa5d26b06981</xr:TypeId>
 				<xr:ValueId>4893ceaa-3887-4841-9864-599ca9055c09</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ReportManager.ГП_СписокАбонентовОбъемПпоДоговоруВ2" category="Manager">
+			<xr:GeneratedType name="ReportManager.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2" category="Manager">
 				<xr:TypeId>770213c5-fb76-4092-89ae-bdfbb8cea947</xr:TypeId>
 				<xr:ValueId>dbff4a2c-289c-452c-960e-721aa1edbfca</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ГП_СписокАбонентовОбъемПпоДоговоруВ2</Name>
+			<Name>Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -23,7 +23,7 @@
 			<UseStandardCommands>true</UseStandardCommands>
 			<DefaultForm/>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>Report.ГП_СписокАбонентовОбъемПпоДоговоруВ2.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>Report.Удалить_ГП_СписокАбонентовОбъемПпоДоговоруВ2.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>
