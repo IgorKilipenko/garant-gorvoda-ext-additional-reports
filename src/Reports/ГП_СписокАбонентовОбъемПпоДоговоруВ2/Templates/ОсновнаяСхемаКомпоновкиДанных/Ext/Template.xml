@@ -1567,6 +1567,96 @@
     ВТ_ОстаткиНачисленийКоличествоПодготовка.Договор</query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>КонтактнаяИнформацияКонтрагентовВзаиморасчетов</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеАдресаКонтрагента</dataPath>
+			<field>ПредставлениеАдресаКонтрагента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеТелефонаКонтрагента</dataPath>
+			<field>ПредставлениеТелефонаКонтрагента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтрагентДляВзаиморасчетов</dataPath>
+			<field>КонтрагентДляВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент для взаиморасчетов</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<dataSource>втАдресаЗданий</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) КАК Контрагент,
+	МАКСИМУМ(КонтактнаяИнформация.Представление) КАК ПредставлениеАдреса
+ПОМЕСТИТЬ ВТ_ЮрАдресаКонтрагентов
+ИЗ
+	Справочник.Контрагенты.КонтактнаяИнформация КАК КонтактнаяИнформация
+ГДЕ
+	ИСТИНА
+	И КонтактнаяИнформация.Ссылка ССЫЛКА Справочник.Контрагенты
+	И КонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ЮрАдресКонтрагента)
+	И ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) &lt;&gt; ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
+
+СГРУППИРОВАТЬ ПО
+    ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) КАК Контрагент,
+	МАКСИМУМ(КонтактнаяИнформация.Представление) КАК ПредставлениеТелефона
+ПОМЕСТИТЬ ВТ_ТелефоныКонтрагентов
+ИЗ
+	Справочник.Контрагенты.КонтактнаяИнформация КАК КонтактнаяИнформация
+ГДЕ
+	ИСТИНА
+	И КонтактнаяИнформация.Ссылка ССЫЛКА Справочник.Контрагенты
+	И КонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.ТелефонКонтрагента)
+	И ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты) &lt;&gt; ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
+	
+СГРУППИРОВАТЬ ПО
+    ВЫРАЗИТЬ(КонтактнаяИнформация.Ссылка КАК Справочник.Контрагенты)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    ЕСТЬNULL(ЮрАдресаКонтрагентов.Контрагент, ТелефоныКонтрагентов.Контрагент) КАК КонтрагентДляВзаиморасчетов,
+    МАКСИМУМ(ЕСТЬNULL(ЮрАдресаКонтрагентов.ПредставлениеАдреса, "")) КАК ПредставлениеАдресаКонтрагента,
+    МАКСИМУМ(ЕСТЬNULL(ТелефоныКонтрагентов.ПредставлениеТелефона, "")) КАК ПредставлениеТелефонаКонтрагента
+{ВЫБРАТЬ
+    КонтрагентДляВзаиморасчетов.*,
+    ПредставлениеАдресаКонтрагента,
+    ПредставлениеТелефонаКонтрагента}
+ИЗ
+    ВТ_ЮрАдресаКонтрагентов КАК ЮрАдресаКонтрагентов
+    ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ТелефоныКонтрагентов КАК ТелефоныКонтрагентов
+    ПО ЮрАдресаКонтрагентов.Контрагент = ТелефоныКонтрагентов.Контрагент
+
+СГРУППИРОВАТЬ ПО
+    ЕСТЬNULL(ЮрАдресаКонтрагентов.Контрагент, ТелефоныКонтрагентов.Контрагент)
+    
+
+    </query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>АдресаЗданий</destinationDataSet>
@@ -1590,6 +1680,12 @@
 		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
 		<sourceExpression>Договор</sourceExpression>
 		<destinationExpression>Договор</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ЗапросДанных</sourceDataSet>
+		<destinationDataSet>КонтактнаяИнформацияКонтрагентовВзаиморасчетов</destinationDataSet>
+		<sourceExpression>КонтрагентДляВзаиморасчетов</sourceExpression>
+		<destinationExpression>КонтрагентДляВзаиморасчетов</destinationExpression>
 	</dataSetLink>
 	<calculatedField>
 		<dataPath>ВсегоКоличество</dataPath>
@@ -2223,6 +2319,12 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КоличествоНаКонецПериода</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПредставлениеАдресаКонтрагента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПредставлениеТелефонаКонтрагента</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -2273,6 +2375,20 @@
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПредставлениеАдресаКонтрагента</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПредставлениеТелефонаКонтрагента</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto">
@@ -2303,6 +2419,21 @@
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>КонтрагентДляВзаиморасчетов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контактная информация</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПредставлениеАдресаКонтрагента</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПредставлениеТелефонаКонтрагента</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Together</dcsset:placement>
 						</dcsset:item>
 						<dcsset:placement>Horizontally</dcsset:placement>
 					</dcsset:item>
