@@ -61,7 +61,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="85b79d09318433cac90c991521505c9cd68e3aac"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="3a7b1e631032a23b4523560dabe087d5fd717092"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="e17b0479a72f4f674f4b58d0b1c1f8711ac8e4ff"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="7e196ba8f227b60460cf2bb7c9d53f6a0b58e2a7"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -279,6 +279,8 @@
 		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга.ManagerModule" id="40ac345a-16da-45b3-b43e-8dca8635ce3c.2" configVersion="56af0b71191e97c20d6d97920a10fb578d17f8b7"/>
 		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга.Template.ОсновнаяСхемаКомпоновкиДанных" id="769f83c3-398f-4570-88e0-30c08b1b2534" configVersion="b10751edfad0403eaa9e14ed86c805950a41398a"/>
 		<Metadata name="Report.ЗадолженностьПокупателейПоСрокамДолга.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="769f83c3-398f-4570-88e0-30c08b1b2534.0" configVersion="7ff8e450640d341e95362042fe7f6805ad1040b0"/>
+		<Metadata name="Report.РасчетыПоЕНС" id="42e9c201-dd40-4b9f-a035-f4cd86e45b5c" configVersion="2043a9a2746bf2c0790e1921a764b041c7d94b7c"/>
+		<Metadata name="Report.РасчетыПоЕНС.ManagerModule" id="42e9c201-dd40-4b9f-a035-f4cd86e45b5c.2" configVersion="daa3d378c6fac09e691c27fe95bd50e6fe051edd"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП" id="49d418b2-77d3-48e4-9b25-e85578e1b41d" configVersion="9b027995d814f25a3081fb36e98e10c7fdd31b4a"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
