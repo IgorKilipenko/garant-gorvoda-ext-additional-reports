@@ -1,24 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
-	<Report uuid="42e9c201-dd40-4b9f-a035-f4cd86e45b5c">
-		<InternalInfo>
-			<xr:GeneratedType name="ReportObject.РасчетыПоЕНС" category="Object">
-				<xr:TypeId>dbeab2af-3548-4e80-91dd-93849e127b89</xr:TypeId>
-				<xr:ValueId>68c85807-e18e-4d50-a176-6a0f2a83b7c6</xr:ValueId>
-			</xr:GeneratedType>
-			<xr:GeneratedType name="ReportManager.РасчетыПоЕНС" category="Manager">
-				<xr:TypeId>1dac0b3a-bdc3-4c7f-a7f8-763d81398147</xr:TypeId>
-				<xr:ValueId>6d607b7c-38a8-451b-b386-48a6df76335b</xr:ValueId>
-			</xr:GeneratedType>
-		</InternalInfo>
+	<Template uuid="f8648a4a-b724-4fc2-935e-a912912504ab">
+		<InternalInfo/>
 		<Properties>
 			<ObjectBelonging>Adopted</ObjectBelonging>
-			<Name>РасчетыПоЕНС</Name>
+			<Name>РасчетыПоНалогамНаЕНС</Name>
 			<Comment/>
-			<ExtendedConfigurationObject>9af680d0-b2a3-4cdd-9378-32b196d0de43</ExtendedConfigurationObject>
+			<ExtendedConfigurationObject>e3b48b0c-4863-4ecb-9638-4cd8224240f3</ExtendedConfigurationObject>
+			<TemplateType>DataCompositionSchema</TemplateType>
 		</Properties>
-		<ChildObjects>
-			<Template>РасчетыПоНалогамНаЕНС</Template>
-		</ChildObjects>
-	</Report>
+	</Template>
 </MetaDataObject>
