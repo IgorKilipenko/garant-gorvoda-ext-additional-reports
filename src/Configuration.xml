@@ -52,7 +52,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.1.7.0-rc4</Version>
+			<Version>2.1.7.1-rc4</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -132,7 +132,6 @@
 			<Report>ГП_ПотреблениеУслугПоНормативам</Report>
 			<Report>ГП_ОтчетДляВыгрузкаДанныхОФД</Report>
 			<Report>ГП_АктИзмененияСроковИспользованияОС</Report>
-			<Report>РасчетыПоЕНС</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
