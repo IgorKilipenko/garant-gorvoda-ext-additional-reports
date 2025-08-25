@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
 	<Configuration uuid="999fb558-4e50-412b-9c22-a2fb8eaccd3e">
 		<InternalInfo>
 			<xr:ContainedObject>
@@ -30,6 +30,14 @@
 				<xr:ClassId>fb282519-d103-4dd3-bc12-cb271d631dfc</xr:ClassId>
 				<xr:ObjectId>c82ad296-159a-40e9-808d-a205881e8557</xr:ObjectId>
 			</xr:ContainedObject>
+			<xr:PropertyState>
+				<xr:Property>CommandInterface</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+			<xr:PropertyState>
+				<xr:Property>MainSectionCommandInterface</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
 		</InternalInfo>
 		<Properties>
 			<ObjectBelonging>Adopted</ObjectBelonging>
@@ -52,7 +60,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.1.7.1-rc4</Version>
+			<Version>2.1.8.2-rc5</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -73,6 +81,7 @@
 			<Role>ГП_ИспользованиеОтчетаАктИзмененияСПИОС</Role>
 			<CommonModule>ГП_РаботаСОтчетами</CommonModule>
 			<CommonModule>ГП_РаботаСОтчетамиПовтИсп</CommonModule>
+			<CommonModule>ГП_ПриборыУчета_</CommonModule>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
 			<Catalog>Валюты</Catalog>
@@ -109,6 +118,7 @@
 			<Enum>СостоянияОС</Enum>
 			<Report>ГП_СводнаяВедомостьСКоличеством</Report>
 			<Report>ГП_ОтчетПоКлиентам</Report>
+			<Report>ГП_ОтчетПоКлиентамСТарифами</Report>
 			<Report>ГП_ОСВПоАбоненту</Report>
 			<Report>ГП_ОтчетПоДебиторам</Report>
 			<Report>ГП_ОтчетПоШифрам</Report>
@@ -117,7 +127,6 @@
 			<Report>ГП_СпискиАбонентовСЮрАдресами</Report>
 			<Report>ГП_УПЖКХ_СверкаСуммОплатВБлокеЖКХиБППоКонтрагентам</Report>
 			<Report>ГП_ЗаполненностьСведенийАбонентов</Report>
-			<Report>ГП_СписокАбонентовОбъемПпоДоговору</Report>
 			<Report>ГП_ПоказанияСчетчиковДляМКД</Report>
 			<Report>ГП_НевыписанныеСчета</Report>
 			<Report>ГП_ДебиторскаяЗадолженность</Report>
@@ -132,6 +141,7 @@
 			<Report>ГП_ПотреблениеУслугПоНормативам</Report>
 			<Report>ГП_ОтчетДляВыгрузкаДанныхОФД</Report>
 			<Report>ГП_АктИзмененияСроковИспользованияОС</Report>
+			<Report>ГП_СписокАбонентовОбъемПпоДоговору</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>

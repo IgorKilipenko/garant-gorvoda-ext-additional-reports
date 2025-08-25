@@ -1287,9 +1287,6 @@
 				<v8:content>Основное средство</v8:content>
 			</v8:item>
 		</title>
-		<valueType>
-			<v8:TypeId>1433c81a-03ff-4319-91c9-379dad7ac0e9</v8:TypeId>
-		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
