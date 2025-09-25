@@ -918,6 +918,12 @@
 ПОМЕСТИТЬ КВП_ОстаткиПоЛицевымСчетам_Подготовка
 ИЗ
 	РегистрНакопления.КВП_ВзаиморасчетыПоЛицевымСчетам.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, , Организация = &amp;Организация {(ЛицевойСчет.*) КАК ЛицевойСчет, (ЛицевойСчет.Адрес.Владелец) КАК Здание, (ЛицевойСчет.Адрес) КАК Помещение, (Услуга.ВидУслуги) КАК Услуга, (Договор).* КАК Договор}) КАК КВП_ВзаиморасчетыПоЛицевымСчетам
+ГДЕ
+	ИСТИНА
+	И ВЫБОР
+		КОГДА &amp;УчитыватьКорректировкиНачислений ТОГДА ИСТИНА
+		ИНАЧЕ НЕ КВП_ВзаиморасчетыПоЛицевымСчетам.Регистратор ССЫЛКА Документ.КВП_КорректировкаНачислений
+	КОНЕЦ
 {ГДЕ
 	КВП_ВзаиморасчетыПоЛицевымСчетам.Услуга.ВидУслуги КАК УслугаДляОтбора,
 	КВП_ВзаиморасчетыПоЛицевымСчетам.Договор.Владелец КАК КонтрагентНачисления}
@@ -1086,6 +1092,10 @@
 				ТОГДА ИСТИНА
 			ИНАЧЕ НЕ УПЖКХ_Начисления.Регистратор ССЫЛКА Документ.КВП_ВводНачальногоСальдо
 		КОНЕЦ
+	И ВЫБОР
+		КОГДА &amp;УчитыватьКорректировкиНачислений ТОГДА ИСТИНА
+		ИНАЧЕ НЕ УПЖКХ_Начисления.Регистратор ССЫЛКА Документ.КВП_КорректировкаНачислений
+	КОНЕЦ
 {ГДЕ
 	УПЖКХ_Начисления.Услуга.ВидУслуги КАК УслугаДляОтбора,
 	УПЖКХ_Начисления.Договор.Владелец КАК КонтрагентНачисления}
@@ -2587,6 +2597,21 @@
 		<availableAsField>false</availableAsField>
 		<use>Always</use>
 	</parameter>
+	<parameter>
+		<name>УчитыватьКорректировкиНачислений</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Учитывать корректировки начислений</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -2726,6 +2751,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:left xsi:type="dcscor:Field">Договородержатель</dcsset:left>
 					<dcsset:comparisonType>InList</dcsset:comparisonType>
 					<dcsset:right xsi:type="v8:ValueListType">
@@ -2733,6 +2759,7 @@
 						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
 					</dcsset:right>
 					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>dafbd0ba-1b00-4f60-87e3-79bac9029de9</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
 			<dcsset:dataParameters>
@@ -2769,6 +2796,11 @@
 					<dcscor:parameter>ТолькоБезНачислений</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					<dcsset:userSettingID>4846409c-e102-4303-8b7d-3003c2bbe34d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>УчитыватьКорректировкиНачислений</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>86249211-2331-4114-9377-50df6b8c5e01</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
