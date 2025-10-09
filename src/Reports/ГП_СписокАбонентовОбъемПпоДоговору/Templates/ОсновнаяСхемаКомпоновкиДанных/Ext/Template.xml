@@ -1718,7 +1718,48 @@
 	Контролер.*,
 	ВидПотребления.*,
 	Характеристика.*,
-	Договородержатель.* КАК Договородержатель}
+	Договородержатель.* КАК Договородержатель,
+	
+	ЛицевойСчетОписание,
+	СуммаЗадолженности,
+	ИтоговаяСуммаНаКонецМесяца,
+	СуммаНачисления,
+	СуммаЛьготы,
+	СуммаПерерасчета,
+	СуммаПени,
+	СуммаПовышающийКоэффициент,
+	СуммаОплатыПени,
+	СуммаНаКонецМесяцаПени,
+	СуммаНаКонецМесяца,
+	СуммаОплаты,
+	ИтоговаяСуммаНачисления,
+	ИтоговаяСуммаНачисленияВодоснабжениеХВС,
+	ИтоговаяСуммаНачисленияВодоснабжениеГВС,
+	ИтоговаяСуммаНачисленияВодоотведение,
+	ИтоговаяСуммаНачисленияНегативноеВоздействие,
+	КОплате,
+	КоличествоНачисления,
+	КоличествоЛьготы,
+	КоличествоПерерасчета,
+	КоличествоПени,
+	КоличествоПовышающийКоэффициент,
+	КоличествоОплаты,
+	КоличествоОплатыПени,
+	ИтоговоеКоличествоНачисления,
+	ИтоговоеКоличествоНачисленияВодоснабжениеХВС,
+	ИтоговоеКоличествоНачисленияВодоснабжениеГВС,
+	ИтоговоеКоличествоНачисленияВодоотведение,
+	ИтоговоеКоличествоНачисленияНегативноеВоздействие,
+	КОплатеКоличество,
+	ФлагНачисления,
+	ФлагОплаты,
+	КоличествоПроживающих,
+	КоличествоЗарегистрированных,
+	ОбщаяПлощадь,
+	ППНомер,
+	ИтогоОплачено,
+	ЛицевойСчетИдентификатор
+	}
 ИЗ
 	ВТ_ДанныеПоАбонентам_Подготовка КАК Результат
 ГДЕ
@@ -1732,6 +1773,7 @@
 							ВТ_ДоговорыКонтрагентыБезНачислений КАК Т)
 			ИНАЧЕ ИСТИНА
 		КОНЕЦ</query>
+		<autoFillFields>false</autoFillFields>
 	</dataSet>
 	<dataSet xsi:type="DataSetObject">
 		<name>АдресаЗданий</name>
@@ -2064,30 +2106,35 @@
 		<destinationDataSet>АдресаЗданий</destinationDataSet>
 		<sourceExpression>Здание</sourceExpression>
 		<destinationExpression>Здание</destinationExpression>
+		<required>false</required>
 	</dataSetLink>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
 		<sourceExpression>ЛицевойСчет</sourceExpression>
 		<destinationExpression>ЛицевойСчет</destinationExpression>
+		<required>false</required>
 	</dataSetLink>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
 		<sourceExpression>Услуга</sourceExpression>
 		<destinationExpression>Услуга</destinationExpression>
+		<required>false</required>
 	</dataSetLink>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>ОстаткиОбъемов</destinationDataSet>
 		<sourceExpression>Договор</sourceExpression>
 		<destinationExpression>Договор</destinationExpression>
+		<required>false</required>
 	</dataSetLink>
 	<dataSetLink>
 		<sourceDataSet>ЗапросДанных</sourceDataSet>
 		<destinationDataSet>КонтактнаяИнформацияКонтрагентовВзаиморасчетов</destinationDataSet>
 		<sourceExpression>КонтрагентДляВзаиморасчетов</sourceExpression>
 		<destinationExpression>КонтрагентДляВзаиморасчетов</destinationExpression>
+		<required>false</required>
 	</dataSetLink>
 	<calculatedField>
 		<dataPath>ВсегоКоличество</dataPath>
