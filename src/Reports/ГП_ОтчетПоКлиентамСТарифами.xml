@@ -34,11 +34,7 @@
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
-			<Form>ФормаОтчета</Form>
-			<Form>ФормаНастроек</Form>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
-			<Template>Макет</Template>
-			<Template>ОсновнаяСхемаКомпоновкиДанных1</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
