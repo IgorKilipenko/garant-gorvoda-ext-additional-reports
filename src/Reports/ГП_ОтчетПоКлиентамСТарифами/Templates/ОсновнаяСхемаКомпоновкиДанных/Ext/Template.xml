@@ -1323,6 +1323,33 @@
 			<order>true</order>
 		</useRestriction>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>ПериодРеализации</dataPath>
+		<expression>НачалоПериода(Период, "МЕСЯЦ")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период начисления (реализации)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ='ММММ гггг'' г'''</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+	</calculatedField>
 	<totalField>
 		<dataPath>Количество</dataPath>
 		<expression>Сумма(Количество)</expression>
@@ -1966,24 +1993,6 @@
 							</dcscor:item>
 						</dcsset:outputParameters>
 						<dcsset:item>
-							<dcsset:use>false</dcsset:use>
-							<dcsset:groupItems>
-								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>Регистратор</dcsset:field>
-									<dcsset:groupType>Items</dcsset:groupType>
-									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-								</dcsset:item>
-							</dcsset:groupItems>
-							<dcsset:order>
-								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-							</dcsset:order>
-							<dcsset:selection>
-								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-							</dcsset:selection>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:groupItems>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
 									<dcsset:field>Здание</dcsset:field>
@@ -1993,15 +2002,7 @@
 									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 								</dcsset:item>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>Тариф</dcsset:field>
-									<dcsset:groupType>Items</dcsset:groupType>
-									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>ТарифГруппировки</dcsset:field>
+									<dcsset:field>ПериодРеализации</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -2020,11 +2021,7 @@
 								</dcsset:item>
 								<dcsset:item xsi:type="dcsset:SelectedItemField">
 									<dcsset:use>false</dcsset:use>
-									<dcsset:field>Тариф</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>ТарифГруппировки</dcsset:field>
+									<dcsset:field>ПериодРеализации</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:outputParameters>
@@ -2038,6 +2035,24 @@
 									<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
 								</dcscor:item>
 							</dcsset:outputParameters>
+							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Регистратор</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
 						</dcsset:item>
 					</dcsset:item>
 				</dcsset:row>
