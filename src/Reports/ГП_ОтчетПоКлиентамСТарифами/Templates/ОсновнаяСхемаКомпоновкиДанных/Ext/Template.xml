@@ -431,6 +431,17 @@
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПредставлениеАдресаДляПечати</dataPath>
@@ -1302,7 +1313,7 @@
 	</totalField>
 	<totalField>
 		<dataPath>Тариф</dataPath>
-		<expression>Среднее(Тариф)</expression>
+		<expression>ГП_РаботаСОтчетами.СреднееРесурсаТариф(ВычислитьВыражениеСГруппировкойМассив("ЕСТЬNULL(Тариф, 0)"))</expression>
 	</totalField>
 	<totalField>
 		<dataPath>Тариф</dataPath>
@@ -1667,12 +1678,6 @@
 					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-					<dcsset:lwsTitle>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Начисления</v8:content>
-						</v8:item>
-					</dcsset:lwsTitle>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>Тариф</dcsset:field>
 					</dcsset:item>
@@ -1694,6 +1699,12 @@
 				<dcsset:userSettingID>9eaf4f2f-272d-43d9-bfe2-c8e91adb8e08</dcsset:userSettingID>
 			</dcsset:selection>
 			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Тариф</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+				</dcsset:item>
 				<dcsset:viewMode>Normal</dcsset:viewMode>
 				<dcsset:userSettingID>50fe898d-e639-42b5-812f-7d8db19e602c</dcsset:userSettingID>
 			</dcsset:filter>
@@ -1832,6 +1843,9 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Тариф</dcsset:field>
+						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>Количество</dcsset:field>
 						</dcsset:item>
