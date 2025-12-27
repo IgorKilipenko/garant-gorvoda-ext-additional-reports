@@ -1298,6 +1298,26 @@
 	<calculatedField>
 		<dataPath>КолонкиИтогов</dataPath>
 		<expression>"Итого"</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Колонки итогов</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ТарифГруппировки</dataPath>
+		<expression>Тариф</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тариф группировки</v8:content>
+			</v8:item>
+		</title>
 		<useRestriction>
 			<condition>true</condition>
 			<order>true</order>
@@ -1685,6 +1705,9 @@
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Здание</dcsset:field>
+				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>Тариф</dcsset:field>
@@ -1936,6 +1959,12 @@
 						<dcsset:selection>
 							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
 						<dcsset:item>
 							<dcsset:use>false</dcsset:use>
 							<dcsset:groupItems>
@@ -1953,6 +1982,62 @@
 							<dcsset:selection>
 								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 							</dcsset:selection>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Здание</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>Тариф</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>ТарифГруппировки</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto">
+									<dcsset:use>false</dcsset:use>
+								</dcsset:item>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Здание</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>Тариф</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>ТарифГруппировки</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:outputParameters>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+									<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Together</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+									<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+								</dcscor:item>
+							</dcsset:outputParameters>
 						</dcsset:item>
 					</dcsset:item>
 				</dcsset:row>
