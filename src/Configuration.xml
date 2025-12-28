@@ -60,7 +60,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.3.0.2-dev4</Version>
+			<Version>2.3.1.0-dev5</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -81,7 +81,7 @@
 			<Role>ГП_ИспользованиеОтчетаАктИзмененияСПИОС</Role>
 			<CommonModule>ГП_РаботаСОтчетами</CommonModule>
 			<CommonModule>ГП_РаботаСОтчетамиПовтИсп</CommonModule>
-			<CommonModule>ГП_ПриборыУчета_</CommonModule>
+			<CommonModule>УдалитьГП_ПриборыУчета_</CommonModule>
 			<Catalog>Организации</Catalog>
 			<Catalog>УПЖКХ_ВидыПлощадей</Catalog>
 			<Catalog>Валюты</Catalog>
