@@ -1310,20 +1310,6 @@
 		</useRestriction>
 	</calculatedField>
 	<calculatedField>
-		<dataPath>ТарифГруппировки</dataPath>
-		<expression>Тариф</expression>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Тариф группировки</v8:content>
-			</v8:item>
-		</title>
-		<useRestriction>
-			<condition>true</condition>
-			<order>true</order>
-		</useRestriction>
-	</calculatedField>
-	<calculatedField>
 		<dataPath>ПериодРеализации</dataPath>
 		<expression>НачалоПериода(Период, "МЕСЯЦ")</expression>
 		<title xsi:type="v8:LocalStringType">
@@ -1966,7 +1952,7 @@
 							<dcsset:appearance>
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>Текст</dcscor:parameter>
-									<dcscor:value xsi:type="xs:string"/>
+									<dcscor:value xsi:type="v8:LocalStringType"/>
 								</dcscor:item>
 							</dcsset:appearance>
 							<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
@@ -1987,15 +1973,58 @@
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ПериодРеализации</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
 						</dcsset:groupItems>
 						<dcsset:order>
-							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto">
+								<dcsset:use>false</dcsset:use>
+							</dcsset:item>
 						</dcsset:order>
 						<dcsset:selection>
 							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Здание</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ПериодРеализации</dcsset:field>
+							</dcsset:item>
 						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>Тариф</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Текст</dcscor:parameter>
+										<dcscor:value xsi:type="v8:LocalStringType"/>
+									</dcscor:item>
+								</dcsset:appearance>
+								<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+								<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+								<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+								<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+								<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+								<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+								<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+								<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
 						<dcsset:outputParameters>
 							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
 								<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
 								<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
 							</dcscor:item>
@@ -2003,14 +2032,6 @@
 						<dcsset:item>
 							<dcsset:groupItems>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>Здание</dcsset:field>
-									<dcsset:groupType>Items</dcsset:groupType>
-									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:use>false</dcsset:use>
 									<dcsset:field>ПериодРеализации</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
@@ -2019,59 +2040,16 @@
 								</dcsset:item>
 							</dcsset:groupItems>
 							<dcsset:order>
-								<dcsset:item xsi:type="dcsset:OrderItemAuto">
-									<dcsset:use>false</dcsset:use>
-								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 							</dcsset:order>
 							<dcsset:selection>
 								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Здание</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>ПериодРеализации</dcsset:field>
-								</dcsset:item>
 							</dcsset:selection>
-							<dcsset:conditionalAppearance>
-								<dcsset:item>
-									<dcsset:use>false</dcsset:use>
-									<dcsset:selection>
-										<dcsset:item>
-											<dcsset:field>Тариф</dcsset:field>
-										</dcsset:item>
-									</dcsset:selection>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Текст</dcscor:parameter>
-											<dcscor:value xsi:type="xs:string"/>
-										</dcscor:item>
-									</dcsset:appearance>
-									<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
-									<dcsset:useInHeader>DontUse</dcsset:useInHeader>
-									<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-									<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-									<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
-									<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
-									<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
-								</dcsset:item>
-							</dcsset:conditionalAppearance>
-							<dcsset:outputParameters>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
-									<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Together</dcscor:value>
-								</dcscor:item>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:use>false</dcscor:use>
-									<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
-									<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
-								</dcscor:item>
-							</dcsset:outputParameters>
 							<dcsset:item>
+								<dcsset:use>false</dcsset:use>
 								<dcsset:groupItems>
 									<dcsset:item xsi:type="dcsset:GroupItemField">
-										<dcsset:field>ПериодРеализации</dcsset:field>
+										<dcsset:field>Регистратор</dcsset:field>
 										<dcsset:groupType>Items</dcsset:groupType>
 										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -2084,24 +2062,6 @@
 								<dcsset:selection>
 									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 								</dcsset:selection>
-								<dcsset:item>
-									<dcsset:use>false</dcsset:use>
-									<dcsset:groupItems>
-										<dcsset:item xsi:type="dcsset:GroupItemField">
-											<dcsset:field>Регистратор</dcsset:field>
-											<dcsset:groupType>Items</dcsset:groupType>
-											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-										</dcsset:item>
-									</dcsset:groupItems>
-									<dcsset:order>
-										<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-									</dcsset:order>
-									<dcsset:selection>
-										<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-									</dcsset:selection>
-								</dcsset:item>
 							</dcsset:item>
 						</dcsset:item>
 					</dcsset:item>
