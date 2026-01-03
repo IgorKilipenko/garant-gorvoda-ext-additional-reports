@@ -57,13 +57,13 @@
 		<Metadata name="Catalog.ФизическиеЛица" id="1fe7e8d5-838d-417e-b406-112e7070c3be" configVersion="e83ab3e7be63972152f059c4345c70244e4b2964"/>
 		<Metadata name="ChartOfAccounts.Хозрасчетный" id="6bb79fc0-b442-4037-b869-ad6bac28686f" configVersion="49bf89c9f5bca3008dff01a427f0bad23f5f8c05"/>
 		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные" id="3b085119-b298-4f5b-8266-eb42d184a0f5" configVersion="daabf3770770a27731eb00b5883e897608e4169d"/>
+		<Metadata name="CommonModule.ГП_ПриборыУчета_" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92" configVersion="206cae26414450ea6dfdeb530b8a6c7f27dde0d5"/>
+		<Metadata name="CommonModule.ГП_ПриборыУчета_.Module" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92.0" configVersion="e89c69e436e78b88b3ebeca0e0a1e2cecf46b56b"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетами" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2" configVersion="af2a18ac4d840ec0af3f04c274ce3e5b12947e27"/>
-		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="ff8930cce8af8c7b701689dfc5d47930c331825d"/>
+		<Metadata name="CommonModule.ГП_РаботаСОтчетами.Module" id="0a32e258-0737-4fc2-8d20-5c5a120cdea2.0" configVersion="c7bce2d7376351b42d06c29652f22f427eb901ed"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп" id="995d9cc6-e070-476b-ade5-06bee0613a86" configVersion="3a7b1e631032a23b4523560dabe087d5fd717092"/>
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
-		<Metadata name="CommonModule.УдалитьГП_ПриборыУчета_" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92" configVersion="f4a677b3ecd757fa419534e7c5bd68dd386de7a7"/>
-		<Metadata name="CommonModule.УдалитьГП_ПриборыУчета_.Module" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92.0" configVersion="47263e4df1d9d64576029bd0e8292f3ed869fecc"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="08ada412ffd9272b4cd693101bd17cf39b871fb6"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="848daca14eacacc66ddf542f38cdefa31c9ab250"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -189,10 +189,18 @@
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="0d2107ac-6134-4474-9748-754ecfc5bb74.0" configVersion="f02771a3c6c3337ec6b6e5e7d73d2e2633ffe1b2"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных1" id="576c963f-18b1-4942-9787-92102e318f3c" configVersion="e2538ea309e72a3351d1be18a69a0df0d6b9ef6f"/>
 		<Metadata name="Report.ГП_ОтчетПоКлиентам.Template.ОсновнаяСхемаКомпоновкиДанных1.Template" id="576c963f-18b1-4942-9787-92102e318f3c.0" configVersion="f02771a3c6c3337ec6b6e5e7d73d2e2633ffe1b2"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами" id="1b48c23e-f22b-49b7-b1f6-b096a232a649" configVersion="ed54f6e88ee1c0932b62bbee418291876eb82f2d"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.ObjectModule" id="1b48c23e-f22b-49b7-b1f6-b096a232a649.0" configVersion="fef48129f0d989b1c9983b55ab4cd5d48714c7ce"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных" id="d427a161-ac0a-4e16-bac3-91d08dad3e35" configVersion="ccd066deeba3a568eb2d0a478cb652fbe3b5a945"/>
-		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d427a161-ac0a-4e16-bac3-91d08dad3e35.0" configVersion="a35387c142b174cae15d31060d2a673dabfd11b3"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами" id="1695cab5-eeda-4321-9c70-77530dbb79fa" configVersion="542d5ba78366c620417c6bc58caedece1af61f18"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Form.ФормаНастроек" id="ca593490-4c8c-4acb-a68b-d6836801fdfd" configVersion="e9dd6daf1086071e64118996d1bdd848248069be"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Form.ФормаНастроек.Form" id="ca593490-4c8c-4acb-a68b-d6836801fdfd.0" configVersion="661f98c44cc78adacbb07980b973cdee3b24f47e"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Form.ФормаОтчета" id="98739de4-7afe-4253-8fc6-953f392beabd" configVersion="6377d43f55fcec21b1f24649791e8c12d9250ad6"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Form.ФормаОтчета.Form" id="98739de4-7afe-4253-8fc6-953f392beabd.0" configVersion="ac9256d6c04ddfafe23759440f8a07008e1e27e2"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.ObjectModule" id="1695cab5-eeda-4321-9c70-77530dbb79fa.0" configVersion="80a2b4ee692d6a676bd949ca59188c2ddae00517"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.Макет" id="1b822ee4-d271-4e27-b18c-1ad113a1b79f" configVersion="b42ebaf0c2f4e69d35eeafc5400e7b03e42fb90d"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.Макет.Template" id="1b822ee4-d271-4e27-b18c-1ad113a1b79f.0" configVersion="ba4cb72fe03cf56e28dbbed40cca394bbc076bed"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных" id="76c28c93-bdf5-4e0a-957a-07dfbdc04a48" configVersion="9ab152a5d443261eaa633eebdc1b088ed651f2d6"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="76c28c93-bdf5-4e0a-957a-07dfbdc04a48.0" configVersion="1d6da22e7b72580fb4a5aa6f993ff10e70335740"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных1" id="aae704c1-b177-451e-bdb5-57b31490910d" configVersion="40d277c628573df5131cfbef54711fc1cc80d6b7"/>
+		<Metadata name="Report.ГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных1.Template" id="aae704c1-b177-451e-bdb5-57b31490910d.0" configVersion="f02771a3c6c3337ec6b6e5e7d73d2e2633ffe1b2"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам" id="4f7d5920-f762-4c30-8a86-d70355273789" configVersion="2d8479a69c83e7f24ef52ddd6b970876758f2600"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.ObjectModule" id="4f7d5920-f762-4c30-8a86-d70355273789.0" configVersion="126df11c16e8fd3e8b707643cc7a46fe0f317a2a"/>
 		<Metadata name="Report.ГП_ОтчетПоШифрам.Template.ОсновнаяСхемаКомпоновкиДанных" id="22919ed2-4c1f-413c-b8c9-e2ec631e3ec9" configVersion="20c45866a8d9f33198fc03828f03e02b2412c190"/>
@@ -291,18 +299,6 @@
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных.Template" id="01257d0c-c318-4d08-a49d-ade73cb0e733.0" configVersion="43aaa50d5bf0dd4f0374404a25417a6b424b9cf7"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами" id="1695cab5-eeda-4321-9c70-77530dbb79fa" configVersion="a7da224c862f5bd5790f83c775b7e982e5dc6ef9"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Form.ФормаНастроек" id="ca593490-4c8c-4acb-a68b-d6836801fdfd" configVersion="e9dd6daf1086071e64118996d1bdd848248069be"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Form.ФормаНастроек.Form" id="ca593490-4c8c-4acb-a68b-d6836801fdfd.0" configVersion="661f98c44cc78adacbb07980b973cdee3b24f47e"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Form.ФормаОтчета" id="98739de4-7afe-4253-8fc6-953f392beabd" configVersion="6377d43f55fcec21b1f24649791e8c12d9250ad6"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Form.ФормаОтчета.Form" id="98739de4-7afe-4253-8fc6-953f392beabd.0" configVersion="ac9256d6c04ddfafe23759440f8a07008e1e27e2"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.ObjectModule" id="1695cab5-eeda-4321-9c70-77530dbb79fa.0" configVersion="80a2b4ee692d6a676bd949ca59188c2ddae00517"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Template.Макет" id="1b822ee4-d271-4e27-b18c-1ad113a1b79f" configVersion="b42ebaf0c2f4e69d35eeafc5400e7b03e42fb90d"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Template.Макет.Template" id="1b822ee4-d271-4e27-b18c-1ad113a1b79f.0" configVersion="ba4cb72fe03cf56e28dbbed40cca394bbc076bed"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных" id="76c28c93-bdf5-4e0a-957a-07dfbdc04a48" configVersion="9ab152a5d443261eaa633eebdc1b088ed651f2d6"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="76c28c93-bdf5-4e0a-957a-07dfbdc04a48.0" configVersion="1d6da22e7b72580fb4a5aa6f993ff10e70335740"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных1" id="aae704c1-b177-451e-bdb5-57b31490910d" configVersion="40d277c628573df5131cfbef54711fc1cc80d6b7"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоКлиентамСТарифами.Template.ОсновнаяСхемаКомпоновкиДанных1.Template" id="aae704c1-b177-451e-bdb5-57b31490910d.0" configVersion="f02771a3c6c3337ec6b6e5e7d73d2e2633ffe1b2"/>
 		<Metadata name="Role.ГП_ИспользованиеДополнительныхОтчетов" id="a91e2477-62c4-488c-a792-b871a337c4f3" configVersion="081d3285f48d439dcc7a38427bb797fa3c5425de"/>
 		<Metadata name="Role.ГП_ИспользованиеДополнительныхОтчетов.Rights" id="a91e2477-62c4-488c-a792-b871a337c4f3.0" configVersion="e88c2a0e0a529dc3904f667c04f1b4791132edf2"/>
 		<Metadata name="Role.ГП_ИспользованиеОтчетаАктИзмененияСПИОС" id="8b71c923-92fd-45ba-8f8a-6636d17b47ee" configVersion="7173e1ca1cf70734548295227133c9bf86ef4356"/>
@@ -312,7 +308,7 @@
 		<Metadata name="StyleItem.СодержаниеУслугиШрифт" id="ddbfa630-2c87-480b-852a-f9c4d59e8bf6" configVersion="dd3a768e8831dfe3d2c8590705a7d56179a0470c"/>
 		<Metadata name="Subsystem.ОСИНМА" id="f68444fe-9ed7-45a8-9859-41d59a63ec53" configVersion="ae8003c54daca4b357a6d3f8e7129fe8bc541909"/>
 		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг" id="c380ce26-6ef9-420d-8d85-e3ff33483051" configVersion="b9803bbbd8f7aab9198f062cf24e13350cd13fc4"/>
-		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="d9fad76ff72886f58bcacb10e3f62e139fc0e36c"/>
+		<Metadata name="Subsystem.УПЖКХ_НачисленияУслуг.Subsystem.УПЖКХ_Начисления" id="a47e8a11-e76c-4bde-92de-00270f576752" configVersion="0d8781018972c6ba90db0502336f0f7ae086de72"/>
 		<Metadata name="Subsystem.УПЖКХ_УправлениеЛицевымиСчетами" id="c279f237-515d-4866-814b-af16a938f375" configVersion="7593776dbb3c2fd3e2778019b265e37542020226"/>
 	</ConfigVersions>
 </ConfigDumpInfo>
