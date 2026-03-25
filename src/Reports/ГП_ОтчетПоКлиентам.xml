@@ -34,11 +34,11 @@
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
-			<Form>ФормаОтчета</Form>
-			<Form>ФормаНастроек</Form>
+			<Form>УдалитьФормаОтчета</Form>
+			<Form>УдалитьФормаНастроек</Form>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
-			<Template>Макет</Template>
-			<Template>ОсновнаяСхемаКомпоновкиДанных1</Template>
+			<Template>УдалитьМакет</Template>
+			<Template>УдалитьОсновнаяСхемаКомпоновкиДанных1</Template>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>
