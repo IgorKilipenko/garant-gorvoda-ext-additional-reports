@@ -4876,6 +4876,14 @@
 				<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
 			</dcscor:item>
 		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
 	</calculatedField>
 	<calculatedField>
 		<dataPath>ПланируемаяСтоиимость.ПланируемаяОстаточнаяСтоимостьНа31122023</dataPath>
@@ -4922,6 +4930,14 @@
 				<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
 			</dcscor:item>
 		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
 	</calculatedField>
 	<calculatedField>
 		<dataPath>ПланируемаяСтоиимость.СравнениеОстатСтоимостиНа31122023сРасчетнойАмортЗа2года</dataPath>
@@ -5177,7 +5193,31 @@
 	</calculatedField>
 	<calculatedField>
 		<dataPath>ПланируемаяСтоиимость.ГП_ПланируемаяИтоговаяРасчетнаяАмортизация</dataPath>
-		<expression>100</expression>
+		<expression>ВЫБОР
+	КОГДА 
+		ВЫБОР 
+		   КОГДА ЧислоМесяцевАмортизации = 0 
+			  ТОГДА 0
+		   ИНАЧЕ 
+		   ВЫБОР 	   
+		   КОГДА НаКонецПериода.СтоимостьОстатокКонПериода - НаКонецПериода.АмортизацияОстатокКонПериода - ЗаПериод.АмортизацияНачисление*24/ЧислоМесяцевАмортизации &lt;= 0 
+			 ТОГДА 0 
+			 ИНАЧЕ НаКонецПериода.СтоимостьОстатокКонПериода - НаКонецПериода.АмортизацияОстатокКонПериода - ЗаПериод.АмортизацияНачисление*24/ЧислоМесяцевАмортизации 
+		   КОНЕЦ
+		КОНЕЦ &gt;= (НаКонецПериода.СтоимостьОстатокКонПериода / СрокПолезногоИспользования) * 12
+		ТОГДА (НаКонецПериода.СтоимостьОстатокКонПериода / СрокПолезногоИспользования) * 12
+	ИНАЧЕ
+		ВЫБОР 
+		   КОГДА ЧислоМесяцевАмортизации = 0 
+			  ТОГДА 0
+		   ИНАЧЕ 
+		   ВЫБОР 	   
+		   КОГДА НаКонецПериода.СтоимостьОстатокКонПериода - НаКонецПериода.АмортизацияОстатокКонПериода - ЗаПериод.АмортизацияНачисление*24/ЧислоМесяцевАмортизации &lt;= 0 
+			 ТОГДА 0 
+			 ИНАЧЕ НаКонецПериода.СтоимостьОстатокКонПериода - НаКонецПериода.АмортизацияОстатокКонПериода - ЗаПериод.АмортизацияНачисление*24/ЧислоМесяцевАмортизации 
+		   КОНЕЦ
+		КОНЕЦ
+КОНЕЦ</expression>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
