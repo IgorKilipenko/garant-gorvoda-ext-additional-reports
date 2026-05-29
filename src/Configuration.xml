@@ -142,6 +142,7 @@
 			<Report>ГП_ОтчетДляВыгрузкаДанныхОФД</Report>
 			<Report>ГП_АктИзмененияСроковИспользованияОС</Report>
 			<Report>ГП_СписокАбонентовОбъемПпоДоговору</Report>
+			<Report>ГП_РасчетАмортизацииКТарифам2025</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
