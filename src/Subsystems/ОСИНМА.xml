@@ -14,6 +14,7 @@
 			<ExtendedConfigurationObject>ebc4bd6f-e5f3-4f56-9e8f-4030d8b90d14</ExtendedConfigurationObject>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_АктИзмененияСроковИспользованияОС</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ГП_РасчетАмортизацииКТарифам2025</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

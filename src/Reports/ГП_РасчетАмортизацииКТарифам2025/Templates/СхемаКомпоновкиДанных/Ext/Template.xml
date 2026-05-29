@@ -5665,11 +5665,11 @@
 		<template>Макет7</template>
 	</groupHeaderTemplate>
 	<settingsVariant>
-		<dcsset:name>lc_РасчетАмортизацииКТарифам</dcsset:name>
+		<dcsset:name>ГП_РасчетАмортизацииКТарифам2025</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Расчет амортизации к тарифам</v8:content>
+				<v8:content>Расчет амортизации к тарифам 2025</v8:content>
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
