@@ -3957,7 +3957,17 @@
 	КОНЕЦ,
 	втРасчетАмортизации.ЧислоМесяцевАмортизации,
 	ХозрасчетныйОстаткиИОбороты.ОстаточнаяСтоимость,
-	ХозрасчетныйОстаткиИОбороты.ОсновноеСредство</query>
+	ХозрасчетныйОстаткиИОбороты.ОсновноеСредство
+
+//! Гарант+ Килипенко 29.05.2026 [] Отчет Расчет амортизации к тарифам 2025 +++
+ИМЕЮЩИЕ
+    ИСТИНА
+    И ВЫБОР КОГДА &amp;ГП_УстановитьОграничениеМинСтоимостьНачальныхОстатков = ИСТИНА
+        ТОГДА СУММА(ХозрасчетныйОстаткиНачПериода.СтоимостьОстаток) &gt;= &amp;ГП_МинСтоимостьНачальныхОстатков
+        ИНАЧЕ ИСТИНА
+    КОНЕЦ
+//! Гарант+ Килипенко 29.05.2026 [] Отчет Расчет амортизации к тарифам 2025 ---
+</query>
 		<autoFillFields>false</autoFillFields>
 	</dataSet>
 	<calculatedField>
@@ -4803,7 +4813,7 @@
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Планируемая остаточная стоимость на 31.12.2022</v8:content>
+				<v8:content>Планируемая остаточная стоимость на 31.12.2026</v8:content>
 			</v8:item>
 		</title>
 		<useRestriction>
@@ -4849,7 +4859,7 @@
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Планируемая остаточная стоимость на 31.12.2023</v8:content>
+				<v8:content>Планируемая остаточная стоимость на 31.12.2027</v8:content>
 			</v8:item>
 		</title>
 		<useRestriction>
@@ -4913,7 +4923,7 @@
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Сравнение остат стоимости на 31.12.2022 с расчетной аморт за 2 года</v8:content>
+				<v8:content>Сравнение остат стоимости на 31.12.2027 с расчетной аморт за 2 года</v8:content>
 			</v8:item>
 		</title>
 		<useRestriction>
@@ -5505,6 +5515,43 @@
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<expression>ПланыВидовХарактеристик.ДополнительныеРеквизитыИСведения.НайтиПоНаименованию("Целевое финансирование")</expression>
+	</parameter>
+	<parameter>
+		<name>ГП_УстановитьОграничениеМинСтоимостьНачальныхОстатков</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Установить ограничение стоимость начальных остатков</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ГП_МинСтоимостьНачальныхОстатков</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Минимальная стоимость начальных остатков</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
 	</parameter>
 	<template>
 		<name>Макет1</name>
