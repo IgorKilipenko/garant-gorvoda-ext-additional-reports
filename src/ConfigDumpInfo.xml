@@ -63,7 +63,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
 		<Metadata name="CommonModule.УдалитьГП_ПриборыУчета_" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92" configVersion="f4a677b3ecd757fa419534e7c5bd68dd386de7a7"/>
 		<Metadata name="CommonModule.УдалитьГП_ПриборыУчета_.Module" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92.0" configVersion="47263e4df1d9d64576029bd0e8292f3ed869fecc"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="844106e108b6ccea5ca55b997d695ba56696b44c"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="e78654e1befbb541095a238e9f711467ecc156f2"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -227,7 +227,7 @@
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ" id="3c01d062-f12c-48bc-a983-1184668e9ad9" configVersion="0adc36d0361efb6e2f1852ab1feddb43c8dcb191"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.ObjectModule" id="3c01d062-f12c-48bc-a983-1184668e9ad9.0" configVersion="12a75c1071259e4f69e9996d5328acd1318828d0"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12" configVersion="2ad0c6c00fa7892c6f59eade657b11adea3c4f2e"/>
-		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12.0" configVersion="206b95c77f62c9fd788334f5eb98d46260e1a693"/>
+		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="3c86b4b6-0c79-40fa-8c77-efb600d01f12.0" configVersion="c1049472e3fb668dc22e37d04ee09b467707913f"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.Удалить_ОсновнаяСхемаКомпоновкиДанных" id="543d7617-d10b-41d7-9d09-9fa130a01666" configVersion="c70cde4a4143aceaa2270d3165b2cff2b4ac0375"/>
 		<Metadata name="Report.ГП_СверкаБухгалтерииЖКХ.Template.Удалить_ОсновнаяСхемаКомпоновкиДанных.Template" id="543d7617-d10b-41d7-9d09-9fa130a01666.0" configVersion="6911d7980382779b408e215b7fde62bd7534d8fc"/>
 		<Metadata name="Report.ГП_СводнаяВедомостьСКоличеством" id="24183566-4402-46c5-8a8a-2307ef99b9f9" configVersion="d8c3a1b1b3afa625088c71892b5bb85af1ab735b">
