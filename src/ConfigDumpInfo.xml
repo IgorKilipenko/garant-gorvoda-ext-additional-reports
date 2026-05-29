@@ -217,7 +217,7 @@
 		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="09de582d-e83b-430f-80c8-9bc9a94622bb.0" configVersion="00388898a8e3e974c3d3fd252cbecebd6a8ccca5"/>
 		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам.Template.Удалить_ОсновнаяСхемаКомпоновкиДанных" id="69980745-3ce7-4203-8cb0-450f0ae19b1d" configVersion="4e0c2f1fcf35389683eeed4f681953246ffe4ccb"/>
 		<Metadata name="Report.ГП_ПотреблениеУслугПоНормативам.Template.Удалить_ОсновнаяСхемаКомпоновкиДанных.Template" id="69980745-3ce7-4203-8cb0-450f0ae19b1d.0" configVersion="b1e756cdb9241b602271d554c195cdc3a2ad774f"/>
-		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025" id="c5d508bf-e43a-4b33-b62b-0baab89df32f" configVersion="20e9fe93f88277ac7130bdb95c32a89e20cbb8bd">
+		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025" id="c5d508bf-e43a-4b33-b62b-0baab89df32f" configVersion="09d7644a54ec6b7e02abb2e7788a5427540e2980">
 			<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.TabularSection.Группировка.Attribute.Представление" id="08854fcc-53a5-4130-af1f-cd07c1d4a7bb"/>
 			<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.TabularSection.ДополнительныеПоля.Attribute.Представление" id="1706b178-7449-4e8b-b54f-6c971158055d"/>
 			<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Attribute.ВключатьОбособленныеПодразделения" id="33bbd599-08d7-4c7f-b2d3-d7557dd434f0"/>
@@ -242,12 +242,12 @@
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Form.ФормаОтчета" id="bb39d281-b851-47e2-ba7e-346e65a8a40e" configVersion="25ae3b5bb28fa2612c68a4430389ddf403c4b216"/>
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Form.ФормаОтчета.Form" id="bb39d281-b851-47e2-ba7e-346e65a8a40e.0" configVersion="60371c91ebaf373a021020dc0b89728b8e4a9e18"/>
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Help" id="c5d508bf-e43a-4b33-b62b-0baab89df32f.1" configVersion="d9518ce5ab601c81d00f612acfd7197bde3413a7"/>
-		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.ManagerModule" id="c5d508bf-e43a-4b33-b62b-0baab89df32f.2" configVersion="fdbafdb23e7cac4646218f278a21a386a1e6901d"/>
+		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.ManagerModule" id="c5d508bf-e43a-4b33-b62b-0baab89df32f.2" configVersion="da81128de1dfad728270f178544929d3131029bb"/>
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.ObjectModule" id="c5d508bf-e43a-4b33-b62b-0baab89df32f.0" configVersion="309e6d482ff2bf4092bb5954612351d90d45fc60"/>
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Template.ОсновнаяСхемаКомпоновкиДанных" id="cce16c1c-d6fe-4ae6-9344-916617d25ab0" configVersion="4c2d057f035d8c4e5402acd190a28ed91c6731e5"/>
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="cce16c1c-d6fe-4ae6-9344-916617d25ab0.0" configVersion="138fba4a9f23d28a3e30de69204757d896011fe9"/>
 		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Template.СхемаКомпоновкиДанных" id="31b0cc32-d6f2-49ff-97ab-2829285d7e4f" configVersion="ce0b75166a2e31df829c42a80a0ca9b0c621cd38"/>
-		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Template.СхемаКомпоновкиДанных.Template" id="31b0cc32-d6f2-49ff-97ab-2829285d7e4f.0" configVersion="35e855712909273ef3b5915fa03f6d833cd59704"/>
+		<Metadata name="Report.ГП_РасчетАмортизацииКТарифам2025.Template.СхемаКомпоновкиДанных.Template" id="31b0cc32-d6f2-49ff-97ab-2829285d7e4f.0" configVersion="0be421073ac34ca2a0a1742f6aaa39a867753804"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд" id="b2687348-939b-40f4-a131-91297bd7143b" configVersion="42459629da512ab6a9d3f5d9debb94b4d321e18e"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ManagerModule" id="b2687348-939b-40f4-a131-91297bd7143b.2" configVersion="f0254bb16d406176f212982ea64ed108a9c6daa7"/>
 		<Metadata name="Report.ГП_РасчетЗадолженностиДляПередачиСуд.ObjectModule" id="b2687348-939b-40f4-a131-91297bd7143b.0" configVersion="0be56dd0fde7ee3ac8149973b02c25fe8fea1abc"/>

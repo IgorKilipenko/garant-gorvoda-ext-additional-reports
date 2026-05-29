@@ -23,7 +23,7 @@
 			<UseStandardCommands>true</UseStandardCommands>
 			<DefaultForm>Report.ГП_РасчетАмортизацииКТарифам2025.Form.ФормаОтчета</DefaultForm>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>Report.ГП_РасчетАмортизацииКТарифам2025.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>Report.ГП_РасчетАмортизацииКТарифам2025.Template.СхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>

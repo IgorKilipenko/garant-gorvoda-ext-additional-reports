@@ -1454,6 +1454,39 @@
 				</dcscor:item>
 			</appearance>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланируемаяСтоиимость.ГП_ПланируемаяИтоговаяРасчетнаяАмортизация</dataPath>
+			<field>ГП_ПланируемаяИтоговаяРасчетнаяАмортизация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоговая расчетная амортизация по факт. СПИ с учетом ост. стоимости</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
 		<field xsi:type="DataSetFieldFolder">
 			<dataPath>ОстаточнаяСтоимость</dataPath>
 			<title xsi:type="v8:LocalStringType">
@@ -5142,6 +5175,51 @@
 			</dcscor:item>
 		</appearance>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>ПланируемаяСтоиимость.ГП_ПланируемаяИтоговаяРасчетнаяАмортизация</dataPath>
+		<expression>100</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Итоговая расчетная амортизация по факт. СПИ с учетом ост. стоимости</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<group>true</group>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+				<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>МаксимальнаяВысота</dcscor:parameter>
+				<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
 	<totalField>
 		<dataPath>ЗаПериод.АмортизацияВРНачисление</dataPath>
 		<expression>Сумма(ЗаПериод.АмортизацияВРНачисление)</expression>
@@ -5421,6 +5499,10 @@
 	<totalField>
 		<dataPath>ПланируемаяСтоиимость.ОстаточнаяСтоимость</dataPath>
 		<expression>Сумма(ПланируемаяСтоиимость.ОстаточнаяСтоимость)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПланируемаяСтоиимость.ГП_ПланируемаяИтоговаяРасчетнаяАмортизация</dataPath>
+		<expression>Сумма(ПланируемаяСтоиимость.ГП_ПланируемаяИтоговаяРасчетнаяАмортизация)</expression>
 	</totalField>
 	<parameter>
 		<name>КонПериода</name>
@@ -6004,6 +6086,9 @@
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ПланируемаяСтоиимость.СравнениеОстатСтоимостиНа31122023сРасчетнойАмортЗа2года</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланируемаяСтоиимость.ГП_ПланируемаяИтоговаяРасчетнаяАмортизация</dcsset:field>
 						</dcsset:item>
 						<dcsset:placement>Horizontally</dcsset:placement>
 					</dcsset:item>
