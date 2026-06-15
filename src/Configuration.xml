@@ -60,7 +60,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>ГарантПлюс</Vendor>
-			<Version>2.4.0.1-rc1</Version>
+			<Version>2.5.0.0-dev1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -143,6 +143,7 @@
 			<Report>ГП_АктИзмененияСроковИспользованияОС</Report>
 			<Report>ГП_СписокАбонентовОбъемПпоДоговору</Report>
 			<Report>ГП_РасчетАмортизацииКТарифам2025</Report>
+			<Report>ГП_ОтчетПоШифрам1</Report>
 			<AccumulationRegister>УПЖКХ_Начисления</AccumulationRegister>
 			<AccumulationRegister>РеализацияУслуг</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконтоХозрасчетные</ChartOfCharacteristicTypes>
