@@ -63,7 +63,7 @@
 		<Metadata name="CommonModule.ГП_РаботаСОтчетамиПовтИсп.Module" id="995d9cc6-e070-476b-ade5-06bee0613a86.0" configVersion="112e88a888924921e530802c770d1b8c9460e11b"/>
 		<Metadata name="CommonModule.УдалитьГП_ПриборыУчета_" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92" configVersion="f4a677b3ecd757fa419534e7c5bd68dd386de7a7"/>
 		<Metadata name="CommonModule.УдалитьГП_ПриборыУчета_.Module" id="e1f21d32-2b27-4335-8b20-0cf4bcde3c92.0" configVersion="47263e4df1d9d64576029bd0e8292f3ed869fecc"/>
-		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="aefceecbc5da8f8a6aca2165ea5ec759cd3aebb5"/>
+		<Metadata name="Configuration.ГП_ДополнительныеОтчеты" id="999fb558-4e50-412b-9c22-a2fb8eaccd3e" configVersion="9c9b09ce5f477882d2f9d791b402b2910fe80138"/>
 		<Metadata name="Document.КВП_РегистрацияОплаты" id="e34201cf-3ab2-4737-afc9-af6e765600df" configVersion="616fd3dd78a939f9fdf0885c3c965b57076c3eb8"/>
 		<Metadata name="Document.ОплатаПлатежнойКартой" id="d6c9f9ef-1e00-4cfb-a937-e607d264275e" configVersion="dcc91b97b2e58ddc49e6afe8fcdb27b4410f45a4"/>
 		<Metadata name="Document.ПоступлениеНаРасчетныйСчет" id="d223e2fb-7fe2-4b38-812f-6fa347b14643" configVersion="64ce6ee75aa2a638622d7762430c4e13a8554686"/>
@@ -333,10 +333,6 @@
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.ManagerModule" id="49d418b2-77d3-48e4-9b25-e85578e1b41d.2" configVersion="e49df588766cd133fa0b744ca0914118864d5ddc"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных" id="01257d0c-c318-4d08-a49d-ade73cb0e733" configVersion="d35e563f1f1bf60a6510eca144982a40a4efe592"/>
 		<Metadata name="Report.УПЖКХ_СверкаСуммОплатВБлокеЖКХиБП.Template.ГП_ОсновнаяСхемаКомпоновкиДанных.Template" id="01257d0c-c318-4d08-a49d-ade73cb0e733.0" configVersion="43aaa50d5bf0dd4f0374404a25417a6b424b9cf7"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоШифрам1" id="faa80cbe-a65e-4444-941b-236524c94ca3" configVersion="68363b083d6d26a4bcfa5f1852b24def26aea8d7"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоШифрам1.ObjectModule" id="faa80cbe-a65e-4444-941b-236524c94ca3.0" configVersion="d00e0e677384b6210f184dba66746e07fc5ddd8e"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоШифрам1.Template.ОсновнаяСхемаКомпоновкиДанных" id="649561d0-4c62-4fe1-adcd-05692c89cde2" configVersion="e99b701243416a3586876dd03f0666acf9ae8e79"/>
-		<Metadata name="Report.УдалитьГП_ОтчетПоШифрам1.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="649561d0-4c62-4fe1-adcd-05692c89cde2.0" configVersion="5c32d268ff2c4e5d723869768b4055a3dace2e53"/>
 		<Metadata name="Role.ГП_ИспользованиеДополнительныхОтчетов" id="a91e2477-62c4-488c-a792-b871a337c4f3" configVersion="081d3285f48d439dcc7a38427bb797fa3c5425de"/>
 		<Metadata name="Role.ГП_ИспользованиеДополнительныхОтчетов.Rights" id="a91e2477-62c4-488c-a792-b871a337c4f3.0" configVersion="e88c2a0e0a529dc3904f667c04f1b4791132edf2"/>
 		<Metadata name="Role.ГП_ИспользованиеОтчетаАктИзмененияСПИОС" id="8b71c923-92fd-45ba-8f8a-6636d17b47ee" configVersion="7173e1ca1cf70734548295227133c9bf86ef4356"/>
